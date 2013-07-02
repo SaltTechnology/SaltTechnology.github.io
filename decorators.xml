@@ -1,0 +1,20 @@
+<decorators defaultdir="/WEB-INF/layouts">
+
+  <excludes>
+    <pattern>/ajax/*</pattern>
+    <pattern>/static/*</pattern>
+    <pattern>/public/error/*</pattern>
+  </excludes>
+
+  <decorator name="public" page="public.jsp">
+    <pattern>/public/*</pattern>
+  </decorator>
+
+  <decorator name="default" page="default.jsp">
+    <pattern>/*</pattern>
+  </decorator>
+
+  <!-- Outputs only body content, with no decoration. -->
+  <decorator name="body" page="body.jsp"/>
+
+</decorators>

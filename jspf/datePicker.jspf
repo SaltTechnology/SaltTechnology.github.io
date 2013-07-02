@@ -1,0 +1,5 @@
+<%@ page pageEncoding="UTF-8" %>
+<style type="text/css" title="currentStyle">
+   @import "static/css/datepicker.css";
+</style>
+<script src="static/js/bootstrap-datepicker.js"></script>
