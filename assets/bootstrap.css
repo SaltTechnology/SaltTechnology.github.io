@@ -845,3 +845,4 @@ a.dropdown-toggle{cursor:pointer;}
 #sidebar{max-width:270px;}
 #sidebar .well{background-color:#f6f6f6;background-image:-moz-linear-gradient(left, #ffffff, #f6f6f6);background-image:-webkit-gradient(linear, 0 0, 100% 0, from(#ffffff), to(#f6f6f6));background-image:-webkit-linear-gradient(left, #ffffff, #f6f6f6);background-image:-o-linear-gradient(left, #ffffff, #f6f6f6);background-image:linear-gradient(to right, #ffffff, #f6f6f6);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff6f6f6', GradientType=1);}
 .uneditable-input{background-color:transparent;border:none;color:#555555;}
+.align_center{margin-left:auto;margin-right:auto;width:90%;}
