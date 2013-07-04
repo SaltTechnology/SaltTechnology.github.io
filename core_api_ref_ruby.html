@@ -11,23 +11,18 @@ layout: base
 
 <link rel="stylesheet" type="text/css" href="./core_api_assets/site.css"
 	media="screen">
+	
+	  <link href="assets/bootstrap.css" rel="stylesheet">
+
+  <script src="assets/jquery-1.7.2.min.js"></script>
+  <script src="assets/bootstrap.min.js"></script>
 </head>
 
 <body class="api-docs java">
 
 	<div id="background"></div>
 
-	<!-- header -->
-	<div id="header">
-		<div class="navigation">
-
-			<ul class="global">
-				<li><a href="http://salt.com">Salt.com</a></li>
-			</ul>
-		</div>
-
-	</div>
-	<!-- /header -->
+	{% include salt_header.html %}
 
 	<!-- guide -->
 	<div id="guide" class="">
@@ -178,6 +173,8 @@ layout: base
 			</div>
 		</div>
 	</div>
+	
+	{% include salt_footer.html %}
 
 </body>
 </html>
