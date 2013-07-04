@@ -15,11 +15,12 @@
         <a class="brand" <img alt="Logo" src="images/salt-logo-tiny.png"/></a>
         <span class="brand">SALT</span>
         <ul class="nav pull-right">
+		<li><a id="managementLink" href="/merchantmanagement/public/security/login">${msg.management}</a>
         <li><a id="developersLink" href="http://salttechnology.github.io/">Developers</a>
           <li class="dropdown">
             <a id="supportLink" class="dropdown-toggle" data-toggle="dropdown">Support <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><a id="supportMailLink" href="#supportMail" data-toggle="modal">Mail Support...</a>
+              <li><a id="supportMailLink" href="https://test.salt.com/merchantmanagement/public/security/login" data-toggle="modal">Mail Support...</a>
               <li class="divider">
               <li><address>Phone: 1-866-854-9851</address>
             </ul>
@@ -32,7 +33,7 @@
   <div class="container">
     <div class="row">
       <div class="span12">
-        <decorator:body/>
+        <br>
 		<a href="http://salttechnology.github.io/core_api_doc.html">Core API Guide</a><br>
 		<a href="http://salttechnology.github.io/post_api_ref.html">POST API Reference</a><br>
 		<a href="http://salttechnology.github.io/core_api_ref.html">Java Credit Card API Reference</a><br>
