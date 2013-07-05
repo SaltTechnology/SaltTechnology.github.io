@@ -35,9 +35,8 @@ layout: base
 	</head>
 	<body>
 	{% include salt_header.html %}
-		<h1> Getting Started </h1>
 	
-	<div>
+	<div class="align_center">
 	Please select a language:
 	<select id="selectLanguages" onchange="makeVisible(this.value)">
 	  <option value="none">-Languages-</option> 
@@ -46,10 +45,15 @@ layout: base
 	  <option value="PHP">PHP</option>
 	  <option value="Ruby">Ruby</option>
 	</select>
+	</div>
 	</body>
 	
 	<div id="Java" style="visibility: hidden;">
-		 Java				
+	<div class="row-fluid">
+      <div class="well align_center">
+	  <h2>
+		 Java
+	</h2>		 
 		<ol>						
 			<li> Create Test Merchant Account. Generate API token, merchant Id, user name and password.
 				<ol>
@@ -119,27 +123,48 @@ layout: base
 			</li>
 		</ol>			
 	</div>
+	</div>
+	</div>
 	
 	<div id=".Net" style="visibility: hidden;">
+	<div class="row-fluid">
+      <div class="well align_center">
+	  <h2>
 		.Net
+		</h2>
 		<ul>
 			<li>Coming Soon</li>
 		</ul>
 	</div>
+	</div>
+	</div>
 	
 	<div id="PHP" style="visibility: hidden;">
+	<div class="row-fluid">
+      <div class="well align_center">
+	  <h2>
 		PHP
+		</h2>
 		<ul>
 			<li>Coming Soon</li>
 		</ul>		
+	</div>
+	</div>
 	</div>
 	
 	<div id="Ruby" style="visibility: hidden;">
+	<div class="row-fluid">
+      <div class="well align_center">
+	  <h2>
 		Ruby
+		</h2>
 		<ul>
 			<li>Coming Soon</li>
 		</ul>		
 	</div>
+	</div>
+	</div>
+	
 	</body>
 	{% include salt_footer.html %}
 </html>
