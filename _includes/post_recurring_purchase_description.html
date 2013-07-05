@@ -5,11 +5,10 @@ You can use SALT’s Periodic Purchase features when the customer is billed peri
 <br>
 </p>
 
-<table border="1">
+To create a recurring payment:
+<table class="table table-bordered table-striped">
 <tr>
-<th>To create a recurring payment:
-<tr>
-<td>requestCode<td>recurringPurchase
+<td>requestCode<td>"recurringPurchase"
 <tr>
 <td>merchantId<td>Your merchant ID.
 <tr>
@@ -50,9 +49,8 @@ You can use SALT’s Periodic Purchase features when the customer is billed peri
 
 <br>
 
-<table border="1">
-<tr>
-<th>To execute a recurring payment:
+To execute a recurring payment:
+<table class="table table-bordered table-striped">
 <tr>
 <td>merchantId<td>Your merchant ID.
 <tr>
@@ -60,7 +58,7 @@ You can use SALT’s Periodic Purchase features when the customer is billed peri
 <tr>
 <td>marketSegmentCode<td>I (Internet) or M (Mail/Telephone)
 <tr>
-<td>operationCode=execute
+<td>operationCode<td>"execute"
 <tr>
 <td>cvv2<td>The purchasing credit card's CVV2.
 <tr>
@@ -69,11 +67,9 @@ You can use SALT’s Periodic Purchase features when the customer is billed peri
 
 <br>
 
-<table border="1">
+To hold/resume/cancel a recurring payment:
 <tr>
-<th>To hold/resume/cancel a recurring payment:
-<tr>
-<td>requestCode<td>recurringPurchase
+<td>requestCode<td>"recurringPurchase"
 <tr>
 <td>merchantId<td>Your merchant ID.
 <tr>
@@ -81,7 +77,7 @@ You can use SALT’s Periodic Purchase features when the customer is billed peri
 <tr>
 <td>marketSegmentCode<td>I (Internet) or M (Mail/Telephone)
 <tr>
-<td>operationCode<td>update
+<td>operationCode<td>"update"
 <tr>
 <td>transactionOrderId<td>The order Id of the transaction you are updating.
 <tr>
