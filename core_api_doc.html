@@ -13,18 +13,35 @@ layout: base
 </head>
 
 {% include salt_header.html %}
-<br clear="all"/>
-<h1>
+
+<div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span3" id="sidebar">
+        <div class="sidebar-nav">
+          <ul class="nav nav-list well">
+            <li class="nav-top">Introduction</li>
+			<li class="nav-top">Development Environment</li>
+			<li class="nav-top">Working With the API</li>
+		  </ul>
+		</div>
+	  </div>
+</div>
+</div>
+<div class="span8">
+<div style="float:left; padding-bottom:4px">
+
+
+<h3>
     <a name="_Toc355011655"></a>
     <a name="_Toc222545468"></a>
     <a name="_Toc271107064"></a>
     <a name="_Toc107299434">1 Introduction</a>
-</h1>
-<h2>
+</h3>
+<h4>
     <a name="_Toc355011656"></a>
     <a name="_Toc222545469"></a>
     <a name="_Toc271107065">1.1 Document Overview</a>
-</h2>
+</h4>
 <p>
     This document describes how to integrate your website with the <strong>SALT Technology Credit Card Core API</strong>. This document provides a step-by-step
     guide to completing the integration process as well as information on test and configuration tools available to you.
@@ -35,11 +52,11 @@ If you are looking for integration instructions for the SALT INTERAC Online Core
 <p>
     <strong></strong>
 </p>
-<h2>
+<h4>
     <a name="_Toc355011657"></a>
     <a name="_Toc222545470"></a>
     <a name="_Toc271107066">1.2 Abbreviations, Definitions, and Acronyms</a>
-</h2>
+</h4>
 <p>
     The following is a list of abbreviations, acronyms, and terms that are used throughout this document:
 </p>
@@ -168,9 +185,9 @@ If you are looking for integration instructions for the SALT INTERAC Online Core
     <a name="_Toc222545471"></a>
     <a name="_Toc271107067"> </a>
 </p>
-<h2>
+<h4>
     <a name="_Toc355011658">1.3 Credit Card Core API Workflow</a>
-</h2>
+</h4>
 <p>
     To get a better understanding of what is involved in the integration process, you should first understand the workflow of the SALT Credit Card Core API.
 </p>
@@ -200,11 +217,11 @@ If you are looking for integration instructions for the SALT INTERAC Online Core
     4. You generate and display a receipt to the customer.
 </p>
 <br clear="all"/>
-<h2>
+<h4>
     <a name="_Toc355011659"></a>
     <a name="_Toc222545472"></a>
     <a name="_Toc271107068">1.4 Integration At-a-Glance</a>
-</h2>
+</h4>
 <p>
     At-a-glance, the process of integrating with the Credit Card Core API consists of the following steps:
 </p>
@@ -356,10 +373,10 @@ If you are looking for integration instructions for the SALT INTERAC Online Core
     <a name="_Toc271107069"></a>
     <a name="_Ref222720746"></a>
 </p>
-<h1>
+<h3>
     <a name="_Toc355011660"></a>
     <a name="_Ref354145119">2 The SALT Development Environment</a>
-</h1>
+</h3>
 <p>
     The SALT Development Environment is a sandbox environment mirroring the production environment that allows you to perform testing and integration before
     going into production.
@@ -431,11 +448,11 @@ If you are looking for integration instructions for the SALT INTERAC Online Core
     The SALT Merchant Management Website requires a login, which consists of a Username and Password provided to you upon signup. You can change your password
     after logging in.
 </p>
-<h2>
+<h4>
     <a name="_Toc355011661"></a>
     <a name="_Toc222545474"></a>
     <a name="_Toc271107070">2.1 Store Information and Configuration</a>
-</h2>
+</h4>
 <p>
     To access the Store information/configuration page:
 </p>
@@ -451,21 +468,21 @@ If you are looking for integration instructions for the SALT INTERAC Online Core
 <p>
     Information about your Store (including Merchant ID and Store ID) is shown, along with all configuration options.
 </p>
-<h1>
+<h3>
     <a name="_Toc355011662"></a>
     <a name="_Toc222545475"></a>
     <a name="_Toc271107071"></a>
     <a name="_Ref222720742">3 Working With the SALT Core API</a>
-</h1>
+</h3>
 <p>
     You will need to use the SALT Core API to perform credit card transactions.
 </p>
-<h2>
+<h4>
     <a name="_Toc355011663"></a>
     <a name="_Toc222545476"></a>
     <a name="_Toc271107072"></a>
     <a name="_Toc205716302">3.1 Client Library</a>
-</h2>
+</h4>
 <p>
     Before working with the SALT Core API, ensure that you have downloaded the client library file to your computer. The Core API consists of a single package
     with two main classes:
@@ -501,13 +518,13 @@ If you are looking for integration instructions for the SALT INTERAC Online Core
         </tbody>
     </table>
 </div>
-<h2>
+<h4>
     <a name="_Toc205716304"></a>
     <a name="_Toc355011664"></a>
     <a name="_Toc222545477"></a>
     <a name="_Toc271107073"></a>
     <a name="_Ref271106528">3.2 HttpsCreditCardService</a>
-</h2>
+</h4>
 <p>
     To process a credit card transaction, you will need to construct an instance of the HttpsCreditCardService class as follows:
 </p>
@@ -689,12 +706,12 @@ URL to the SALT Core API handler. In the development environment this is        
 <p>
     After you have created a new instance, you can use it to process transactions.
 </p>
-<h2>
+<h4>
     <a name="_Toc355011665"></a>
     <a name="_Toc222545478"></a>
     <a name="_Toc271107074"></a>
     <a name="_Ref222717207">3.3 Purchase</a>
-</h2>
+</h4>
 <p>
     To perform a credit card purchase you will invoke the <strong>singlePurchase()</strong> method:
 </p>
@@ -1284,9 +1301,9 @@ URL to the SALT Core API handler. In the development environment this is        
     <a name="_Toc271107075"></a>
     <a name="_Ref222721427"> </a>
 </p>
-<h2>
+<h4>
     <a name="_Toc355011666">3.4 Void and Refund</a>
-</h2>
+</h4>
 <p>
     You may need to void or refund a purchase made by a customer from time to time. You can do this programmatically through the Core API (see below) but if
     you don’t need/want to, you can perform refunds manually through the Merchant Management Website.
@@ -1590,9 +1607,9 @@ URL to the SALT Core API handler. In the development environment this is        
     <a name="_Toc271107078"></a>
     <a name="_Ref231029661"> </a>
 </p>
-<h2>
+<h4>
     <a name="_Toc355011667">3.5 Periodic/Recurring Payments</a>
-</h2>
+</h4>
 <p>
     You can use SALT’s Periodic Purchase features when the customer is billed periodically, or when splitting payment into a number of separate payments.
 </p>
@@ -2827,12 +2844,12 @@ Once a recurring purchase has been successfully created (with recurringPurchase(
 <p align="left">
     4. You can view/update existing Periodic Purchases by using the search form (by date, order Id, etc)
 </p>
-<h2>
+<h4>
     <a name="_Toc355011668"></a>
     <a name="_Toc222545487"></a>
     <a name="_Toc271107082"></a>
     <a name="_Ref233194184">3.6 Transaction Verification</a>
-</h2>
+</h4>
 <p>
     In certain cases when you are unsure of the results of the transaction, such as when a transaction times out, you may need to double-check its status. You
     can run the verifyTransaction() method to perform this check. This method returns a receipt containing the results of the transaction.
@@ -2943,9 +2960,9 @@ Once a recurring purchase has been successfully created (with recurringPurchase(
     <a name="_Toc222545488"></a>
     <a name="_Toc271107083"> </a>
 </p>
-<h2>
+<h4>
     <a name="_Toc355011669">3.7 Credit Card Verification</a>
-</h2>
+</h4>
 <p>
     Use the verifyCreditCard() method to check the status of a credit card. A CreditCardReceipt object is returned, containing information about the card’s
     validity, Secure Storage information if the card uses Secure Storage and Fraud information if the card uses the Advanced Fraud Suite.
@@ -3045,11 +3062,11 @@ Once a recurring purchase has been successfully created (with recurringPurchase(
         </tbody>
     </table>
 </div>
-<h2>
+<h4>
     <a name="_Toc355011670"></a>
     <a name="_Toc222545489"></a>
     <a name="_Ref311820685">3.8 Closing Batches</a>
-</h2>
+</h4>
 <p>
     All batches are closed automatically every night at 12:00 am EST. If for some reason you want to close a batch manually during the day, this may be done by
     invoking the closeBatch() method. Note that this will NOT prevent the automatic daily batch closure.
@@ -3086,11 +3103,11 @@ Once a recurring purchase has been successfully created (with recurringPurchase(
         </tbody>
     </table>
 </div>
-<h2>
+<h4>
     <a name="_Toc355011671"></a>
     <a name="_Ref222545767"></a>
     <a name="_Toc222545490">3.9 Updating Fraud</a>
-</h2>
+</h4>
 <p>
     Allow merchants to update fraud AUTH status if they use other payment processing service.
 </p>
@@ -3213,21 +3230,21 @@ Once a recurring purchase has been successfully created (with recurringPurchase(
     <a name="_Ref213578860"> </a>
 </p>
 <br clear="all"/>
-<h1>
+<h3>
     <a name="_Ref355172800"></a>
     <a name="_Toc355011672">4 Receipt</a>
     s
-</h1>
+</h3>
 <p>
     When a transaction has been completed, you must display a receipt to your customer. The following section describes the requirements of a receipt.
 </p>
-<h2>
+<h4>
     <a name="_Toc355011673"></a>
     <a name="_Toc222545492"></a>
     <a name="_Toc271107085"></a>
     <a name="_Toc205716308"></a>
     <a name="_Ref203384740">4.1 What do I need to display in a Receipt?</a>
-</h2>
+</h4>
 <p>
     The required receipt fields listed below include the corresponding CreditCardReceipt field name as returned by SALT (where applicable). Note that there are
     different fields to be displayed depending on if the transaction was successful or unsuccessful.
@@ -3350,15 +3367,15 @@ Once a recurring purchase has been successfully created (with recurringPurchase(
     <a name="_Toc271107087"></a>
     <a name="_Ref222717133"></a>
 </p>
-<h1>
+<h3>
     <a name="_Toc355011674">5 Advanced Core API Features</a>
-</h1>
-<h2>
+</h3>
+<h4>
     <a name="_Toc355011675"></a>
     <a name="_Toc222545495"></a>
     <a name="_Toc271107088"></a>
     <a name="_Ref223318688">5.1 Credit Card Security Features</a>
-</h2>
+</h4>
 <p>
     To use the Core API Credit Card security features, you will need to use the full constructor for the CreditCard class, which includes additional data
     fields.
@@ -4702,13 +4719,13 @@ Note that if an AVS check results in a mismatch or is not supported by the cardh
     – If the cardholder address is international, you may see this result. If you typically do business with international customers, then this will be
     expected. Otherwise, you may want to consider whether or not to accept the transaction.
 </p>
-<h2>
+<h4>
     <a name="_Toc355011676"></a>
     <a name="_Toc222545501"></a>
     <a name="_Toc271107094"></a>
     <a name="_Ref233193600"></a>
     <a name="_Ref233193589">5.2 Secure Storage API</a>
-</h2>
+</h4>
 <p>
     With the Secure Storage API, merchants can remotely store credit card and other sensitive customer data with SALT to increase security and reduce the scope
     of PCI Compliance.
@@ -6084,28 +6101,28 @@ PaymentProfile <strong>paymentProfile</strong> = <strong>new PaymentProfile</str
     <a name="_Toc205716311"></a>
 </p>
 <br clear="all"/>
-<h1>
+<h3>
     6 Non-Page Specific Requirements
-</h1>
-<h2>
+</h3>
+<h4>
     <a name="_Toc355011678"></a>
     <a name="_Toc222545507"></a>
     <a name="_Toc271107100"></a>
     <a name="_Toc205716312">6.1 General Requirements</a>
-</h2>
+</h4>
 <ul>
     <li>
         <strong>Domain: </strong>
         The domain of the merchant website must be registered to the merchant
     </li>
 </ul>
-<h2>
+<h4>
     <a name="_Toc355011679"></a>
     <a name="_Toc222545508"></a>
     <a name="_Toc271107101"></a>
     <a name="_Toc205716313"></a>
     <a name="_Ref203385567">6.2 Customer Notification of Transaction Results</a>
-</h2>
+</h4>
 <p>
     The customer must have a means to receive notification of the results of a transaction through a separate channel in addition to display on screen. This is
     to ensure that even in the case of an accident such as the customer closing their browser, the customer will still be able to determine if the transaction
@@ -6127,9 +6144,9 @@ PaymentProfile <strong>paymentProfile</strong> = <strong>new PaymentProfile</str
 <p>
 If you do not already have such a feature it is recommended that the Email Notification method be used for ease of implementation.    <a name="_Toc222545509"></a><a name="_Toc271107102"></a><a name="_Toc205716314"></a><a name="_Ref203385501"></a>
 </p>
-<h2>
+<h4>
     <a name="_Toc355011680">6.3 Security and Privacy</a>
-</h2>
+</h4>
 <p>
     Your store must make a Privacy Statement/Policy clearly available to the customer. A Privacy Statement should tell the customer:
 </p>
@@ -6187,27 +6204,27 @@ If you do not already have such a feature it is recommended that the Email Notif
     <a name="_Toc205716315"></a>
     <a name="_Ref203364495"></a>
 </p>
-<h1>
+<h3>
     <a name="_Ref355172812"></a>
     <a name="_Toc355011681">7 Certification</a>
-</h1>
+</h3>
 <p>
     Elavon requires that all merchants offering credit card payment follow a set of standard guidelines for implementation.
 </p>
-<h2>
+<h4>
     <a name="_Toc355011682"></a>
     <a name="_Toc222545511"></a>
     <a name="_Toc271107104">7.1 Approval</a>
-</h2>
+</h4>
 <p>
     A “full” Approval from Elavon requires a fully-functional, secure and complete e-commerce website to be created by the merchant. Since you will want to
     obtain some kind of approval before actually starting integration, you will typically go for a Conditional Approval first (see below).
 </p>
-<h2>
+<h4>
     <a name="_Toc355011683"></a>
     <a name="_Toc222545512"></a>
     <a name="_Toc271107105">7.2 Conditional Approval</a>
-</h2>
+</h4>
 <p>
     A Conditional Approval can be granted to a merchant who has not yet integrated their site with the SALT Payment Gateway. A Conditional Approval means that
     you are guaranteed a full Approval so long as the payment portion of your site is completed.
@@ -6231,11 +6248,11 @@ If you do not already have such a feature it is recommended that the Email Notif
         <strong>No integration is required to obtain Conditional Approval</strong>
     </li>
 </ul>
-<h2>
+<h4>
     <a name="_Toc355011684"></a>
     <a name="_Toc222545513"></a>
     <a name="_Toc271107106">7.3 Certification Checklist</a>
-</h2>
+</h4>
 <p>
     Each merchant implementation must undergo a brief certification process to obtain approval. To complete certification, you will need to supply SALT with:
 </p>
@@ -6518,10 +6535,10 @@ If you do not already have such a feature it is recommended that the Email Notif
     <a name="_Toc271107107"></a>
     <a name="_Ref222720715"></a>
 </p>
-<h1>
+<h3>
     <a name="_Ref355172824"></a>
     <a name="_Toc355011685">8 Moving to Production</a>
-</h1>
+</h3>
 <p>
     Once certification is complete, you will be ready to move to the SALT Production environment. Moving to the Production environment involves changing the
     credit card Core API handler URL to the production URL, and verifying your configuration settings in the production Merchant Management Website.
@@ -6588,9 +6605,9 @@ If you do not already have such a feature it is recommended that the Email Notif
     <a name="_Toc222545515"></a>
     <a name="_Toc271107108"></a>
 </p>
-<h1>
+<h3>
     <a name="_Toc355011686">9 Appendix I: Differences Between INTERAC Online and Credit Card Integration</a>
-</h1>
+</h3>
 <p>
     The INTERAC Online and Credit Card Core API integrations are similar, with a few minor differences listed below:
 </p>
@@ -6711,9 +6728,9 @@ If you do not already have such a feature it is recommended that the Email Notif
     <a name="_Ref226707931"></a>
     <a name="_Toc226707551"></a>
 </p>
-<h1>
+<h3>
     <a name="_Toc355011687">10 Appendix II: SALT Error Codes</a>
-</h1>
+</h3>
 <p>
     Below is a list of the SALT credit card processing error codes that can be returned by the SALT Payment Gateway.
 </p>
@@ -7206,9 +7223,9 @@ If you do not already have such a feature it is recommended that the Email Notif
     <a name="_Toc271107110"></a>
     <a name="_Ref228159339"></a>
 </p>
-<h1>
+<h3>
     <a name="_Toc355011688">11 Appendix III: Testing Parameters for the Development Environment</a>
-</h1>
+</h3>
 <p>
     The SALT Credit Card Development Environment allows you to simulate different response scenarios by providing certain values for transaction parameters.
     Note that these parameters operate in the <strong>Development Environment only </strong>and have no bearing on the behaviour of the Production Environment
@@ -8637,15 +8654,15 @@ If you do not already have such a feature it is recommended that the Email Notif
     <a name="_Toc271107111"></a>
     <a name="_Ref228159362"></a>
 </p>
-<h1>
+<h3>
     <a name="_Toc355011689">12 Appendix IV: Core API for </a>
     Other Programming Languages
-</h1>
-<h2>
+</h3>
+<h4>
     <a name="_Toc355011690"></a>
     <a name="_Toc222545519"></a>
     <a name="_Toc271107112">12.1 Microsoft .NET</a>
-</h2>
+</h4>
 <p>
     The SALT Core API is available for Microsoft .NET (for both .NET Framework versions 1.1 and 2.0). Below is a sample code fragment of a single purchase with
     the .NET Core API (in C#):
@@ -8762,11 +8779,11 @@ If you do not already have such a feature it is recommended that the Email Notif
     Copy the admeriscc*.dll to your web bin folder. The Test executable files are provided so that you can quickly test some of the gateway functions from the
     command line. Run the executable(s) with no arguments for usage instructions.
 </p>
-<h2>
+<h4>
     <a name="_Toc355011691"></a>
     <a name="_Toc222545521"></a>
     <a name="_Toc271107114">12.2 PHP</a>
-</h2>
+</h4>
 <p>
     The SALT Core API is available for PHP 4.3 (or greater). Below is a sample code fragment of a single purchase with the PHP Core API.
 </p>
@@ -8943,4 +8960,6 @@ If you do not already have such a feature it is recommended that the Email Notif
     </tbody>
 </table>
 
+</div>
+</div>
 {% include salt_footer.html %}
