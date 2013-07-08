@@ -30,6 +30,7 @@ a:hover{color:#00608c;text-decoration:underline;}
 .row:after{clear:both;}
 [class*="span"]{float:left;min-height:1px;margin-left:20px;}
 .container,.navbar-static-top .container,.navbar-fixed-top .container,.navbar-fixed-bottom .container{width:940px;}
+.spanIndent{width:620px;margin-left:25%;}
 .span12{width:940px;}
 .span11{width:860px;}
 .span10{width:780px;}
