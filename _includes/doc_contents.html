@@ -1,3 +1,4 @@
+<a id="introduction" name="introduction" class="section-anchor">&nbsp;</a>
 <h3>
     <a name="_Toc355011655"></a>
     <a name="_Toc222545468"></a>
@@ -30,7 +31,7 @@ If you are looking for integration instructions for the SALT INTERAC Online Core
 <p>
     <a name="_Toc222546509"></a>
     <a name="_Toc271107115">Table </a>
-    1-1 ?Abbreviations, Definitions, and Acronyms
+    1-1 Abbreviations, Definitions, and Acronyms
 </p>
 <div align="center">
     <table border="1" cellspacing="0" cellpadding="0">
@@ -165,19 +166,19 @@ If you are looking for integration instructions for the SALT INTERAC Online Core
     <a name="_Toc337027744"></a>
     <a name="_Toc271107157"></a>
     <a name="_Ref252186512">Figure </a>
-    1-1 ?Credit Card Core API Solution Workflow
+    1-1 Credit Card Core API Solution Workflow
 </p>
 <p align="center">
     <img width="600" height="350" src="/images/clip_image004.jpg"/>
 </p>
 <p align="left">
-    1. When the customer is ready to checkout and pay for their order, you collect the customer? credit card information on your website.
+    1. When the customer is ready to checkout and pay for their order, you collect the customer credit card information on your website.
 </p>
 <p align="left">
-    2. You then obtain approval for the payment by invoking the SALT Core API with the customer? credit card information.
+    2. You then obtain approval for the payment by invoking the SALT Core API with the customer credit card information.
 </p>
 <p align="left">
-    3. SALT? Core API Handler will process the request through the credit card network. The result of the payment approval will be returned to you from the
+    3. SALT Core API Handler will process the request through the credit card network. The result of the payment approval will be returned to you from the
     Core API.
 </p>
 <p align="left">
@@ -335,6 +336,7 @@ If you are looking for integration instructions for the SALT INTERAC Online Core
     </table>
 </div>
 <br clear="all"/>
+<a id="environment" name="environment" class="section-anchor">&nbsp;</a>
 <p align="left">
     <a name="_Toc222545473"></a>
     <a name="_Toc271107069"></a>
@@ -427,14 +429,15 @@ If you are looking for integration instructions for the SALT INTERAC Online Core
     1. Login to the SALT Merchant Management Website at <a href="https://test.salt.com/merchantmanagement/">https://test.salt.com/merchantmanagement/</a>
 </p>
 <p align="left">
-    2. Select the ?tore?Link under the ?erchant Setup?section. A list of all of your Stores will be displayed.
+    2. Select the Store Link under the Merchant Setup section. A list of all of your Stores will be displayed.
 </p>
 <p align="left">
-    3. Press the ?odify?button for the Store that you wish to configure. You will be taken to the Store configuration page.
+    3. Press the Modify button for the Store that you wish to configure. You will be taken to the Store configuration page.
 </p>
 <p>
     Information about your Store (including Merchant ID and Store ID) is shown, along with all configuration options.
 </p>
+<a id="api" name="api" class="section-anchor">&nbsp;</a>
 <h3>
     <a name="_Toc355011662"></a>
     <a name="_Toc222545475"></a>
@@ -460,11 +463,11 @@ If you are looking for integration instructions for the SALT INTERAC Online Core
 <ul type="disc">
     <li>
         <strong>HttpsCreditCardService</strong>
-        ?calls the SALT Core API Handler to process credit card transactions, such as purchases, voids, and refunds.
+        Calls the SALT Core API Handler to process credit card transactions, such as purchases, voids, and refunds.
     </li>
     <li>
         <strong>CreditCardReceipt</strong>
-        ?A container class for the HttpsCreditCardService method response
+        A container class for the HttpsCreditCardService method response
     </li>
 </ul>
 <p>
@@ -498,7 +501,7 @@ If you are looking for integration instructions for the SALT INTERAC Online Core
 <p>
     <a name="_Toc222546511"></a>
     <a name="_Toc271107117">Table </a>
-    3-1 ?Core API: HttpsCreditCardService Constructor
+    3-1 Core API: HttpsCreditCardService Constructor
 </p>
 <div align="center">
     <table border="1" cellspacing="0" cellpadding="0">
@@ -583,7 +586,7 @@ URL to the SALT Core API handler. In the development environment this is        
     <a name="_Toc222546512"></a>
     <a name="_Toc271107118"></a>
     <a name="_Ref271106382">Table </a>
-    3-2 ?Core API: Merchant Constructor
+    3-2 Core API: Merchant Constructor
 </p>
 <div align="center">
     <table border="1" cellspacing="0" cellpadding="0">
@@ -685,7 +688,7 @@ URL to the SALT Core API handler. In the development environment this is        
 <p>
     <a name="_Toc222546513"></a>
     <a name="_Toc271107119">Table </a>
-    3-3 ?Core API: HttpsCreditCardService.singlePurchase() Method
+    3-3 Core API: HttpsCreditCardService.singlePurchase() Method
 </p>
 <div align="center">
     <table border="1" cellspacing="0" cellpadding="0">
@@ -768,7 +771,7 @@ URL to the SALT Core API handler. In the development environment this is        
                 </td>
                 <td width="379" valign="top">
                     <p align="left">
-                        Amount of the purchase <strong>in cents</strong>. Do NOT include a ??or any decimal place. (e.g. if your purchase is $10.00, then
+                        Amount of the purchase <strong>in cents</strong>. Do NOT include a $ or any decimal place. (e.g. if your purchase is $10.00, then
                         send 1000 as the total).
                     </p>
                 </td>
@@ -813,13 +816,13 @@ URL to the SALT Core API handler. In the development environment this is        
     </table>
 </div>
 <p>
-    The customer? credit card information is submitted using the data object CreditCard. The basic constructor is shown below.
+    The customer credit card information is submitted using the data object CreditCard. The basic constructor is shown below.
 </p>
 <p>
     <a name="_Toc222546514"></a>
     <a name="_Toc271107120"></a>
     <a name="_Ref222716658">Table </a>
-    3-4 ?Core API: CreditCard Class (Basic Constructor)
+    3-4 Core API: CreditCard Class (Basic Constructor)
 </p>
 <div align="center">
     <table border="1" cellspacing="0" cellpadding="0">
@@ -897,7 +900,7 @@ URL to the SALT Core API handler. In the development environment this is        
     <a name="_Ref334689079"></a>
     <a name="_Toc271107121"></a>
     <a name="_Ref334689086">Table </a>
-    3-5 ?Core API: CreditCardReceipt Class
+    3-5 Core API: CreditCardReceipt Class
 </p>
 <div align="center">
     <table border="1" cellspacing="0" cellpadding="0">
@@ -976,7 +979,7 @@ URL to the SALT Core API handler. In the development environment this is        
                         Returns the brand of the credit card, as a number:
                     </p>
                     <p align="left">
-                        1=Visa, 2=MasterCard, 3=AMEX, 4=Discover, 5=Diner? , 6=JCB, 7=Other
+                        1=Visa, 2=MasterCard, 3=AMEX, 4=Discover, 5=Diner , 6=JCB, 7=Other
                     </p>
                 </td>
             </tr>
@@ -1162,7 +1165,7 @@ URL to the SALT Core API handler. In the development environment this is        
 <p>
     <a name="_Toc222546516"></a>
     <a name="_Toc271107122">Table </a>
-    3-6 ?Core API: ApprovalInfo Class
+    3-6 Core API: ApprovalInfo Class
 </p>
 <div align="center">
     <table border="1" cellspacing="0" cellpadding="0">
@@ -1273,24 +1276,24 @@ URL to the SALT Core API handler. In the development environment this is        
 </h4>
 <p>
     You may need to void or refund a purchase made by a customer from time to time. You can do this programmatically through the Core API (see below) but if
-    you don? need/want to, you can perform refunds manually through the Merchant Management Website.
+    you don't need/want to, you can perform refunds manually through the Merchant Management Website.
 </p>
 <p>
     What is a Void? What is a Refund?
 </p>
 <p>
     <strong>Void </strong>
-    ??ancels?a transaction, preventing it from being settled. A Void can only be performed on a transaction belonging to the current batch, before the
+    Cancels a transaction, preventing it from being settled. A Void can only be performed on a transaction belonging to the current batch, before the
     current batch is closed (i.e. before the end of day).
 </p>
 <p>
     <strong>Refund </strong>
-    ?returns funds from a previously settled purchase to the customer. Refunds can only be performed on a purchase that is part of an already-closed batch.
+    Returns funds from a previously settled purchase to the customer. Refunds can only be performed on a purchase that is part of an already-closed batch.
 </p>
 <p>
     <a name="_Toc222546517"></a>
     <a name="_Toc271107123">Table </a>
-    3-7 ?Core API: HttpsCreditCardService.voidTransaction() Method
+    3-7 Core API: HttpsCreditCardService.voidTransaction() Method
 </p>
 <div align="center">
     <table border="1" cellspacing="0" cellpadding="0">
@@ -1387,7 +1390,7 @@ URL to the SALT Core API handler. In the development environment this is        
     <a name="_Toc222546518"></a>
     <a name="_Toc271107124"></a>
     <a name="_Toc205716337">Table </a>
-    3-8 ?Core API: HttpsCreditCardService.refund() Method
+    3-8 Core API: HttpsCreditCardService.refund() Method
 </p>
 <div align="center">
     <table border="1" cellspacing="0" cellpadding="0">
@@ -1488,7 +1491,7 @@ URL to the SALT Core API handler. In the development environment this is        
                 </td>
                 <td width="391" valign="top">
                     <p align="left">
-                        Amount to refund <strong>in cents</strong>. Do NOT include a ??or any decimal place. (e.g. if your purchase is $10.00, then send 1000
+                        Amount to refund <strong>in cents</strong>. Do NOT include a $ or any decimal place. (e.g. if your purchase is $10.00, then send 1000
                         as the total). This value does NOT have to match the original purchase amount.
                     </p>
                 </td>
@@ -1527,11 +1530,11 @@ URL to the SALT Core API handler. In the development environment this is        
     Credit Card Void and Refund operations are subject to the following restrictions/conditions:
 </p>
 <p>
-    ?Only transactions belonging to a batch that has not yet been closed may be voided. Once a batch has closed, you may only refund that transaction.
+    Only transactions belonging to a batch that has not yet been closed may be voided. Once a batch has closed, you may only refund that transaction.
     Conversely transactions belonging to a batch that has not yet been closed may not be refunded.
 </p>
 <p>
-?You may only Refund/Void a Purchase that has been <strong>approved successfully</strong>. Any declined/erroneous/cancelled Purchases    <strong>cannot be refunded or voided</strong>.
+You may only Refund/Void a Purchase that has been <strong>approved successfully</strong>. Any declined/erroneous/cancelled Purchases    <strong>cannot be refunded or voided</strong>.
 </p>
 <ul>
     <li>
@@ -1540,7 +1543,7 @@ URL to the SALT Core API handler. In the development environment this is        
     </li>
 </ul>
 <p>
-    ?You can void a refund request, providing it belongs to a batch that has not yet been closed.
+    You can void a refund request, providing it belongs to a batch that has not yet been closed.
 </p>
 <p>
     <a name="_Toc222545481"></a>
@@ -1555,19 +1558,19 @@ URL to the SALT Core API handler. In the development environment this is        
     1. Login to the SALT Merchant Management Website at <a href="https://test.salt.com/merchantmanagement/">https://test.salt.com/merchantmanagement/</a>
 </p>
 <p>
-    2. Select the ?oid/Refund?Link under the ?erminal?section.
+    2. Select the Void/Refund?Link under the Terminal section.
 </p>
 <p>
     3. Search for the Purchase transaction that you wish to void/refund (by date, Store ID, etc)
 </p>
 <p>
-    4. When you find the transaction to void/refund, press the ?oid?or ?efund?button
+    4. When you find the transaction to void/refund, press the void or refund button
 </p>
 <p>
     5. If you are performing a Refund, you will be asked to enter the amount to refund (the default is the original purchase amount).
 </p>
 <p>
-    6. Press the ?ubmit Void??ubmit Refund?button
+    6. Press the Submit Void or Submit Refund button
 </p>
 <p>
     <a name="_Toc222545482"></a>
@@ -1578,7 +1581,7 @@ URL to the SALT Core API handler. In the development environment this is        
     <a name="_Toc355011667">3.5 Periodic/Recurring Payments</a>
 </h4>
 <p>
-    You can use SALT? Periodic Purchase features when the customer is billed periodically, or when splitting payment into a number of separate payments.
+    You can use SALT Periodic Purchase features when the customer is billed periodically, or when splitting payment into a number of separate payments.
 </p>
 <p>
     <a name="_Toc222545483"></a>
@@ -1590,7 +1593,7 @@ URL to the SALT Core API handler. In the development environment this is        
 <p>
     In the API version 1.4 and below, calling recurringPurchase() will automatically create, verify and process the transaction. However, starting in 2.0,
     calling <strong>recurringPurchase()</strong> will only create and verify the transaction. The funds are <strong>not</strong> immediately captured from the
-    customer? credit card until <strong>executeRecurringPurchase() </strong> is explicitly called.
+    customer credit card until <strong>executeRecurringPurchase() </strong> is explicitly called.
 </p>
 <p>
     You can set up a customer for recurring billing by using the recurringPurchase() method:
@@ -1598,7 +1601,7 @@ URL to the SALT Core API handler. In the development environment this is        
 <p>
     <a name="_Toc222546519"></a>
     <a name="_Toc271107125">Table </a>
-    3-9 ?Core API: HttpsCreditCardService.recurringPurchase() Method
+    3-9 Core API: HttpsCreditCardService.recurringPurchase() Method
 </p>
 <div align="center">
     <table border="1" cellspacing="0" cellpadding="0">
@@ -1737,7 +1740,7 @@ URL to the SALT Core API handler. In the development environment this is        
 <p>
     <a name="_Toc222546520"></a>
     <a name="_Ref292747887">Table </a>
-    3-10 ?Core API: PeriodicPurchaseInfo Class (Full Constructor)
+    3-10 Core API: PeriodicPurchaseInfo Class (Full Constructor)
 </p>
 <div align="center">
     <table border="1" cellspacing="0" cellpadding="0">
@@ -1831,7 +1834,7 @@ URL to the SALT Core API handler. In the development environment this is        
                 </td>
                 <td width="310" valign="top">
                     <p align="left">
-                        Per-payment amount of the <strong>in cents</strong>. Do NOT include a ??or any decimal place. (e.g. if your purchase is $10.00, then
+                        Per-payment amount of the <strong>in cents</strong>. Do NOT include a $ or any decimal place. (e.g. if your purchase is $10.00, then
                         send 1000 as the total).
                     </p>
                 </td>
@@ -2044,7 +2047,7 @@ URL to the SALT Core API handler. In the development environment this is        
     <a name="_Toc222546521"></a>
     <a name="_Toc271107126"></a>
     <a name="_Ref229195659">Table </a>
-    3-11 ?Core API: Schedule Class (Basic Constructor)
+    3-11 Core API: Schedule Class (Basic Constructor)
 </p>
 <div align="center">
     <table border="1" cellspacing="0" cellpadding="0">
@@ -2086,7 +2089,7 @@ URL to the SALT Core API handler. In the development environment this is        
                 </td>
                 <td width="385" valign="top">
                     <p align="left">
-                        Schedule based on days, weeks, or months (See Table 3.12 ?ScheduleType Enumeration)
+                        Schedule based on days, weeks, or months (See Table 3.12 ScheduleType Enumeration)
                     </p>
                 </td>
             </tr>
@@ -2114,7 +2117,7 @@ URL to the SALT Core API handler. In the development environment this is        
     <a name="_Toc222546522"></a>
     <a name="_Toc271107127"></a>
     <a name="_Ref229195592">Table </a>
-    3-12 ?ScheduleType Enumeration
+    3-12 ScheduleType Enumeration
 </p>
 <div align="center">
     <table border="1" cellspacing="0" cellpadding="0">
@@ -2191,7 +2194,7 @@ Once a recurring purchase has been successfully created (with recurringPurchase(
 </p>
 <p>
     <a name="_Toc222546523">Table </a>
-    3-13 ?HttpsCreditCardService.executeRecurringPurchase() method
+    3-13 HttpsCreditCardService.executeRecurringPurchase() method
 </p>
 <div align="center">
     <table border="1" cellspacing="0" cellpadding="0">
@@ -2295,13 +2298,13 @@ Once a recurring purchase has been successfully created (with recurringPurchase(
     Putting a Payment on Hold (and Resuming a Payment on Hold)
 </p>
 <p>
-    Putting a ?old?on a recurring payment means that further payments will be suspended until the recurring payment is resumed. You can resume payments by
+    Putting a hold on a recurring payment means that further payments will be suspended until the recurring payment is resumed. You can resume payments by
     calling the resumeRecurringPurchase() method.
 </p>
 <p>
     <a name="_Toc222546524"></a>
     <a name="_Toc271107128">Table </a>
-    3-14 ?Core API: HttpsCreditCardService.holdRecurringPurchase() Method
+    3-14 Core API: HttpsCreditCardService.holdRecurringPurchase() Method
 </p>
 <div align="center">
     <table border="1" cellspacing="0" cellpadding="0">
@@ -2379,7 +2382,7 @@ Once a recurring purchase has been successfully created (with recurringPurchase(
 <p>
     <a name="_Toc222546525"></a>
     <a name="_Toc271107129">Table </a>
-    3-15 ?Core API: HttpsCreditCardService.resumeRecurringPurchase() Method
+    3-15 Core API: HttpsCreditCardService.resumeRecurringPurchase() Method
 </p>
 <div align="center">
     <table border="1" cellspacing="0" cellpadding="0">
@@ -2464,7 +2467,7 @@ Once a recurring purchase has been successfully created (with recurringPurchase(
 <p>
     <a name="_Toc222546526"></a>
     <a name="_Toc271107130">Table </a>
-    3-16 ?Core API: HttpsCreditCardService.cancelRecurringPurchase() Method
+    3-16 Core API: HttpsCreditCardService.cancelRecurringPurchase() Method
 </p>
 <div align="center">
     <table border="1" cellspacing="0" cellpadding="0">
@@ -2543,7 +2546,7 @@ Once a recurring purchase has been successfully created (with recurringPurchase(
     Updating Payment Details
 </p>
 <p>
-    To update the payment details of a recurring purchase such as when a customer? credit card expires/is changed, you can use the updateRecurringPurchase()
+    To update the payment details of a recurring purchase such as when a customer credit card expires/is changed, you can use the updateRecurringPurchase()
     method. Note that you cannot update a recurring purchase that has been cancelled or that has completed.
 </p>
 <p>
@@ -2552,7 +2555,7 @@ Once a recurring purchase has been successfully created (with recurringPurchase(
 <p>
     <a name="_Toc222546527"></a>
     <a name="_Toc271107131">Table </a>
-    3-17 ?Core API: HttpsCreditCardService.updateRecurringPurchase() Method
+    3-17 Core API: HttpsCreditCardService.updateRecurringPurchase() Method
 </p>
 <div align="center">
     <table border="1" cellspacing="0" cellpadding="0">
@@ -2695,7 +2698,7 @@ Once a recurring purchase has been successfully created (with recurringPurchase(
 <p>
     <a name="_Toc222546528"></a>
     <a name="_Toc271107132">Table </a>
-    3-18 ?Core API: HttpsCreditCardService.queryRecurringPurchase() Method
+    3-18 Core API: HttpsCreditCardService.queryRecurringPurchase() Method
 </p>
 <div align="center">
     <table border="1" cellspacing="0" cellpadding="0">
@@ -2763,7 +2766,7 @@ Once a recurring purchase has been successfully created (with recurringPurchase(
                 </td>
                 <td width="391" valign="top">
                     <p align="left">
-                        The results of the query ?retrieve the PeriodicPurchaseInfo field for periodic purchase fields.
+                        The results of the query retrieve the PeriodicPurchaseInfo field for periodic purchase fields.
                     </p>
                 </td>
             </tr>
@@ -2776,19 +2779,19 @@ Once a recurring purchase has been successfully created (with recurringPurchase(
 <ul>
     <li align="left">
         <strong>periodicTransactionId</strong>
-        ?the ID when the periodic purchase was originally created
+        the ID when the periodic purchase was originally created
     </li>
     <li align="left">
         <strong>state</strong>
-        ?current state of the periodic purchase
+        current state of the periodic purchase
     </li>
     <li align="left">
         <strong>nextPaymentDate</strong>
-        ?next date the payment will be run
+        next date the payment will be run
     </li>
     <li align="left">
         <strong>lastPaymentId</strong>
-        ?the transaction ID of the <strong>last successful payment run.</strong> You can use this ID to run a verifyTransaction() to retrieve the transaction
+        the transaction ID of the <strong>last successful payment run.</strong> You can use this ID to run a verifyTransaction() to retrieve the transaction
         information.
     </li>
 </ul>
@@ -2803,10 +2806,10 @@ Once a recurring purchase has been successfully created (with recurringPurchase(
     1. Login to the SALT Merchant Management Website at <a href="https://test.salt.com/merchantmanagement/">https://test.salt.com/merchantmanagement/</a>
 </p>
 <p align="left">
-    2. Select the ?eriodic Purchases?Link under the ?erminal?section.
+    2. Select the Periodic Purchases Link under the Terminal section.
 </p>
 <p align="left">
-    3. You can add a new Periodic Purchase by pressing the ?dd a New Periodic PurchaseR link
+    3. You can add a new Periodic Purchase by pressing the add a New Periodic Purchase link
 </p>
 <p align="left">
     4. You can view/update existing Periodic Purchases by using the search form (by date, order Id, etc)
@@ -2824,7 +2827,7 @@ Once a recurring purchase has been successfully created (with recurringPurchase(
 <p>
     <a name="_Toc222546529"></a>
     <a name="_Toc271107133">Table </a>
-    3-19 ?Core API: HttpsCreditCardService.verifyTransaction() Method
+    3-19 Core API: HttpsCreditCardService.verifyTransaction() Method
 </p>
 <div align="center">
     <table border="1" cellspacing="0" cellpadding="0">
@@ -2920,7 +2923,7 @@ Once a recurring purchase has been successfully created (with recurringPurchase(
     You must specify <strong>at least one</strong> of the transactionId or transactionOrderId arguments.
 </p>
 <p>
-    Note that if the specified transaction cannot be found, you will receive a ?ot-found?C111_TRANSACTION_DOES_NOT_EXIST error in the receipt, as opposed to
+    Note that if the specified transaction cannot be found, you will receive a not-found C111_TRANSACTION_DOES_NOT_EXIST error in the receipt, as opposed to
     the results of the transaction.
 </p>
 <p>
@@ -2931,13 +2934,13 @@ Once a recurring purchase has been successfully created (with recurringPurchase(
     <a name="_Toc355011669">3.7 Credit Card Verification</a>
 </h4>
 <p>
-    Use the verifyCreditCard() method to check the status of a credit card. A CreditCardReceipt object is returned, containing information about the card?
+    Use the verifyCreditCard() method to check the status of a credit card. A CreditCardReceipt object is returned, containing information about the card
     validity, Secure Storage information if the card uses Secure Storage and Fraud information if the card uses the Advanced Fraud Suite.
 </p>
 <p>
     <a name="_Toc222546530"></a>
     <a name="_Toc271107134">Table </a>
-    3-20 ?Core API: HttpsCreditCardService.verifyCreditCard() Method
+    3-20 Core API: HttpsCreditCardService.verifyCreditCard() Method
 </p>
 <div align="center">
     <table border="1" cellspacing="0" cellpadding="0">
@@ -3080,7 +3083,7 @@ Once a recurring purchase has been successfully created (with recurringPurchase(
 </p>
 <p>
     <a name="_Toc222546531">Table </a>
-    3-21 ?Core API: HttpsCreditCardService.updateFraud() Method
+    3-21 Core API: HttpsCreditCardService.updateFraud() Method
 </p>
 <div align="center">
     <table border="1" cellspacing="0" cellpadding="0">
@@ -3190,6 +3193,8 @@ Once a recurring purchase has been successfully created (with recurringPurchase(
         </tbody>
     </table>
 </div>
+
+<a id="receipts" name="receipts" class="section-anchor">&nbsp;</a>
 <p>
     <a name="_Toc222545491"></a>
     <a name="_Toc271107084"></a>
@@ -3199,8 +3204,7 @@ Once a recurring purchase has been successfully created (with recurringPurchase(
 <br clear="all"/>
 <h3>
     <a name="_Ref355172800"></a>
-    <a name="_Toc355011672">4 Receipt</a>
-    s
+    <a name="_Toc355011672">4 Receipts</a>
 </h3>
 <p>
     When a transaction has been completed, you must display a receipt to your customer. The following section describes the requirements of a receipt.
@@ -3224,7 +3228,7 @@ Once a recurring purchase has been successfully created (with recurringPurchase(
         Your Merchant Name
     </li>
     <li>
-        That the transaction was ?uccessful?(based on if <strong>isApproved() </strong>= true)
+        That the transaction was successful?(based on if <strong>isApproved() </strong>= true)
     </li>
     <li>
         Invoice Number (<strong>getOrderId()</strong>)
@@ -3260,7 +3264,7 @@ Once a recurring purchase has been successfully created (with recurringPurchase(
         Your Merchant Name
     </li>
     <li>
-        That the transaction was ?nsuccessful?(based on if <strong>isApproved() </strong>= false)
+        That the transaction was unsuccessful?(based on if <strong>isApproved() </strong>= false)
     </li>
     <li>
         Date of the transaction (<strong>getProcessedDateTime()</strong>)
@@ -3300,7 +3304,7 @@ Once a recurring purchase has been successfully created (with recurringPurchase(
     <a name="_Toc271107158"></a>
     <a name="_Toc205716353"></a>
     <a name="_Toc203276481">Figure </a>
-    4-1 ?An Example Receipt Screen
+    4-1 An Example Receipt Screen
 </p>
 <p align="center">
     <img border="0" width="578" height="413" src="/images/clip_image006.jpg" alt="..\ccdemo_receipt.png"/>
@@ -3315,7 +3319,7 @@ Once a recurring purchase has been successfully created (with recurringPurchase(
     <a name="_Toc337027746"></a>
     <a name="_Toc271107159"></a>
     <a name="_Toc205716354">Figure </a>
-    4-2 ?Example Error Screen With Payment Retry
+    4-2 Example Error Screen With Payment Retry
 </p>
 <p align="center">
     <img border="0" width="623" height="184" src="/images/clip_image008.jpg" alt="core_failpage_retry"/>
@@ -3323,7 +3327,7 @@ Once a recurring purchase has been successfully created (with recurringPurchase(
 <p>
     <a name="_Toc337027747"></a>
     <a name="_Toc271107160">Figure </a>
-    4-3 ?Example Error Screen With No Payment Retry (Order Cancellation)
+    4-3 Example Error Screen With No Payment Retry (Order Cancellation)
 </p>
 <p>
     <img border="0" width="631" height="148" src="/images/clip_image010.jpg" alt="core_failpage"/>
@@ -3334,6 +3338,7 @@ Once a recurring purchase has been successfully created (with recurringPurchase(
     <a name="_Toc271107087"></a>
     <a name="_Ref222717133"></a>
 </p>
+<a id="advanced_api" name="advanced_api" class="section-anchor">&nbsp;</a>
 <h3>
     <a name="_Toc355011674">5 Advanced Core API Features</a>
 </h3>
@@ -3351,7 +3356,7 @@ Once a recurring purchase has been successfully created (with recurringPurchase(
     <a name="_Toc222546532"></a>
     <a name="_Toc271107135"></a>
     <a name="_Ref233264689">Table </a>
-    5-1 ?Core API: CreditCard Class (Full Constructor)
+    5-1 Core API: CreditCard Class (Full Constructor)
 </p>
 <div align="center">
     <table border="1" cellspacing="0" cellpadding="0">
@@ -3444,7 +3449,7 @@ Once a recurring purchase has been successfully created (with recurringPurchase(
                 </td>
                 <td width="383" valign="top">
                     <p align="left">
-                        Cardholder? street address
+                        Cardholder street address
                     </p>
                 </td>
             </tr>
@@ -3461,7 +3466,7 @@ Once a recurring purchase has been successfully created (with recurringPurchase(
                 </td>
                 <td width="383" valign="top">
                     <p align="left">
-                        Cardholder? zip/postal code
+                        Cardholder zip/postal code
                     </p>
                 </td>
             </tr>
@@ -3507,7 +3512,7 @@ Once a recurring purchase has been successfully created (with recurringPurchase(
     <a name="_Toc271107089">Card Verification Value (CVV2)</a>
 </p>
 <p>
-    The Card Verification Value (sometimes known as ?VV2?or ?VN? is a security feature for credit card transactions, giving increased protection against
+    The Card Verification Value (sometimes known as CVV2 or CVN is a security feature for credit card transactions, giving increased protection against
     credit card fraud. It is a series of digits (3 or 4) that can be usually found on the back of a credit card.
 </p>
 <p>
@@ -3525,7 +3530,7 @@ Once a recurring purchase has been successfully created (with recurringPurchase(
     1. Collect and include the CVV2 value as part of the CreditCard object
 </p>
 <p align="left">
-    2. Create a VerificationRequest with the Cvv2Request parameter set (to ?VV2_PRESENT?.
+    2. Create a VerificationRequest with the Cvv2Request parameter set (to CVV2_PRESENT).
 </p>
 <p align="left">
     3. Call the singlePurchase() method with the VerificationRequest.
@@ -3533,7 +3538,7 @@ Once a recurring purchase has been successfully created (with recurringPurchase(
 <p>
     <a name="_Toc222546533"></a>
     <a name="_Toc271107136">Table </a>
-    5-2 ?Cvv2Request Enumeration
+    5-2 Cvv2Request Enumeration
 </p>
 <div align="center">
     <table border="1" cellspacing="0" cellpadding="0">
@@ -3635,7 +3640,7 @@ Once a recurring purchase has been successfully created (with recurringPurchase(
 </div>
 <p>
     <strong>
-        * Denotes the ?ndicator?digit typically associated with CVV2 verification. Is not needed when using this API, but may be referred to in other
+        * Denotes the indicator digit typically associated with CVV2 verification. Is not needed when using this API, but may be referred to in other
         documentation.
     </strong>
 </p>
@@ -3648,7 +3653,7 @@ Once a recurring purchase has been successfully created (with recurringPurchase(
     <a name="_Toc271107161"><strong></strong></a>
 </p>
 <p>
-    Figure 5-1 ?Example Core API Purchase with CVV2
+    Figure 5-1 Example Core API Purchase with CVV2
 </p>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
@@ -3697,7 +3702,7 @@ Once a recurring purchase has been successfully created (with recurringPurchase(
                     CreditCard creditCard = <strong>new CreditCard</strong>(pan, expiry<strong>, cvv2, </strong>null, null);
                 </p>
                 <p align="left">
-                    // specify the VerificationRequest ?contains an AvsRequest and/or Cvv2Request
+                    // specify the VerificationRequest contains an AvsRequest and/or Cvv2Request
                 </p>
                 <p align="left">
                     <strong>VerificationRequest verify = new VerificationRequest(</strong>
@@ -3756,7 +3761,7 @@ Once a recurring purchase has been successfully created (with recurringPurchase(
 <p>
     <a name="_Toc222546534"></a>
     <a name="_Toc271107137">Table </a>
-    5-3 ?Core API: Cvv2Response Object
+    5-3 Core API: Cvv2Response Object
 </p>
 <div align="center">
     <table border="1" cellspacing="0" cellpadding="0">
@@ -3828,7 +3833,7 @@ Once a recurring purchase has been successfully created (with recurringPurchase(
 <p>
     <a name="_Toc222546535"></a>
     <a name="_Toc271107138">Table </a>
-    5-4 ?CVV2 Response Codes
+    5-4 CVV2 Response Codes
 </p>
 <div align="center">
     <table border="1" cellspacing="0" cellpadding="0">
@@ -3957,7 +3962,7 @@ Once a recurring purchase has been successfully created (with recurringPurchase(
     </table>
 </div>
 <p>
-Note that if a CVV2 check results in a mismatch or is not supported by the cardholder? financial institution, this does <strong>NOT</strong>    <strong>necessarily</strong> mean that a transaction will be declined. Some financial institutions may decline but others will not. CVV2 gives you
+Note that if a CVV2 check results in a mismatch or is not supported by the cardholder financial institution, this does <strong>NOT</strong>    <strong>necessarily</strong> mean that a transaction will be declined. Some financial institutions may decline but others will not. CVV2 gives you
     additional information on which you can base your decision whether or not to accept the transaction as legitimate
     <strong>
         . If the financial institution does not decline the transaction, and you choose not to accept the transaction, you must issue a void against it.
@@ -3969,16 +3974,16 @@ Note that if a CVV2 check results in a mismatch or is not supported by the cardh
     <a name="_Toc271107091">Address Verification System (AVS)</a>
 </p>
 <p>
-    Address Verification System (AVS) provides additional security by comparing a given billing address against the address on file at the cardholder?
+    Address Verification System (AVS) provides additional security by comparing a given billing address against the address on file at the cardholder
     financial institution. If an AVS check indicates that the address does not fully match, you may have cause to suspect a possibly fraudulent transaction.
 </p>
 <p>
     The result of an AVS check is a letter code indicating the degree of match, which can be full, partial, or a mismatch. Some financial institutions, in
-    particular those outside the US, Canada, and UK, may not support AVS checking which can result in a corresponding ?ot supported?response code being
+    particular those outside the US, Canada, and UK, may not support AVS checking which can result in a corresponding not supportedmresponse code being
     returned.
 </p>
 <p>
-Note that if an AVS check results in a mismatch or is not supported by the cardholder? financial institution, this does <strong>NOT</strong>    <strong>necessarily</strong> mean that a transaction will be rejected. AVS only gives you additional information on which you can base your decision
+Note that if an AVS check results in a mismatch or is not supported by the cardholder financial institution, this does <strong>NOT</strong>    <strong>necessarily</strong> mean that a transaction will be rejected. AVS only gives you additional information on which you can base your decision
     whether or not to accept the transaction as legitimate<strong>. If you choose not to accept the transaction, you must issue a void against it </strong>(see
     Section 3.4 on how to perform a void).
 </p>
@@ -3990,7 +3995,7 @@ Note that if an AVS check results in a mismatch or is not supported by the cardh
     To use AVS, you must
 </p>
 <p align="left">
-    1. Collect and include the customer? zip/postal code and address as part of the CreditCard object
+    1. Collect and include the customer zip/postal code and address as part of the CreditCard object
 </p>
 <p align="left">
     2. Create a VerificationRequest with the AvsRequest parameter set.
@@ -4002,7 +4007,7 @@ Note that if an AVS check results in a mismatch or is not supported by the cardh
     <a name="_Toc222546536"></a>
     <a name="_Toc271107139"></a>
     <a name="_Toc185066523">Table </a>
-    5-5 ?AvsRequest Enumeration
+    5-5 AvsRequest Enumeration
 </p>
 <div align="center">
     <table border="1" cellspacing="0" cellpadding="0">
@@ -4035,7 +4040,7 @@ Note that if an AVS check results in a mismatch or is not supported by the cardh
                 <td width="441" valign="top">
                     <p align="left">
                         Verify that <strong>both </strong>specified street number &amp; name (combined) and zip/postal code of the cardholder matches the
-                        values in the cardholder? issuer? file.
+                        values in the cardholder issuer file.
                     </p>
                 </td>
             </tr>
@@ -4047,7 +4052,7 @@ Note that if an AVS check results in a mismatch or is not supported by the cardh
                 </td>
                 <td width="441" valign="top">
                     <p align="left">
-                        Verify that specified zip/postal code of the cardholder matches the value in the cardholder? issuer? file. If this is specified,
+                        Verify that specified zip/postal code of the cardholder matches the value in the cardholder issuer file. If this is specified,
                         address will <strong>not </strong>be verified
                     </p>
                 </td>
@@ -4064,7 +4069,7 @@ Note that if an AVS check results in a mismatch or is not supported by the cardh
     <a name="_Toc271107162"><strong></strong></a>
 </p>
 <p>
-    Figure 5-2 ?Example Core API Purchase with AVS
+    Figure 5-2 Example Core API Purchase with AVS
 </p>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
@@ -4116,7 +4121,7 @@ Note that if an AVS check results in a mismatch or is not supported by the cardh
                     CreditCard creditCard = <strong>new CreditCard</strong>(pan, expiry<strong>, </strong>null<strong>, avsStreet, avsZip</strong>);
                 </p>
                 <p align="left">
-                    // specify the VerificationRequest ?contains an AvsRequest and/or Cvv2Request
+                    // specify the VerificationRequest contains an AvsRequest and/or Cvv2Request
                 </p>
                 <p align="left">
                     <strong>VerificationRequest verify = new VerificationRequest(</strong>
@@ -4175,7 +4180,7 @@ Note that if an AVS check results in a mismatch or is not supported by the cardh
 <p>
     <a name="_Toc222546537"></a>
     <a name="_Toc271107140">Table </a>
-    5-6 ?Core API: AvsResponse Object
+    5-6 Core API: AvsResponse Object
 </p>
 <div align="center">
     <table border="1" cellspacing="0" cellpadding="0">
@@ -4285,7 +4290,7 @@ Note that if an AVS check results in a mismatch or is not supported by the cardh
                 </td>
                 <td width="356" valign="top">
                     <p align="left">
-                        true if AVS was performed, false if it wasn?
+                        true if AVS was performed, false if it wasn't
                     </p>
                 </td>
             </tr>
@@ -4368,14 +4373,14 @@ Note that if an AVS check results in a mismatch or is not supported by the cardh
 </div>
 <p>
     The getResponseCode() field indicates: a full match (both address and zip/postal match), a partial match (one field matches), a mismatch (both do not
-    match), or unknown (AVS may be unavailable/unsupported by this cardholder? bank).
+    match), or unknown (AVS may be unavailable/unsupported by this cardholder bank).
 </p>
 <p>
     <a name="_Toc222546538"></a>
     <a name="_Toc271107141"></a>
     <a name="_Ref222722916"></a>
     <a name="_Ref222722925">Table </a>
-    5-7 ?AVS Response Codes
+    5-7 AVS Response Codes
 </p>
 <div align="center">
     <table border="1" cellspacing="0" cellpadding="0">
@@ -4665,7 +4670,7 @@ Note that if an AVS check results in a mismatch or is not supported by the cardh
 <p>
     AVS is not a foolproof security feature, so even if a full match is obtained, there is no guarantee that a transaction is not fraudulent. However, a
     partial, or better yet, full match makes it more likely that whoever is submitting the transaction is the real cardholder (since they have access to the
-    correct address information, which typically only appears the cardholder? statement).
+    correct address information, which typically only appears the cardholder statement).
 </p>
 <p>
     Below are some suggestions for the interpretation/handling of AVS responses. Please note that these are just suggestions and the ultimate decision of
@@ -4673,17 +4678,17 @@ Note that if an AVS check results in a mismatch or is not supported by the cardh
 </p>
 <p>
     <strong>Partial Match</strong>
-    ?Typically if the user has one part of the address correct, they probably know the entire address. Of course, a full match is more reassuring, but
+    Typically if the user has one part of the address correct, they probably know the entire address. Of course, a full match is more reassuring, but
     sometimes a partial match occurs because of differences in the formats of the entered address and the address on file (for example, sometimes the
     cardholder may enter the unit number before their street number).
 </p>
 <p>
     <strong>Mismatch</strong>
-    ?You probably should not accept this transaction without confirming with the cardholder directly.
+    You probably should not accept this transaction without confirming with the cardholder directly.
 </p>
 <p>
     <strong>Unknown</strong>
-    ?If the cardholder address is international, you may see this result. If you typically do business with international customers, then this will be
+    If the cardholder address is international, you may see this result. If you typically do business with international customers, then this will be
     expected. Otherwise, you may want to consider whether or not to accept the transaction.
 </p>
 <h4>
@@ -4698,7 +4703,7 @@ Note that if an AVS check results in a mismatch or is not supported by the cardh
     of PCI Compliance.
 </p>
 <p>
-    When information is stored with SALT, a ?torage Token?(which identifies the information in secure storage) is returned in response. This Storage Token
+    When information is stored with SALT, a Storage Token (which identifies the information in secure storage) is returned in response. This Storage Token
     can be used for all subsequent transactions including purchases and credit card verification.
 </p>
 <p>
@@ -4708,7 +4713,7 @@ Note that if an AVS check results in a mismatch or is not supported by the cardh
 <p>
     <a name="_Toc222546539"></a>
     <a name="_Toc271107142">Table </a>
-    5-8 ?Core API: HttpsCreditCardService.addToStorage() Method
+    5-8 Core API: HttpsCreditCardService.addToStorage() Method
 </p>
 <div align="center">
     <table border="1" cellspacing="0" cellpadding="0">
@@ -4809,7 +4814,7 @@ Note that if an AVS check results in a mismatch or is not supported by the cardh
     <a name="_Toc271107143"></a>
     <a name="_Ref233221771"></a>
     <a name="_Ref233221820">Table </a>
-    5-9 ?Core API: PaymentProfile Class
+    5-9 Core API: PaymentProfile Class
 </p>
 <div align="center">
     <table border="1" cellspacing="0" cellpadding="0">
@@ -4880,14 +4885,14 @@ Note that if an AVS check results in a mismatch or is not supported by the cardh
     The CreditCard class is described in Table 5.1. Note that CVV2 will not be stored, even if specified.
 </p>
 <p>
-    The CustomerProfile class allows you to store various customer details such as name and address. All fields are completely optional ?you can choose to
+    The CustomerProfile class allows you to store various customer details such as name and address. All fields are completely optional you can choose to
     store any or all of the following fields:
 </p>
 <p>
     <a name="_Toc222546541"></a>
     <a name="_Toc271107144"></a>
     <a name="_Ref233266996">Table </a>
-    5-10 ?Core API: CustomerProfile Class
+    5-10 Core API: CustomerProfile Class
 </p>
 <div align="center">
     <table border="1" cellspacing="0" cellpadding="0">
@@ -4929,7 +4934,7 @@ Note that if an AVS check results in a mismatch or is not supported by the cardh
                 </td>
                 <td width="388" valign="top">
                     <p align="left">
-                        Customer? first name
+                        Customer first name
                     </p>
                 </td>
             </tr>
@@ -4946,7 +4951,7 @@ Note that if an AVS check results in a mismatch or is not supported by the cardh
                 </td>
                 <td width="388" valign="top">
                     <p align="left">
-                        Customer? last name
+                        Customer last name
                     </p>
                 </td>
             </tr>
@@ -5065,7 +5070,7 @@ Note that if an AVS check results in a mismatch or is not supported by the cardh
                 </td>
                 <td width="388" valign="top">
                     <p align="left">
-                        Customer? Phone Number
+                        Customer Phone Number
                     </p>
                 </td>
             </tr>
@@ -5082,7 +5087,7 @@ Note that if an AVS check results in a mismatch or is not supported by the cardh
                 </td>
                 <td width="388" valign="top">
                     <p align="left">
-                        Customer? Fax Number
+                        Customer Fax Number
                     </p>
                 </td>
             </tr>
@@ -5099,7 +5104,7 @@ Note that if an AVS check results in a mismatch or is not supported by the cardh
                 </td>
                 <td width="388" valign="top">
                     <p align="left">
-                        Customer? website
+                        Customer website
                     </p>
                 </td>
             </tr>
@@ -5116,7 +5121,7 @@ Note that if an AVS check results in a mismatch or is not supported by the cardh
                 </td>
                 <td width="388" valign="top">
                     <p align="left">
-                        Customer? Company? Legal Name
+                        Customer Company Legal Name
                     </p>
                 </td>
             </tr>
@@ -5133,7 +5138,7 @@ Note that if an AVS check results in a mismatch or is not supported by the cardh
                 </td>
                 <td width="388" valign="top">
                     <p align="left">
-                        Customer? Company? Trade Name
+                        Customer Company Trade Name
                     </p>
                 </td>
             </tr>
@@ -5149,7 +5154,7 @@ Note that if an AVS check results in a mismatch or is not supported by the cardh
     <a name="_Toc271107163"><strong></strong></a>
 </p>
 <p>
-    Figure 5-3 ?Example: Using Core API to Store Customer Information
+    Figure 5-3 Example: Using Core API to Store Customer Information
 </p>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
@@ -5281,7 +5286,7 @@ PaymentProfile <strong>paymentProfile</strong> = <strong>new PaymentProfile</str
 <p>
     <a name="_Toc222546542"></a>
     <a name="_Toc271107145">Table </a>
-    5-11 ?Core API: StorageReceipt Class
+    5-11 Core API: StorageReceipt Class
 </p>
 <div align="center">
     <table border="1" cellspacing="0" cellpadding="0">
@@ -5451,7 +5456,7 @@ PaymentProfile <strong>paymentProfile</strong> = <strong>new PaymentProfile</str
                     <p>
                         <strong><u>IMPORTANT:</u></strong>
                         Credit card information is <strong>required to be stored </strong>in order to run transactions with the storage token. If you do not
-                        provide this information when creating/updating the storage record (for example, if you are just storing the customer? profile), then
+                        provide this information when creating/updating the storage record (for example, if you are just storing the customer profile), then
                         you will be unable to use that storage token to run a transaction
                     </p>
                 </td>
@@ -5466,7 +5471,7 @@ PaymentProfile <strong>paymentProfile</strong> = <strong>new PaymentProfile</str
 <p>
     <a name="_Toc222546543"></a>
     <a name="_Toc271107146">Table </a>
-    5-12 ?Core API: HttpsCreditCardService.singlePurchase() (Storage Token Ver.)
+    5-12 Core API: HttpsCreditCardService.singlePurchase() (Storage Token Ver.)
 </p>
 <div align="center">
     <table border="1" cellspacing="0" cellpadding="0">
@@ -5550,7 +5555,7 @@ PaymentProfile <strong>paymentProfile</strong> = <strong>new PaymentProfile</str
                 </td>
                 <td width="380" valign="top">
                     <p align="left">
-                        Amount of the purchase <strong>in cents</strong>. Do NOT include a ??or any decimal place. (e.g. if your purchase is $10.00, then
+                        Amount of the purchase <strong>in cents</strong>. Do NOT include a $ or any decimal place. (e.g. if your purchase is $10.00, then
                         send 1000 as the total).
                     </p>
                 </td>
@@ -5600,7 +5605,7 @@ PaymentProfile <strong>paymentProfile</strong> = <strong>new PaymentProfile</str
 </p>
 <p>
     <a name="_Toc222546544">Table </a>
-    5-13 ?Core API: HttpsCreditCardService.singlePurchase() (Storage Token Ver.)
+    5-13 Core API: HttpsCreditCardService.singlePurchase() (Storage Token Ver.)
 </p>
 <div align="center">
     <table border="1" cellspacing="0" cellpadding="0">
@@ -5683,7 +5688,7 @@ PaymentProfile <strong>paymentProfile</strong> = <strong>new PaymentProfile</str
                 </td>
                 <td width="380" valign="top">
                     <p align="left">
-                        Amount of the purchase <strong>in cents</strong>. Do NOT include a ??or any decimal place. (e.g. if your purchase is $10.00, then
+                        Amount of the purchase <strong>in cents</strong>. Do NOT include a $ or any decimal place. (e.g. if your purchase is $10.00, then
                         send 1000 as the total).
                     </p>
                 </td>
@@ -5776,7 +5781,7 @@ PaymentProfile <strong>paymentProfile</strong> = <strong>new PaymentProfile</str
 <p>
     <a name="_Toc222546545"></a>
     <a name="_Toc271107147">Table </a>
-    5-14 ?Core API: HttpsCreditCardService.queryStorage() Method
+    5-14 Core API: HttpsCreditCardService.queryStorage() Method
 </p>
 <div align="center">
     <table border="1" cellspacing="0" cellpadding="0">
@@ -5880,7 +5885,7 @@ PaymentProfile <strong>paymentProfile</strong> = <strong>new PaymentProfile</str
 <p>
     <a name="_Toc222546546"></a>
     <a name="_Toc271107148">Table </a>
-    5-15 ?Core API: HttpsCreditCardService.updateStorage() Method
+    5-15 Core API: HttpsCreditCardService.updateStorage() Method
 </p>
 <div align="center">
     <table border="1" cellspacing="0" cellpadding="0">
@@ -5973,7 +5978,7 @@ PaymentProfile <strong>paymentProfile</strong> = <strong>new PaymentProfile</str
     </table>
 </div>
 <p>
-    The provided PaymentProfile will overwrite any existing data. If a null value is provided for the PaymentProfile? creditCard or customerProfile
+    The provided PaymentProfile will overwrite any existing data. If a null value is provided for the PaymentProfile creditCard or customerProfile
     parameters, then the corresponding stored data will be deleted. Note that even if you delete all of the data, the record itself will still exist (but be
     blank).
 </p>
@@ -5983,7 +5988,7 @@ PaymentProfile <strong>paymentProfile</strong> = <strong>new PaymentProfile</str
 <p>
     <a name="_Toc222546547"></a>
     <a name="_Toc271107149">Table </a>
-    5-16 ?Core API: HttpsCreditCardService.deleteFromStorage() Method
+    5-16 Core API: HttpsCreditCardService.deleteFromStorage() Method
 </p>
 <div align="center">
     <table border="1" cellspacing="0" cellpadding="0">
@@ -6068,6 +6073,7 @@ PaymentProfile <strong>paymentProfile</strong> = <strong>new PaymentProfile</str
     <a name="_Toc205716311"></a>
 </p>
 <br clear="all"/>
+<a id="non_page" name="non_page" class="section-anchor">&nbsp;</a>
 <h3>
     6 Non-Page Specific Requirements
 </h3>
@@ -6118,16 +6124,16 @@ If you do not already have such a feature it is recommended that the Email Notif
     Your store must make a Privacy Statement/Policy clearly available to the customer. A Privacy Statement should tell the customer:
 </p>
 <p>
-    ?What kinds of personal information are being collected,
+    What kinds of personal information are being collected,
 </p>
 <p>
-    ?What purpose(s) this information is used for,
+    What purpose(s) this information is used for,
 </p>
 <p>
-    ?How this information is protected, and
+    How this information is protected, and
 </p>
 <p>
-    ?Under what circumstances this information is shared (if at all)
+    Under what circumstances this information is shared (if at all)
 </p>
 <p>
     You must adhere to the following security and privacy requirements:
@@ -6145,11 +6151,11 @@ If you do not already have such a feature it is recommended that the Email Notif
 <ul>
     <li>
         <strong>Consumer Information:</strong>
-        You may collect a consumer? personal information so long as
+        You may collect a consumer personal information so long as
     </li>
 </ul>
 <p>
-    o You do not retain the customer? credit card information. You may only collect this information for the sole purpose of submitting a transaction through
+    o You do not retain the customer credit card information. You may only collect this information for the sole purpose of submitting a transaction through
     the Core API, afterwards it <strong><em>must not</em></strong> be stored.
 </p>
 <p>
@@ -6165,6 +6171,7 @@ If you do not already have such a feature it is recommended that the Email Notif
     o <a href="http://cmcweb.ca/epic/internet/incmc-cmc.nsf/en/fe00064e.html">http://cmcweb.ca/epic/internet/incmc-cmc.nsf/en/fe00064e.html</a>
 </p>
 <br clear="all"/>
+<a id="certification" name="certification" class="section-anchor">&nbsp;</a>
 <p align="left">
     <a name="_Toc222545510"></a>
     <a name="_Toc271107103"></a>
@@ -6184,7 +6191,7 @@ If you do not already have such a feature it is recommended that the Email Notif
     <a name="_Toc271107104">7.1 Approval</a>
 </h4>
 <p>
-    A ?ull?Approval from Elavon requires a fully-functional, secure and complete e-commerce website to be created by the merchant. Since you will want to
+    A full Approval from Elavon requires a fully-functional, secure and complete e-commerce website to be created by the merchant. Since you will want to
     obtain some kind of approval before actually starting integration, you will typically go for a Conditional Approval first (see below).
 </p>
 <h4>
@@ -6197,7 +6204,7 @@ If you do not already have such a feature it is recommended that the Email Notif
     you are guaranteed a full Approval so long as the payment portion of your site is completed.
 </p>
 <p>
-    As long as the ?nformational?parts of your website are complete (product, return/refund policy, delivery policy, and privacy policy), you can be
+    As long as the informational parts of your website are complete (product, return/refund policy, delivery policy, and privacy policy), you can be
     conditionally approved.
 </p>
 <p>
@@ -6209,7 +6216,7 @@ If you do not already have such a feature it is recommended that the Email Notif
     </li>
     <li align="left">
         <strong>It expires in 30 days</strong>
-        ?if full approval is not obtained by that point, your entire application will have to be re-submitted.
+        if full approval is not obtained by that point, your entire application will have to be re-submitted.
     </li>
     <li align="left">
         <strong>No integration is required to obtain Conditional Approval</strong>
@@ -6224,10 +6231,10 @@ If you do not already have such a feature it is recommended that the Email Notif
     Each merchant implementation must undergo a brief certification process to obtain approval. To complete certification, you will need to supply SALT with:
 </p>
 <p align="left">
-    ?The URL to your credit card store implementation
+    The URL to your credit card store implementation
 </p>
 <p align="left">
-    ?Any instructions (logins, registration etc) needed to complete a test purchase
+    Any instructions (logins, registration etc) needed to complete a test purchase
 </p>
 <p>
     SALT and Elavon will conduct a review of your site, and once this is complete you will receive the appropriate approval(s). Please ensure that you have met
@@ -6435,7 +6442,7 @@ If you do not already have such a feature it is recommended that the Email Notif
                 </td>
                 <td width="404" valign="top">
                     <p>
-                        The website includes an ?ge Verification?process for products sold that require age verification (alcohol, tobacco etc.).
+                        The website includes an age Verification process for products sold that require age verification (alcohol, tobacco etc.).
                     </p>
                 </td>
             </tr>
@@ -6444,13 +6451,13 @@ If you do not already have such a feature it is recommended that the Email Notif
                 </td>
                 <td width="198" valign="top">
                     <p align="left">
-                        <strong>*?ustomer Ready?/strong>
+                        <strong>Customer Ready?</strong>
                     </p>
                 </td>
                 <td width="404" valign="top">
                     <p>
-                        The website must be ready to accept real orders from customers at the website URL specified in your application ?the site should NOT
-                        use language/pages that imply that it is ?oming soon?or ?nder construction? or use a testing URL (e.g. www.yourdomain.com/test)
+                        The website must be ready to accept real orders from customers at the website URL specified in your application the site should NOT
+                        use language/pages that imply that it is coming soon or under construction or use a testing URL (e.g. www.yourdomain.com/test)
                     </p>
                 </td>
             </tr>
@@ -6497,6 +6504,7 @@ If you do not already have such a feature it is recommended that the Email Notif
     <strong>* Required for full approval, but not required for conditional approval</strong>
 </p>
 <br clear="all"/>
+<a id="moving_production" name="moving_production" class="section-anchor">&nbsp;</a>
 <p align="left">
     <a name="_Toc222545514"></a>
     <a name="_Toc271107107"></a>
@@ -6513,7 +6521,7 @@ If you do not already have such a feature it is recommended that the Email Notif
 <p>
     <a name="_Toc222546549"></a>
     <a name="_Toc271107151">Table </a>
-    8-1 ?SALT Core API Production Environment
+    8-1 SALT Core API Production Environment
 </p>
 <div align="center">
     <table border="1" cellspacing="0" cellpadding="0">
@@ -6568,6 +6576,7 @@ If you do not already have such a feature it is recommended that the Email Notif
 3. Finally, verify that your account is enabled and that your configurations are correct by logging into the production Merchant Management Website at    <a href="https://manage.salt.com/">https://manage.salt.com/</a>.
 </p>
 <br clear="all"/>
+<a id="appendix" name="appendix" class="section-anchor">&nbsp;</a>
 <p align="left">
     <a name="_Toc222545515"></a>
     <a name="_Toc271107108"></a>
@@ -6640,7 +6649,7 @@ If you do not already have such a feature it is recommended that the Email Notif
                 </td>
                 <td width="228" valign="top">
                     <p align="left">
-                        Banking information is entered at the customer? online banking website, it is not seen by the merchant
+                        Banking information is entered at the customer online banking website, it is not seen by the merchant
                     </p>
                 </td>
                 <td width="259" valign="top">
@@ -6787,7 +6796,7 @@ If you do not already have such a feature it is recommended that the Email Notif
                         </li>
                     </ul>
                     <p align="left">
-                        ?The incorrect CVV2 value is provided (note: will not occur in all cases that a CVV2 does not match)
+                        The incorrect CVV2 value is provided (note: will not occur in all cases that a CVV2 does not match)
                     </p>
                 </td>
             </tr>
@@ -7089,7 +7098,7 @@ If you do not already have such a feature it is recommended that the Email Notif
                 </td>
                 <td width="358" valign="top">
                     <p align="left">
-                        The transaction has exceeded the card? credit limit.
+                        The transaction has exceeded the card credit limit.
                     </p>
                 </td>
             </tr>
@@ -7176,7 +7185,7 @@ If you do not already have such a feature it is recommended that the Email Notif
                 <td width="358" valign="top">
                     <p align="left">
                         <strong><em>Advanced Fraud Suite only</em>.</strong>
-                        A ?eview?status was returned by the fraud suite check. You should login to the Fraud Provider interface to review the transaction.
+                        A review status was returned by the fraud suite check. You should login to the Fraud Provider interface to review the transaction.
                     </p>
                 </td>
             </tr>
@@ -7201,13 +7210,13 @@ If you do not already have such a feature it is recommended that the Email Notif
     Transaction Cents Value
 </p>
 <p>
-    The cents value of the transaction amount dictates whether a transaction will be ?pproved?or declined/failed. For example, transactions ending in 00 and
+    The cents value of the transaction amount dictates whether a transaction will be approved or declined/failed. For example, transactions ending in 00 and
     50 cents (e.g. $10.00, $20.50) will be approved.
 </p>
 <p>
     <a name="_Toc222546551"></a>
     <a name="_Toc271107153">Table III-</a>
-    1 ?Dev Environment Transaction Cents Value Results
+    1 Dev Environment Transaction Cents Value Results
 </p>
 <div align="center">
     <table border="1" cellspacing="0" cellpadding="0" width="639">
@@ -8332,7 +8341,7 @@ If you do not already have such a feature it is recommended that the Email Notif
 <p>
     <a name="_Toc222546552"></a>
     <a name="_Toc271107154">Table III-</a>
-    2 ?Dev Environment CVV2 Results
+    2 Dev Environment CVV2 Results
 </p>
 <div align="center">
     <table border="1" cellspacing="0" cellpadding="0">
@@ -8373,7 +8382,7 @@ If you do not already have such a feature it is recommended that the Email Notif
 <p>
     <a name="_Toc222546553"></a>
     <a name="_Toc271107155">Table III-</a>
-    3 ?Dev Environment AVS Results
+    3 Dev Environment AVS Results
 </p>
 <div align="center">
     <table border="1" cellspacing="0" cellpadding="0">
@@ -8523,7 +8532,7 @@ If you do not already have such a feature it is recommended that the Email Notif
 <p>
     <a name="_Toc222546554"></a>
     <a name="_Toc271107156">Table III-</a>
-    4 ?Dev Environment Test Credit Card Numbers
+    4 Dev Environment Test Credit Card Numbers
 </p>
 <div align="center">
     <table border="1" cellspacing="0" cellpadding="0">
@@ -8555,7 +8564,7 @@ If you do not already have such a feature it is recommended that the Email Notif
             <tr>
                 <td width="236" valign="top">
                     <p align="left">
-                        Diner? Club
+                        Diner's Club
                     </p>
                 </td>
                 <td width="404" valign="top">
@@ -8638,7 +8647,7 @@ If you do not already have such a feature it is recommended that the Email Notif
     <a name="_Toc337027751"></a>
     <a name="_Toc271107164"></a>
     <a name="_Toc170687643">Figure IV-</a>
-    1 ?Sample Code: Core API Single Purchase in Microsoft .NET
+    1 Sample Code: Core API Single Purchase in Microsoft .NET
 </p>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
@@ -8731,15 +8740,15 @@ If you do not already have such a feature it is recommended that the Email Notif
 <ul type="disc">
     <li>
         <strong>admeriscc[dot net version].dll</strong>
-        (where ?ot net version?= version of .NET Framework)
+        (where dot net version = version of .NET Framework)
     </li>
     <li>
         <strong>CCGatewayTest.exe</strong>
-        ?tests credit card functions
+        tests credit card functions
     </li>
     <li>
         <strong>StorageGatewayTest.exe</strong>
-        ?tests secure storage functions
+        tests secure storage functions
     </li>
 </ul>
 <p>
@@ -8757,14 +8766,14 @@ If you do not already have such a feature it is recommended that the Email Notif
 <p>
     <a name="_Toc337027752"></a>
     <a name="_Toc271107165">Figure IV-</a>
-    2 ?Sample Code: Core API Single Purchase in PHP
+    2 Sample Code: Core API Single Purchase in PHP
 </p>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
             <td width="638" valign="top">
                 <p align="left">
-                    <strong>&lt;?php</strong>
+                    <strong>php</strong>
                 </p>
                 <p align="left">
                     <strong>include "</strong>
@@ -8831,7 +8840,7 @@ If you do not already have such a feature it is recommended that the Email Notif
                     }
                 </p>
                 <p align="left">
-                    <strong>?&gt;</strong>
+                    <strong></strong>
                 </p>
             </td>
         </tr>
@@ -8842,14 +8851,14 @@ If you do not already have such a feature it is recommended that the Email Notif
 </p>
 <p>
     <a name="_Toc337027753">Figure IV-</a>
-    3 ?Sample Code: Core API Single Purchase in PHP with Secure Storage
+    3 Sample Code: Core API Single Purchase in PHP with Secure Storage
 </p>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
             <td width="638" valign="top">
                 <p align="left">
-                    <strong>&lt;?php</strong>
+                    <strong>php</strong>
                 </p>
                 <p align="left">
                     <strong>include "</strong>
@@ -8920,7 +8929,7 @@ If you do not already have such a feature it is recommended that the Email Notif
                     }
                 </p>
                 <p align="left">
-                    <strong>?&gt;</strong>
+                    <s
                 </p>
             </td>
         </tr>
