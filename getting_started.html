@@ -10,45 +10,27 @@ layout: base
   <script src="assets/jquery-1.7.2.min.js"></script>
   <script src="assets/bootstrap.min.js"></script>
 		<title> Salt Payment System, Getting Started </title>
-		<script>	
-		function setFirstVisible(){
-		
-		}
-		
-		function hideAll(){
-			document.getElementById("Java").style.visibility = 'hidden';
-			document.getElementById(".Net").style.visibility = 'hidden';
-			document.getElementById("PHP").style.visibility = 'hidden';
-			document.getElementById("Ruby").style.visibility = 'hidden';
-			document.getElementById("Java").style.display = 'none';
-			document.getElementById(".Net").style.display = 'none';
-			document.getElementById("PHP").style.display = 'none';
-			document.getElementById("Ruby").style.display = 'none';
-		}
-			
-		function makeVisible(divId){
-			hideAll();
-			document.getElementById(divId).style.display = '';
-			document.getElementById(divId).style.visibility = 'visible';
-		}
-		</script>
 	</head>
 	<body>
 	{% include salt_header.html %}
 	
-	<div class="align_center">
-	Please select a language:
-	<select id="selectLanguages" onchange="makeVisible(this.value)">
-	  <option value="none">-Languages-</option> 
-	  <option value="Java">Java</option>
-	  <option value=".Net">.Net</option>
-	  <option value="PHP">PHP</option>
-	  <option value="Ruby">Ruby</option>
-	</select>
-	</div>
-	</body>
+	<div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span3" id="sidebar">
+        <div class="sidebar-nav">
+          <ul class="nav nav-list well">
+            <li class="nav-top"><a class="child" href="#java">Java</a></li>
+			<li class="nav-top"><a class="child" href="#net">.Net</a></li>
+			<li class="nav-top"><a class="child" href="#php">PHP</a></li>
+			<li class="nav-top"><a class="child" href="#ruby">Ruby</a></li>
+		  </ul>
+		</div>
+	  </div>
+    
+		<div class ="span8">
+		
 
-	<div id="Java" style="visibility: hidden;">
+	<div id="java" name="java" class="section-anchor">
 	<div class="row-fluid">
       <div class="well align_center">
 	  <h2>
@@ -126,7 +108,7 @@ layout: base
 	</div>
 	</div>
 	
-	<div id=".Net" style="visibility: hidden;">
+	<div id="net" name="net" class="section-anchor">
 	<div class="row-fluid">
       <div class="well align_center">
 	  <h2>
@@ -139,7 +121,7 @@ layout: base
 	</div>
 	</div>
 	
-	<div id="PHP" style="visibility: hidden;">
+	<div id="php" name="php" class="section-anchor">
 	<div class="row-fluid">
       <div class="well align_center">
 	  <h2>
@@ -152,7 +134,7 @@ layout: base
 	</div>
 	</div>
 	
-	<div id="Ruby" style="visibility: hidden;">
+	<div id="ruby" name="ruby" class="section-anchor">
 	<div class="row-fluid">
       <div class="well align_center">
 	  <h2>
@@ -164,8 +146,12 @@ layout: base
 	</div>
 	</div>
 	</div>
+	</div>
+		</div>
+	</div>
 	
-	</body>
 	{% include salt_footer.html %}
+	</body>
+	
 </html>
 
