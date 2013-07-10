@@ -23,26 +23,21 @@ layout: base
 
 	{% include salt_header.html %}
 
-	<!-- guide -->
-	<div id="guide" class="">
 
-		<!-- reference -->
-		<div id="reference">
-			<p class="ref-title">API</p>
 
-			<ul class="ref-list">
+	<div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span2" id="sidebar">
+	  
+	  
+        <div class="sidebar-nav">
+          <ul class="nav nav-list well">
 				<!-- basics (ref) -->
 				<li class="section section-introduction"><a class="parent"
 					href="./core_ap_ref.htm">Introduction</a></li>
-			</ul>
-
-			<ul class="ref-list">
 				<!-- charges (ref) -->
-				<li class="section section-purchase"><a class="parent"
-					href="#purchase">Purchase</a> <span class="children"> <a
-						class="child" href="#single_purchase">Single Purchase</a> <a
-						class="child" href="#recurring_purchase">Recurring Purchase</a>
-				</span></li>
+				<li class="section section-single_purchase"><a class="parent" href="#single_purchase">Single Purchase</a> </li>
+				<li class="section section-recurring_purchase"><a class="parent" href="#recurring_purchase">Recurring Purchase</a></li>
 
 				<li class="section section-void"><a class="parent" href="#void">Void</a></li>
 
@@ -68,9 +63,9 @@ layout: base
 					href="#secure_storage">Secure Storage</a></li>
 			</ul>
 		</div>
+		</div>
+		
 
-	</div>
-	<!-- /guide -->
 
 	<div id="api-docs">
 
@@ -85,16 +80,6 @@ layout: base
 					<div class="method-section">
 						<div class="method-description">{% include intro_description.html %}</div>
 						<div class="method-example" id="api-summary-example">{% include intro_example.html %}</div>
-					</div>
-				</div>
-
-				<div class="method">
-					<a id="purchase" name="purchase" class="section-anchor">&nbsp;</a>
-					<a id="purchase_object" name="purchase_object"
-						class="section-anchor">&nbsp;</a>
-					<div class="method-section">
-						<div class="method-description">{% include purchase_description.html %}</div>
-						<div class="method-example">{% include purchase_example.html %}</div>
 					</div>
 				</div>
 
@@ -198,8 +183,9 @@ layout: base
 			</div>
 		</div>
 	</div>
+	</div>
 	
 	{% include salt_footer.html %}
-
+</div>
 </body>
 </html>
