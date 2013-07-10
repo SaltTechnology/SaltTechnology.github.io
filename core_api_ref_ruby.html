@@ -24,27 +24,19 @@ layout: base
 
 	{% include salt_header.html %}
 
-	<!-- guide -->
-	<div id="guide" class="">
-
-		<!-- reference -->
-		<div id="reference">
-			<p class="ref-title">API</p>
-
-			<ul class="ref-list">
-				<!-- basics (ref) -->
+		<div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span2" id="sidebar">
+	  
+	  
+        <div class="sidebar-nav">
+          <ul class="nav nav-list well">
+			
 				<li class="section section-introduction"><a class="parent"
 					href="./core_ap_ref.htm">Introduction</a></li>
-			</ul>
-
-			<ul class="ref-list">
-				<!-- charges (ref) -->
-				<li class="section section-purchase"><a class="parent"
-					href="#purchase">Purchase</a> <span class="children"> <a
-						class="child" href="#single_purchase">Single Purchase</a> <a
-						class="child" href="#recurring_purchase">Recurring Purchase</a>
-				</span></li>
-
+			
+				<li class="section section-single_purchase"><a class="parent" href="#single_purchase">Single Purchase</a> </li>
+				<li class="section section-recurring_purchase"><a class="parent" href="#recurring_purchase">Recurring Purchase</a></li>
 				<li class="section section-void"><a class="parent" href="#void">Void</a></li>
 
 				<li class="section section-refund"><a class="parent"
@@ -173,8 +165,8 @@ layout: base
 			</div>
 		</div>
 	</div>
-	
+	</div>
 	{% include salt_footer.html %}
-
+</div>
 </body>
 </html>
