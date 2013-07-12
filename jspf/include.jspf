@@ -1,6 +1,0 @@
-<%-- Directives to include at the beginning of every content JSP template --%>
-<%@ page pageEncoding="UTF-8" session="false" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="custom" uri="http://admeris.com/jsp/custom" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>

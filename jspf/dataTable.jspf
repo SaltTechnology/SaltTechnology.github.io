@@ -1,6 +1,0 @@
-<%@ page pageEncoding="UTF-8" %>
-<style type="text/css" title="currentStyle">
-  @import "static/css/dataTable.css";
-</style>
-<script src="static/js/jquery.dataTables.min.js"></script>
-<script src="static/js/dataTable.js"></script>
