@@ -1,0 +1,113 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation=" http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+     <groupId>com.salt</groupId>
+     <artifactId>company-parent</artifactId>
+     <version>2.0.1</version>
+  </parent>
+
+  <groupId>com.admeris.devcenter</groupId>
+  <artifactId>devcenter</artifactId>
+  <version>2.1.0-SNAPSHOT</version>
+
+  <packaging>pom</packaging>
+  <name>${project.artifactId}</name>
+  <description>Developer Center</description>
+  
+  <properties>
+        <adminportal-web-assets>${project.build.directory}</adminportal-web-assets>
+        <salt_base_css>${adminportal-web-assets}/assets/salt_base/css</salt_base_css>
+        <salt_base_javascript>${adminportal-web-assets}/assets/salt_base/javascript</salt_base_javascript>
+        <salt_base_images>${adminportal-web-assets}/assets/salt_base/images</salt_base_images>
+    </properties>
+  
+  <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.8</version>
+                <executions>
+                    <execution>
+                        <id>copy</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>com.admeris.merchantmanagement.adminportal</groupId>
+                                    <artifactId>adminportal-web-assets</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>zip</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${adminportal-web-assets}</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>com.github.goldin</groupId>
+                <artifactId>copy-maven-plugin</artifactId>
+                <version>0.2.5</version>
+                <executions>
+                    <execution>
+                        <id>create-archive</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <resources>
+                                <!-- ~~~~~~~~~~~~~~ -->
+                                <!-- Copy adminportal-web-assets generated css resources -->
+                                <!-- ~~~~~~~~~~~~~~ -->
+                                <resource>
+                                    <directory>${salt_base_css}</directory>
+                                    <targetPath>${basedir}/assets/salt_base/css</targetPath>
+                                    <includes>
+                                        <include>*.css</include>
+                                    </includes>
+                                </resource>
+
+                                <!-- ~~~~~~~~~~~~~~ -->
+                                <!-- Copy adminportal-web-assets javascript resources -->
+                                <!-- ~~~~~~~~~~~~~~ -->
+                                <resource>
+                                    <directory>${salt_base_javascript}</directory>
+                                    <targetPath>${basedir}/assets/salt_base/javascript</targetPath>
+                                </resource>
+
+                                <!-- ~~~~~~~~~~~~~~ -->
+                                <!-- Copy adminportal-web-assets images resources -->
+                                <!-- ~~~~~~~~~~~~~~ -->
+                                <resource>
+                                    <directory>${salt_base_images}</directory>
+                                    <targetPath>${basedir}/assets/salt_base/images</targetPath>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+
+        </plugins>
+    </build>
+  
+    <repositories>
+        <repository>
+            <id>corporate</id>
+            <url>https://maven.xtrememobility.xm/content/repositories/public/</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+    </repositories>
+</project>
