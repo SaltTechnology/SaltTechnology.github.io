@@ -22,7 +22,12 @@
         <salt_base_images>${adminportal-web-assets}/assets/salt_base/images</salt_base_images>
     </properties>
   
-  <build>
+  <profiles>
+	<profile>
+		<id>download-web-assets</id>
+
+
+		<build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -98,7 +103,10 @@
 
 
         </plugins>
-    </build>
+		</build>
+	
+	  </profile>
+	</profiles>
   
     <repositories>
         <repository>
