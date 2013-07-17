@@ -1,0 +1,317 @@
+<p>Below is a list of the SALT credit card processing error codes that can be returned by the SALT Payment Gateway.</p>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Error Code</th>
+        <th>Explanation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <td>
+      <code>C001_TIMED_OUT</code>
+      </td>
+      <td>
+      Timed out before completing request, most likely because of heavy server load of transactions. Retry transaction later
+      </td>
+      </tr>
+      <tr>
+      <td>
+      <code>C002_SYSTEM_ERROR</code>
+      </td>
+      <td>
+      There was a system error in the back end. Retry transaction later
+      </td>
+      </tr>
+      <tr>
+      <td>
+      <code>C003_NETWORK_ERROR</code>
+      </td>
+      <td>
+      The transaction failed to process due to a network connection failure. If this error occurs, the merchant should query for the request
+      to see whether or not it was successful.
+      </td>
+      </tr>
+      <tr>
+      <td>
+      <code>C004_VALIDATION_ERROR</code>
+      </td>
+      <td>
+      There was a general error validating the merchant request input data. Double-check the data that you are sending.
+      </td>
+      </tr>
+      <tr>
+      <td>
+      <code>C005_DECLINED</code>
+      </td>
+      <td>
+        The request was declined by the card processor. This can occur when:
+        <ul>
+          <li>The incorrect expiry date is provided</li>
+          <li>The incorrect CVV2 value is provided (note: will not occur in all cases that a CVV2 does not match - it is card-issuer-dependant)</li>
+        </ul>
+      </td>
+        </tr>
+        <tr>
+        <td>
+        <code>C100_INVALID_MERCHANT_CREDENTIALS</code>
+        </td>
+        <td>
+        The provided merchant ID does not exist or the API token does not match.
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <code>C101_AMOUNT_OUT_OF_BOUNDS</code>
+        </td>
+        <td>
+        The specified transaction amount is invalid, e.g. a negative amount for a purchase.
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <code>C102_INVALID_PURCHASE</code>
+        </td>
+        <td>
+        Occurs when doing a refund and specifying a purchase ID to refund that does not exist for the merchant.
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <code>C103_INVALID_TRANSACTION</code>
+        </td>
+        <td>
+        Occurs when attempting to void a transaction that does not exist for the merchant.
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <code>C104_PURCHASE_NOT_IN_REFUNDABLE_STATE</code>
+        </td>
+        <td>
+        The purchase in its current state is not refundable.
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <code>C105_PURCHASE_REFUND_AMOUNT_OVER_LIMIT</code>
+        </td>
+        <td>
+        The purchase cannot be refunded by the specified amount; probably because it has passed the maximum amount that the purchase can be
+        refunded.
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <code>C106_TRANSACTION_NOT_VOIDABLE</code>
+        </td>
+        <td>
+        The specified transaction in its current state is not voidable.
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <code>C107_REQUEST_DENIED</code>
+        </td>
+        <td>
+        The merchant is not allowed to perform the specified request.
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <code>C108_ORDER_ID_ALREADY_EXIST</code>
+        </td>
+        <td>
+        The specified orderId already exists and is already associated with a different transaction.
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <code>C109_INVALID_TOTAL_NUMBER_INSTALLMENTS</code>
+        </td>
+        <td>
+        The total number of instalments of an instalment purchase is invalid.
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <code>C110_TRANSACTION_EXCEEDS_ACCOUNT_LIMITS</code>
+        </td>
+        <td>
+        Transaction cannot be processed because it has exceeds the maximum amount/count permissible to the account.
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <code>C111_TRANSACTION_DOES_NOT_EXIST</code>
+        </td>
+        <td>
+        Occurs when trying to perform an operation on a transaction but the specified transaction does not exist
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <code>C112_PERIODIC_PURCHASE_COMPLETE_OR_CANCELLED</code>
+        </td>
+        <td>
+        Occurs when trying to update a periodic/recurring purchase that has already been completed or cancelled
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <code>C200_INVALID_CREDIT_CARD_NUMBER</code>
+        </td>
+        <td>
+        The customer's credit card number is invalid (validation error).
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <code>C201_INVALID_CREDIT_CARD_EXPIRY_DATE</code>
+        </td>
+        <td>
+        The customer's credit card expiry date is invalid (validation error).
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <code>C202_INVALID_CREDIT_CARD_CVV2_FORMAT</code>
+        </td>
+        <td>
+        The customer's credit card CVV2 is not in the correct format (validation error).
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <code>C203_INVALID_ZIP_FORMAT</code>
+        </td>
+        <td>
+        The customer's zip/postal code is invalid (validation error).
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <code>C204_INVALID_STREET_FORMAT</code>
+        </td>
+        <td>
+        The customer's street is invalid (validation error).
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <code>C220_CVV2_VERIFICATION_FAILED</code>
+        </td>
+        <td>
+        Failed to verify CVV2
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <code>C221_CVV2_VERIFICATION_NOT_SUPPORTED</code>
+        </td>
+        <td>
+        The issuer does not support CVV2 verification
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <code>C222_AVS_FAILED</code>
+        </td>
+        <td>
+        AVS Street or Zip verification failed
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <code>C223_AVS_NOT_SUPPORTED</code>
+        </td>
+        <td>
+        The issuer does not support AVS
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <code>C224_CREDIT_CARD_EXPIRED</code>
+        </td>
+        <td>
+        Expired Credit Card
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <code>C225_CARD_NOT_SUPPORTED</code>
+        </td>
+        <td>
+        Occurs when trying to process a credit card type that is not provisioned for (e.g. if AMEX is not setup for a Merchant account, an AMEX
+            card will cause this error)
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <code>C226_CARD_LIMIT_EXCEEDED</code>
+        </td>
+        <td>
+        The transaction has exceeded the card credit limit.
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <code>C227_CARD_LOST_OR_STOLEN</code>
+        </td>
+        <td>
+        Credit card has been marked as lost or stolen by the issuer.
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <code>C300_STORAGE_TOKEN_ID_ALREADY_IN_USE</code>
+        </td>
+        <td>
+        The specified storageTokenId is already in use.
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <code>C301_STORAGE_RECORD_DOES_NOT_EXIST</code>
+        </td>
+        <td>
+        Storage Record with the specified storageTokenId does not exist
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <code>C302_NO_CREDIT_CARD_IN_STORAGE_RECORD</code>
+        </td>
+        <td>
+        Storage Record exists, but there is no credit card stored in it.
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <code>C400_DECLINED_FROM_FRAUD_PROVIDER</code>
+        </td>
+        <td>
+        <strong><em>Advanced Fraud Suite only</em>.</strong>
+        Declined due to failure of advanced fraud suite check.
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <code>C401_APPROVED_FROM_FRAUD_PROVIDER</code>
+        </td>
+        <td>
+        <strong><em>Advanced Fraud Suite only</em>.</strong>
+        Approved by fraud suite check. Applies to a fraud-suite-only check
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <code>C402_REVIEW_FROM_FRAUD_PROVIDER</code>
+        </td>
+        <td>
+        <strong><em>Advanced Fraud Suite only</em>.</strong>
+        A review status was returned by the fraud suite check. You should login to the Fraud Provider interface to review the transaction.
+        </td>
+      </tr>
+    </tbody>
+  </table>
