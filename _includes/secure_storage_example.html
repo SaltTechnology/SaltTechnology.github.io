@@ -1,3 +1,4 @@
+<div class="well">
 <p>
 CustomerProfile customerProfile = new CustomerProfile();
 customerProfile.setFirstName("firstName");
@@ -14,3 +15,4 @@ StorageReceipt receipt = httpsCreditCardService.addToStorage(storageTokenId, pay
 VerificationRequest verificationRequest = new VerificationRequest(AvsRequest.VERIFY_STREET_AND_ZIP, Cvv2Request.CVV2_PRESENT);
 httpsCreditCardService.singlePurchase("order id", STORAGE_TOKEN_ID, 1000, verificationRequest); //10 dollars
 </p>
+</div>

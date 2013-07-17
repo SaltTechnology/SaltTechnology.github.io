@@ -1,3 +1,4 @@
+<div class="well">
 <p>
 $merchant = new Merchant ('yourMerchatId', 'yourApiToken');
 $service = new HttpsCreditCardService($merchant, $url);
@@ -21,3 +22,4 @@ if ($receipt->isApproved() != 'false') {
 	$receipt = $service->singlePurchase('stored-card-001', $storageToken, '100', null);
 }
 </p>
+</div>

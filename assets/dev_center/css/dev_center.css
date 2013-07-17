@@ -1,6 +1,5 @@
 body.api-docs div#api-docs {
 	background: white;
-	border-left: 1px solid #dadfe5;
 	margin-left: 220px;
 	min-width: 750px;
 	position: relative;
@@ -13,13 +12,6 @@ body.api-docs div#api-docs a.section-anchor {
 }
 
 body.api-docs div#api-docs div#methods {
-	-webkit-box-shadow: #dadfe5 -1px 0 0, rgba(0, 0, 0, 0.05) 1px 0 2px
-		inset;
-	-moz-box-shadow: #dadfe5 -1px 0 0, rgba(0, 0, 0, 0.05) 1px 0 2px inset;
-	-ms-box-shadow: #dadfe5 -1px 0 0, rgba(0, 0, 0, 0.05) 1px 0 2px inset;
-	-o-box-shadow: #dadfe5 -1px 0 0, rgba(0, 0, 0, 0.05) 1px 0 2px inset;
-	box-shadow: #dadfe5 -1px 0 0, rgba(0, 0, 0, 0.05) 1px 0 2px inset;
-	background-color: #f6faf7;
 	margin-left: 50%;
 	position: relative;
 	z-index: 50
@@ -45,18 +37,7 @@ body.api-docs div#api-docs div#methods .method {
 	}
 }
 
-body.api-docs div#api-docs div#methods .method:after {
-	background-color: #fff;
-	background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0),
-		rgba(255, 255, 255, 0) 52%, #fff 53%, rgba(255, 255, 255, 0));
-	background: -moz-linear-gradient(left, rgba(255, 255, 255, 0),
-		rgba(255, 255, 255, 0) 52%, #fff 53%, rgba(255, 255, 255, 0));
-	background: -o-linear-gradient(left, rgba(255, 255, 255, 0),
-		rgba(255, 255, 255, 0) 52%, #fff 53%, rgba(255, 255, 255, 0));
-	background: linear-gradient(right, rgba(255, 255, 255, 0),
-		rgba(255, 255, 255, 0) 52%, #fff 53%, rgba(255, 255, 255, 0));
-	top: 23.5px
-}
+
 
 body.api-docs div#api-docs div#methods .method:first-child {
 	padding-top: 0
@@ -113,19 +94,8 @@ body.api-docs div#api-docs div#methods .method-section .method-description
 @media all and (min-width: 1380px) {
 	body.api-docs div#api-docs div#methods .method-section .method-description
 		{
-		width: 571px
+		width: 660px
 	}
-}
-
-body.api-docs div#api-docs div#methods .method-section .method-description div.method-list dl dd span:not
-	(.lang ){
-	display: block;
-	padding-top: 2px
-}
-
-body.api-docs div#api-docs div#methods .method-section .method-description div.method-list dl dd em
-	{
-	font-style: italic
 }
 
 body.api-docs div#api-docs div#methods .method-section .method-example {
@@ -134,7 +104,7 @@ body.api-docs div#api-docs div#methods .method-section .method-example {
 	-moz-box-sizing: border-box;
 	margin-left: 50%;
 	overflow: hidden;
-	padding: 38px 45px 0;
+	padding: 0 45px 0;
 	width: 50%
 }
 
@@ -145,25 +115,15 @@ body.api-docs div#api-docs div#methods .method-section .method-example {
 	}
 }
 
-body.api-docs div#api-docs div#methods .method-section .method-example .part+.part
-	{
-	padding-top: 45px
-}
-
-body.api-docs div#api-docs div#methods .method-section .method-example code+code
-	{
-	margin-top: 26px
-}
-
 #sidebar {
-  min-width: 250px;
+  min-width: 180px;
 }
 
 #sidebar .fixed-nav-list {
   margin-top:60px;
   overflow: hidden;
   position:fixed;
-  width: 200px;
+  width: 180px;
 }
 
 .navbar-fixed-top .navbar-inner {
