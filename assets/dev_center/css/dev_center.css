@@ -162,5 +162,9 @@ body.api-docs div#api-docs div#methods .method-section .method-example code+code
 .fixed-nav-list [class^="icon-"]{margin-right:2px;}
 .fixed-nav-list {*width:100%;margin:9px 1px;*margin:-5px 0 5px;overflow:hidden;background-color:#e5e5e5;border-bottom:1px solid #ffffff;}
 .fixed-nav-list{margin-top:60px;}
+.fixed-nav-list{
+	font-size: 13px;
+	line-height: 1.9em;
+}
 
 .fat_bottom_margin{margin-bottom:500px}
