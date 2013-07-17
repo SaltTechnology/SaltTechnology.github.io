@@ -44,16 +44,16 @@ body.api-docs div#api-docs div#methods .method-section .method-description
 
 body.api-docs div#api-docs div#methods .method-section .method-description
 		{
-		width: 620px
+		width: 700px
 	}
 
 body.api-docs div#api-docs div#methods .method-section .method-example {
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
-	margin-left: 20%;
 	overflow: hidden;
-	padding: 0 45px 0 20px;
+	margin-left: 20%;
+	padding: 0 20px 0 0px;
 	width: auto
 }
 
