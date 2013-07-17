@@ -163,7 +163,7 @@ body.api-docs div#api-docs div#methods .method-section .method-example code+code
   margin-top:60px;
   overflow: hidden;
   position:fixed;
-  width: 220px;
+  width: 200px;
 }
 
 .navbar-fixed-top-adjusted{position:fixed;z-index:1030;width:100%;margin-bottom:0;}
