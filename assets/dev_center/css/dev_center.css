@@ -88,13 +88,13 @@ body.api-docs div#api-docs div#methods .method-section .method-description
 	color: #444444;
 	float: left;
 	padding: 0 45px;
-	width: 50%
+	width: 75%
 }
 
 @media all and (min-width: 1380px) {
 	body.api-docs div#api-docs div#methods .method-section .method-description
 		{
-		width: 660px
+		width: 860px
 	}
 }
 
