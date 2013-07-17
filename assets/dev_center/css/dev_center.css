@@ -116,8 +116,12 @@ body.api-docs div#api-docs div#methods .method-section .method-example {
   min-width: 180px;
 }
 
+body > .container-fluid {
+  padding-top: 40px;
+}
+
+
 #sidebar .fixed-nav-list {
-  margin-top:60px;
   overflow: hidden;
   position:fixed;
   width: 180px;
