@@ -155,6 +155,10 @@ body.api-docs div#api-docs div#methods .method-section .method-example code+code
 	margin-top: 26px
 }
 
+#sidebar {
+  min-width: 250px;
+}
+
 #sidebar .fixed-nav-list {
   margin-top:60px;
   overflow: hidden;
