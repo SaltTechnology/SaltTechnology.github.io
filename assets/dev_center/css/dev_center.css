@@ -17,26 +17,21 @@ body.api-docs div#api-docs div#methods {
 	z-index: 50
 }
 
-@media all and (min-width: 1380px) {
 	body.api-docs div#api-docs div#methods {
 		margin-left: 571px
 	}
-}
+
 
 body.api-docs div#api-docs div#methods .method {
 	position: relative
 }
 
-@media all and (min-width: 1380px) {
 	body.api-docs div#api-docs div#methods .method:before,body.api-docs div#api-docs div#methods .method:after
 		{
 		left: -571px;
 		margin-left: 0;
 		max-width: 1137px
 	}
-}
-
-
 
 body.api-docs div#api-docs div#methods .method:first-child {
 	padding-top: 0
