@@ -162,4 +162,11 @@ body.api-docs div#api-docs div#methods .method-section .method-example code+code
   width: 220px;
 }
 
+.navbar-fixed-top-adjusted{position:fixed;z-index:1030;width:100%;margin-bottom:0;}
+.navbar-fixed-top-adjusted{border-width:0 0 1px;}
+.navbar-fixed-top-adjusted{padding-left:0;padding-right:0;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;}
+.navbar-fixed-top-adjusted{top:0;}
+.navbar-fixed-top-adjusted{-webkit-box-shadow:inset 0 -1px 0 rgba(0, 0, 0, 0.1), 0 1px 10px rgba(0, 0, 0, 0.1);-moz-box-shadow:inset 0 -1px 0 rgba(0, 0, 0, 0.1), 0 1px 10px rgba(0, 0, 0, 0.1);box-shadow:inset 0 -1px 0 rgba(0, 0, 0, 0.1), 0 1px 10px rgba(0, 0, 0, 0.1);}
+
+
 .fat_bottom_margin{margin-bottom:500px}
