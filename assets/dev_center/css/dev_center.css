@@ -17,10 +17,6 @@ body.api-docs div#api-docs div#methods {
 	z-index: 50
 }
 
-	body.api-docs div#api-docs div#methods {
-		margin-left: 571px
-	}
-
 
 body.api-docs div#api-docs div#methods .method {
 	position: relative
@@ -51,27 +47,6 @@ body.api-docs div#api-docs div#methods .method-section {
 	body.api-docs div#api-docs div#methods .method-section {
 		margin-left: -571px
 	}
-}
-
-
-body.api-docs div#api-docs div#methods .method-section h2 {
-	font-size: 20px
-}
-
-body.api-docs div#api-docs div#methods .method-section h3 {
-	font-size: 18px
-}
-
-body.api-docs div#api-docs div#methods .method-section h4 {
-	font-size: 16px
-}
-
-body.api-docs div#api-docs div#methods .method-section h5 {
-	font-size: 14px
-}
-
-body.api-docs div#api-docs div#methods .method-section h6 {
-	font-size: 13px
 }
 
 body.api-docs div#api-docs div#methods .method-section .method-description
