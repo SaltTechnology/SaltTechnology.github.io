@@ -1,46 +1,40 @@
 ---
 layout: base
+title: Integration Guide
 ---
 <!DOCTYPE html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<title>Core API</title>
-  <link href="assets/salt_base/css/bootstrap.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="assets/dev_center/css/dev_center.css" media="screen">
-
-  <script src="assets/dev_center/javascript/jquery-1.7.2.min.js"></script>
-  <script src="assets/salt_base/javascript/bootstrap.min.js"></script>
+  {% include salt_head.html %}
 </head>
 <body>
 {% include salt_header.html %}
 
 <div class="container-fluid">
-    <div class="row-fluid">
-      <div class="span2" id="sidebar">
-        <div class="sidebar-nav">
-          <ul class="nav fixed-nav-list well">
-            <li class="section"><a class="child" href="#introduction">Introduction</a></li>
-			<li class="section"><a class="child" href="#environment">Development Environment</a></li>
-			<li class="section"><a class="child" href="#api">Working With the API</a></li>
-			<li class="section"><a class="child" href="#receipts">Receipts</a></li>
-			<li class="section"><a class="child" href="#advanced_api">Advanced API Features</a></li>
-			<li class="section"><a class="child" href="#non_page">Non-Page Specific Requirements</a></li>
-			<li class="section"><a class="child" href="#certification">Certification</a></li>
-			<li class="section"><a class="child" href="#moving_production">Moving to Production</a></li>
-			<li class="section"><a class="child" href="#appendix">Appendix</a></li>
-		  </ul>
-		</div>
-	  </div>
-    
-		<div class ="span8">
-			{% include doc_contents.html %}
-		</div>
-	</div>
-	<div>
-		{% include salt_footer.html %}
-	</div>
-
+  <div class="row-fluid">
+    <div class="span3" id="sidebar">
+      <div class="sidebar-nav">
+        <ul class="nav nav-list fixed-nav-list well">
+          <li><a class="child" href="#introduction">Introduction</a></li>
+          <li><a class="child" href="#environment">Development Environment</a></li>
+          <li><a class="child" href="#api">Working With the API</a></li>
+          <li><a class="child" href="#receipts">Receipts</a></li>
+          <li><a class="child" href="#advanced_api">Advanced API Features</a></li>
+          <li><a class="child" href="#non_page">Non-Page Specific Requirements</a></li>
+          <li><a class="child" href="#certification">Certification</a></li>
+          <li><a class="child" href="#moving_production">Moving to Production</a></li>
+          <li><a class="child" href="#appendix">Appendix</a></li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class ="span8">
+      {% include doc_contents.html %}
+    </div>
+  </div>
+  <div>
+    {% include salt_footer.html %}
+  </div>
 </div>
 
 </body>
