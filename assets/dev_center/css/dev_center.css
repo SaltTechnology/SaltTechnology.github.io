@@ -88,31 +88,30 @@ body.api-docs div#api-docs div#methods .method-section .method-description
 	color: #444444;
 	float: left;
 	padding: 0 45px;
-	width: 70%
+	width: 65%
 }
 
-@media all and (min-width: 1380px) {
-	body.api-docs div#api-docs div#methods .method-section .method-description
+body.api-docs div#api-docs div#methods .method-section .method-description
 		{
-		width: 800px
+		width: 750px
 	}
-}
+
 
 body.api-docs div#api-docs div#methods .method-section .method-example {
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
-	margin-left: 50%;
+	margin-left: 35%;
 	overflow: hidden;
 	padding: 0 45px 0;
+	width: auto
 }
 
-@media all and (min-width: 1380px) {
-	body.api-docs div#api-docs div#methods .method-section .method-example {
+body.api-docs div#api-docs div#methods .method-section .method-example {
 		margin-left: 572px;
 		width: auto
 	}
-}
+
 
 #sidebar {
   min-width: 180px;
