@@ -1,7 +1,6 @@
 body.api-docs div#api-docs {
 	background: white;
 	margin-left: 220px;
-	min-width: 750px;
 	position: relative;
 	z-index: 45
 }
@@ -22,31 +21,14 @@ body.api-docs div#api-docs div#methods .method {
 	position: relative
 }
 
-	body.api-docs div#api-docs div#methods .method:before,body.api-docs div#api-docs div#methods .method:after
-		{
-		left: -571px;
-		margin-left: 0;
-		max-width: 1137px
-	}
-
-body.api-docs div#api-docs div#methods .method:first-child {
-	padding-top: 0
-}
-
 
 body.api-docs div#api-docs div#methods .method-section {
 	clear: left;
 	font-size: 13px;
 	line-height: 1.9em;
 	margin-left: -100%;
-	padding: 45px 0;
+	padding: 0 0 45px 20px;
 	position: relative
-}
-
-@media all and (min-width: 1380px) {
-	body.api-docs div#api-docs div#methods .method-section {
-		margin-left: -571px
-	}
 }
 
 body.api-docs div#api-docs div#methods .method-section .method-description
@@ -56,15 +38,14 @@ body.api-docs div#api-docs div#methods .method-section .method-description
 	-moz-box-sizing: border-box;
 	color: #444444;
 	float: left;
-	padding: 0 45px;
+	padding: 0 45px 0 20px;
 	width: 65%
 }
 
 body.api-docs div#api-docs div#methods .method-section .method-description
 		{
-		width: 750px
+		width: 620px
 	}
-
 
 body.api-docs div#api-docs div#methods .method-section .method-example {
 	box-sizing: border-box;
@@ -72,12 +53,12 @@ body.api-docs div#api-docs div#methods .method-section .method-example {
 	-moz-box-sizing: border-box;
 	margin-left: 20%;
 	overflow: hidden;
-	padding: 0 45px 0;
+	padding: 0 45px 0 20px;
 	width: auto
 }
 
 body.api-docs div#api-docs div#methods .method-section .method-example {
-		margin-left: 572px;
+		margin-left: 542px;
 		width: auto
 	}
 
