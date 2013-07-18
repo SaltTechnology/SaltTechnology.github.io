@@ -17,7 +17,7 @@ body.api-docs div#api-docs div#methods .method {
 body.api-docs div#api-docs div#methods .method-section {
 	clear: left;
 	font-size: 13px;
-	padding: 0 10px 45px 0;
+	padding: 0 0 45px 0;
 	position: relative
 }
 
@@ -25,7 +25,8 @@ body.api-docs div#api-docs div#methods .method-section .method-description
 	{
 	color: #444444;
 	float: left;
-	width: 65%
+	width: 65%;
+	margin-right: 10px;
 }
 
 body.api-docs div#api-docs div#methods .method-section .method-description

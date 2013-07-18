@@ -6,6 +6,15 @@ title: Java Core API Reference
 <html>
 <head>
 
+  <meta charset="UTF-8">
+  <link href="assets/salt_base/css/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="assets/dev_center/css/dev_center.css" media="screen">
+  <script src="assets/dev_center/javascript/jquery-1.7.2.min.js"></script>
+  <script src="assets/salt_base/javascript/bootstrap.min.js"></script>
+  <title>{% if page.title %}{{ page.title }}{% endif %} - SALT Technology</title>
+
+  
+  
   {% include salt_head.html %}
 </head>
 <body class="api-docs java">
@@ -40,13 +49,7 @@ title: Java Core API Reference
 				<div class="method">
 					<a id="intro" name="intro" class="section-anchor">&nbsp;</a>
 					<div class="method-section">
-						<div class="method-description"><div class="well">
-<h3>Introduction</h3>
-
-<p>
-This document is meant as a quick reference for the key features of the Salt Technology Credit Card Core API.  The API is designed to help you integrate your website with the SALT payment platform.
-</p>
-</div></div>
+						<div class="method-description">{% include intro_description.html %}</div>
 						<div class="method-example">{% include intro_example.html %}</div>
 					</div>
 				</div>
