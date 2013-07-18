@@ -1,17 +1,11 @@
 body.api-docs div#api-docs {
 	background: white;
-	margin-left: 220px;
+	margin-left: 223px;
 	position: relative;
 	z-index: 45
 }
 
-body.api-docs div#api-docs a.section-anchor {
-	display: block;
-	height: 0
-}
-
 body.api-docs div#api-docs div#methods {
-	margin-left: 50%;
 	position: relative;
 	z-index: 50
 }
@@ -23,16 +17,12 @@ body.api-docs div#api-docs div#methods .method {
 body.api-docs div#api-docs div#methods .method-section {
 	clear: left;
 	font-size: 13px;
-	margin-left: -100%;
-	padding: 0 0 45px 0px;
+	padding: 0 10px 45px 0;
 	position: relative
 }
 
 body.api-docs div#api-docs div#methods .method-section .method-description
 	{
-	box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	color: #444444;
 	float: left;
 	width: 65%
@@ -40,13 +30,10 @@ body.api-docs div#api-docs div#methods .method-section .method-description
 
 body.api-docs div#api-docs div#methods .method-section .method-description
 		{
-		width: 700px
+		width: 640px
 	}
 
 body.api-docs div#api-docs div#methods .method-section .method-example {
-	box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	overflow: hidden;
 	margin-left: 20%;
 	padding: 0;
@@ -66,10 +53,10 @@ body > .container-fluid {
   overflow: hidden;
   position:fixed;
   width: 180px;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
-.span6{margin-top: 20px;}
+.span6{margin-top: 30px;}
 
 .navbar-fixed-top .navbar-inner {
   padding-left:20px;
