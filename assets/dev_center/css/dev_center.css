@@ -76,7 +76,7 @@ body > .container-fluid {
   overflow: hidden;
   position:fixed;
   width: 180px;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .navbar-fixed-top .navbar-inner {
