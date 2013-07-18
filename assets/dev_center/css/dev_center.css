@@ -16,18 +16,15 @@ body.api-docs div#api-docs div#methods {
 	z-index: 50
 }
 
-
 body.api-docs div#api-docs div#methods .method {
 	position: relative
 }
 
-
 body.api-docs div#api-docs div#methods .method-section {
 	clear: left;
 	font-size: 13px;
-	line-height: 1.9em;
 	margin-left: -100%;
-	padding: 0 0 45px 20px;
+	padding: 0 0 45px 0px;
 	position: relative
 }
 
@@ -38,7 +35,6 @@ body.api-docs div#api-docs div#methods .method-section .method-description
 	-moz-box-sizing: border-box;
 	color: #444444;
 	float: left;
-	padding: 0 45px 0 0px;
 	width: 65%
 }
 
@@ -57,12 +53,6 @@ body.api-docs div#api-docs div#methods .method-section .method-example {
 	width: auto
 }
 
-body.api-docs div#api-docs div#methods .method-section .method-example {
-		margin-left: 542px;
-		width: auto
-	}
-
-
 #sidebar {
   min-width: 180px;
 }
@@ -80,8 +70,6 @@ body > .container-fluid {
 }
 
 .span6{margin-top: 20px;}
-
-.spanhalf{width:80px;}
 
 .navbar-fixed-top .navbar-inner {
   padding-left:20px;
