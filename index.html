@@ -5,6 +5,16 @@ title: Developer Center
 <!DOCTYPE html>
 <html>
 <head>
+
+  <meta charset="UTF-8">
+  <link href="assets/salt_base/css/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="assets/dev_center/css/dev_center.css" media="screen">
+  <script src="assets/dev_center/javascript/jquery-1.7.2.min.js"></script>
+  <script src="assets/salt_base/javascript/bootstrap.min.js"></script>
+  <title>{% if page.title %}{{ page.title }}{% endif %} - SALT Technology</title>
+
+  
+  
   {% include salt_head.html %}
 </head>
 <body>
@@ -12,8 +22,8 @@ title: Developer Center
   
   <div class="container-fluid">
     <div class="row-fluid">
-      <div class="span3" id="sidebar">
-        <div class="sidebar-nav">
+	
+      <div class="span2" id="sidebar">
           <ul class="nav nav-list fixed-nav-list well">
             <li class="nav-header">Overview</li>
             <li><a href="getting_started.html">Getting Started</a></li>
@@ -27,7 +37,6 @@ title: Developer Center
             <li><a href="core_api_ref_ruby.html">Ruby Credit Card API</a></li>
             <li><a href="ref_error_codes.html">Error Codes</a></li>
           </ul>
-        </div>
       </div>
 
 

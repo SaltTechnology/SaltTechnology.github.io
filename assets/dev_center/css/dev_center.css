@@ -38,7 +38,7 @@ body.api-docs div#api-docs div#methods .method-section .method-description
 	-moz-box-sizing: border-box;
 	color: #444444;
 	float: left;
-	padding: 0 45px 0 20px;
+	padding: 0 45px 0 0px;
 	width: 65%
 }
 
@@ -53,7 +53,7 @@ body.api-docs div#api-docs div#methods .method-section .method-example {
 	-moz-box-sizing: border-box;
 	overflow: hidden;
 	margin-left: 20%;
-	padding: 0 20px 0 0px;
+	padding: 0;
 	width: auto
 }
 
@@ -79,10 +79,13 @@ body > .container-fluid {
   margin-top: 20px;
 }
 
+.span6{margin-top: 20px;}
+
+.spanhalf{width:80px;}
+
 .navbar-fixed-top .navbar-inner {
   padding-left:20px;
   padding-right:20px;
 }
-
 
 .fat_bottom_margin{margin-bottom:500px}
