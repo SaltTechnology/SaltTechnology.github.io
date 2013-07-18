@@ -1,27 +1,27 @@
-body.api-docs div#api-docs {
+div#api-docs {
 	background: white;
 	margin-left: 223px;
 	position: relative;
 	z-index: 45
 }
 
-body.api-docs div#api-docs div#methods {
+div#api-docs div#methods {
 	position: relative;
 	z-index: 50
 }
 
-body.api-docs div#api-docs div#methods .method {
+div#api-docs div#methods .method {
 	position: relative
 }
 
-body.api-docs div#api-docs div#methods .method-section {
+div#api-docs div#methods .method-section {
 	clear: left;
 	font-size: 13px;
 	padding: 0 0 45px 0;
 	position: relative
 }
 
-body.api-docs div#api-docs div#methods .method-section .method-description
+div#api-docs div#methods .method-section .method-description
 	{
 	color: #444444;
 	float: left;
@@ -29,12 +29,12 @@ body.api-docs div#api-docs div#methods .method-section .method-description
 	margin-right: 10px;
 }
 
-body.api-docs div#api-docs div#methods .method-section .method-description
+div#api-docs div#methods .method-section .method-description
 		{
 		width: 640px
 	}
 
-body.api-docs div#api-docs div#methods .method-section .method-example {
+div#api-docs div#methods .method-section .method-example {
 	overflow: hidden;
 	margin-left: 20%;
 	padding: 0;
@@ -57,11 +57,11 @@ body > .container-fluid {
   margin-top: 30px;
 }
 
-.span6{margin-top: 30px;}
+.span6{margin-top: 30px;margin-left:0px;position: relative;clear: left;}
 
 .navbar-fixed-top .navbar-inner {
   padding-left:20px;
   padding-right:20px;
 }
 
-.fat_bottom_margin{margin-bottom:500px}
+.fat_bottom_margin{margin-bottom:500px;}
