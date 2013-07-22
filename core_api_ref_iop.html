@@ -4,95 +4,74 @@ title: Java INTERAC Online Core API Reference
 ---
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     {% include salt_head.html %}
-</head>
+  </head>
+  <body> {% include salt_header.html %}
+  <div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span2" id="sidebar">
+      <div class="sidebar-nav">
+        <ul class="nav nav-list fixed-nav-list well">
+          <li class="section section-introduction">
+            <a class="parent viewing" href="./core_api_ref_iop.html">Introduction</a>
+          </li>
+          <li class="section section-purchase">
+            <a class="parent" href="#purchase">Purchase</a>
+          </li>
+          <li class="section section-refund">
+            <a class="parent" href="#refund">Refund</a>
+          </li>
+          <li class="section section-validate">
+            <a class="parent" href="#validate">Transaction Verification</a>
+          </li>
+          <li class="section section-receipts">
+            <a class="parent" href="#receipts">Receipts</a>
+          </li>
+        </ul>
+      </div>
+    </div>
 
-<body>
-
-	{% include salt_header.html %}
-
-		<div class="container-fluid">
-    <div class="row-fluid">
-      <div class="span2" id="sidebar">
-	  
-	  
-        <div class="sidebar-nav">
-          <ul class="nav nav-list fixed-nav-list well">
-
-				<li class="section section-introduction"><a class="parent viewing"
-					href="./core_api_ref_iop.html">Introduction</a></li>
-
-				<li class="section section-purchase"><a class="parent"
-					href="#purchase">Purchase</a></li>
-
-				<li class="section section-refund"><a class="parent"
-					href="#refund">Refund</a></li>
-					
-				<li class="section section-validate"><a class="parent"
-					href="#validate">Transaction Verification</a></li>
-					
-				<li class="section section-receipts"><a class="parent"
-					href="#receipts">Receipts</a></li>
-			</ul>
-</div>
-	</div>
-	<!-- /guide -->
-
-	<div id="api-docs">
-
-		<a id="top" name="top" class="section-anchor">&nbsp;</a>
-
-		<div id="methods">
-
-			<div class="method-position">
-
-				<div class="method">
-					<a id="intro" name="intro" class="section-anchor">&nbsp;</a>
-					<div class="method-section">
-						<div class="method-description">{% include intro_description.html %}</div>
-						<div class="method-example" id="api-summary-example">{% include intro_example.html %}</div>
-					</div>
-				</div>
-
-				<div class="method">
-					<a id="purchase" name="purchase" class="section-anchor">&nbsp;</a>
-					<div class="method-section">
-						<div class="method-description">{% include iop_purchase_description.html %}</div>
-						<div class="method-example">{% include iop_purchase_example.html %}</div>
-					</div>
-				</div>
-
-				<div class="method">
-					<a id="refund" name="refund" class="section-anchor">&nbsp;</a>
-					<div class="method-section">
-						<div class="method-description">{% include iop_refund_description.html %}</div>
-						<div class="method-example">{% include iop_refund_example.html %}</div>
-					</div>
-					
-				</div><div class="method">
-					<a id="validate" name="validate" class="section-anchor">&nbsp;</a>
-					<div class="method-section">
-						<div class="method-description">{% include iop_validate_description.html %}</div>
-						<div class="method-example">{% include iop_validate_example.html %}</div>
-					</div>
-				</div>
-				
-				
-
-				<div class="method">
-					<a id="receipts" name="receipts" class="section-anchor">&nbsp;</a>
-					<div class="method-section">
-						<div class="method-description">{% include receipts_description.html %}</div>
-						<div class="method-example">{% include receipts_example.html %}</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</div>
-	</div>
-	{% include salt_footer.html %}
-</div>
-</body>
+    <div id="api-docs">
+      <div id="methods">
+        <div class="method-position">
+          <div class="method">
+            <a id="intro" name="intro" class="section-anchor"> </a>
+            <div class="method-section">
+              <div class="method-description">{% include intro_description.html %}</div>
+              <div class="method-example" id="api-summary-example">{% include intro_example.html %}</div>
+            </div>
+          </div>
+          <div class="method">
+            <a id="purchase" name="purchase" class="section-anchor"> </a>
+            <div class="method-section">
+              <div class="method-description">{% include iop_purchase_description.html %}</div>
+              <div class="method-example">{% include iop_purchase_example.html %}</div>
+            </div>
+          </div>
+          <div class="method">
+            <a id="refund" name="refund" class="section-anchor"> </a>
+            <div class="method-section">
+              <div class="method-description">{% include iop_refund_description.html %}</div>
+              <div class="method-example">{% include iop_refund_example.html %}</div>
+            </div>
+          </div>
+          <div class="method">
+            <a id="validate" name="validate" class="section-anchor"> </a>
+            <div class="method-section">
+              <div class="method-description">{% include iop_validate_description.html %}</div>
+              <div class="method-example">{% include iop_validate_example.html %}</div>
+            </div>
+          </div>
+          <div class="method">
+            <a id="receipts" name="receipts" class="section-anchor"> </a>
+            <div class="method-section">
+              <div class="method-description">{% include receipts_description.html %}</div>
+              <div class="method-example">{% include receipts_example.html %}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>{% include salt_footer.html %}</div></body>
 </html>
