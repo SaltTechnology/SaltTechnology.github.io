@@ -1,0 +1,2786 @@
+
+<div class="well">
+<a id="api" name="api" class="section-anchor"></a>
+<h3>
+    <a name="_Toc355011662"></a>
+    <a name="_Toc222545475"></a>
+    <a name="_Toc271107071"></a>
+    <a name="_Ref222720742">3 Working With the SALT Core API</a>
+</h3>
+<p>
+    You will need to use the SALT Core API to perform credit card transactions.
+</p>
+</div>
+<br>
+<div class="well">
+<h4>
+    <a name="_Toc355011663"></a>
+    <a name="_Toc222545476"></a>
+    <a name="_Toc271107072"></a>
+    <a name="_Toc205716302">3.1 Client Library</a>
+</h4>
+<p>
+    Before working with the SALT Core API, ensure that you have downloaded the client library file to your computer. The Core API consists of a single package
+    with two main classes:
+</p>
+<p>
+    <strong>package com.salt.payment.client.creditcard.api</strong>
+</p>
+<ul type="disc">
+    <li>
+        <strong>HttpsCreditCardService</strong>
+        Calls the SALT Core API Handler to process credit card transactions, such as purchases, voids, and refunds.
+    </li>
+    <li>
+        <strong>CreditCardReceipt</strong>
+        A container class for the HttpsCreditCardService method response
+    </li>
+</ul>
+<p>
+    These classes and their methods will be described in full in the following sections.
+</p>
+<div align="center">
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <td width="638" valign="top">
+                    <p>
+                        <strong><u>IMPORTANT:</u></strong>
+                        This chapter discusses development using the Java version of the Core API. For examples using other languages, including Microsoft .NET
+                        and PHP, please see Appendix IV: Core API for Other Programming Languages.
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+<br>
+<div class="well">
+<h4>
+    <a name="_Toc205716304"></a>
+    <a name="_Toc355011664"></a>
+    <a name="_Toc222545477"></a>
+    <a name="_Toc271107073"></a>
+    <a name="_Ref271106528">3.2 HttpsCreditCardService</a>
+</h4>
+<p>
+    To process a credit card transaction, you will need to construct an instance of the HttpsCreditCardService class as follows:
+</p>
+<p>
+    <a name="_Toc222546511"></a>
+    <a name="_Toc271107117">Table </a>
+    3-1 Core API: HttpsCreditCardService Constructor
+</p>
+<div align="center">
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        HttpsCreditCardService(merchant, apiToken, url) Parameters
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="85" valign="top">
+                    <p align="left">
+                        <strong>Name</strong>
+                    </p>
+                </td>
+                <td width="88" valign="top">
+                    <p align="left">
+                        <strong>Type</strong>
+                    </p>
+                </td>
+                <td width="465" valign="top">
+                    <p align="left">
+                        <strong>Description</strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="85" valign="top">
+                    <p align="left">
+                        merchant
+                    </p>
+                </td>
+                <td width="88" valign="top">
+                    <p align="left">
+                        Merchant
+                    </p>
+                </td>
+                <td width="465" valign="top">
+                    <p align="left">
+                        Contains your merchant credentials. See Table 3.2.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="85" valign="top">
+                    <p align="left">
+                        url
+                    </p>
+                </td>
+                <td width="88" valign="top">
+                    <p align="left">
+                        String(255)
+                    </p>
+                </td>
+                <td width="465" valign="top">
+                    <p align="left">
+URL to the SALT Core API handler. In the development environment this is                        <a href="https://test.salt.com/gateway/creditcard/processor.do">https://test.salt.com/gateway/creditcard/processor.do</a>
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div align="center">
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <td width="638" valign="top">
+                    <p>
+                        <strong><u>NOTE:</u></strong>
+                        If you are using the HttpsCreditCardService from API versions 1.3.1 or older, the old constructors are still supported but are now
+                        considered deprecated.
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p>
+    <a name="_Toc222546512"></a>
+    <a name="_Toc271107118"></a>
+    <a name="_Ref271106382">Table </a>
+    3-2 Core API: Merchant Constructor
+</p>
+<div align="center">
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        Merchant(merchantId, apiToken) Parameters
+                        <br/>
+                        Merchant(merchantId, apiToken, storeId) Parameters
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        <strong>Name</strong>
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        <strong>Type</strong>
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        <strong>Description</strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        merchantId
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        Integer
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        Merchant ID as assigned to you by SALT (can check this in the Merchant Management Website).
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        apiToken
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        String(20)
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        API Token as assigned to you by SALT (can check this in the Merchant Management Website)
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        storeId
+                        <br/>
+                        OPTIONAL
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        String(50)
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        Store ID field that can be used to identify/group transactions. Optional field.
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p>
+    After you have created a new instance, you can use it to process transactions.
+</p>
+</div>
+<br>
+<div class="well">
+<h4>
+    <a name="_Toc355011665"></a>
+    <a name="_Toc222545478"></a>
+    <a name="_Toc271107074"></a>
+    <a name="_Ref222717207">3.3 Purchase</a>
+</h4>
+<p>
+    To perform a credit card purchase you will invoke the <strong>singlePurchase()</strong> method:
+</p>
+<p>
+    <a name="_Toc222546513"></a>
+    <a name="_Toc271107119">Table </a>
+    3-3 Core API: HttpsCreditCardService.singlePurchase() Method
+</p>
+<div align="center">
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <td width="639" colspan="3" valign="top">
+                    <p>
+                        HttpsCreditCardService.singlePurchase(orderId, creditCard, amount, verificationRequest)
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="639" colspan="3" valign="top">
+                    <p>
+                        Parameters:
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        <strong>Name</strong>
+                    </p>
+                </td>
+                <td width="121" valign="top">
+                    <p align="left">
+                        <strong>Type</strong>
+                    </p>
+                </td>
+                <td width="379" valign="top">
+                    <p align="left">
+                        <strong>Description</strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        orderId
+                    </p>
+                </td>
+                <td width="121" valign="top">
+                    <p align="left">
+                        String(32)
+                    </p>
+                </td>
+                <td width="379" valign="top">
+                    <p align="left">
+                        Merchant assigned orderId. Must be unique.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        creditCard
+                    </p>
+                </td>
+                <td width="121" valign="top">
+                    <p align="left">
+                        CreditCard
+                    </p>
+                </td>
+                <td width="379" valign="top">
+                    <p align="left">
+                        Credit Card information (see Table 3.4)
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        amount
+                    </p>
+                </td>
+                <td width="121" valign="top">
+                    <p align="left">
+                        Long
+                    </p>
+                </td>
+                <td width="379" valign="top">
+                    <p align="left">
+                        Amount of the purchase <strong>in cents</strong>. Do NOT include a $ or any decimal place. (e.g. if your purchase is $10.00, then
+                        send 1000 as the total).
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        verificationRequest
+                    </p>
+                </td>
+                <td width="121" valign="top">
+                    <p align="left">
+                        Verification Request
+                    </p>
+                </td>
+                <td width="379" valign="top">
+                    <p align="left">
+                        Credit Card Verification request information, null if not used. See Section 5 for details on how to use this field.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="639" colspan="3" valign="top">
+                    <p>
+                        Returns:
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="260" colspan="2" valign="top">
+                    <p align="left">
+                        CreditCardReceipt
+                    </p>
+                </td>
+                <td width="379" valign="top">
+                    <p align="left">
+                        The results of the purchase request
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p>
+    The customer credit card information is submitted using the data object CreditCard. The basic constructor is shown below.
+</p>
+<p>
+    <a name="_Toc222546514"></a>
+    <a name="_Toc271107120"></a>
+    <a name="_Ref222716658">Table </a>
+    3-4 Core API: CreditCard Class (Basic Constructor)
+</p>
+<div align="center">
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        CreditCard Constructor Parameters
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="150" valign="top">
+                    <p align="left">
+                        <strong>Name</strong>
+                    </p>
+                </td>
+                <td width="106" valign="top">
+                    <p align="left">
+                        <strong>Type</strong>
+                    </p>
+                </td>
+                <td width="382" valign="top">
+                    <p align="left">
+                        <strong>Description</strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="150" valign="top">
+                    <p align="left">
+                        creditCardNumber
+                    </p>
+                </td>
+                <td width="106" valign="top">
+                    <p align="left">
+                        Long
+                    </p>
+                </td>
+                <td width="382" valign="top">
+                    <p align="left">
+                        Credit Card Number
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="150" valign="top">
+                    <p align="left">
+                        expiryDate
+                    </p>
+                </td>
+                <td width="106" valign="top">
+                    <p align="left">
+                        Short
+                    </p>
+                </td>
+                <td width="382" valign="top">
+                    <p align="left">
+                        Credit Card Expiry Date in MMYY format
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p>
+    To use advanced features such as Address Verification System and CVV, you will have to use the full constructor that provides additional fields. See
+    Section 5.1 for details.
+</p>
+<p>
+    The CreditCardReceipt object contains the results of the Purchase:
+</p>
+<p>
+    <a name="_Toc222546515"></a>
+    <a name="_Ref334689079"></a>
+    <a name="_Toc271107121"></a>
+    <a name="_Ref334689086">Table </a>
+    3-5 Core API: CreditCardReceipt Class
+</p>
+<div align="center">
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        CreditCardReceipt
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="206" valign="top">
+                    <p align="left">
+                        <strong>Field</strong>
+                    </p>
+                </td>
+                <td width="122" valign="top">
+                    <p align="left">
+                        <strong>Type</strong>
+                    </p>
+                </td>
+                <td width="310" valign="top">
+                    <p align="left">
+                        <strong>Description</strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="206" valign="top">
+                    <p align="left">
+                        getApprovalInfo()
+                    </p>
+                </td>
+                <td width="122" valign="top">
+                    <p align="left">
+                        ApprovalInfo
+                    </p>
+                </td>
+                <td width="310" valign="top">
+                    <p align="left">
+                        Transaction approval information
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="206" valign="top">
+                    <p align="left">
+                        getAvsResponse()
+                    </p>
+                </td>
+                <td width="122" valign="top">
+                    <p align="left">
+                        AvsResponse
+                    </p>
+                </td>
+                <td width="310" valign="top">
+                    <p align="left">
+                        The AVS response from processing the purchase, or null if AVS was not enabled or no response. See Section 5
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="206" valign="top">
+                    <p align="left">
+                        getCardBrand()
+                    </p>
+                </td>
+                <td width="122" valign="top">
+                    <p align="left">
+                        Integer
+                    </p>
+                </td>
+                <td width="310" valign="top">
+                    <p align="left">
+                        Returns the brand of the credit card, as a number:
+                    </p>
+                    <p align="left">
+                        1=Visa, 2=MasterCard, 3=AMEX, 4=Discover, 5=Diner , 6=JCB, 7=Other
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="206" valign="top">
+                    <p align="left">
+                        getCvv2Response()
+                    </p>
+                </td>
+                <td width="122" valign="top">
+                    <p align="left">
+                        Cvv2Response
+                    </p>
+                </td>
+                <td width="310" valign="top">
+                    <p align="left">
+                        The CVV2 response from processing the purchase, or null if CVV2 was not enabled or no response. See Section 5
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="206" valign="top">
+                    <p align="left">
+                        getDebugMessage()
+                    </p>
+                </td>
+                <td width="122" valign="top">
+                    <p align="left">
+                        String(255)
+                    </p>
+                </td>
+                <td width="310" valign="top">
+                    <p align="left">
+                        Debug message, if applicable
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="206" valign="top">
+                    <p align="left">
+                        getErrorCode()
+                    </p>
+                </td>
+                <td width="122" valign="top">
+                    <p align="left">
+                        String(128)
+                    </p>
+                </td>
+                <td width="310" valign="top">
+                    <p align="left">
+                        Error code, if applicable
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="206" valign="top">
+                    <p align="left">
+                        getErrorMessage()
+                    </p>
+                </td>
+                <td width="122" valign="top">
+                    <p align="left">
+                        String(255)
+                    </p>
+                </td>
+                <td width="310" valign="top">
+                    <p align="left">
+                        Error message, if applicable
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="206" valign="top">
+                    <p align="left">
+                        getOrderId()
+                    </p>
+                </td>
+                <td width="122" valign="top">
+                    <p align="left">
+                        String(32)
+                    </p>
+                </td>
+                <td width="310" valign="top">
+                    <p align="left">
+                        Merchant-assigned orderId
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="206" valign="top">
+                    <p align="left">
+                        getPeriodicPurchaseInfo()
+                    </p>
+                </td>
+                <td width="122" valign="top">
+                    <p align="left">
+                        Periodic PurchaseInfo
+                    </p>
+                </td>
+                <td width="310" valign="top">
+                    <p align="left">
+                        Information about the periodic purchase, if this was a periodic purchase transaction
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="206" valign="top">
+                    <p align="left">
+                        getProcessedDateTime()
+                    </p>
+                </td>
+                <td width="122" valign="top">
+                    <p align="left">
+                        Date
+                    </p>
+                </td>
+                <td width="310" valign="top">
+                    <p align="left">
+                        Date/time when the transaction was processed
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="206" valign="top">
+                    <p align="left">
+                        getSanitizedCardNumber()
+                    </p>
+                </td>
+                <td width="122" valign="top">
+                    <p align="left">
+                        String(20)
+                    </p>
+                </td>
+                <td width="310" valign="top">
+                    <p align="left">
+                        Storage/display-safe version of the credit card number.
+                    </p>
+                    <p align="left">
+                        E.g. 424242****4242
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="206" valign="top">
+                    <p align="left">
+                        getTransactionId()
+                    </p>
+                </td>
+                <td width="122" valign="top">
+                    <p align="left">
+                        Long
+                    </p>
+                </td>
+                <td width="310" valign="top">
+                    <p align="left">
+                        SALT TransactionId for this transaction
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="206" valign="top">
+                    <p align="left">
+                        isApproved()
+                    </p>
+                </td>
+                <td width="122" valign="top">
+                    <p align="left">
+                        Boolean
+                    </p>
+                </td>
+                <td width="310" valign="top">
+                    <p align="left">
+                        Returns true if the request was approved, otherwise the request was declined due to some error.
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p>
+    The ApprovalInfo object contains the transaction approval information of the Transaction:
+</p>
+<p>
+    <a name="_Toc222546516"></a>
+    <a name="_Toc271107122">Table </a>
+    3-6 Core API: ApprovalInfo Class
+</p>
+<div align="center">
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        ApprovalInfo
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="196" valign="top">
+                    <p align="left">
+                        <strong>Field</strong>
+                    </p>
+                </td>
+                <td width="89" valign="top">
+                    <p align="left">
+                        <strong>Type</strong>
+                    </p>
+                </td>
+                <td width="353" valign="top">
+                    <p align="left">
+                        <strong>Description</strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="196" valign="top">
+                    <p align="left">
+                        getApprovalCode()
+                    </p>
+                </td>
+                <td width="89" valign="top">
+                    <p align="left">
+                        String
+                    </p>
+                </td>
+                <td width="353" valign="top">
+                    <p align="left">
+                        Credit Card Approval Code
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="196" valign="top">
+                    <p align="left">
+                        getAuthorizedAmount()
+                    </p>
+                </td>
+                <td width="89" valign="top">
+                    <p align="left">
+                        Long
+                    </p>
+                </td>
+                <td width="353" valign="top">
+                    <p align="left">
+                        Amount authorized on approval, in cents
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="196" valign="top">
+                    <p align="left">
+                        getReferenceNumber()
+                    </p>
+                </td>
+                <td width="89" valign="top">
+                    <p align="left">
+                        Integer
+                    </p>
+                </td>
+                <td width="353" valign="top">
+                    <p align="left">
+                        Credit Card approval Reference Number
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="196" valign="top">
+                    <p align="left">
+                        getTraceNumber()
+                    </p>
+                </td>
+                <td width="89" valign="top">
+                    <p align="left">
+                        Integer
+                    </p>
+                </td>
+                <td width="353" valign="top">
+                    <p align="left">
+                        Credit Card approval Trace Number
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p>
+    <a name="_Toc222545479"></a>
+    <a name="_Ref311820101"></a>
+    <a name="_Toc271107075"></a>
+    <a name="_Ref222721427"> </a>
+</p>
+</div>
+<br>
+<div class="well">
+<h4>
+    <a name="_Toc355011666">3.4 Void and Refund</a>
+</h4>
+<p>
+    You may need to void or refund a purchase made by a customer from time to time. You can do this programmatically through the Core API (see below) but if
+    you don't need/want to, you can perform refunds manually through the Merchant Management Website.
+</p>
+<p>
+    What is a Void? What is a Refund?
+</p>
+<p>
+    <strong>Void </strong>
+    Cancels a transaction, preventing it from being settled. A Void can only be performed on a transaction belonging to the current batch, before the
+    current batch is closed (i.e. before the end of day).
+</p>
+<p>
+    <strong>Refund </strong>
+    Returns funds from a previously settled purchase to the customer. Refunds can only be performed on a purchase that is part of an already-closed batch.
+</p>
+<p>
+    <a name="_Toc222546517"></a>
+    <a name="_Toc271107123">Table </a>
+    3-7 Core API: HttpsCreditCardService.voidTransaction() Method
+</p>
+<div align="center">
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        HttpsCreditCardService.voidTransaction(transactionId, transactionOrderId)
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        Parameters:
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        <strong>Name</strong>
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        <strong>Type</strong>
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        <strong>Description</strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        transactionId
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        Long
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        The SALT transactionId of the transaction to void
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        transactionOrderId
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        String(32)
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        The orderId previously assigned to the transaction that is to be voided. This is an extra check to prevent inadvertent voiding of a
+                        transaction. Not null.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        Returns:
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="247" colspan="2" valign="top">
+                    <p align="left">
+                        CreditCardReceipt
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        The results of the void request
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p>
+    <a name="_Toc222546518"></a>
+    <a name="_Toc271107124"></a>
+    <a name="_Toc205716337">Table </a>
+    3-8 Core API: HttpsCreditCardService.refund() Method
+</p>
+<div align="center">
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        HttpsCreditCardService.refund(purchaseId, purchaseOrderId, refundOrderId, amount)
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        Parameters:
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        <strong>Name</strong>
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        <strong>Type</strong>
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        <strong>Description</strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        purchaseId
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        Long
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        The SALT transactionId of the purchase to void
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        purchaseOrderId
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        String(32)
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        The order id previously assigned to the purchase that is to be refunded. This is an extra check to prevent inadvertent refunding of a
+                        purchase. Not null.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        refundOrderId
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        String(32)
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        The merchant assigned orderId to be attached to this refund request. Will be generated if null.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        amount
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        Long
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        Amount to refund <strong>in cents</strong>. Do NOT include a $ or any decimal place. (e.g. if your purchase is $10.00, then send 1000
+                        as the total). This value does NOT have to match the original purchase amount.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        Returns:
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="247" colspan="2" valign="top">
+                    <p align="left">
+                        CreditCardReceipt
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        The results of the Refund Request
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p>
+    The CreditCardReceipt object is the same as is described in Section 3.3.
+</p>
+<p>
+    <a name="_Toc222545480"></a>
+    <a name="_Toc271107076"></a>
+    <a name="_Toc205716305">Void/Refund Notes and Restrictions</a>
+</p>
+<p>
+    Credit Card Void and Refund operations are subject to the following restrictions/conditions:
+</p>
+<p>
+    Only transactions belonging to a batch that has not yet been closed may be voided. Once a batch has closed, you may only refund that transaction.
+    Conversely transactions belonging to a batch that has not yet been closed may not be refunded.
+</p>
+<p>
+You may only Refund/Void a Purchase that has been <strong>approved successfully</strong>. Any declined/erroneous/cancelled Purchases    <strong>cannot be refunded or voided</strong>.
+</p>
+<ul>
+    <li>
+        You may perform <strong><em>multiple </em>refunds against a given Purchase</strong> (example scenario: the customer incrementally returns parts of
+        their order, and you refund the cost of each increment when it is received)
+    </li>
+</ul>
+<p>
+    You can void a refund request, providing it belongs to a batch that has not yet been closed.
+</p>
+<p>
+    <a name="_Toc222545481"></a>
+    <a name="_Toc271107077"></a>
+    <a name="_Toc205716306"></a>
+    <a name="_Ref203384470">Manual Void/Refund Using the Merchant Management Website</a>
+</p>
+<p>
+    If you do not need/want to perform Void/Refund operations programmatically, you can always perform them manually using the Merchant Management Website:
+</p>
+<p>
+    1. Login to the SALT Merchant Management Website at <a href="https://test.salt.com/merchantmanagement/">https://test.salt.com/merchantmanagement/</a>
+</p>
+<p>
+    2. Select the Void/Refund?Link under the Terminal section.
+</p>
+<p>
+    3. Search for the Purchase transaction that you wish to void/refund (by date, Store ID, etc)
+</p>
+<p>
+    4. When you find the transaction to void/refund, press the void or refund button
+</p>
+<p>
+    5. If you are performing a Refund, you will be asked to enter the amount to refund (the default is the original purchase amount).
+</p>
+<p>
+    6. Press the Submit Void or Submit Refund button
+</p>
+<p>
+    <a name="_Toc222545482"></a>
+    <a name="_Toc271107078"></a>
+    <a name="_Ref231029661"> </a>
+</p>
+</div>
+<br>
+<div class="well">
+<h4>
+    <a name="_Toc355011667">3.5 Periodic/Recurring Payments</a>
+</h4>
+<p>
+    You can use SALT Periodic Purchase features when the customer is billed periodically, or when splitting payment into a number of separate payments.
+</p>
+<p>
+    <a name="_Toc222545483"></a>
+    <a name="_Ref311811990"></a>
+    <a name="_Ref311811976"></a>
+    <a name="_Ref311811927"></a>
+    <a name="_Toc271107079">Creating a Recurring Payment</a>
+</p>
+<p>
+    In the API version 1.4 and below, calling recurringPurchase() will automatically create, verify and process the transaction. However, starting in 2.0,
+    calling <strong>recurringPurchase()</strong> will only create and verify the transaction. The funds are <strong>not</strong> immediately captured from the
+    customer credit card until <strong>executeRecurringPurchase() </strong> is explicitly called.
+</p>
+<p>
+    You can set up a customer for recurring billing by using the recurringPurchase() method:
+</p>
+<p>
+    <a name="_Toc222546519"></a>
+    <a name="_Toc271107125">Table </a>
+    3-9 Core API: HttpsCreditCardService.recurringPurchase() Method
+</p>
+<div align="center">
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <td width="639" colspan="3" valign="top">
+                    <p>
+                        HttpsCreditCardService.recurringPurchase(periodicPurchaseInfo, creditCard, storageTokenId, verificationRequest)
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="639" colspan="3" valign="top">
+                    <p>
+                        Parameters:
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="142" valign="top">
+                    <p align="left">
+                        <strong>Name</strong>
+                    </p>
+                </td>
+                <td width="121" valign="top">
+                    <p align="left">
+                        <strong>Type</strong>
+                    </p>
+                </td>
+                <td width="377" valign="top">
+                    <p align="left">
+                        <strong>Description</strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="142" valign="top">
+                    <p align="left">
+                        periodicPurchaseInfo
+                    </p>
+                </td>
+                <td width="121" valign="top">
+                    <p align="left">
+                        Periodic
+                    </p>
+                    <p align="left">
+                        Purchase
+                    </p>
+                    <p align="left">
+                        Info
+                    </p>
+                </td>
+                <td width="377" valign="top">
+                    <p align="left">
+                        Defines periodic-specific information, such as schedule, dates, and customer ID. See Table 3.10.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="142" valign="top">
+                    <p align="left">
+                        creditCard
+                    </p>
+                </td>
+                <td width="121" valign="top">
+                    <p align="left">
+                        CreditCard
+                    </p>
+                </td>
+                <td width="377" valign="top">
+                    <p align="left">
+                        Credit Card information (see Table 3.4). If storageTokenId is provided, this will be ignored
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="142" valign="top">
+                    <p align="left">
+                        <strong>storageTokenId</strong>
+                    </p>
+                </td>
+                <td width="121" valign="top">
+                    <p align="left">
+                        String
+                    </p>
+                </td>
+                <td width="377" valign="top">
+                    <p align="left">
+                        Storage Token ID specifying the stored credit card to use for this purchase. Takes precedence over the creditCard field.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="142" valign="top">
+                    <p align="left">
+                        verificationRequest
+                    </p>
+                </td>
+                <td width="121" valign="top">
+                    <p align="left">
+                        Verification Request
+                    </p>
+                </td>
+                <td width="377" valign="top">
+                    <p align="left">
+                        Credit Card Verification request information, null if not used. Note that CVV2 will not be stored/used in recurring purchases. See
+                        Section 5 for details on how to use this field.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="639" colspan="3" valign="top">
+                    <p>
+                        Returns:
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="263" colspan="2" valign="top">
+                    <p align="left">
+                        CreditCardReceipt
+                    </p>
+                </td>
+                <td width="377" valign="top">
+                    <p align="left">
+                        The results of the purchase request
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p>
+    The periodicPurchaseInfo object is constructed as follows:
+</p>
+<p>
+    <a name="_Toc222546520"></a>
+    <a name="_Ref292747887">Table </a>
+    3-10 Core API: PeriodicPurchaseInfo Class (Full Constructor)
+</p>
+<div align="center">
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        PeriodicPurchaseInfo Constructor Parameters
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="206" valign="top">
+                    <p align="left">
+                        <strong>Name</strong>
+                    </p>
+                </td>
+                <td width="123" valign="top">
+                    <p align="left">
+                        <strong>Type</strong>
+                    </p>
+                </td>
+                <td width="310" valign="top">
+                    <p align="left">
+                        <strong>Description</strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="206" valign="top">
+                    <p align="left">
+                        periodicTransactionId
+                    </p>
+                </td>
+                <td width="123" valign="top">
+                    <p align="left">
+                        Long
+                    </p>
+                </td>
+                <td width="310" valign="top">
+                    <p align="left">
+                        SALT recurring purchase ID returned when the purchase was originally created. Not applicable to new recurring purchases
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="206" valign="top">
+                    <p align="left">
+                        state
+                    </p>
+                </td>
+                <td width="123" valign="top">
+                    <p align="left">
+                        State
+                    </p>
+                </td>
+                <td width="310" valign="top">
+                    <p align="left">
+                        One of IN_PROGRESS, ON_HOLD, CANCELLED. Note a cancelled payment will not be run again and cannot be further modified. Not applicable
+                        to new recurring purchases.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="206" valign="top">
+                    <p align="left">
+                        schedule
+                    </p>
+                </td>
+                <td width="123" valign="top">
+                    <p align="left">
+                        Schedule
+                    </p>
+                </td>
+                <td width="310" valign="top">
+                    <p align="left">
+                        The schedule on which to issue payments. See Table 3.11. If null, will default to monthly payments.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="206" valign="top">
+                    <p align="left">
+                        perPaymentAmount
+                    </p>
+                </td>
+                <td width="123" valign="top">
+                    <p align="left">
+                        Long
+                    </p>
+                </td>
+                <td width="310" valign="top">
+                    <p align="left">
+                        Per-payment amount of the <strong>in cents</strong>. Do NOT include a $ or any decimal place. (e.g. if your purchase is $10.00, then
+                        send 1000 as the total).
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="206" valign="top">
+                    <p align="left">
+                        orderId
+                    </p>
+                </td>
+                <td width="123" valign="top">
+                    <p align="left">
+                        String(32)
+                    </p>
+                </td>
+                <td width="310" valign="top">
+                    <p align="left">
+                        Merchant assigned orderId. Must be unique. Cannot be modified after the first payment has been issued.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="206" valign="top">
+                    <p align="left">
+                        customerId
+                    </p>
+                </td>
+                <td width="123" valign="top">
+                    <p align="left">
+                        String(32)
+                    </p>
+                </td>
+                <td width="310" valign="top">
+                    <p align="left">
+                        Optional meta field that can be used to describe a customer
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="206" valign="top">
+                    <p align="left">
+                        startDate
+                    </p>
+                </td>
+                <td width="123" valign="top">
+                    <p align="left">
+                        Date
+                    </p>
+                </td>
+                <td width="310" valign="top">
+                    <p align="left">
+                        The date of when to issue the first payment. If this date is null or in the past, then the first payment will be issued immediately.
+                        Cannot be modified after the first payment has been issued.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="206" valign="top">
+                    <p align="left">
+                        endDate
+                    </p>
+                </td>
+                <td width="123" valign="top">
+                    <p align="left">
+                        Date
+                    </p>
+                </td>
+                <td width="310" valign="top">
+                    <p align="left">
+                        The date of when to end the payments. A payment will not be issued if it falls on this date.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="206" valign="top">
+                    <p align="left">
+                        nextPaymentDate
+                    </p>
+                </td>
+                <td width="123" valign="top">
+                    <p align="left">
+                        Date
+                    </p>
+                </td>
+                <td width="310" valign="top">
+                    <p align="left">
+                        Change when the next payment will occur. Must be set between the start and end date (as currently defined or as modified by their
+                        respective parameters). Not used in a new recurring payment (startDate defines first payment date).
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p align="left">
+                        <strong>Parameters Outside of the full constructor</strong>
+                        <strong></strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="206" valign="top">
+                    <p align="left">
+                        ExecutionType
+                    </p>
+                </td>
+                <td width="123" valign="top">
+                    <p align="left">
+                        enum
+                    </p>
+                </td>
+                <td width="310" valign="top">
+                    <p align="left">
+                        Has a value of either MANUAL or AUTO
+                    </p>
+                    <p align="left">
+                        AUTO = the recurring purchase will execute immediately.
+                    </p>
+                    <p align="left">
+                        MANUAL = the recurring purchase will not run unless first explicitly executed via executeRecurringPurchase().
+                    </p>
+                    <p align="left">
+                        If not provided, will default to MANUAL
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="206" valign="top">
+                    <p align="left">
+                        setExecutionType(ExecutionType executionType)
+                    </p>
+                </td>
+                <td width="123" valign="top">
+                </td>
+                <td width="310" valign="top">
+                    <p align="left">
+                        Sets the execution type to either manual or auto
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="206" valign="top">
+                    <p align="left">
+                        getExecutionType()
+                    </p>
+                </td>
+                <td width="123" valign="top">
+                    <p align="left">
+                        ExecutionType
+                    </p>
+                </td>
+                <td width="310" valign="top">
+                    <p align="left">
+                        Returns the value of the execution type
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="206" valign="top">
+                    <p align="left">
+                        installmentNumber
+                    </p>
+                </td>
+                <td width="123" valign="top">
+                    <p align="left">
+                        Integer
+                    </p>
+                </td>
+                <td width="310" valign="top">
+                    <p align="left">
+                        The value of the instalment the periodic purchase transaction is on. (e.g. if there are 4 instalments, and the card is charged for the
+                        second time, the installmentNumber = 2)
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="206" valign="top">
+                    <p align="left">
+                        setInstallmentNumber(Integer installmentNumber)
+                    </p>
+                </td>
+                <td width="123" valign="top">
+                </td>
+                <td width="310" valign="top">
+                </td>
+            </tr>
+            <tr>
+                <td width="206" valign="top">
+                    <p align="left">
+                        getInstallmentNumber()
+                    </p>
+                </td>
+                <td width="123" valign="top">
+                    <p align="left">
+                        Integer
+                    </p>
+                </td>
+                <td width="310" valign="top">
+                    <p align="left">
+                        Returns the installmentNumber
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p>
+    You can define a custom schedule for when to issue recurring payments:
+</p>
+<p>
+    <a name="_Toc222546521"></a>
+    <a name="_Toc271107126"></a>
+    <a name="_Ref229195659">Table </a>
+    3-11 Core API: Schedule Class (Basic Constructor)
+</p>
+<div align="center">
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        Schedule Constructor Parameters
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        <strong>Name</strong>
+                    </p>
+                </td>
+                <td width="115" valign="top">
+                    <p align="left">
+                        <strong>Type</strong>
+                    </p>
+                </td>
+                <td width="385" valign="top">
+                    <p align="left">
+                        <strong>Description</strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        scheduleType
+                    </p>
+                </td>
+                <td width="115" valign="top">
+                    <p align="left">
+                        ScheduleType
+                    </p>
+                </td>
+                <td width="385" valign="top">
+                    <p align="left">
+                        Schedule based on days, weeks, or months (See Table 3.12 ScheduleType Enumeration)
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        intervalLength
+                    </p>
+                </td>
+                <td width="115" valign="top">
+                    <p align="left">
+                        Short
+                    </p>
+                </td>
+                <td width="385" valign="top">
+                    <p align="left">
+                        Payments will be issued every number of days/weeks/months
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p>
+    <a name="_Toc222546522"></a>
+    <a name="_Toc271107127"></a>
+    <a name="_Ref229195592">Table </a>
+    3-12 ScheduleType Enumeration
+</p>
+<div align="center">
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <td width="639" colspan="2" valign="top">
+                    <p>
+                        ScheduleType
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="244" valign="top">
+                    <p align="left">
+                        <strong>Value</strong>
+                    </p>
+                </td>
+                <td width="396" valign="top">
+                    <p align="left">
+                        <strong>Description</strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="244" valign="top">
+                    <p align="left">
+                        MONTH
+                    </p>
+                </td>
+                <td width="396" valign="top">
+                    <p align="left">
+                        Schedule based on months
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="244" valign="top">
+                    <p align="left">
+                        WEEK
+                    </p>
+                </td>
+                <td width="396" valign="top">
+                    <p align="left">
+                        Schedule based on weeks
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="244" valign="top">
+                    <p align="left">
+                        DAY
+                    </p>
+                </td>
+                <td width="396" valign="top">
+                    <p align="left">
+                        Schedule based on days
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p>
+    So for example, if you create a Schedule using scheduleType = WEEK and intervalLength = 2, then payments will be issued every two weeks.
+</p>
+<p>
+    <a name="_Ref292748903"></a>
+    <a name="_Toc271107080"></a>
+    <a name="_Toc222545484"></a>
+    <a name="_Ref311812940">Executing Recurring Payments</a>
+</p>
+<p>
+Once a recurring purchase has been successfully created (with recurringPurchase() ), it can be executed by calling the    <strong>executeRecurringPurchase()</strong> method.
+</p>
+<p>
+    <a name="_Toc222546523">Table </a>
+    3-13 HttpsCreditCardService.executeRecurringPurchase() method
+</p>
+<div align="center">
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        HttpsCreditCardService.executeRecurringPurchase(recurringPurchaseId, cvv2)
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        Parameters:
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        <strong>Name</strong>
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        <strong>Type</strong>
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        <strong>Description</strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        recurringPurchaseId
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        Long
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        SALT recurring purchase ID returned when the purchase was originally created.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        cvv2
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        String
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        Card Verification Value/Card Verification Digits. This parameter provides optional verification when performing this transaction
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        Returns:
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="247" colspan="2" valign="top">
+                    <p align="left">
+                        CreditCardReceipt
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        The results of the transaction
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p>
+    <a name="_Toc222545485"></a>
+    <a name="_Ref311816205"></a>
+    <a name="_Ref311813140">Managing Recurring Payments</a>
+</p>
+<p>
+    There are additional operations available that you can use to manage your recurring payments.
+</p>
+<p>
+    Putting a Payment on Hold (and Resuming a Payment on Hold)
+</p>
+<p>
+    Putting a hold on a recurring payment means that further payments will be suspended until the recurring payment is resumed. You can resume payments by
+    calling the resumeRecurringPurchase() method.
+</p>
+<p>
+    <a name="_Toc222546524"></a>
+    <a name="_Toc271107128">Table </a>
+    3-14 Core API: HttpsCreditCardService.holdRecurringPurchase() Method
+</p>
+<div align="center">
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        HttpsCreditCardService.holdRecurringPurchase(recurringPurchaseId)
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        Parameters:
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        <strong>Name</strong>
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        <strong>Type</strong>
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        <strong>Description</strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        recurringPurchaseId
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        Long
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        SALT recurring purchase ID returned when the purchase was originally created.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        Returns:
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="247" colspan="2" valign="top">
+                    <p align="left">
+                        CreditCardReceipt
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        The results of the hold
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p>
+    <a name="_Toc222546525"></a>
+    <a name="_Toc271107129">Table </a>
+    3-15 Core API: HttpsCreditCardService.resumeRecurringPurchase() Method
+</p>
+<div align="center">
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        HttpsCreditCardService.resumeRecurringPurchase(recurringPurchaseId)
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        Parameters:
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        <strong>Name</strong>
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        <strong>Type</strong>
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        <strong>Description</strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        recurringPurchaseId
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        Long
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        SALT recurring purchase ID returned when the purchase was originally created.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        Returns:
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="247" colspan="2" valign="top">
+                    <p align="left">
+                        CreditCardReceipt
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        The results of the hold
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p>
+    Cancelling a Payment
+</p>
+<p>
+    You can cancel a payment entirely by calling the cancelRecurringPurchase() method. This means that no further payments will be made regardless of whether
+    the payment has reached its endDate. Note that you <strong>cannot</strong> resume or otherwise update a cancelled payment.
+</p>
+<p>
+    <a name="_Toc222546526"></a>
+    <a name="_Toc271107130">Table </a>
+    3-16 Core API: HttpsCreditCardService.cancelRecurringPurchase() Method
+</p>
+<div align="center">
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        HttpsCreditCardService.cancelRecurringPurchase(recurringPurchaseId)
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        Parameters:
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        <strong>Name</strong>
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        <strong>Type</strong>
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        <strong>Description</strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        recurringPurchaseId
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        Long
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        SALT recurring purchase ID returned when the purchase was originally created.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        Returns:
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="247" colspan="2" valign="top">
+                    <p align="left">
+                        CreditCardReceipt
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        The results of the cancellation
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p>
+    Updating Payment Details
+</p>
+<p>
+    To update the payment details of a recurring purchase such as when a customer credit card expires/is changed, you can use the updateRecurringPurchase()
+    method. Note that you cannot update a recurring purchase that has been cancelled or that has completed.
+</p>
+<p>
+    If any parameters provided are null, the existing corresponding fields will <strong>not</strong> be updated.
+</p>
+<p>
+    <a name="_Toc222546527"></a>
+    <a name="_Toc271107131">Table </a>
+    3-17 Core API: HttpsCreditCardService.updateRecurringPurchase() Method
+</p>
+<div align="center">
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <td width="639" colspan="3" valign="top">
+                    <p>
+                        HttpsCreditCardService.updateRecurringPurchase(periodicPurchaseInfo, creditCard, storageTokenId, verificationRequest)
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="639" colspan="3" valign="top">
+                    <p>
+                        Parameters:
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="142" valign="top">
+                    <p align="left">
+                        <strong>Name</strong>
+                    </p>
+                </td>
+                <td width="121" valign="top">
+                    <p align="left">
+                        <strong>Type</strong>
+                    </p>
+                </td>
+                <td width="377" valign="top">
+                    <p align="left">
+                        <strong>Description</strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="142" valign="top">
+                    <p align="left">
+                        periodicPurchaseInfo
+                    </p>
+                </td>
+                <td width="121" valign="top">
+                    <p align="left">
+                        Periodic
+                    </p>
+                    <p align="left">
+                        Purchase
+                    </p>
+                    <p align="left">
+                        Info
+                    </p>
+                </td>
+                <td width="377" valign="top">
+                    <p align="left">
+                        Defines periodic-specific information, such as schedule, dates, and customer ID. See Table 3.10.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="142" valign="top">
+                    <p align="left">
+                        creditCard
+                    </p>
+                </td>
+                <td width="121" valign="top">
+                    <p align="left">
+                        CreditCard
+                    </p>
+                </td>
+                <td width="377" valign="top">
+                    <p align="left">
+                        Credit Card information (see Table 3.4). If storageTokenId is provided, this will be ignored
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="142" valign="top">
+                    <p align="left">
+                        <strong>storageTokenId</strong>
+                    </p>
+                </td>
+                <td width="121" valign="top">
+                    <p align="left">
+                        String(32)
+                    </p>
+                </td>
+                <td width="377" valign="top">
+                    <p align="left">
+                        Storage Token ID specifying the stored credit card to use for this purchase. Takes precedence over the creditCard field.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="142" valign="top">
+                    <p align="left">
+                        verificationRequest
+                    </p>
+                </td>
+                <td width="121" valign="top">
+                    <p align="left">
+                        Verification Request
+                    </p>
+                </td>
+                <td width="377" valign="top">
+                    <p align="left">
+                        Credit Card Verification request information, null if not used. Note that CVV2 will not be stored/used in recurring purchases. See
+                        Section 5 for details on how to use this field.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="639" colspan="3" valign="top">
+                    <p>
+                        Returns:
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="263" colspan="2" valign="top">
+                    <p align="left">
+                        CreditCardReceipt
+                    </p>
+                </td>
+                <td width="377" valign="top">
+                    <p align="left">
+                        The results of the update request
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p>
+    Miscellaneous
+</p>
+<p>
+    The queryRecurringPurchase() method is a convenience method that you can use to check the current status of a recurring purchase, including the last
+    successful payment made.
+</p>
+<p>
+    <a name="_Toc222546528"></a>
+    <a name="_Toc271107132">Table </a>
+    3-18 Core API: HttpsCreditCardService.queryRecurringPurchase() Method
+</p>
+<div align="center">
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        HttpsCreditCardService.queryRecurringPurchase(recurringPurchaseId)
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        Parameters:
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        <strong>Name</strong>
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        <strong>Type</strong>
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        <strong>Description</strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        recurringPurchaseId
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        Long
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        SALT recurring purchase ID returned when the purchase was originally created.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        Returns:
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="247" colspan="2" valign="top">
+                    <p align="left">
+                        CreditCardReceipt
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        The results of the query retrieve the PeriodicPurchaseInfo field for periodic purchase fields.
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p>
+    The PeriodicPurchaseInfo object contains a subset of the fields from the class:
+</p>
+<ul>
+    <li align="left">
+        <strong>periodicTransactionId</strong>
+        the ID when the periodic purchase was originally created
+    </li>
+    <li align="left">
+        <strong>state</strong>
+        current state of the periodic purchase
+    </li>
+    <li align="left">
+        <strong>nextPaymentDate</strong>
+        next date the payment will be run
+    </li>
+    <li align="left">
+        <strong>lastPaymentId</strong>
+        the transaction ID of the <strong>last successful payment run.</strong> You can use this ID to run a verifyTransaction() to retrieve the transaction
+        information.
+    </li>
+</ul>
+<p>
+    <a name="_Toc222545486"></a>
+    <a name="_Toc271107081">Manual Periodic Payments Using the Merchant Management Website</a>
+</p>
+<p>
+    If you do not need/want to manage Periodic Payments programmatically, you can always perform them manually using the Merchant Management Website:
+</p>
+<p align="left">
+    1. Login to the SALT Merchant Management Website at <a href="https://test.salt.com/merchantmanagement/">https://test.salt.com/merchantmanagement/</a>
+</p>
+<p align="left">
+    2. Select the Periodic Purchases Link under the Terminal section.
+</p>
+<p align="left">
+    3. You can add a new Periodic Purchase by pressing the add a New Periodic Purchase link
+</p>
+<p align="left">
+    4. You can view/update existing Periodic Purchases by using the search form (by date, order Id, etc)
+</p>
+</div>
+<br>
+<div class="well">
+<h4>
+    <a name="_Toc355011668"></a>
+    <a name="_Toc222545487"></a>
+    <a name="_Toc271107082"></a>
+    <a name="_Ref233194184">3.6 Transaction Verification</a>
+</h4>
+<p>
+    In certain cases when you are unsure of the results of the transaction, such as when a transaction times out, you may need to double-check its status. You
+    can run the verifyTransaction() method to perform this check. This method returns a receipt containing the results of the transaction.
+</p>
+<p>
+    <a name="_Toc222546529"></a>
+    <a name="_Toc271107133">Table </a>
+    3-19 Core API: HttpsCreditCardService.verifyTransaction() Method
+</p>
+<div align="center">
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        HttpsCreditCardService.verifyTransaction(transactionId, transactionOrderId)
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        Parameters:
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        <strong>Name</strong>
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        <strong>Type</strong>
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        <strong>Description</strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        transactionId
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        Long
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        The SALT transactionId of the transaction to verify
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        transactionOrderId
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        String(32)
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        The orderId assigned to the transaction.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        Returns:
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="247" colspan="2" valign="top">
+                    <p align="left">
+                        CreditCardReceipt
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        The results of the transaction verification request
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p>
+    You must specify <strong>at least one</strong> of the transactionId or transactionOrderId arguments.
+</p>
+<p>
+    Note that if the specified transaction cannot be found, you will receive a not-found C111_TRANSACTION_DOES_NOT_EXIST error in the receipt, as opposed to
+    the results of the transaction.
+</p>
+<p>
+    <a name="_Toc222545488"></a>
+    <a name="_Toc271107083"> </a>
+</p>
+</div>
+<br>
+<div class="well">
+<h4>
+    <a name="_Toc355011669">3.7 Credit Card Verification</a>
+</h4>
+<p>
+    Use the verifyCreditCard() method to check the status of a credit card. A CreditCardReceipt object is returned, containing information about the card
+    validity, Secure Storage information if the card uses Secure Storage and Fraud information if the card uses the Advanced Fraud Suite.
+</p>
+<p>
+    <a name="_Toc222546530"></a>
+    <a name="_Toc271107134">Table </a>
+    3-20 Core API: HttpsCreditCardService.verifyCreditCard() Method
+</p>
+<div align="center">
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        HttpsCreditCardService.verifyCreditCard(creditCard, verificationRequest)
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        Parameters:
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="150" valign="top">
+                    <p align="left">
+                        <strong>Name</strong>
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        <strong>Type</strong>
+                    </p>
+                </td>
+                <td width="380" valign="top">
+                    <p align="left">
+                        <strong>Description</strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="150" valign="top">
+                    <p align="left">
+                        creditCard
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        CreditCard
+                    </p>
+                </td>
+                <td width="380" valign="top">
+                    <p align="left">
+                        Credit Card information (see Table 3.4)
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="150" valign="top">
+                    <p align="left">
+                        verificationRequest
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        Verification Request
+                    </p>
+                </td>
+                <td width="380" valign="top">
+                    <p align="left">
+                        Credit Card Verification request information, null if not used. See Section 5 for details on how to use this field.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        Returns:
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="258" colspan="2" valign="top">
+                    <p align="left">
+                        CreditCardReceipt
+                    </p>
+                </td>
+                <td width="380" valign="top">
+                    <p align="left">
+                        The results of the verifyCreditCard request. (See Table 3.21)
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+<br>
+<div class="well">
+<h4>
+    <a name="_Toc355011670"></a>
+    <a name="_Toc222545489"></a>
+    <a name="_Ref311820685">3.8 Closing Batches</a>
+</h4>
+<p>
+    All batches are closed automatically every night at 12:00 am EST. If for some reason you want to close a batch manually during the day, this may be done by
+    invoking the closeBatch() method. Note that this will NOT prevent the automatic daily batch closure.
+</p>
+<div align="center">
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <td width="638" colspan="2" valign="top">
+                    <p>
+                        HttpsCreditCardService.closeBatch()
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="638" colspan="2" valign="top">
+                    <p>
+                        Returns:
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="260" valign="top">
+                    <p align="left">
+                        CreditCardReceipt
+                    </p>
+                </td>
+                <td width="379" valign="top">
+                    <p align="left">
+                        The results of the batch close
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+<br>
+<div class="well">
+<h4>
+    <a name="_Toc355011671"></a>
+    <a name="_Ref222545767"></a>
+    <a name="_Toc222545490">3.9 Updating Fraud</a>
+</h4>
+<p>
+    Allow merchants to update fraud AUTH status if they use other payment processing service.
+</p>
+<p>
+    <a name="_Toc222546531">Table </a>
+    3-21 Core API: HttpsCreditCardService.updateFraud() Method
+</p>
+<div align="center">
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <td width="639" colspan="3" valign="top">
+                    <p align="left">
+                        <strong>HttpsCreditCardService.updateFraud</strong>
+                        (Long transactionId, String fraudSessionId, String auth)<strong></strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="639" colspan="3" valign="top">
+                    <p>
+                        Parameters:
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        <strong>Name</strong>
+                    </p>
+                </td>
+                <td width="121" valign="top">
+                    <p align="left">
+                        <strong>Type</strong>
+                    </p>
+                </td>
+                <td width="379" valign="top">
+                    <p align="left">
+                        <strong>Description</strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        transactionId
+                    </p>
+                </td>
+                <td width="121" valign="top">
+                    <p align="left">
+                        Long
+                    </p>
+                </td>
+                <td width="379" valign="top">
+                    <p align="left">
+                        Transaction ID number of the transaction whose fraud authentication is being updated. Cannot be null.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        fraudSessionId
+                    </p>
+                </td>
+                <td width="121" valign="top">
+                    <p align="left">
+                        String
+                    </p>
+                </td>
+                <td width="379" valign="top">
+                    <p align="left">
+                        Fraud Session ID string. Cannot be null. Used to track which merchant is preforming the fraud update.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        auth
+                    </p>
+                </td>
+                <td width="121" valign="top">
+                    <p align="left">
+                        String
+                    </p>
+                </td>
+                <td width="379" valign="top">
+                    <p align="left">
+                        Auth string. If null, will decline the update request.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="639" colspan="3" valign="top">
+                    <p>
+                        Returns:
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="260" colspan="2" valign="top">
+                    <p align="left">
+                        CreditCardReceipt
+                    </p>
+                </td>
+                <td width="379" valign="top">
+                    <p align="left">
+                        The results of the fraud update
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>

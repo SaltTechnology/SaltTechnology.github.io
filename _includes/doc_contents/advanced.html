@@ -1,0 +1,2741 @@
+<p align="left">
+    <a name="_Toc222545494"></a>
+    <a name="_Toc271107087"></a>
+    <a name="_Ref222717133"></a>
+</p>
+<a id="advanced_api" name="advanced_api" class="section-anchor"></a>
+<div class="well">
+<h3>
+    <a name="_Toc355011674">5 Advanced Core API Features</a>
+</h3>
+</div>
+<br>
+<div class="well">
+<h4>
+    <a name="_Toc355011675"></a>
+    <a name="_Toc222545495"></a>
+    <a name="_Toc271107088"></a>
+    <a name="_Ref223318688">5.1 Credit Card Security Features</a>
+</h4>
+<p>
+    To use the Core API Credit Card security features, you will need to use the full constructor for the CreditCard class, which includes additional data
+    fields.
+</p>
+<p>
+    <a name="_Toc222546532"></a>
+    <a name="_Toc271107135"></a>
+    <a name="_Ref233264689">Table </a>
+    5-1 Core API: CreditCard Class (Full Constructor)
+</p>
+<div align="center">
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        CreditCard Constructor Parameters
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="158" valign="top">
+                    <p align="left">
+                        <strong>Name</strong>
+                    </p>
+                </td>
+                <td width="97" valign="top">
+                    <p align="left">
+                        <strong>Type</strong>
+                    </p>
+                </td>
+                <td width="383" valign="top">
+                    <p align="left">
+                        <strong>Description</strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="158" valign="top">
+                    <p align="left">
+                        creditCardNumber
+                    </p>
+                </td>
+                <td width="97" valign="top">
+                    <p align="left">
+                        Long
+                    </p>
+                </td>
+                <td width="383" valign="top">
+                    <p align="left">
+                        Credit Card Number
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="158" valign="top">
+                    <p align="left">
+                        expiryDate
+                    </p>
+                </td>
+                <td width="97" valign="top">
+                    <p align="left">
+                        Short
+                    </p>
+                </td>
+                <td width="383" valign="top">
+                    <p align="left">
+                        Credit Card Expiry Date
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="158" valign="top">
+                    <p align="left">
+                        cvv2
+                    </p>
+                </td>
+                <td width="97" valign="top">
+                    <p align="left">
+                        String
+                    </p>
+                </td>
+                <td width="383" valign="top">
+                    <p align="left">
+                        Card Verification Value/Card Verification Digits
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="158" valign="top">
+                    <p align="left">
+                        street
+                    </p>
+                </td>
+                <td width="97" valign="top">
+                    <p align="left">
+                        String
+                    </p>
+                </td>
+                <td width="383" valign="top">
+                    <p align="left">
+                        Cardholder street address
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="158" valign="top">
+                    <p align="left">
+                        zip
+                    </p>
+                </td>
+                <td width="97" valign="top">
+                    <p align="left">
+                        String
+                    </p>
+                </td>
+                <td width="383" valign="top">
+                    <p align="left">
+                        Cardholder zip/postal code
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="158" valign="top">
+                    <p align="left">
+                        secureCode
+                    </p>
+                </td>
+                <td width="97" valign="top">
+                    <p align="left">
+                        String
+                    </p>
+                </td>
+                <td width="383" valign="top">
+                    <p align="left">
+                        Verified by Visa/MasterCard SecureCode value
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="158" valign="top">
+                    <p align="left">
+                        cardHolderName
+                    </p>
+                </td>
+                <td width="97" valign="top">
+                    <p align="left">
+                        String
+                    </p>
+                </td>
+                <td width="383" valign="top">
+                    <p align="left">
+                        Credit Card Holder Name
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p>
+    <a name="_Toc222545496"></a>
+    <a name="_Toc271107089">Card Verification Value (CVV2)</a>
+</p>
+<p>
+    The Card Verification Value (sometimes known as CVV2 or CVN is a security feature for credit card transactions, giving increased protection against
+    credit card fraud. It is a series of digits (3 or 4) that can be usually found on the back of a credit card.
+</p>
+<p>
+    Many card issuers will decline a transaction if the CVV2 is not provided. If the value provided by the customer does not match the value on file with the
+    card issuer, the issuer <em>may </em>decline the transaction (although this is not always the case).
+</p>
+<p>
+    <a name="_Toc222545497"></a>
+    <a name="_Toc271107090">Using CVV2</a>
+</p>
+<p>
+    To use CVV2, you must
+</p>
+<p align="left">
+    1. Collect and include the CVV2 value as part of the CreditCard object
+</p>
+<p align="left">
+    2. Create a VerificationRequest with the Cvv2Request parameter set (to CVV2_PRESENT).
+</p>
+<p align="left">
+    3. Call the singlePurchase() method with the VerificationRequest.
+</p>
+<p>
+    <a name="_Toc222546533"></a>
+    <a name="_Toc271107136">Table </a>
+    5-2 Cvv2Request Enumeration
+</p>
+<div align="center">
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        Cvv2Request
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="234" valign="top">
+                    <p align="left">
+                        <strong>Value</strong>
+                    </p>
+                </td>
+                <td width="320" valign="top">
+                    <p align="left">
+                        <strong>Description</strong>
+                    </p>
+                </td>
+                <td width="85" valign="top">
+                    <p align="left">
+                        <strong>Indicator*</strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="234" valign="top">
+                    <p align="left">
+                        CVV2_NOT_SUBMITTED
+                    </p>
+                </td>
+                <td width="320" valign="top">
+                    <p align="left">
+                        CVV2 value is deliberately bypassed or is not provided by the merchant.
+                    </p>
+                </td>
+                <td width="85" valign="top">
+                    <p align="left">
+                        0
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="234" valign="top">
+                    <p align="left">
+                        CVV2_PRESENT
+                    </p>
+                </td>
+                <td width="320" valign="top">
+                    <p align="left">
+                        Cardholder states that the CVV2 value is present on the card and can be verified.
+                    </p>
+                </td>
+                <td width="85" valign="top">
+                    <p align="left">
+                        1
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="234" valign="top">
+                    <p align="left">
+                        CVV2_PRESENT_BUT_ILLEGIBLE
+                    </p>
+                </td>
+                <td width="320" valign="top">
+                    <p align="left">
+                        Cardholder states that the CVV2 value is present on the card but it is illegible.
+                    </p>
+                </td>
+                <td width="85" valign="top">
+                    <p align="left">
+                        2
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="234" valign="top">
+                    <p align="left">
+                        CARD_HAS_NO_CVV2
+                    </p>
+                </td>
+                <td width="320" valign="top">
+                    <p align="left">
+                        Cardholder states that the card has no value imprint.
+                    </p>
+                </td>
+                <td width="85" valign="top">
+                    <p align="left">
+                        9
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p>
+    <strong>
+        * Denotes the indicator digit typically associated with CVV2 verification. Is not needed when using this API, but may be referred to in other
+        documentation.
+    </strong>
+</p>
+<p>
+    An example of a singlePurchase() with CVV2 checking is shown below:
+</p>
+<br clear="all"/>
+<p align="left">
+    <a name="_Toc337027748"></a>
+    <a name="_Toc271107161"><strong></strong></a>
+</p>
+<p>
+    Figure 5-1 Example Core API Purchase with CVV2
+</p>
+<table class="table table-bordered table-striped">
+    <tbody>
+        <tr>
+            <td width="638" valign="top">
+                <p align="left">
+                    import com.salt.payment.client.creditcard.api.*;
+                </p>
+                <p align="left">
+                    :
+                </p>
+                <p align="left">
+                    :
+                </p>
+                <p align="left">
+                    int merchantId=12345; // as assigned by SALT
+                </p>
+                <p align="left">
+                    String apiToken="DNZHRC6dNgppYYzR"; // as assigned by SALT
+                </p>
+                <p align="left">
+                    long pan=4242424242424242L;
+                </p>
+                <p align="left">
+                    short expiry=1212;
+                </p>
+                <p align="left">
+                    String invoice="order-12345"; // merchant invoice/orderId
+                </p>
+                <p align="left">
+                    String <strong>cvv2</strong>="<strong>888</strong>"; // CVV2 digits
+                </p>
+                <p align="left">
+                    long amount=3420; // in cents
+                </p>
+                <p align="left">
+                    HttpsCreditCardService ccService = new HttpsCreditCardService(
+                    <br/>
+                    <strong> </strong>
+                    new Merchant(merchantId, apiToken), <strong> </strong>"https://test.salt.com/gateway/creditcard/processor.do");
+                </p>
+                <p align="left">
+                    // specify additional credit card parameters
+                </p>
+                <p align="left">
+                    CreditCard creditCard = <strong>new CreditCard</strong>(pan, expiry<strong>, cvv2, </strong>null, null);
+                </p>
+                <p align="left">
+                    // specify the VerificationRequest contains an AvsRequest and/or Cvv2Request
+                </p>
+                <p align="left">
+                    <strong>VerificationRequest verify = new VerificationRequest(</strong>
+                </p>
+                <p align="left">
+                    <strong> null,</strong>
+                </p>
+                <p align="left">
+                    <strong> Cvv2Request.CVV2_PRESENT,</strong>
+                </p>
+                <p align="left">
+                    <strong> );</strong>
+                </p>
+                <p align="left">
+                    CreditCardReceipt receipt =
+                </p>
+                <p align="left">
+                    <strong> </strong>
+                    ccService.singlePurchase(invoice, creditCard, amount<strong>, verify</strong>);
+                </p>
+                <p align="left">
+                    :
+                </p>
+                <p align="left">
+                    :
+                </p>
+                <p align="left">
+                    // Extract Results from CreditCardReceipt...
+                </p>
+                <p align="left">
+                    :
+                </p>
+                <p align="left">
+                    :
+                </p>
+                <p align="left">
+                    // Verification results from CreditCardReceipt...
+                </p>
+                <p align="left">
+                    <strong>Cvv2Response cvv2Response = receipt.getCvv2Response();</strong>
+                    <strong></strong>
+                </p>
+                <p align="left">
+                    :
+                </p>
+                <p align="left">
+                    :
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    The results of the CVV2 check are returned as a <strong>Cvv2Response</strong> object as part of the CreditCardReceipt.
+</p>
+<p>
+    <a name="_Toc222546534"></a>
+    <a name="_Toc271107137">Table </a>
+    5-3 Core API: Cvv2Response Object
+</p>
+<div align="center">
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        Cvv2Response
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="209" valign="top">
+                    <p align="left">
+                        <strong>Field (Accessor)</strong>
+                    </p>
+                </td>
+                <td width="91" valign="top">
+                    <p align="left">
+                        <strong>Type</strong>
+                    </p>
+                </td>
+                <td width="338" valign="top">
+                    <p align="left">
+                        <strong>Description</strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="209" valign="top">
+                    <p align="left">
+                        getCode()
+                    </p>
+                </td>
+                <td width="91" valign="top">
+                    <p align="left">
+                        String
+                    </p>
+                </td>
+                <td width="338" valign="top">
+                    <p align="left">
+                        CVV2 Response Code
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="209" valign="top">
+                    <p align="left">
+                        getMessage()
+                    </p>
+                </td>
+                <td width="91" valign="top">
+                    <p align="left">
+                        String
+                    </p>
+                </td>
+                <td width="338" valign="top">
+                    <p align="left">
+                        CVV2 Response Message
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p>
+    The CVV2 response code will denote a match/mismatch:
+</p>
+<p>
+    <a name="_Toc222546535"></a>
+    <a name="_Toc271107138">Table </a>
+    5-4 CVV2 Response Codes
+</p>
+<div align="center">
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <td width="68" valign="top">
+                    <p align="left">
+                        <strong>Code</strong>
+                    </p>
+                </td>
+                <td width="444" valign="top">
+                    <p align="left">
+                        <strong>Description</strong>
+                    </p>
+                </td>
+                <td width="127" valign="top">
+                    <p align="left">
+                        <strong>Match</strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="68" valign="top">
+                    <p align="left">
+                        M
+                    </p>
+                </td>
+                <td width="444" valign="top">
+                    <p align="left">
+                        CVV2 Match
+                    </p>
+                </td>
+                <td width="127" valign="top">
+                    <p align="left">
+                        Match
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="68" valign="top">
+                    <p align="left">
+                        N
+                    </p>
+                </td>
+                <td width="444" valign="top">
+                    <p align="left">
+                        CVV2 No Match
+                    </p>
+                </td>
+                <td width="127" valign="top">
+                    <p align="left">
+                        <strong>Mismatch</strong>
+                        <strong></strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="68" valign="top">
+                    <p align="left">
+                        P
+                    </p>
+                </td>
+                <td width="444" valign="top">
+                    <p align="left">
+                        Not Processed
+                    </p>
+                </td>
+                <td width="127" valign="top">
+                    <p align="left">
+                        Unknown
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="68" valign="top">
+                    <p align="left">
+                        S
+                    </p>
+                </td>
+                <td width="444" valign="top">
+                    <p align="left">
+                        Issuer indicates that CVV2 data should be present on the card, but the merchant has indicated data is not present on the card
+                    </p>
+                </td>
+                <td width="127" valign="top">
+                    <p align="left">
+                        Unknown
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="68" valign="top">
+                    <p align="left">
+                        U
+                    </p>
+                </td>
+                <td width="444" valign="top">
+                    <p align="left">
+                        Issuer has not certified for CVV2 or Issuer has not provided Visa with the CVV2 encryption keys
+                    </p>
+                </td>
+                <td width="127" valign="top">
+                    <p align="left">
+                        Unknown
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="68" valign="top">
+                    <p align="left">
+                        &lt;blank&gt;
+                    </p>
+                </td>
+                <td width="444" valign="top">
+                    <p align="left">
+                        CVV2 was not performed, occurs if you did not provide a cvv2 or an invalid cvv2 value
+                    </p>
+                </td>
+                <td width="127" valign="top">
+                    <p align="left">
+                        Unknown
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p>
+Note that if a CVV2 check results in a mismatch or is not supported by the cardholder financial institution, this does <strong>NOT</strong>    <strong>necessarily</strong> mean that a transaction will be declined. Some financial institutions may decline but others will not. CVV2 gives you
+    additional information on which you can base your decision whether or not to accept the transaction as legitimate
+    <strong>
+        . If the financial institution does not decline the transaction, and you choose not to accept the transaction, you must issue a void against it.
+    </strong>
+    (See Section 3.4 on how to perform a void)
+</p>
+<p>
+    <a name="_Toc222545498"></a>
+    <a name="_Toc271107091">Address Verification System (AVS)</a>
+</p>
+<p>
+    Address Verification System (AVS) provides additional security by comparing a given billing address against the address on file at the cardholder
+    financial institution. If an AVS check indicates that the address does not fully match, you may have cause to suspect a possibly fraudulent transaction.
+</p>
+<p>
+    The result of an AVS check is a letter code indicating the degree of match, which can be full, partial, or a mismatch. Some financial institutions, in
+    particular those outside the US, Canada, and UK, may not support AVS checking which can result in a corresponding not supportedmresponse code being
+    returned.
+</p>
+<p>
+Note that if an AVS check results in a mismatch or is not supported by the cardholder financial institution, this does <strong>NOT</strong>    <strong>necessarily</strong> mean that a transaction will be rejected. AVS only gives you additional information on which you can base your decision
+    whether or not to accept the transaction as legitimate<strong>. If you choose not to accept the transaction, you must issue a void against it </strong>(see
+    Section 3.4 on how to perform a void).
+</p>
+<p>
+    <a name="_Toc222545499"></a>
+    <a name="_Toc271107092">Using AVS</a>
+</p>
+<p>
+    To use AVS, you must
+</p>
+<p align="left">
+    1. Collect and include the customer zip/postal code and address as part of the CreditCard object
+</p>
+<p align="left">
+    2. Create a VerificationRequest with the AvsRequest parameter set.
+</p>
+<p align="left">
+    3. Call the singlePurchase() method with the VerificationRequest.
+</p>
+<p>
+    <a name="_Toc222546536"></a>
+    <a name="_Toc271107139"></a>
+    <a name="_Toc185066523">Table </a>
+    5-5 AvsRequest Enumeration
+</p>
+<div align="center">
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <td width="639" colspan="2" valign="top">
+                    <p>
+                        AvsRequest
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="198" valign="top">
+                    <p align="left">
+                        <strong>Value</strong>
+                    </p>
+                </td>
+                <td width="441" valign="top">
+                    <p align="left">
+                        <strong>Description</strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="198" valign="top">
+                    <p align="left">
+                        VERIFY_STREET_AND_ZIP
+                    </p>
+                </td>
+                <td width="441" valign="top">
+                    <p align="left">
+                        Verify that <strong>both </strong>specified street number &amp; name (combined) and zip/postal code of the cardholder matches the
+                        values in the cardholder issuer file.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="198" valign="top">
+                    <p align="left">
+                        VERIFY_ZIP_ONLY
+                    </p>
+                </td>
+                <td width="441" valign="top">
+                    <p align="left">
+                        Verify that specified zip/postal code of the cardholder matches the value in the cardholder issuer file. If this is specified,
+                        address will <strong>not </strong>be verified
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p>
+    An example of a singlePurchase() with AVS checking is shown below:
+</p>
+<br clear="all"/>
+<p align="left">
+    <a name="_Toc337027749"></a>
+    <a name="_Toc271107162"><strong></strong></a>
+</p>
+<p>
+    Figure 5-2 Example Core API Purchase with AVS
+</p>
+<table class="table table-bordered table-striped">
+    <tbody>
+        <tr>
+            <td width="638" valign="top">
+                <p align="left">
+                    import com.salt.payment.client.creditcard.api.*;
+                </p>
+                <p align="left">
+                    :
+                </p>
+                <p align="left">
+                    :
+                </p>
+                <p align="left">
+                    int merchantId=12345; // as assigned by SALT
+                </p>
+                <p align="left">
+                    String apiToken="DNZHRC6dNgppYYzR"; // as assigned by SALT
+                </p>
+                <p align="left">
+                    long pan=4242424242424242L;
+                </p>
+                <p align="left">
+                    short expiry=1212;
+                </p>
+                <p align="left">
+                    String invoice="order-12345"; // merchant invoice/orderId
+                </p>
+                <p align="left">
+                    String <strong>avsStreet</strong>="<strong>123 Easy Street</strong>"; // AVS Street number and name
+                </p>
+                <p align="left">
+                    String <strong>avsZip</strong>="<strong>A1B2C3</strong>"; // AVS ZIP/Postal code
+                </p>
+                <p align="left">
+                    long amount=3420; // in cents
+                </p>
+                <p align="left">
+                    HttpsCreditCardService ccService = new HttpsCreditCardService(
+                    <br/>
+                    <strong> </strong>
+                    new Merchant(merchantId, apiToken), <strong> </strong>"https://test.salt.com/gateway/creditcard/processor.do");
+                </p>
+                <p align="left">
+                    // specify additional credit card parameters
+                </p>
+                <p align="left">
+                    CreditCard creditCard = <strong>new CreditCard</strong>(pan, expiry<strong>, </strong>null<strong>, avsStreet, avsZip</strong>);
+                </p>
+                <p align="left">
+                    // specify the VerificationRequest contains an AvsRequest and/or Cvv2Request
+                </p>
+                <p align="left">
+                    <strong>VerificationRequest verify = new VerificationRequest(</strong>
+                </p>
+                <p align="left">
+                    <strong> AvsRequest.VERIFY_STREET_AND_ZIP,</strong>
+                </p>
+                <p align="left">
+                    <strong> null</strong>
+                </p>
+                <p align="left">
+                    <strong> );</strong>
+                </p>
+                <p align="left">
+                    CreditCardReceipt receipt =
+                </p>
+                <p align="left">
+                    <strong> </strong>
+                    ccService.singlePurchase(invoice, creditCard, amount<strong>, verify</strong>);
+                </p>
+                <p align="left">
+                    :
+                </p>
+                <p align="left">
+                    :
+                </p>
+                <p align="left">
+                    // Extract Results from CreditCardReceipt...
+                </p>
+                <p align="left">
+                    :
+                </p>
+                <p align="left">
+                    :
+                </p>
+                <p align="left">
+                    // Verification results from CreditCardReceipt...
+                </p>
+                <p align="left">
+                    <strong>AvsResponse avsResponse = receipt.getAvsResponse();</strong>
+                    <strong></strong>
+                </p>
+                <p align="left">
+                    :
+                </p>
+                <p align="left">
+                    :
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    The results of the AVS request are returned as an AvsResponse object as part of the CreditCardReceipt.
+</p>
+<p>
+    <a name="_Toc222546537"></a>
+    <a name="_Toc271107140">Table </a>
+    5-6 Core API: AvsResponse Object
+</p>
+<div align="center">
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        AvsResponse
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="209" valign="top">
+                    <p align="left">
+                        <strong>Field (Accessor)</strong>
+                    </p>
+                </td>
+                <td width="73" valign="top">
+                    <p align="left">
+                        <strong>Type</strong>
+                    </p>
+                </td>
+                <td width="356" valign="top">
+                    <p align="left">
+                        <strong>Description</strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="209" valign="top">
+                    <p align="left">
+                        getAvsErrorCode()
+                    </p>
+                </td>
+                <td width="73" valign="top">
+                    <p align="left">
+                        String
+                    </p>
+                </td>
+                <td width="356" valign="top">
+                    <p align="left">
+                        The code of the error that prevented AVS from being performed, or null if no error
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="209" valign="top">
+                    <p align="left">
+                        getAvsErrorMessage()
+                    </p>
+                </td>
+                <td width="73" valign="top">
+                    <p align="left">
+                        String
+                    </p>
+                </td>
+                <td width="356" valign="top">
+                    <p align="left">
+                        The message of the error that prevented AVS from being performed, or null if no error
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="209" valign="top">
+                    <p align="left">
+                        getAvsResponseCode()
+                    </p>
+                </td>
+                <td width="73" valign="top">
+                    <p align="left">
+                        String
+                    </p>
+                </td>
+                <td width="356" valign="top">
+                    <p align="left">
+                        The standard alphabetic AVS response code (see Table 5.7)
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="209" valign="top">
+                    <p align="left">
+                        getZipType()
+                    </p>
+                </td>
+                <td width="73" valign="top">
+                    <p align="left">
+                        String
+                    </p>
+                </td>
+                <td width="356" valign="top">
+                    <p align="left">
+                        The type of the zip (either zip or postal code) or null if there was an AVS error
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="209" valign="top">
+                    <p align="left">
+                        isAvsPerformed()
+                    </p>
+                </td>
+                <td width="73" valign="top">
+                    <p align="left">
+                        Boolean
+                    </p>
+                </td>
+                <td width="356" valign="top">
+                    <p align="left">
+                        true if AVS was performed, false if it wasn't
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="209" valign="top">
+                    <p align="left">
+                        isStreetFormatValid()
+                    </p>
+                </td>
+                <td width="73" valign="top">
+                    <p align="left">
+                        Boolean
+                    </p>
+                </td>
+                <td width="356" valign="top">
+                    <p align="left">
+                        true if the street format is valid, false otherwise
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="209" valign="top">
+                    <p align="left">
+                        isStreetFormatValid
+                    </p>
+                    <p align="left">
+                        AndMatched()
+                    </p>
+                </td>
+                <td width="73" valign="top">
+                    <p align="left">
+                        Boolean
+                    </p>
+                </td>
+                <td width="356" valign="top">
+                    <p align="left">
+                        true if the street format is valid and matches
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="209" valign="top">
+                    <p align="left">
+                        isZipFormatValid()
+                    </p>
+                </td>
+                <td width="73" valign="top">
+                    <p align="left">
+                        Boolean
+                    </p>
+                </td>
+                <td width="356" valign="top">
+                    <p align="left">
+                        true if the zip/postal code format is valid, false otherwise
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="209" valign="top">
+                    <p align="left">
+                        isZipFormatValid
+                    </p>
+                    <p align="left">
+                        AndMatched()
+                    </p>
+                </td>
+                <td width="73" valign="top">
+                    <p align="left">
+                        Boolean
+                    </p>
+                </td>
+                <td width="356" valign="top">
+                    <p align="left">
+                        true if the zip/postal code format is valid and matches
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p>
+    The getResponseCode() field indicates: a full match (both address and zip/postal match), a partial match (one field matches), a mismatch (both do not
+    match), or unknown (AVS may be unavailable/unsupported by this cardholder bank).
+</p>
+<p>
+    <a name="_Toc222546538"></a>
+    <a name="_Toc271107141"></a>
+    <a name="_Ref222722916"></a>
+    <a name="_Ref222722925">Table </a>
+    5-7 AVS Response Codes
+</p>
+<div align="center">
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <td width="68" valign="top">
+                    <p align="left">
+                        <strong>Code</strong>
+                    </p>
+                </td>
+                <td width="444" valign="top">
+                    <p align="left">
+                        <strong>Description</strong>
+                    </p>
+                </td>
+                <td width="127" valign="top">
+                    <p align="left">
+                        <strong>Match</strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="68" valign="top">
+                    <p align="left">
+                        A
+                    </p>
+                </td>
+                <td width="444" valign="top">
+                    <p align="left">
+                        Street address matches, but zip/postal does not (Domestic)
+                    </p>
+                </td>
+                <td width="127" valign="top">
+                    <p align="left">
+                        Partial
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="68" valign="top">
+                    <p align="left">
+                        B
+                    </p>
+                </td>
+                <td width="444" valign="top">
+                    <p align="left">
+                        Street address matches, but postal code not verified (International)
+                    </p>
+                </td>
+                <td width="127" valign="top">
+                    <p align="left">
+                        Partial
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="68" valign="top">
+                    <p align="left">
+                        C
+                    </p>
+                </td>
+                <td width="444" valign="top">
+                    <p align="left">
+                        Street address and postal code do not match (International)
+                    </p>
+                </td>
+                <td width="127" valign="top">
+                    <p align="left">
+                        <strong>Mismatch</strong>
+                        <strong></strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="68" valign="top">
+                    <p align="left">
+                        D, M
+                    </p>
+                </td>
+                <td width="444" valign="top">
+                    <p align="left">
+                        Street address and postal code match (International)
+                    </p>
+                </td>
+                <td width="127" valign="top">
+                    <p align="left">
+                        Full Match
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="68" valign="top">
+                    <p align="left">
+                        E
+                    </p>
+                </td>
+                <td width="444" valign="top">
+                    <p align="left">
+                        AVS data invalid or not allowed for this card type
+                    </p>
+                </td>
+                <td width="127" valign="top">
+                    <p align="left">
+                        Unknown
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="68" valign="top">
+                    <p align="left">
+                        G
+                    </p>
+                </td>
+                <td width="444" valign="top">
+                    <p align="left">
+                        Non-US bank does not support AVS
+                    </p>
+                </td>
+                <td width="127" valign="top">
+                    <p align="left">
+                        Unknown
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="68" valign="top">
+                    <p align="left">
+                        I
+                    </p>
+                </td>
+                <td width="444" valign="top">
+                    <p align="left">
+                        Address not verified
+                    </p>
+                </td>
+                <td width="127" valign="top">
+                    <p align="left">
+                        Unknown
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="68" valign="top">
+                    <p align="left">
+                        N
+                    </p>
+                </td>
+                <td width="444" valign="top">
+                    <p align="left">
+                        Street address and postal code do not match (Domestic)
+                    </p>
+                </td>
+                <td width="127" valign="top">
+                    <p align="left">
+                        <strong>Mismatch</strong>
+                        <strong></strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="68" valign="top">
+                    <p align="left">
+                        P
+                    </p>
+                </td>
+                <td width="444" valign="top">
+                    <p align="left">
+                        Postal code matches, but street address not verified (International)
+                    </p>
+                </td>
+                <td width="127" valign="top">
+                    <p align="left">
+                        Partial
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="68" valign="top">
+                    <p align="left">
+                        R
+                    </p>
+                </td>
+                <td width="444" valign="top">
+                    <p align="left">
+                        System unavailable (Domestic)
+                    </p>
+                </td>
+                <td width="127" valign="top">
+                    <p align="left">
+                        Unknown
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="68" valign="top">
+                    <p align="left">
+                        S
+                    </p>
+                </td>
+                <td width="444" valign="top">
+                    <p align="left">
+                        Bank Does not support AVS (Domestic)
+                    </p>
+                </td>
+                <td width="127" valign="top">
+                    <p align="left">
+                        Unknown
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="68" valign="top">
+                    <p align="left">
+                        U
+                    </p>
+                </td>
+                <td width="444" valign="top">
+                    <p align="left">
+                        Address information unavailable. Returned if the US bank does not support non-US AVS or if the AVS in a US bank is not functioning
+                        properly.
+                    </p>
+                </td>
+                <td width="127" valign="top">
+                    <p align="left">
+                        Unknown
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="68" valign="top">
+                    <p align="left">
+                        W, Z
+                    </p>
+                </td>
+                <td width="444" valign="top">
+                    <p align="left">
+                        Street address does not match, but zip code matches (Domestic)
+                    </p>
+                </td>
+                <td width="127" valign="top">
+                    <p align="left">
+                        Partial
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="68" valign="top">
+                    <p align="left">
+                        X, Y
+                    </p>
+                </td>
+                <td width="444" valign="top">
+                    <p align="left">
+                        Street address and zip code match (Domestic)
+                    </p>
+                </td>
+                <td width="127" valign="top">
+                    <p align="left">
+                        Full Match
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="68" valign="top">
+                    <p align="left">
+                        &lt;blank&gt;
+                    </p>
+                </td>
+                <td width="444" valign="top">
+                    <p align="left">
+                        AVS was not performed, occurs if you did not provide a billing address
+                    </p>
+                </td>
+                <td width="127" valign="top">
+                    <p align="left">
+                        Unknown
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p>
+    <a name="_Toc222545500"></a>
+    <a name="_Toc271107093">Suggestions for Interpreting/Handling an AVS Response</a>
+</p>
+<p>
+    AVS is not a foolproof security feature, so even if a full match is obtained, there is no guarantee that a transaction is not fraudulent. However, a
+    partial, or better yet, full match makes it more likely that whoever is submitting the transaction is the real cardholder (since they have access to the
+    correct address information, which typically only appears the cardholder statement).
+</p>
+<p>
+    Below are some suggestions for the interpretation/handling of AVS responses. Please note that these are just suggestions and the ultimate decision of
+    whether or not to accept a transaction is still up to you. Also remember that if you do not want to accept a transaction, you must void it yourself.
+</p>
+<p>
+    <strong>Partial Match</strong>
+    Typically if the user has one part of the address correct, they probably know the entire address. Of course, a full match is more reassuring, but
+    sometimes a partial match occurs because of differences in the formats of the entered address and the address on file (for example, sometimes the
+    cardholder may enter the unit number before their street number).
+</p>
+<p>
+    <strong>Mismatch</strong>
+    You probably should not accept this transaction without confirming with the cardholder directly.
+</p>
+<p>
+    <strong>Unknown</strong>
+    If the cardholder address is international, you may see this result. If you typically do business with international customers, then this will be
+    expected. Otherwise, you may want to consider whether or not to accept the transaction.
+</p>
+</div>
+<br>
+<div class="well">
+<h4>
+    <a name="_Toc355011676"></a>
+    <a name="_Toc222545501"></a>
+    <a name="_Toc271107094"></a>
+    <a name="_Ref233193600"></a>
+    <a name="_Ref233193589">5.2 Secure Storage API</a>
+</h4>
+<p>
+    With the Secure Storage API, merchants can remotely store credit card and other sensitive customer data with SALT to increase security and reduce the scope
+    of PCI Compliance.
+</p>
+<p>
+    When information is stored with SALT, a Storage Token (which identifies the information in secure storage) is returned in response. This Storage Token
+    can be used for all subsequent transactions including purchases and credit card verification.
+</p>
+<p>
+    <a name="_Toc222545502"></a>
+    <a name="_Toc271107095">Storing Customer Information (Creating a Storage Token)</a>
+</p>
+<p>
+    <a name="_Toc222546539"></a>
+    <a name="_Toc271107142">Table </a>
+    5-8 Core API: HttpsCreditCardService.addToStorage() Method
+</p>
+<div align="center">
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        HttpsCreditCardService.addToStorage(paymentProfile, storageTokenId)
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        Parameters:
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        <strong>Name</strong>
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        <strong>Type</strong>
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        <strong>Description</strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        storageTokenId
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        String(32)
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        Optional. Specifies the identifier (storage token) for the stored information. Must be unique. If not provided, SALT will auto-generate
+                        one for you.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        paymentProfile
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        PaymentProfile
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        Contains the customer information to be stored. See Table 5.9 for details
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        Returns:
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="247" colspan="2" valign="top">
+                    <p align="left">
+                        StorageReceipt
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        The results of the storage request
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p>
+    The PaymentProfile class contains a CreditCard data object as well as a CustomerProfile data object. The basic constructor is shown below.
+</p>
+<p>
+    <a name="_Toc222546540"></a>
+    <a name="_Toc271107143"></a>
+    <a name="_Ref233221771"></a>
+    <a name="_Ref233221820">Table </a>
+    5-9 Core API: PaymentProfile Class
+</p>
+<div align="center">
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        PaymentProfile Constructor Parameters
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="138" valign="top">
+                    <p align="left">
+                        <strong>Name</strong>
+                    </p>
+                </td>
+                <td width="126" valign="top">
+                    <p align="left">
+                        <strong>Type</strong>
+                    </p>
+                </td>
+                <td width="374" valign="top">
+                    <p align="left">
+                        <strong>Description</strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="138" valign="top">
+                    <p align="left">
+                        creditCard
+                    </p>
+                </td>
+                <td width="126" valign="top">
+                    <p align="left">
+                        CreditCard
+                    </p>
+                </td>
+                <td width="374" valign="top">
+                    <p align="left">
+                        Contains Credit Card information, optional. However, if you intend to run transactions with this PaymentProfile you must provide this
+                        field.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="138" valign="top">
+                    <p align="left">
+                        customerProfile
+                    </p>
+                </td>
+                <td width="126" valign="top">
+                    <p align="left">
+                        CustomerProfile
+                    </p>
+                </td>
+                <td width="374" valign="top">
+                    <p align="left">
+                        Contains Customer information, optional. See Table 5.10 for details
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p>
+    The CreditCard class is described in Table 5.1. Note that CVV2 will not be stored, even if specified.
+</p>
+<p>
+    The CustomerProfile class allows you to store various customer details such as name and address. All fields are completely optional you can choose to
+    store any or all of the following fields:
+</p>
+<p>
+    <a name="_Toc222546541"></a>
+    <a name="_Toc271107144"></a>
+    <a name="_Ref233266996">Table </a>
+    5-10 Core API: CustomerProfile Class
+</p>
+<div align="center">
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <td width="639" colspan="3" valign="top">
+                    <p>
+                        CustomerProfile
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        <strong>Field</strong>
+                    </p>
+                </td>
+                <td width="112" valign="top">
+                    <p align="left">
+                        <strong>Type</strong>
+                    </p>
+                </td>
+                <td width="388" valign="top">
+                    <p align="left">
+                        <strong>Description</strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        setFirstName()
+                    </p>
+                </td>
+                <td width="112" valign="top">
+                    <p align="left">
+                        String
+                    </p>
+                </td>
+                <td width="388" valign="top">
+                    <p align="left">
+                        Customer first name
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        setLastName()
+                    </p>
+                </td>
+                <td width="112" valign="top">
+                    <p align="left">
+                        String
+                    </p>
+                </td>
+                <td width="388" valign="top">
+                    <p align="left">
+                        Customer last name
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        setAddress1()
+                    </p>
+                </td>
+                <td width="112" valign="top">
+                    <p align="left">
+                        String
+                    </p>
+                </td>
+                <td width="388" valign="top">
+                    <p align="left">
+                        Address 1 (first line of address)
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        setAddress2()
+                    </p>
+                </td>
+                <td width="112" valign="top">
+                    <p align="left">
+                        String
+                    </p>
+                </td>
+                <td width="388" valign="top">
+                    <p align="left">
+                        Address 2 (second line of address)
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        setCity()
+                    </p>
+                </td>
+                <td width="112" valign="top">
+                    <p align="left">
+                        String
+                    </p>
+                </td>
+                <td width="388" valign="top">
+                    <p align="left">
+                        City
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        setProvince()
+                    </p>
+                </td>
+                <td width="112" valign="top">
+                    <p align="left">
+                        String
+                    </p>
+                </td>
+                <td width="388" valign="top">
+                    <p align="left">
+                        Province/State
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        setPostal()
+                    </p>
+                </td>
+                <td width="112" valign="top">
+                    <p align="left">
+                        String
+                    </p>
+                </td>
+                <td width="388" valign="top">
+                    <p align="left">
+                        Postal/ZIP Code
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        setCountry()
+                    </p>
+                </td>
+                <td width="112" valign="top">
+                    <p align="left">
+                        String
+                    </p>
+                </td>
+                <td width="388" valign="top">
+                    <p align="left">
+                        Country
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        setPhoneNumber()
+                    </p>
+                </td>
+                <td width="112" valign="top">
+                    <p align="left">
+                        String
+                    </p>
+                </td>
+                <td width="388" valign="top">
+                    <p align="left">
+                        Customer Phone Number
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        setFaxNumber()
+                    </p>
+                </td>
+                <td width="112" valign="top">
+                    <p align="left">
+                        String
+                    </p>
+                </td>
+                <td width="388" valign="top">
+                    <p align="left">
+                        Customer Fax Number
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        setWebsite()
+                    </p>
+                </td>
+                <td width="112" valign="top">
+                    <p align="left">
+                        String
+                    </p>
+                </td>
+                <td width="388" valign="top">
+                    <p align="left">
+                        Customer website
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        setLegalName()
+                    </p>
+                </td>
+                <td width="112" valign="top">
+                    <p align="left">
+                        String
+                    </p>
+                </td>
+                <td width="388" valign="top">
+                    <p align="left">
+                        Customer Company Legal Name
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        setTradeName()
+                    </p>
+                </td>
+                <td width="112" valign="top">
+                    <p align="left">
+                        String
+                    </p>
+                </td>
+                <td width="388" valign="top">
+                    <p align="left">
+                        Customer Company Trade Name
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p>
+    An example of storing customer data (credit card and customer profile) is shown below:
+</p>
+<br clear="all"/>
+<p align="left">
+    <a name="_Toc337027750"></a>
+    <a name="_Toc271107163"><strong></strong></a>
+</p>
+<p>
+    Figure 5-3 Example: Using Core API to Store Customer Information
+</p>
+<table class="table table-bordered table-striped">
+    <tbody>
+        <tr>
+            <td width="638" valign="top">
+                <p align="left">
+                    import com.salt.payment.client.creditcard.api.*;
+                </p>
+                <p align="left">
+                    :
+                </p>
+                <p align="left">
+                    :
+                </p>
+                <p align="left">
+                    int merchantId=12345; // as assigned by SALT
+                </p>
+                <p align="left">
+                    String apiToken="DNZHRC6dNgppYYzR"; // as assigned by SALT
+                </p>
+                <p align="left">
+                    String <strong>storageTokenId</strong>="myToken-001"; // will be used to identify the storage record
+                </p>
+                <p align="left">
+                    long <strong>ccNumber</strong>=4242424242424242L; // Credit Card Number
+                </p>
+                <p align="left">
+                    short <strong>ccExpiry</strong>=1212; // Credit Card Expiry
+                </p>
+                <p align="left">
+                    String <strong>firstName</strong>="John"; // Customer first name
+                </p>
+                <p align="left">
+                    String <strong>lastName</strong>="Smith"; // Customer last name
+                </p>
+                <p align="left">
+                    String <strong>address1</strong>="123 Easy Street"; // Customer address1
+                </p>
+                <p align="left">
+                    String <strong>postal</strong>="A1B2C3"; // Customer Postal code
+                </p>
+                <p align="left">
+                    String <strong>phone</strong>="4165551234"; // Customer phone number
+                </p>
+                <p align="left">
+                    HttpsCreditCardService ccService = new HttpsCreditCardService(
+                    <br/>
+                    <strong> </strong>
+                    new Merchant(merchantId, apiToken), <strong> </strong>"https://test.salt.com/gateway/creditcard/processor.do");
+                </p>
+                <p align="left">
+                    // credit card to store
+                </p>
+                <p align="left">
+                    CreditCard <strong>creditCard</strong> = <strong>new CreditCard</strong>(<strong>ccNumber</strong>, <strong>ccExpiry</strong>);
+                </p>
+                <p align="left">
+                    // customer profile details to store
+                </p>
+                <p align="left">
+                    CustomerProfile <strong>customerProfile</strong> = <strong>new CustomerProfile</strong>();
+                </p>
+                <p align="left">
+                    customerProfile.setFirstName(<strong>firstName</strong>);
+                </p>
+                <p align="left">
+                    customerProfile.setLastName(<strong>lastName</strong>);
+                </p>
+                <p align="left">
+                    customerProfile.setAddress1(<strong>address1</strong>);
+                </p>
+                <p align="left">
+                    customerProfile.setPostal(<strong>postal</strong>);
+                </p>
+                <p align="left">
+                    customerProfile.setPhoneNumber(<strong>phone</strong>);
+                </p>
+                <p align="left">
+                    <strong></strong>
+                </p>
+                <p align="left">
+                    // put together data into a payment profile<strong></strong>
+                </p>
+                <p align="left">
+PaymentProfile <strong>paymentProfile</strong> = <strong>new PaymentProfile</strong>(<strong>creditCard</strong>,                    <strong>customerProfile</strong>);
+                </p>
+                <p align="left">
+                    <strong></strong>
+                </p>
+                <p align="left">
+                    // Store the data under the specified storageTokenId<strong></strong>
+                </p>
+                <p align="left">
+                    StorageReceipt receipt =
+                </p>
+                <p align="left">
+                    <strong> </strong>
+                    ccService.<strong>addToStorage</strong>(<strong>storageTokenId, paymentProfile</strong>);
+                </p>
+                <p align="left">
+                    :
+                </p>
+                <p align="left">
+                    :
+                </p>
+                <p align="left">
+                    // Use Results from StorageReceipt...
+                </p>
+                <p align="left">
+                    if (receipt.isApproved()) {
+                </p>
+                <p align="left">
+                    :
+                </p>
+                <p align="left">
+                    :
+                </p>
+                <p align="left">
+                    }
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    The results of the storage request are returned as a StorageReceipt object. This is a data class similar to the CreditCardReceipt, and contains the
+    following fields:
+</p>
+<p>
+    <a name="_Toc222546542"></a>
+    <a name="_Toc271107145">Table </a>
+    5-11 Core API: StorageReceipt Class
+</p>
+<div align="center">
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <td width="639" colspan="3" valign="top">
+                    <p>
+                        CreditCardReceipt
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="160" valign="top">
+                    <p align="left">
+                        <strong>Field</strong>
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        <strong>Type</strong>
+                    </p>
+                </td>
+                <td width="371" valign="top">
+                    <p align="left">
+                        <strong>Description</strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="160" valign="top">
+                    <p align="left">
+                        getDebugMessage()
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        String
+                    </p>
+                </td>
+                <td width="371" valign="top">
+                    <p align="left">
+                        Debug message, if applicable
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="160" valign="top">
+                    <p align="left">
+                        getErrorCode()
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        String
+                    </p>
+                </td>
+                <td width="371" valign="top">
+                    <p align="left">
+                        Error code, if applicable
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="160" valign="top">
+                    <p align="left">
+                        getErrorMessage()
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        String
+                    </p>
+                </td>
+                <td width="371" valign="top">
+                    <p align="left">
+                        Error message, if applicable
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="160" valign="top">
+                    <p align="left">
+                        getProcessedDateTime()
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        Date
+                    </p>
+                </td>
+                <td width="371" valign="top">
+                    <p align="left">
+                        Date/time when the transaction was processed
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="160" valign="top">
+                    <p align="left">
+                        getPaymentProfile()
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        PaymentProfile
+                    </p>
+                </td>
+                <td width="371" valign="top">
+                    <p align="left">
+                        Payment profile retrieved or updates (via the storage query or update methods). For creation/deletion, this field is null
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="160" valign="top">
+                    <p align="left">
+                        getStorageTokenId()
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        String(32)
+                    </p>
+                </td>
+                <td width="371" valign="top">
+                    <p align="left">
+                        The storageTokenId used. For storage record creation where no storageTokenId was specified, this will contain the value of the
+                        SALT-generated storageTokenId.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="160" valign="top">
+                    <p align="left">
+                        isApproved()
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        Boolean
+                    </p>
+                </td>
+                <td width="371" valign="top">
+                    <p align="left">
+                        Returns true if the request was approved, otherwise the request was declined due to some error.
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p>
+    <a name="_Toc222545503"></a>
+    <a name="_Ref337027881"></a>
+    <a name="_Ref311818208"></a>
+    <a name="_Toc271107096">Running a Transaction with a Storage Token</a>
+</p>
+<p>
+    Once you have created a Storage Token, you can use it in place of a CreditCard object in any transaction that requires a credit card. The SALT Gateway will
+    use the storageTokenId to look up the stored credit card information, which in turn will be used in the transaction.
+</p>
+<div align="center">
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <td width="638" valign="top">
+                    <p>
+                        <strong><u>IMPORTANT:</u></strong>
+                        Credit card information is <strong>required to be stored </strong>in order to run transactions with the storage token. If you do not
+                        provide this information when creating/updating the storage record (for example, if you are just storing the customer profile), then
+                        you will be unable to use that storage token to run a transaction
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p>
+    To use the storageTokenId, all you need to do is call the appropriate Storage Token transaction methods (which are the same as the credit card methods,
+    just replacing the credit card with the token). The Storage Token singlePurchase() is shown below:
+</p>
+<p>
+    <a name="_Toc222546543"></a>
+    <a name="_Toc271107146">Table </a>
+    5-12 Core API: HttpsCreditCardService.singlePurchase() (Storage Token Ver.)
+</p>
+<div align="center">
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <td width="639" colspan="3" valign="top">
+                    <p>
+                        HttpsCreditCardService.singlePurchase(orderId, storageTokenId, amount, verificationRequest)
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="639" colspan="3" valign="top">
+                    <p>
+                        Parameters:
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        <strong>Name</strong>
+                    </p>
+                </td>
+                <td width="121" valign="top">
+                    <p align="left">
+                        <strong>Type</strong>
+                    </p>
+                </td>
+                <td width="380" valign="top">
+                    <p align="left">
+                        <strong>Description</strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        orderId
+                    </p>
+                </td>
+                <td width="121" valign="top">
+                    <p align="left">
+                        String(32)
+                    </p>
+                </td>
+                <td width="380" valign="top">
+                    <p align="left">
+                        Merchant assigned orderId. Must be unique.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        <strong>storageTokenId</strong>
+                    </p>
+                </td>
+                <td width="121" valign="top">
+                    <p align="left">
+                        String(32)
+                    </p>
+                </td>
+                <td width="380" valign="top">
+                    <p align="left">
+                        Storage Token ID as returned to you/specified by you when the storage record was created, will specify the stored credit card to use
+                        for this purchase.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        amount
+                    </p>
+                </td>
+                <td width="121" valign="top">
+                    <p align="left">
+                        Long
+                    </p>
+                </td>
+                <td width="380" valign="top">
+                    <p align="left">
+                        Amount of the purchase <strong>in cents</strong>. Do NOT include a $ or any decimal place. (e.g. if your purchase is $10.00, then
+                        send 1000 as the total).
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        verificationRequest
+                    </p>
+                </td>
+                <td width="121" valign="top">
+                    <p align="left">
+                        Verification Request
+                    </p>
+                </td>
+                <td width="380" valign="top">
+                    <p align="left">
+                        Credit Card Verification request information, null if not used. See Section 5.1 for details on how to use this field. Note that because
+                        CVV2 is not stored, you cannot specify a CVV2 check.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="639" colspan="3" valign="top">
+                    <p>
+                        Returns:
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="260" colspan="2" valign="top">
+                    <p align="left">
+                        CreditCardReceipt
+                    </p>
+                </td>
+                <td width="380" valign="top">
+                    <p align="left">
+                        The results of the purchase request
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p>
+    There is a method that can provide the merchant a combined transaction for both purchase and secure storage creation.
+</p>
+<p>
+    <a name="_Toc222546544">Table </a>
+    5-13 Core API: HttpsCreditCardService.singlePurchase() (Storage Token Ver.)
+</p>
+<div align="center">
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <td width="639" colspan="3" valign="top">
+                    <p>
+                        HttpsCreditCardService.singlePurchase(orderId, storageTokenId, amount, verificationRequest)
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="639" colspan="3" valign="top">
+                    <p>
+                        Parameters:
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        <strong>Name</strong>
+                    </p>
+                </td>
+                <td width="121" valign="top">
+                    <p align="left">
+                        <strong>Type</strong>
+                    </p>
+                </td>
+                <td width="380" valign="top">
+                    <p align="left">
+                        <strong>Description</strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        orderId
+                    </p>
+                </td>
+                <td width="121" valign="top">
+                    <p align="left">
+                        String(32)
+                    </p>
+                </td>
+                <td width="380" valign="top">
+                    <p align="left">
+                        Merchant assigned orderId. Must be unique.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        <strong>creditCard</strong>
+                    </p>
+                </td>
+                <td width="121" valign="top">
+                    <p align="left">
+                        CreditCard
+                    </p>
+                </td>
+                <td width="380" valign="top">
+                    <p align="left">
+                        Credit Card information (see Table 3.4)
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        amount
+                    </p>
+                </td>
+                <td width="121" valign="top">
+                    <p align="left">
+                        Long
+                    </p>
+                </td>
+                <td width="380" valign="top">
+                    <p align="left">
+                        Amount of the purchase <strong>in cents</strong>. Do NOT include a $ or any decimal place. (e.g. if your purchase is $10.00, then
+                        send 1000 as the total).
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        verificationRequest
+                    </p>
+                </td>
+                <td width="121" valign="top">
+                    <p align="left">
+                        Verification Request
+                    </p>
+                </td>
+                <td width="380" valign="top">
+                    <p align="left">
+                        Credit Card Verification request information, null if not used. See Section 5.1 for details on how to use this field. Note that because
+                        CVV2 is not stored, you cannot specify a CVV2 check.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        <strong>storageTokenId</strong>
+                    </p>
+                </td>
+                <td width="121" valign="top">
+                    <p align="left">
+                        String(32)
+                    </p>
+                </td>
+                <td width="380" valign="top">
+                    <p align="left">
+                        The secure storage token id that will be used to create storage record for this credit card.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="639" colspan="3" valign="top">
+                    <p>
+                        Returns:
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="260" colspan="2" valign="top">
+                    <p align="left">
+                        CreditCardReceipt
+                    </p>
+                </td>
+                <td width="380" valign="top">
+                    <p align="left">
+                        The results of the purchase request
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p>
+    The other methods that can use the storageTokenId are:
+</p>
+<ul type="disc">
+    <li>
+        <strong>recurringPurchase</strong>
+        (orderId, <strong>storageTokenId</strong>, perPaymentAmount, startDate, endDate, schedule, verificationRequest)
+    </li>
+    <li>
+        <strong>updateRecurringPurchase</strong>
+        (recurringPurchaseId, <strong>storageTokenId</strong>, perPaymentAmount, verificationRequest)
+    </li>
+    <li>
+        <strong>verifyCreditCard</strong>
+        (<strong>storageTokenId</strong>, verificationRequest)
+    </li>
+    <li>
+        <strong>verifyCreditCard</strong>
+        (creditCard, verificationRequest, <strong>storageTokenId</strong>)
+    </li>
+</ul>
+<p>
+    <a name="_Toc222545504"></a>
+    <a name="_Toc271107097">Querying for Stored Information</a>
+</p>
+<p>
+    You can query and retrieve the contents of any previously stored customer information.
+</p>
+<p>
+    <a name="_Toc222546545"></a>
+    <a name="_Toc271107147">Table </a>
+    5-14 Core API: HttpsCreditCardService.queryStorage() Method
+</p>
+<div align="center">
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        HttpsCreditCardService.queryStorage(storageTokenId)
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        Parameters:
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        <strong>Name</strong>
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        <strong>Type</strong>
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        <strong>Description</strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        storageTokenId
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        String(32)
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        The Storage Token ID of the stored information to retrieve.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        Returns:
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="247" colspan="2" valign="top">
+                    <p align="left">
+                        StorageReceipt
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        The results of the query request
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p>
+    You can access the data through StorageReceipt.getPaymentProfile()and then retrieving the contained creditCard and/or customerProfile.
+</p>
+<div align="center">
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <td width="638" valign="top">
+                    <p>
+                        <strong><u>IMPORTANT:</u></strong>
+                        For security purposes, the credit card number returned will always be <strong>only the last 4 digits </strong>of the full credit card
+                        number. All other data will be returned in its original form, including the card expiry date and all of the customer profile
+                        information.
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p>
+    <a name="_Toc222545505"></a>
+    <a name="_Toc271107098">Updating and Deleting Stored Information</a>
+</p>
+<p>
+    If you need to update/modify a stored record:
+</p>
+<p>
+    <a name="_Toc222546546"></a>
+    <a name="_Toc271107148">Table </a>
+    5-15 Core API: HttpsCreditCardService.updateStorage() Method
+</p>
+<div align="center">
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        HttpsCreditCardService.updateStorage(storageTokenId, paymentProfile)
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        Parameters:
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        <strong>Name</strong>
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        <strong>Type</strong>
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        <strong>Description</strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        storageTokenId
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        String(32)
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        The Storage Token ID of the stored information to update.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        paymentProfile
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        PaymentProfile
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        Customer information to be stored. Will overwrite any existing customer information.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        Returns:
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="247" colspan="2" valign="top">
+                    <p align="left">
+                        StorageReceipt
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        The results of the update request
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p>
+    The provided PaymentProfile will overwrite any existing data. If a null value is provided for the PaymentProfile creditCard or customerProfile
+    parameters, then the corresponding stored data will be deleted. Note that even if you delete all of the data, the record itself will still exist (but be
+    blank).
+</p>
+<p>
+    If you need to delete a stored record altogether:
+</p>
+<p>
+    <a name="_Toc222546547"></a>
+    <a name="_Toc271107149">Table </a>
+    5-16 Core API: HttpsCreditCardService.deleteFromStorage() Method
+</p>
+<div align="center">
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        HttpsCreditCardService.deleteFromStorage(storageTokenId)
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        Parameters:
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        <strong>Name</strong>
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        <strong>Type</strong>
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        <strong>Description</strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="139" valign="top">
+                    <p align="left">
+                        storageTokenId
+                    </p>
+                </td>
+                <td width="108" valign="top">
+                    <p align="left">
+                        String(32)
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        The Storage Token ID of the stored information to delete.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="638" colspan="3" valign="top">
+                    <p>
+                        Returns:
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="247" colspan="2" valign="top">
+                    <p align="left">
+                        StorageReceipt
+                    </p>
+                </td>
+                <td width="391" valign="top">
+                    <p align="left">
+                        The results of the delete request
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p>
+    Deleting a record will free up the associated storageTokenId for re-use.
+</p>
+</div>

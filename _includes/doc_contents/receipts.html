@@ -1,0 +1,144 @@
+<a id="receipts" name="receipts" class="section-anchor"></a>
+
+<div class="well">
+<p>
+    <a name="_Toc222545491"></a>
+    <a name="_Toc271107084"></a>
+    <a name="_Ref222720731"></a>
+    <a name="_Ref213578860"> </a>
+</p>
+<br clear="all"/>
+<h3>
+    <a name="_Ref355172800"></a>
+    <a name="_Toc355011672">4 Receipts</a>
+</h3>
+<p>
+    When a transaction has been completed, you must display a receipt to your customer. The following section describes the requirements of a receipt.
+</p>
+</div>
+<br>
+<div class="well">
+<h4>
+    <a name="_Toc355011673"></a>
+    <a name="_Toc222545492"></a>
+    <a name="_Toc271107085"></a>
+    <a name="_Toc205716308"></a>
+    <a name="_Ref203384740">4.1 What do I need to display in a Receipt?</a>
+</h4>
+<p>
+    The required receipt fields listed below include the corresponding CreditCardReceipt field name as returned by SALT (where applicable). Note that there are
+    different fields to be displayed depending on if the transaction was successful or unsuccessful.
+</p>
+<p>
+    In the case of a <strong>Successful </strong>Transaction, you must display:
+</p>
+<ul type="disc">
+    <li>
+        Your Merchant Name
+    </li>
+    <li>
+        That the transaction was successful?(based on if <strong>isApproved() </strong>= true)
+    </li>
+    <li>
+        Invoice Number (<strong>getOrderId()</strong>)
+    </li>
+    <li>
+        Amount of the transaction (<strong>getApprovalInfo()</strong>.<strong>getAuthorizedAmount()</strong> field, be sure to convert back to dollars/cents
+        and also to include currency)
+    </li>
+    <li>
+        Date of the transaction (<strong>getProcessedDateTime()</strong>)
+    </li>
+    <li>
+        Approval Code (<strong>getApprovalInfo().getApprovalCode()</strong>)
+    </li>
+    <li>
+        A button/link allowing the user to print the receipt page
+    </li>
+    <li>
+        Also, optionally:
+    </li>
+</ul>
+<p align="left">
+    - Last 4 digits of the Credit Card Number (never display the entire Credit Card number)
+</p>
+<p align="left">
+    - A button/link allowing the customer to return to your home page/account page etc
+</p>
+<p>
+    In the case of an <strong>Unsuccessful</strong> Transaction, you must display:
+</p>
+<ul type="disc">
+    <li>
+        Your Merchant Name
+    </li>
+    <li>
+        That the transaction was unsuccessful?(based on if <strong>isApproved() </strong>= false)
+    </li>
+    <li>
+        Date of the transaction (<strong>getProcessedDateTime()</strong>)
+    </li>
+    <li>
+        About payment retries:
+    </li>
+</ul>
+<p align="left">
+- If you allow the customer to try a different payment option (e.g.INTERAC Online) or to retry Credit Card payment, then indicate to the customer    <strong>that they can retry payment </strong>(provide a link to the retry page or display the actual retry options).
+</p>
+<p align="left">
+    - Otherwise display <strong>a clear statement that the order has been cancelled</strong>.
+</p>
+<ul type="disc">
+    <li>
+        Also, optionally:
+    </li>
+</ul>
+<p align="left">
+    - Invoice Number (<strong>getOrderId()</strong>)
+</p>
+<p>
+    <strong>Do NOT display</strong>
+    the Approval Code or Card Number to the customer on an Unsuccessful Transaction.
+</p>
+<p>
+    <a name="_Toc222545493"></a>
+    <a name="_Toc271107086"></a>
+    <a name="_Toc205716309">Example Receipt/Error Pages</a>
+</p>
+<p>
+    An example of an appropriate receipt for a successful transaction is shown below:
+</p>
+<p>
+    <a name="_Toc337027745"></a>
+    <a name="_Toc271107158"></a>
+    <a name="_Toc205716353"></a>
+    <a name="_Toc203276481">Figure </a>
+    4-1 An Example Receipt Screen
+</p>
+<p align="center">
+    <img border="0" width="578" height="413" src="/assets/dev_center/images/clip_image006.jpg" alt="..\ccdemo_receipt.png"/>
+</p>
+<p>
+    This receipt shows all required information, a print page link, and a return link. You can use this as a reference for the generation of your own receipt.
+</p>
+<p>
+    Below are two examples of an appropriate error page for an unsuccessful transaction:
+</p>
+<p>
+    <a name="_Toc337027746"></a>
+    <a name="_Toc271107159"></a>
+    <a name="_Toc205716354">Figure </a>
+    4-2 Example Error Screen With Payment Retry
+</p>
+<p align="center">
+    <img border="0" width="623" height="184" src="/assets/dev_center/images/clip_image008.jpg" alt="core_failpage_retry"/>
+</p>
+<p>
+    <a name="_Toc337027747"></a>
+    <a name="_Toc271107160">Figure </a>
+    4-3 Example Error Screen With No Payment Retry (Order Cancellation)
+</p>
+<p>
+    <img border="0" width="631" height="148" src="/assets/dev_center/images/clip_image010.jpg" alt="core_failpage"/>
+</p>
+</div>
