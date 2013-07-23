@@ -1,5 +1,5 @@
 <div class="well">
-<p>
+<pre class="prettyprint linenums">
 CustomerProfile customerProfile = new CustomerProfile();
 customerProfile.setFirstName("firstName");
 customerProfile.setLastName("lastName");
@@ -14,5 +14,5 @@ StorageReceipt receipt = httpsCreditCardService.addToStorage(storageTokenId, pay
 //make a purchase
 VerificationRequest verificationRequest = new VerificationRequest(AvsRequest.VERIFY_STREET_AND_ZIP, Cvv2Request.CVV2_PRESENT);
 httpsCreditCardService.singlePurchase("order id", STORAGE_TOKEN_ID, 1000, verificationRequest); //10 dollars
-</p>
+</pre>
 </div>
