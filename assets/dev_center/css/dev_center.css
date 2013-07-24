@@ -1,6 +1,6 @@
 div#api-docs {
 	background: white;
-	margin-left: 223px;
+	margin-left: 298px;
 	position: relative;
 	z-index: 45
 }
@@ -46,14 +46,14 @@ div#api-docs div#methods .method-section .method-example {
 }
 
 body > .container-fluid {
-  padding-top: 40px;
+  padding-top: 31px;
 }
 
 
 #sidebar .fixed-nav-list {
   overflow: hidden;
   position:fixed;
-  width: 180px;
+  width: 238px;
   margin-top: 30px;
 }
 
