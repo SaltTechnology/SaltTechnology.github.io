@@ -10,29 +10,37 @@ title: Getting Started with SALT Payments
   <body> {% include salt_header.html %}
   
   <div class="container-fluid">
-  <div class="row-fluid">
-    {% include main_sidebar.html %}
-    <div id="api-docs">
-      <div id="methods">
-        <div class="method">
-          <div class="method-section">
-            <div class="method-description">
-				{% include getting_started_instructions.html %}
-			</div>
-		  </div>
-	   </div>
-	   
-	   <div class="method">
-          <div class="method-section">
-            <div class="method-description">
-				<div class="fat_bottom_margin">
-					{% include getting_started_contents.html %}
+	  <div class="row-fluid">
+		  <div class="span2" id="sidebar">
+			<ul class="nav nav-list fixed-nav-list">
+				<div class = "well">
+					{% include main_sidebar.html %}
 				</div>
-			</div>
-		  </div>
-	   </div>
-     </div>           
-    </div>
-  </div>{% include salt_footer.html %}</div></body>
+			</ul>
+		</div>
+		<div id="api-docs">
+		  <div id="methods">
+			<div class="method">
+			  <div class="method-section">
+				<div class="method-description">
+					{% include getting_started_instructions.html %}
+				</div>
+			  </div>
+		   </div>
+		   
+		   <div class="method">
+			  <div class="method-section">
+				<div class="method-description">
+					<div class="fat_bottom_margin">
+						{% include getting_started_contents.html %}
+					</div>
+				</div>
+			  </div>
+		   </div>
+		 </div>           
+		</div>
+	  </div>
+		{% include salt_footer.html %}
+  </div>
   </body>
 </html>

@@ -7,7 +7,13 @@
     {% include salt_header.html %}
     <div class="container-fluid">
       <div class="row-fluid">
-        {% include main_sidebar.html %}
+	  <div class="span2" id="sidebar">
+        <ul class="nav nav-list fixed-nav-list">
+			<div class = "well">
+				{% include main_sidebar.html %}
+			</div>
+		</ul>
+	  </div>
       {{ content }}
       </div> <!-- row -->
     </div> <!-- container -->

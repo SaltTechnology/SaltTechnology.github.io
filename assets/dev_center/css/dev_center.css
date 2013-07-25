@@ -53,8 +53,9 @@ body > .container-fluid {
 #sidebar .fixed-nav-list {
   overflow: hidden;
   position:fixed;
-  width: 238px;
+  width: 270px;
   margin-top: 30px;
+  padding: 0;
 }
 
 .span6{margin-top: 30px;margin-left:0px;position: relative;clear: left;}
@@ -62,6 +63,10 @@ body > .container-fluid {
 .navbar-fixed-top .navbar-inner {
   padding-left:20px;
   padding-right:20px;
+}
+
+.second_sidebar_margin{
+	margin-top: 150px;
 }
 
 .fat_bottom_margin{margin-bottom:500px;}
