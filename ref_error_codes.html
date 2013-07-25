@@ -1,50 +1,15 @@
 ---
-layout: base
+layout: default
 title: SALT Error Codes
 ---
-<!DOCTYPE html>
-<html>
-<head>
-  {% include salt_head.html %}
-</head>
-<body>
-  {% include salt_header.html %}
-  
-  <div class="container-fluid">
-    <div class="row-fluid">
-      <div class="span3" id="sidebar">
-        <div class="sidebar-nav">
-          <ul class="nav nav-list fixed-nav-list well">
-            <li class="nav-header">Overview</li>
-            <li><a href="getting_started.html">Getting Started</a></li>
-            <li><a href="core_api_doc.html">Integration Guide</a></li>
-            <li class="nav-header">API Reference</li>
-            <li><a href="post_api_ref.html">POST API</a></li>
-            <li><a href="core_api_ref.html">Java Credit Card API</a></li>
-            <li><a href="core_api_ref_iop.html">Java IOP API</a></li>
-            <li><a href="core_api_ref_dotnet.html">.NET Credit Card API</a></li>
-            <li><a href="core_api_ref_php.html">PHP Credit Card API</a></li>
-            <li><a href="core_api_ref_ruby.html">Ruby Credit Card API</a></li>
-            <li><a href="ref_error_codes.html">Error Codes</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div id="api-docs">
-        <div id="methods">
-          <div class="method">
-            <div class="method-section">
-              <div class="method-description">
+<div id="api-docs">
+  <div id="methods">
+    <div class="method">
+      <div class="method-section">
+        <div class="method-description">
 				{% include error_codes.html %}
 			  </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
-  <div>
-		{% include salt_footer.html %}
-	</div>
-</body>
-</html>
+</div>
