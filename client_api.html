@@ -1,0 +1,128 @@
+---
+layout: base
+title: SALT Client API
+---
+<!DOCTYPE html>
+<html>
+  <head>
+	{% include salt_head.html %}
+  </head>
+  <body> {% include salt_header.html %}
+  <div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span2" id="sidebar">
+      <ul class="nav nav-list fixed-nav-list well">
+        <li>
+          <a class="child" href="#java">Java</a>
+        </li>
+        <li>
+          <a class="child" href="#net">.Net</a>
+        </li>
+        <li>
+          <a class="child" href="#php">PHP</a>
+        </li>
+        <li>
+          <a class="child" href="#ruby">Ruby</a>
+        </li>
+      </ul>
+    </div>
+    <div id="api-docs">
+      <div id="methods">
+        <div class="method">
+          <div class="method-section">
+            <div class="method-description">
+              <div id="java" name="java" class="section-anchor">
+                <div class="well">
+                  <h2>Java</h2>
+                  <ol>
+                    <li>Create Test Merchant Account. Generate API token, merchant Id, user name and password.
+                    <ol>
+                      <li>Contact Customer Services
+                      <ul>
+                        <li>Phone: 1-866-854-9851 ext. 2</li>
+                        <li>Email: support@salt.com</li>
+                      </ul></li>
+                    </ol></li>
+                    <li>Get source code as zip file or from git repository
+                    <ul>
+                      <li>Zip File
+                      <ol>
+                        <li>Download the repository 
+                        <a href="https://github.com/SaltTechnology/salt-payment-client-java/archive/master.zip">zip file</a></li>
+                        <li>Extract the zip file</li>
+                      </ol></li>
+                      <li>Git
+                      <ol>
+                        <li>Check out the from 
+                        <a href="https://github.com/SaltTechnology/salt-payment-client-java" target="_blank">git hub
+                        repository</a></li>
+                      </ol></li>
+                    </ul></li>
+                    <li>Update API token and merchant Id in source code
+                    <ol>
+                      <li>Open merchant.properties file located under 
+                      <code>salt-payment-client-java\src\main\resources\merchant.properties</code></li>
+                      <li>Replace the values of merchant.Id and merchant.apiToken with those received from step one</li>
+                    </ol></li>
+                    <li>Make a transaction
+                    <ul>
+                      <li>Maven:
+                      <ol>
+                        <li>To run example single purchase execute: mvn install -Psingle-purchase</li>
+                        <li>To run example secure storage execute: mvn install -Psecure-storagee</li>
+                        <li>To run example recurring-purchase execute: mvn install -Precurring-purchase</li>
+                      </ol></li>
+                      <li>Intellij:
+                      <ol>
+                        <li>Open a new project in Intellij by opening the pom.xml file, extracted from the zip file.</li>
+                        <li>Open the maven tab (located at the left side).</li>
+                        <li>Run the lifecycle named &quot;clean&quot; followed by the lifecycle named &quot;install&quot;.</li>
+                      </ol></li>
+                      <li>Eclipse:
+                      <ol>
+                        <li>Run the project as &quot;Maven clean&quot;</li>
+                        <li>Run the project as &quot;Maven install&quot;</li>
+                      </ol></li>
+                    </ul></li>
+                    <li>View Transaction
+                    <ol>
+                      <li>Go to the 
+                      <a href="https://test.salt.com/merchantmanagement/public/security/login" target="_blank">Merchant Management
+                      login</a></li>
+                      <li>Login using the username and password credentials created in step one</li>
+                      <li>Go to &#39;...&#39; to view transaction</li>
+                    </ol></li>
+                  </ol>
+                </div>
+              </div>
+              <div id="net" name="net" class="section-anchor">
+                <div class="well">
+                  <h2>.Net</h2>
+                  <ul>
+                    <li>Coming Soon</li>
+                  </ul>
+                </div>
+              </div>
+              <div id="php" name="php" class="section-anchor">
+                <div class="well">
+                  <h2>PHP</h2>
+                  <ul>
+                    <li>Coming Soon</li>
+                  </ul>
+                </div>
+              </div>
+              <div id="ruby" name="ruby" class="section-anchor">
+                <div class="well">
+                  <h2>Ruby</h2>
+                  <ul>
+                    <li>Coming Soon</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>{% include salt_footer.html %}</div></body>
+</html>
