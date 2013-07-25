@@ -1,74 +1,105 @@
 <div class="well">
-<h3>Purchase</h3>
-
-<p>
-Prior to making a purchase you will need to define your Merchant, CreditCard, HttpsCreditCardService, and (optionally) VerificationRequest.
-</p>
-
-<br>
-
-<table class="table table-bordered table-striped">
-<tr>
-<th>Merchant Arguments
-<th>Description
-<tr>
-<td>int merchantId<td>The ID of the merchant issuing the requests.
-<tr>
-<td>String apiToken<td>The API token of the merchant issuing the requests.
-<tr>
-<td>String storeId<td>(optional)The merchant's store ID.
-</table>
-
-<br>
-
-<table class="table table-bordered table-striped">
-<tr>
-<th>CreditCard Arguments
-<th>Description
-<tr>
-<td>creditCardNumber<td>the keyed creditcard number
-<tr>
-<td>expiryDate<td>the keyed expiry date
-<tr>
-<td>cvv2<td>(optional)the cvv2 on the creditcard
-<tr>
-<td>street<td>(optional)the street of the creditcard holder
-<tr>
-<td>zip	<td>(optional)the zip of the creditcard holder
-<tr>
-<td>secureCode<td>(optional)the optional Verified By Visa CAVV value or the MasterCard SecureCode value for cardholder authentication
-</table>
-
-<br>
-
-<table class="table table-bordered table-striped">
-<tr>
-<th>HttpsCreditCardService Arguments
-<th>Description
-<tr>
-<td>merchantId<td>the id of the merchant issueing the requests
-<tr>
-<td>apiToken<td>the apiToken of the merchant issueing the requests
-<tr>
-<td>marketSegment<td>the market segment of all requests. Not null.
-<tr>
-<td>url	<td>(optional)the creditcard gateway url to send requests to. Not null.
-<tr>
-<td>secured	<td>(optional)true if using https, otherwise http is used
-</table>
-
-<br>
-
-<table class="table table-bordered table-striped">
-<tr>
-<th>VerificationRequest Arguments
-<th>Description
-<tr>
-<td>avsRequest<td>indicates how to verify the address. If null, then ignore the address (street/zip) of the creditCard and don't verify it.
-<tr>
-<td>cvv2Request<td>indicates how to verify the CVV2. If null, then ignore the	CVV2 value of the creditCard and don't verify it.
-<tr>
-<td>advancedRiskProfile<td>(optional)indicates how to verify the AdvancedRiskProfile. If null, then ignore the AdvancedRiskProfile specific fields and dont verify them.
-</table>
-
+  <h3>Purchase</h3>
+  <p>Prior to making a purchase you will need to define your Merchant, CreditCard, HttpsCreditCardService, and (optionally)
+  VerificationRequest.</p>
+  <br />
+  <table class="table table-bordered table-striped">
+	<tr>
+	  <th>Merchant Arguments</th>
+	  <th>Description</th>
+	</tr>
+	<tr>
+	  <td>int merchantId</td>
+	  <td>The ID of the merchant issuing the requests.</td>
+	</tr>
+	<tr>
+	  <td>String apiToken</td>
+	  <td>The API token of the merchant issuing the requests.</td>
+	</tr>
+	<tr>
+	  <td>String storeId</td>
+	  <td>(optional)The merchant&#39;s store ID.</td>
+	</tr>
+  </table>
+  <br />
+  <table class="table table-bordered table-striped">
+	<tr>
+	  <th>CreditCard Arguments</th>
+	  <th>Description</th>
+	</tr>
+	<tr>
+	  <td>creditCardNumber</td>
+	  <td>the keyed creditcard number</td>
+	</tr>
+	<tr>
+	  <td>expiryDate</td>
+	  <td>the keyed expiry date</td>
+	</tr>
+	<tr>
+	  <td>cvv2</td>
+	  <td>(optional)the cvv2 on the creditcard</td>
+	</tr>
+	<tr>
+	  <td>street</td>
+	  <td>(optional)the street of the creditcard holder</td>
+	</tr>
+	<tr>
+	  <td>zip</td>
+	  <td>(optional)the zip of the creditcard holder</td>
+	</tr>
+	<tr>
+	  <td>secureCode</td>
+	  <td>(optional)the optional Verified By Visa CAVV value or the MasterCard SecureCode value for cardholder
+	  authentication</td>
+	</tr>
+  </table>
+  <br />
+  <table class="table table-bordered table-striped">
+	<tr>
+	  <th>HttpsCreditCardService Arguments</th>
+	  <th>Description</th>
+	</tr>
+	<tr>
+	  <td>merchantId</td>
+	  <td>the id of the merchant issueing the requests</td>
+	</tr>
+	<tr>
+	  <td>apiToken</td>
+	  <td>the apiToken of the merchant issueing the requests</td>
+	</tr>
+	<tr>
+	  <td>marketSegment</td>
+	  <td>the market segment of all requests. Not null.</td>
+	</tr>
+	<tr>
+	  <td>url</td>
+	  <td>(optional)the creditcard gateway url to send requests to. Not null.</td>
+	</tr>
+	<tr>
+	  <td>secured</td>
+	  <td>(optional)true if using https, otherwise http is used</td>
+	</tr>
+  </table>
+  <br />
+  <table class="table table-bordered table-striped">
+	<tr>
+	  <th>VerificationRequest Arguments</th>
+	  <th>Description</th>
+	</tr>
+	<tr>
+	  <td>avsRequest</td>
+	  <td>indicates how to verify the address. If null, then ignore the address (street/zip) of the creditCard and don&#39;t
+	  verify it.</td>
+	</tr>
+	<tr>
+	  <td>cvv2Request</td>
+	  <td>indicates how to verify the CVV2. If null, then ignore the CVV2 value of the creditCard and don&#39;t verify it.</td>
+	</tr>
+	<tr>
+	  <td>advancedRiskProfile</td>
+	  <td>(optional)indicates how to verify the AdvancedRiskProfile. If null, then ignore the AdvancedRiskProfile specific
+	  fields and dont verify them.</td>
+	</tr>
+  </table>
 </div>
+
