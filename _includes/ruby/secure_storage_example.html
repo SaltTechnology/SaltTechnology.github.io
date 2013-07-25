@@ -1,5 +1,3 @@
-<div class="well">
-<p>
 merchantId = [your merchantId]
 apiToken = "[your apiToken]"
 service = HttpsCreditCardService.new(merchantId, apiToken, url)
@@ -14,5 +12,3 @@ receipt = service.addToStorage(storageToken, paymentProfile)
 puts "storage Approved: " + "#{receipt.isApproved()}"
 
 response = service.singlePurchase("stored-card-003", storageToken, "100", nil)
-</p>
-</div>
