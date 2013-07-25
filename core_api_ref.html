@@ -7,6 +7,29 @@ title: Java Core API Reference
   <head>
     {% include salt_head.html %}
     {% include layout/prettify_head.html %}
+	
+	<script>	
+		function setFirstVisible(){
+
+		}
+
+		function hideAll(){
+			document.getElementById("Java").style.visibility = 'hidden';
+			document.getElementById(".Net").style.visibility = 'hidden';
+			document.getElementById("PHP").style.visibility = 'hidden';
+			document.getElementById("Ruby").style.visibility = 'hidden';
+			document.getElementById("Java").style.display = 'none';
+			document.getElementById(".Net").style.display = 'none';
+			document.getElementById("PHP").style.display = 'none';
+			document.getElementById("Ruby").style.display = 'none';
+		}
+
+		function makeVisible(divId){
+			hideAll();
+			document.getElementById(divId).style.display = '';
+			document.getElementById(divId).style.visibility = 'visible';
+		}
+		</script>
   </head>
   <body> 
   {% include salt_header.html %}
@@ -56,14 +79,23 @@ title: Java Core API Reference
             <a id="intro" name="intro" class="section-anchor"></a>
             <div class="method-section">
               <div class="method-description">{% include intro_description.html %}</div>
-              <div class="method-example">{% include intro_example.html %}</div>
+              <div class="method-example">
+					<select id="selectLanguages" onchange="makeVisible(this.value)">
+						<option value="none">-Languages-</option> 
+						<option value="Java">Java</option>
+						<option value=".Net">.Net</option>
+						<option value="PHP">PHP</option>
+						<option value="Ruby">Ruby</option>
+					</select>
+				</div>
             </div>
           </div>
           <a id="single_purchase" name="single_purchase" class="section-anchor"></a>
           <div class="method-section">
             <div class="method-description">{% include single_purchase_description.html %}</div>
             <div class="method-example">
-            <pre class="prettyprint linenums">{% include single_purchase_example.html %}</pre></div>
+            <div id="Java"><pre class="prettyprint linenums">{% include single_purchase_example.html %}</pre></div>
+			<div id="PHP" style="visibility: hidden;"><pre class="prettyprint linenums">{% include php/single_purchase_example_php.html %}</pre></div>
           </div>
           <a id="recurring_purchase" name="recurring_purchase" class="section-anchor"></a>
           <div class="method-section">
