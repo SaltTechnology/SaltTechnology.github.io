@@ -2,6 +2,7 @@
 <html>
   <head>
     {% include salt_head.html %} 
+    {% include layout/prettify_head.html %} 
   </head>
   <body>
     {% include salt_header.html %}
@@ -46,6 +47,15 @@
                 <li><a href="#fraud">Updating Fraud</a></li>
                 <li><a href="#receipts">Receipts</a></li>
                 <li><a href="#secure_storage">Secure Storage</a></li>
+              </ul>
+            {% elsif page.menu == 'iop-reference' %}
+              <ul class="salt-side-nav nav nav-list well">
+                <h4>IOP API</h4>
+                <li><a href="./core_api_ref_iop.html">Introduction</a></li>
+                <li><a href="#purchase">Purchase</a></li>
+                <li><a href="#refund">Refund</a></li>
+                <li><a href="#validate">Transaction Verification</a></li>
+                <li><a href="#receipts">Receipts</a></li>
               </ul>
             {% endif %}
           {% endif %}
