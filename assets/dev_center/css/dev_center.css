@@ -53,9 +53,8 @@ body > .container-fluid {
 #sidebar .fixed-nav-list {
   overflow: hidden;
   position:fixed;
-  width: 270px;
+  width: 238px;
   margin-top: 30px;
-  padding: 0;
 }
 
 .span6{margin-top: 30px;margin-left:0px;position: relative;clear: left;}
