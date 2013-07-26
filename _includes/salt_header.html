@@ -10,7 +10,7 @@
           <li class="dropdown">
             <a id="supportLink" class="dropdown-toggle" data-toggle="dropdown">Support <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><a id="supportMailLink" href="https://test.salt.com/merchantmanagement/public/security/login" data-toggle="modal">Mail Support...</a></li>
+              <li><a id="supportMailLink" href="#supportMail" data-toggle="modal">Mail Support...</a></li>
               <li class="divider"></li>
               <li><address>Phone: 1-866-854-9851</address></li>
             </ul>
@@ -19,4 +19,46 @@
       </div>
     </div>
   </div>
+  
+  
+<div id="supportMail" class="modal hide fade">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3>Mail Support</h3>
+  </div>
+  
+  <form id="supportMailForm" method="POST" action="https://test.salt.com/merchantmanagement/public/support/mail">
+    <input id="supportMailMerchantName" type="hidden" name="merchantName" value="">
+    <input id="supportMailMerchantNumber" type="hidden" name="merchantNumber" value="">
+    <input id="supportMailUrl" type="hidden" name="referringUrl" value="">
+    
+    <div class="modal-body">
+      <label>From</label>
+      <input type="text" id="supportMailFrom" name="from" style="width: 90%;">
+      <label>Subject</label>
+      <input type="text" id="supportMailSubject" name="subject" style="width: 90%;">
+      <label>Comment or Issue</label>
+      <textarea id="supportMailComment" name="comment" rows="6" style="width: 90%;"></textarea>
+    </div>
+    
+    <div class="modal-footer form-actions">
+      <a class="btn" data-dismiss="modal">Cancel</a>
+      <input type="submit" id="supportMailSubmit" class="btn btn-primary" value="Send">
+    </div>
+  </form>
+</div>
+
+<script>
+  $(function () {
+    $("#supportMailFrom").val("");
+  
+    $("#supportMailForm").submit(function () {
+      $("#supportMailMerchantName").val("");
+      $("#supportMailMerchantNumber").val("");
+      $("#supportMailUrl").val(document.URL);
+      return true;
+    });
+  });
+</script>
+
 <!-- Copyright © 2013 SALT Technology Inc. All rights reserved. -->
