@@ -49,12 +49,12 @@ body > .container-fluid {
   padding-top: 31px;
 }
 
-
 #sidebar .fixed-nav-list {
   overflow: hidden;
   position:fixed;
-  width: 238px;
+  width: 270px;
   margin-top: 30px;
+  padding: 0;
 }
 
 .span6{margin-top: 30px;margin-left:0px;position: relative;clear: left;}
