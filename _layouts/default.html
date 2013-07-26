@@ -11,6 +11,17 @@
           <ul class="salt-side-nav nav nav-list well">
             {% include main_sidebar.html %}
           </ul>
+          {% if page.menu %}
+            {% if page.menu == 'client-api' %}
+              <ul class="salt-side-nav nav nav-list well">
+                <h4>Client API</h4>
+                <li><a class="child" href="#java">Java</a></li>
+                <li><a class="child" href="#net">.Net</a></li>
+                <li><a class="child" href="#php">PHP</a></li>
+                <li><a class="child" href="#ruby">Ruby</a></li>
+              </ul>
+            {% endif %}
+          {% endif %}
         </div>
         <div class="span9" style="margin-top:31px;">
         {{ content }}
