@@ -41,23 +41,21 @@ div#api-docs div#methods .method-section .method-example {
 	width: auto
 }
 
-#sidebar {
-  min-width: 180px;
-}
-
 body > .container-fluid {
   padding-top: 31px;
 }
 
-#sidebar .fixed-nav-list {
-  overflow: hidden;
-  position:fixed;
-  width: 270px;
+
+#sidebar .salt-side-nav {
   margin-top: 30px;
-  padding: 0;
+  width: 225px;
 }
 
-.span6{margin-top: 30px;margin-left:0px;position: relative;clear: left;}
+@media (min-width: 1200px) {
+  #sidebar .salt-side-nav {
+    width: 238px;
+  }
+}
 
 .navbar-fixed-top .navbar-inner {
   padding-left:20px;

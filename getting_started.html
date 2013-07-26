@@ -1,45 +1,23 @@
 ---
-layout: base
+layout: default 
 title: Getting Started with SALT Payments
 ---
-<!DOCTYPE html>
-<html>
-  <head>
-	{% include salt_head.html %}
-  </head>
-  <body> {% include salt_header.html %}
-  
-  <div class="container-fluid">
-	  <div class="row-fluid">
-		  <div class="span2" id="sidebar">
-			<ul class="nav nav-list fixed-nav-list">
-				<div class = "well">
-					{% include main_sidebar.html %}
-				</div>
-			</ul>
-		</div>
-		<div id="api-docs">
-		  <div id="methods">
-			<div class="method">
-			  <div class="method-section">
+<div id="api-docs">
+  <div id="methods">
+		<div class="method">
+		  <div class="method-section">
 				<div class="method-description">
 					{% include getting_started_instructions.html %}
 				</div>
-			  </div>
-		   </div>
-		   
-		   <div class="method">
-			  <div class="method-section">
-				<div class="method-description">
-					{% include getting_started_contents.html %}
-				</div>
-			  </div>
-		   </div>
-		 </div>           
-		</div>
+		  </div>
 	  </div>
-		{% include salt_footer.html %}
-  </div>
-  </body>
-</html>
-<!-- Copyright © 2013 SALT Technology Inc. All rights reserved. -->
+		   
+	  <div class="method">
+		  <div class="method-section">
+        <div class="method-description">
+          {% include getting_started_contents.html %}
+        </div>
+			</div>
+    </div>
+  </div>           
+</div>
