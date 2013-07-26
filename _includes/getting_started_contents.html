@@ -48,7 +48,7 @@
                     Order Id:
                 </td>
                 <td>
-                    <input id="inputOrderId"  type="text" name="inputOrderId" value="" size="50" disabled="true"/>
+                    <input id="inputOrderId"  type="text" name="orderId" value="" size="50" disabled="true"/>
                 </td>
             </tr>
             <tr>
@@ -133,7 +133,7 @@
 
 <script>
     var formSinglePurchase = document.forms['form-single-purchase'];
-    formSinglePurchase.elements["inputOrderId"].value = $time();
+    formSinglePurchase.elements["orderId"].value = $time();
 </script>
 
 <!-- Copyright � 2013 SALT Technology Inc. All rights reserved. -->
