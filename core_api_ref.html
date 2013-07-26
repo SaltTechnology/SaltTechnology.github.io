@@ -1,233 +1,182 @@
 ---
-layout: base
-title: Java Core API Reference
+layout: default
+title: Credit Card API Reference
+menu: credit-card-reference
 ---
-<!DOCTYPE html>
-<html>
-  <head>
-    {% include salt_head.html %}
-    {% include layout/prettify_head.html %}
-	
-	<script>	
-		function makeVisible(divId){
-			switch(divId){
-				case "Java":
-					for (var i = 0; i < document.getElementsByName("Java").length; i++) {
-						document.getElementsByName("Java")[i].style.display = 'block';
-						document.getElementsByName(".Net")[i].style.display = 'none';
-						document.getElementsByName("PHP")[i].style.display = 'none';
-						document.getElementsByName("Ruby")[i].style.display = 'none';
-					}
-					break;
-				case ".Net":
-					for (var i = 0; i < document.getElementsByName("Java").length; i++) {
-						document.getElementsByName("Java")[i].style.display = 'none';
-						document.getElementsByName(".Net")[i].style.display = 'block';
-						document.getElementsByName("PHP")[i].style.display = 'none';
-						document.getElementsByName("Ruby")[i].style.display = 'none';
-					}
-					break;
-				case "PHP":
-					for (var i = 0; i < document.getElementsByName("Java").length; i++) {
-						document.getElementsByName("Java")[i].style.display = 'none';
-						document.getElementsByName(".Net")[i].style.display = 'none';
-						document.getElementsByName("PHP")[i].style.display = 'block';
-						document.getElementsByName("Ruby")[i].style.display = 'none';
-					}
-					break;
-				case "Ruby":
-					for (var i = 0; i < document.getElementsByName("Java").length; i++) {
-						document.getElementsByName("Java")[i].style.display = 'none';
-						document.getElementsByName(".Net")[i].style.display = 'none';
-						document.getElementsByName("PHP")[i].style.display = 'none';
-						document.getElementsByName("Ruby")[i].style.display = 'block';
-					}
-					break;
-			}
-		}
-		</script>
-  </head>
-  <body> 
-  {% include salt_header.html %}
-  <div class="container-fluid">
-    <div class="row-fluid">
-      <div class="span3 affix" id="sidebar">
-        <ul class="salt-side-nav nav nav-list well">
-				{% include main_sidebar.html %}
-			  </ul>
-        <ul class="salt-side-nav nav nav-list well">
-          <h4>Credit Card API</h4>
-          <li>
-          <a href="./core_api_ref.html">Introduction</a>
-          </li>
-          <li>
-          <a href="#single_purchase">Single Purchase</a>
-          </li>
-          <li>
-          <a href="#recurring_purchase">Recurring Purchase</a>
-          </li>
-          <li>
-          <a href="#void">Void</a>
-          </li>
-          <li>
-          <a href="#refund">Refund</a>
-          </li>
-          <li>
-          <a href="#txn_verification">Transaction Verification</a>
-          </li>
-          <li>
-          <a href="#cc_verification">Credit Card Verification</a>
-          </li>
-          <li>
-          <a href="#batch">Closing a Batch</a>
-          </li>
-          <li>
-          <a href="#fraud">Updating Fraud</a>
-          </li>
-          <li>
-          <a href="#receipts">Receipts</a>
-          </li>
-          <li>
-          <a href="#secure_storage">Secure Storage</a>
-          </li>
-        </ul>
-      </div>
-	  
-      <div id="api-docs">
-        <div id="methods">
-          <div class="method">
-            <a id="intro" name="intro" class="section-anchor"></a>
-            <div class="method-section">
-              <div class="method-description">{% include intro_description.html %}</div>
-              <div class="method-example">
-					<select id="selectLanguages" onchange="makeVisible(this.value)">
-						<option value="none">-Languages-</option> 
-						<option value="Java">Java</option>
-						<option value=".Net">.Net</option>
-						<option value="PHP">PHP</option>
-						<option value="Ruby">Ruby</option>
-					</select>
-				</div>
-            </div>
-          </div>
-          <a id="single_purchase" name="single_purchase" class="section-anchor"></a>
-          <div class="method-section">
-            <div class="method-description">
-				{% include single_purchase_description.html %}
-			</div>
-			<div class="method-example">
-				<div name="Java" style="display: none;"><pre class="prettyprint linenums">{% include java/single_purchase_example.html %}</pre></div>
-				<div name="PHP" style="display: none;"><pre class="prettyprint linenums">{% include php/single_purchase_example.html %}</pre></div>
-				<div name="Ruby" style="display: none;"><pre class="prettyprint linenums">{% include ruby/single_purchase_example.html %}</pre></div>
-				<div name=".Net" style="display: none;"><pre class="prettyprint linenums">{% include net/single_purchase_example.html %}</pre></div>
-			 </div>
-		  </div>
-          <a id="recurring_purchase" name="recurring_purchase" class="section-anchor"></a>
-          <div class="method-section">
-            <div class="method-description">
-				{% include recurring_purchase_description.html %}
-			</div>
-				<div class="method-example">
-					<div name="Java" style="display: none;"><pre class="prettyprint linenums">{% include java/recurring_purchase_example.html %}</pre></div>
-					<div name="PHP" style="display: none;"><pre class="prettyprint linenums">{% include php/recurring_purchase_example.html %}</pre></div>
-					<div name="Ruby" style="display: none;"><pre class="prettyprint linenums">{% include ruby/recurring_purchase_example.html %}</pre></div>
-					<div name=".Net" style="display: none;"><pre class="prettyprint linenums">{% include net/recurring_purchase_example.html %}</pre></div>
-				 </div>
-		  </div>
-          <div class="method">
-            <a id="void" name="void" class="section-anchor"></a>
-            <div class="method-section">
-              <div class="method-description">
-				{% include void_description.html %}
-			  </div>
-              <div class="method-example">
-			       <div name="Java" style="display: none;"><pre class="prettyprint linenums">{% include java/void_example.html %}</pre></div>
-				<div name="PHP" style="display: none;"><pre class="prettyprint linenums">{% include php/void_example.html %}</pre></div>
-				<div name="Ruby" style="display: none;"><pre class="prettyprint linenums">{% include ruby/void_example.html %}</pre></div>
-				<div name=".Net" style="display: none;"><pre class="prettyprint linenums">{% include net/void_example.html %}</pre></div>
-			  </div>
-            </div>
-          </div>
-          <div class="method">
-            <a id="refund" name="refund" class="section-anchor"></a>
-            <div class="method-section">
-              <div class="method-description">{% include refund_description.html %}</div>
-				  <div class="method-example">
-					<div name="Java" style="display: none;"><pre class="prettyprint linenums">{% include java/refund_example.html %}</pre></div>
-					<div name="PHP" style="display: none;"><pre class="prettyprint linenums">{% include php/single_refund_example.html %}</pre></div>
-					<div name="Ruby" style="display: none;"><pre class="prettyprint linenums">{% include ruby/single_refund_example.html %}</pre></div>
-					<div name=".Net" style="display: none;"><pre class="prettyprint linenums">{% include net/refund_example.html %}</pre></div>
-				</div>
-			</div>
-          </div>
-          <div class="method">
-            <a id="txn_verification" name="txn_verification" class="section-anchor"></a>
-            <div class="method-section">
-              <div class="method-description">{% include txn_verification_description.html %}</div>
-				  <div class="method-example">
-					<div name="Java" style="display: none;"><pre class="prettyprint linenums">{% include java/txn_verification_example.html %}</pre></div>
-					<div name="PHP" style="display: none;"><pre class="prettyprint linenums">{% include php/txn_verification_example.html %}</pre></div>
-					<div name="Ruby" style="display: none;"><pre class="prettyprint linenums">{% include ruby/txn_verification_example.html %}</pre></div>
-					<div name=".Net" style="display: none;"><pre class="prettyprint linenums">{% include net/txn_verification_example.html %}</pre></div>
-				</div>
-			</div>
-          </div>
-          <div class="method">
-            <a id="cc_verification" name="cc_verification" class="section-anchor"></a>
-            <div class="method-section">
-              <div class="method-description">{% include cc_verification_description.html %}</div>
-				  <div class="method-example">
-					<div name="Java" style="display: none;"><pre class="prettyprint linenums">{% include java/cc_verification_example.html %}</pre></div>
-					<div name="PHP" style="display: none;"><pre class="prettyprint linenums">{% include php/cc_verification_example.html %}</pre></div>
-					<div name="Ruby" style="display: none;"><pre class="prettyprint linenums">{% include ruby/cc_verification_example.html %}</pre></div>
-					<div name=".Net" style="display: none;"><pre class="prettyprint linenums">{% include net/cc_verification_example.html %}</pre></div>
-				</div>
-			</div>
-          </div>
-          <div class="method">
-            <a id="batch" name="batch" class="section-anchor"></a>
-            <div class="method-section">
-              <div class="method-description">{% include batch_description.html %}</div>
-				  <div class="method-example">
-					<div name="Java" style="display: none;"><pre class="prettyprint linenums">{% include java/batch_example.html %}</pre></div>
-					<div name=".Net" style="display: none;"><pre class="prettyprint linenums">{% include net/batch_example.html %}</pre></div>
-				</div>
-			</div>
-		  </div>
-          <div class="method">
-            <a id="fraud" name="fraud" class="section-anchor"></a>
-            <div class="method-section">
-              <div class="method-description">{% include fraud_description.html %}</div>
-				  <div class="method-example">
-					<div name="Java" style="display: none;"><pre class="prettyprint linenums">{% include java/fraud_example.html %}</pre></div>
-					<div name=".Net" style="display: none;"><pre class="prettyprint linenums">{% include net/fraud_example.html %}</pre></div>
-				</div>
-			  </div>
-		  </div>
-          <div class="method">
-            <a id="receipts" name="receipts" class="section-anchor"></a>
-            <div class="method-section">
-              <div class="method-description">{% include receipts_description.html %}</div>
-			    <div name="Java" style="display: none;"><pre class="prettyprint linenums">{% include java/receipts_example.html %}</pre></div>
-				<div name=".Net" style="display: none;"><pre class="prettyprint linenums">{% include net/receipts_example.html %}</pre></div>
-            </div>
-          </div>
-          <div class="method">
-            <a id="secure_storage" name="secure_storage" class="section-anchor"></a>
-            <div class="method-section">
-              <div class="method-description">{% include secure_storage_description.html %}</div>
-				  <div class="method-example">
-					<div name="Java" style="display: none;"><pre class="prettyprint linenums">{% include java/secure_storage_example.html %}</pre></div>
-					<div name="PHP" style="display: none;"><pre class="prettyprint linenums">{% include php/secure_storage_example.html %}</pre></div>
-					<div name="Ruby" style="display: none;"><pre class="prettyprint linenums">{% include ruby/secure_storage_example.html %}</pre></div>
-					<div name=".Net" style="display: none;"><pre class="prettyprint linenums">{% include net/secure_storage_example.html %}</pre></div>
-				</div>
-			  </div>
-		  </div>
+<script>
+  function makeVisible(divId){
+    switch(divId){
+      case "Java":
+        for (var i = 0; i < document.getElementsByName("Java").length; i++) {
+          document.getElementsByName("Java")[i].style.display = 'block';
+          document.getElementsByName(".Net")[i].style.display = 'none';
+          document.getElementsByName("PHP")[i].style.display = 'none';
+          document.getElementsByName("Ruby")[i].style.display = 'none';
+        }
+        break;
+      case ".Net":
+        for (var i = 0; i < document.getElementsByName("Java").length; i++) {
+          document.getElementsByName("Java")[i].style.display = 'none';
+          document.getElementsByName(".Net")[i].style.display = 'block';
+          document.getElementsByName("PHP")[i].style.display = 'none';
+          document.getElementsByName("Ruby")[i].style.display = 'none';
+        }
+        break;
+      case "PHP":
+        for (var i = 0; i < document.getElementsByName("Java").length; i++) {
+          document.getElementsByName("Java")[i].style.display = 'none';
+          document.getElementsByName(".Net")[i].style.display = 'none';
+          document.getElementsByName("PHP")[i].style.display = 'block';
+          document.getElementsByName("Ruby")[i].style.display = 'none';
+        }
+        break;
+      case "Ruby":
+        for (var i = 0; i < document.getElementsByName("Java").length; i++) {
+          document.getElementsByName("Java")[i].style.display = 'none';
+          document.getElementsByName(".Net")[i].style.display = 'none';
+          document.getElementsByName("PHP")[i].style.display = 'none';
+          document.getElementsByName("Ruby")[i].style.display = 'block';
+        }
+        break;
+    }
+  }
+</script>
+
+<div id="api-docs">
+  <div id="methods">
+    <div class="method">
+      <a id="intro" name="intro" class="section-anchor"></a>
+      <div class="method-section">
+        <div class="method-description">
+          {% include intro_description.html %}
         </div>
-	</div>
-	</div>
-    <div>{% include salt_footer.html %}</div>
-  </div></body>
-</html>
+        <div class="method-example">
+          <select id="selectLanguages" onchange="makeVisible(this.value)">
+          <option value="none">-Languages-</option> 
+          <option value="Java">Java</option>
+          <option value=".Net">.Net</option>
+          <option value="PHP">PHP</option>
+          <option value="Ruby">Ruby</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="method">
+      <a id="single_purchase" name="single_purchase" class="section-anchor"></a>
+      <div class="method-section">
+        <div class="method-description">
+          {% include single_purchase_description.html %}
+        </div>
+        <div class="method-example">
+          <div name="Java" style="display: none;"><pre class="prettyprint linenums">{% include java/single_purchase_example.html %}</pre></div>
+          <div name="PHP" style="display: none;"><pre class="prettyprint linenums">{% include php/single_purchase_example.html %}</pre></div>
+          <div name="Ruby" style="display: none;"><pre class="prettyprint linenums">{% include ruby/single_purchase_example.html %}</pre></div>
+          <div name=".Net" style="display: none;"><pre class="prettyprint linenums">{% include net/single_purchase_example.html %}</pre></div>
+        </div>
+      </div>
+      <a id="recurring_purchase" name="recurring_purchase" class="section-anchor"></a>
+      <div class="method-section">
+        <div class="method-description">
+          {% include recurring_purchase_description.html %}
+        </div>
+        <div class="method-example">
+          <div name="Java" style="display: none;"><pre class="prettyprint linenums">{% include java/recurring_purchase_example.html %}</pre></div>
+          <div name="PHP" style="display: none;"><pre class="prettyprint linenums">{% include php/recurring_purchase_example.html %}</pre></div>
+          <div name="Ruby" style="display: none;"><pre class="prettyprint linenums">{% include ruby/recurring_purchase_example.html %}</pre></div>
+          <div name=".Net" style="display: none;"><pre class="prettyprint linenums">{% include net/recurring_purchase_example.html %}</pre></div>
+        </div>
+      </div>
+    </div>
+    <div class="method">
+      <a id="void" name="void" class="section-anchor"></a>
+      <div class="method-section">
+        <div class="method-description">
+          {% include void_description.html %}
+        </div>
+        <div class="method-example">
+          <div name="Java" style="display: none;"><pre class="prettyprint linenums">{% include java/void_example.html %}</pre></div>
+          <div name="PHP" style="display: none;"><pre class="prettyprint linenums">{% include php/void_example.html %}</pre></div>
+          <div name="Ruby" style="display: none;"><pre class="prettyprint linenums">{% include ruby/void_example.html %}</pre></div>
+          <div name=".Net" style="display: none;"><pre class="prettyprint linenums">{% include net/void_example.html %}</pre></div>
+        </div>
+      </div>
+    </div>
+    <div class="method">
+      <a id="refund" name="refund" class="section-anchor"></a>
+      <div class="method-section">
+      <div class="method-description">{% include refund_description.html %}</div>
+        <div class="method-example">
+          <div name="Java" style="display: none;"><pre class="prettyprint linenums">{% include java/refund_example.html %}</pre></div>
+          <div name="PHP" style="display: none;"><pre class="prettyprint linenums">{% include php/single_refund_example.html %}</pre></div>
+          <div name="Ruby" style="display: none;"><pre class="prettyprint linenums">{% include ruby/single_refund_example.html %}</pre></div>
+          <div name=".Net" style="display: none;"><pre class="prettyprint linenums">{% include net/refund_example.html %}</pre></div>
+        </div>
+      </div>
+    </div>
+    <div class="method">
+      <a id="txn_verification" name="txn_verification" class="section-anchor"></a>
+      <div class="method-section">
+        <div class="method-description">{% include txn_verification_description.html %}</div>
+        <div class="method-example">
+          <div name="Java" style="display: none;"><pre class="prettyprint linenums">{% include java/txn_verification_example.html %}</pre></div>
+          <div name="PHP" style="display: none;"><pre class="prettyprint linenums">{% include php/txn_verification_example.html %}</pre></div>
+          <div name="Ruby" style="display: none;"><pre class="prettyprint linenums">{% include ruby/txn_verification_example.html %}</pre></div>
+          <div name=".Net" style="display: none;"><pre class="prettyprint linenums">{% include net/txn_verification_example.html %}</pre></div>
+        </div>
+      </div>
+    </div>
+    <div class="method">
+      <a id="cc_verification" name="cc_verification" class="section-anchor"></a>
+      <div class="method-section">
+        <div class="method-description">{% include cc_verification_description.html %}</div>
+        <div class="method-example">
+          <div name="Java" style="display: none;"><pre class="prettyprint linenums">{% include java/cc_verification_example.html %}</pre></div>
+          <div name="PHP" style="display: none;"><pre class="prettyprint linenums">{% include php/cc_verification_example.html %}</pre></div>
+          <div name="Ruby" style="display: none;"><pre class="prettyprint linenums">{% include ruby/cc_verification_example.html %}</pre></div>
+          <div name=".Net" style="display: none;"><pre class="prettyprint linenums">{% include net/cc_verification_example.html %}</pre></div>
+        </div>
+      </div>
+    </div>
+    <div class="method">
+    <a id="batch" name="batch" class="section-anchor"></a>
+    <div class="method-section">
+      <div class="method-description">{% include batch_description.html %}</div>
+        <div class="method-example">
+          <div name="Java" style="display: none;"><pre class="prettyprint linenums">{% include java/batch_example.html %}</pre></div>
+          <div name=".Net" style="display: none;"><pre class="prettyprint linenums">{% include net/batch_example.html %}</pre></div>
+        </div>
+      </div>
+    </div>
+    <div class="method">
+      <a id="fraud" name="fraud" class="section-anchor"></a>
+      <div class="method-section">
+        <div class="method-description">{% include fraud_description.html %}</div>
+        <div class="method-example">
+          <div name="Java" style="display: none;"><pre class="prettyprint linenums">{% include java/fraud_example.html %}</pre></div>
+          <div name=".Net" style="display: none;"><pre class="prettyprint linenums">{% include net/fraud_example.html %}</pre></div>
+        </div>
+      </div>
+    </div>
+    <div class="method">
+      <a id="receipts" name="receipts" class="section-anchor"></a>
+      <div class="method-section">
+        <div class="method-description">{% include receipts_description.html %}</div>
+        <div name="Java" style="display: none;"><pre class="prettyprint linenums">{% include java/receipts_example.html %}</pre></div>
+        <div name=".Net" style="display: none;"><pre class="prettyprint linenums">{% include net/receipts_example.html %}</pre></div>
+      </div>
+    </div>
+    <div class="method">
+      <a id="secure_storage" name="secure_storage" class="section-anchor"></a>
+      <div class="method-section">
+        <div class="method-description">{% include secure_storage_description.html %}</div>
+        <div class="method-example">
+          <div name="Java" style="display: none;"><pre class="prettyprint linenums">{% include java/secure_storage_example.html %}</pre></div>
+          <div name="PHP" style="display: none;"><pre class="prettyprint linenums">{% include php/secure_storage_example.html %}</pre></div>
+          <div name="Ruby" style="display: none;"><pre class="prettyprint linenums">{% include ruby/secure_storage_example.html %}</pre></div>
+          <div name=".Net" style="display: none;"><pre class="prettyprint linenums">{% include net/secure_storage_example.html %}</pre></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- Copyright (c) 2013 SALT Technology Inc. All rights reserved. -->
