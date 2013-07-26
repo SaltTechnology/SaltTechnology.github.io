@@ -15,10 +15,22 @@
             {% if page.menu == 'client-api' %}
               <ul class="salt-side-nav nav nav-list well">
                 <h4>Client API</h4>
-                <li><a class="child" href="#java">Java</a></li>
-                <li><a class="child" href="#net">.Net</a></li>
-                <li><a class="child" href="#php">PHP</a></li>
-                <li><a class="child" href="#ruby">Ruby</a></li>
+                <li><a href="#java">Java</a></li>
+                <li><a href="#net">.Net</a></li>
+                <li><a href="#php">PHP</a></li>
+                <li><a href="#ruby">Ruby</a></li>
+              </ul>
+            {% elsif page.menu == 'guide' %}
+              <ul class="salt-side-nav nav nav-list well">
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#environment">Test Environment</a></li>
+                <li><a href="#api">Working With the API</a></li>
+                <li><a href="#receipts">Receipts</a></li>
+                <li><a href="#advanced_api">Advanced API Features</a></li>
+                <li><a href="#non_page">Non-Page Specific Requirements</a></li>
+                <li><a href="#certification">Certification</a></li>
+                <li><a href="#moving_production">Moving to Production</a></li>
+                <li><a href="#appendix">Appendix</a></li>
               </ul>
             {% endif %}
           {% endif %}
