@@ -1,5 +1,136 @@
-<div class="well">      
+<div class="well">
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" >
+        var $time = Date.now || function() {
+            return +new Date;
+        };
+    </script>
 
 	<h3>Try It Yourself</h3>
+    <form id="form-single-purchase" action="https://test.salt.com/gateway/creditcard/processor.do" method="post" target="iframe-single-purchase-result">
+        <table width="100%" border="0">
+            <col width="100">
+            <col>
+            <tr>
+                <td>
+                    Merchant Id:
+                </td>
+                <td>
+                    <input type="text" name="merchantId" value="333" size="50" disabled="true"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    APIToken:
+                </td>
+                <td>
+                    <input type="text" name="apiToken" value="abc" size="50" disabled="true"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Amount:
+                </td>
+                <td>
+                    <input type="text" name="amount" value="100" size="10"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Request Code:
+                </td>
+                <td>
+                    <input type="text" name="requestCode" value="singlePurchase" size="50" disabled="true"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Order Id:
+                </td>
+                <td>
+                    <input id="inputOrderId"  type="text" name="inputOrderId" value="" size="50" disabled="true"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    CCN:
+                </td>
+                <td>
+                    <input type="text" name="creditCardNumber" value="4775889400000171" size="20" disabled="true"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Expiry:
+                </td>
+                <td>
+                    <input type="text" name="expiryDate" value="1215" size="4" disabled="true"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Cvv2:
+                </td>
+                <td>
+                    <input type="text" name="cvv2" value="123" size="3" disabled="true"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Street:
+                </td>
+                <td>
+                    <input type="text" name="street" value="111 street" size="50" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    PostalCode:
+                </td>
+                <td>
+                    <input type="text" name="zip" value="m1m 1m1" size="10" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Market:
+                </td>
+                <td>
+                    <input type="text" name="marketSegmentCode" value="I" size="1" disabled="true"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    CVV Request:
+                </td>
+                <td>
+                    <input type="text" name="cvv2RequestCode" value="1" size="1" disabled="true"/>
+                </td>
+            <tr>
+                <td>
+                    AVS Request:
+                </td>
+                <td>
+                    <input type="text" name="avsRequestCode" value="1" size="1" disabled="true"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="Submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    Result:
+    <iframe name="iframe-single-purchase-result" width="100%" height="300" frameborder="0">
+        <p>Your browser does not support iframes.</p>
+    </iframe>
 	
 </div>
+
+<script>
+    var formSinglePurchase = document.forms['form-single-purchase'];
+    formSinglePurchase.elements["inputOrderId"].value = $time();
+</script>
