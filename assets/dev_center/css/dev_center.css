@@ -5,36 +5,23 @@ div#api-docs {
 	z-index: 45
 }
 
-div#api-docs div#methods {
-	position: relative;
-	z-index: 50
-}
-
-div#api-docs div#methods .method {
-	position: relative
-}
-
-div#api-docs div#methods .method-section {
+div#api-docs .method-section {
 	clear: left;
 	font-size: 13px;
 	padding: 0 0 45px 0;
 	position: relative
 }
 
-div#api-docs div#methods .method-section .method-description
+div#api-docs .method-section .method-description
 	{
 	color: #444444;
 	float: left;
 	width: 65%;
 	margin-right: 10px;
+  width: 640px
 }
 
-div#api-docs div#methods .method-section .method-description
-		{
-		width: 640px
-	}
-
-div#api-docs div#methods .method-section .method-example {
+div#api-docs .method-section .method-example {
 	overflow: hidden;
 	margin-left: 20%;
 	padding: 0;
