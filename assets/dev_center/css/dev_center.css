@@ -1,24 +1,22 @@
 .method-section {
-	clear: left;
-	font-size: 13px;
-	padding: 0 0 45px 0;
-	position: relative
+  clear: left;
+  font-size: 13px;
+  padding: 0 0 45px 0;
+  position: relative
 }
 
-.method-section .method-description
-	{
-	color: #444444;
-	float: left;
-	width: 65%;
-	margin-right: 10px;
-  width: 640px
+.method-section .method-description {
+  color: #444444;
+  float: left;
+  width: 50%;
 }
 
 .method-section .method-example {
-	overflow: hidden;
-	margin-left: 20%;
-	padding: 0;
-	width: auto
+  left: 20px;
+  margin-left: 50%;
+  padding: 0;
+  position: relative;
+  width: auto;
 }
 
 body > .container-fluid {
@@ -28,7 +26,6 @@ body > .container-fluid {
 
 #sidebar .salt-side-nav {
   margin-top: 30px;
-  width: 225px;
 }
 
 @media (min-width: 1200px) {
@@ -40,6 +37,16 @@ body > .container-fluid {
 @media (max-height: 750px) {
   #sidebar > div.affix {
     position: static;
+  }
+}
+
+@media (max-width: 1200px) {
+  .method-section .method-description {
+    width: 400px;
+  }
+  .method-section .method-example{
+    width: 400px;
+    margin-left: 400px;
   }
 }
 
