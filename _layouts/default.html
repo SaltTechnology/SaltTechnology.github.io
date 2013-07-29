@@ -8,59 +8,61 @@
     {% include salt_header.html %}
     <div class="container-fluid">
       <div class="row-fluid">
-        <div class="span3 affix" id="sidebar">
-          <ul class="salt-side-nav nav nav-list well">
-            {% include main_sidebar.html %}
-          </ul>
-          {% if page.menu %}
-            {% if page.menu == 'client-libraries' %}
-              <ul class="salt-side-nav nav nav-list well">
-                <h4>Client API</h4>
-                <li><a href="#java">Java</a></li>
-                <li><a href="#net">.Net</a></li>
-                <li><a href="#php">PHP</a></li>
-                <li><a href="#ruby">Ruby</a></li>
-              </ul>
-            {% elsif page.menu == 'guide' %}
-              <ul class="salt-side-nav nav nav-list well">
-                <li><a href="#introduction">Introduction</a></li>
-                <li><a href="#environment">Test Environment</a></li>
-                <li><a href="#api">Working With the API</a></li>
-                <li><a href="#receipts">Receipts</a></li>
-                <li><a href="#advanced_api">Advanced API Features</a></li>
-                <li><a href="#non_page">Non-Page Specific Requirements</a></li>
-                <li><a href="#certification">Certification</a></li>
-                <li><a href="#moving_production">Moving to Production</a></li>
-                <li><a href="#appendix">Appendix</a></li>
-              </ul>
-            {% elsif page.menu == 'credit-card-reference' %}
-              <ul class="salt-side-nav nav nav-list well">
-                <h4>Credit Card API</h4>
-                <li><a href="./core_api_ref.html">Introduction</a></li>
-                <li><a href="#single_purchase">Single Purchase</a></li>
-                <li><a href="#recurring_purchase">Recurring Purchase</a></li>
-                <li><a href="#void">Void</a></li>
-                <li><a href="#refund">Refund</a></li>
-                <li><a href="#txn_verification">Transaction Verification</a></li>
-                <li><a href="#cc_verification">Credit Card Verification</a></li>
-                <li><a href="#batch">Closing a Batch</a></li>
-                <li><a href="#fraud">Updating Fraud</a></li>
-                <li><a href="#receipts">Receipts</a></li>
-                <li><a href="#secure_storage">Secure Storage</a></li>
-              </ul>
-            {% elsif page.menu == 'iop-reference' %}
-              <ul class="salt-side-nav nav nav-list well">
-                <h4>IOP API</h4>
-                <li><a href="./core_api_ref_iop.html">Introduction</a></li>
-                <li><a href="#purchase">Purchase</a></li>
-                <li><a href="#refund">Refund</a></li>
-                <li><a href="#validate">Transaction Verification</a></li>
-                <li><a href="#receipts">Receipts</a></li>
-              </ul>
+        <div class="span3" id="sidebar">
+          <div class="affix">
+            <ul class="salt-side-nav nav nav-list well">
+              {% include main_sidebar.html %}
+            </ul>
+            {% if page.menu %}
+              {% if page.menu == 'client-libraries' %}
+                <ul class="salt-side-nav nav nav-list well">
+                  <h4>Client API</h4>
+                  <li><a href="#java">Java</a></li>
+                  <li><a href="#net">.Net</a></li>
+                  <li><a href="#php">PHP</a></li>
+                  <li><a href="#ruby">Ruby</a></li>
+                </ul>
+              {% elsif page.menu == 'guide' %}
+                <ul class="salt-side-nav nav nav-list well">
+                  <li><a href="#introduction">Introduction</a></li>
+                  <li><a href="#environment">Test Environment</a></li>
+                  <li><a href="#api">Working With the API</a></li>
+                  <li><a href="#receipts">Receipts</a></li>
+                  <li><a href="#advanced_api">Advanced API Features</a></li>
+                  <li><a href="#non_page">Non-Page Specific Requirements</a></li>
+                  <li><a href="#certification">Certification</a></li>
+                  <li><a href="#moving_production">Moving to Production</a></li>
+                  <li><a href="#appendix">Appendix</a></li>
+                </ul>
+              {% elsif page.menu == 'credit-card-reference' %}
+                <ul class="salt-side-nav nav nav-list well">
+                  <h4>Credit Card API</h4>
+                  <li><a href="./core_api_ref.html">Introduction</a></li>
+                  <li><a href="#single_purchase">Single Purchase</a></li>
+                  <li><a href="#recurring_purchase">Recurring Purchase</a></li>
+                  <li><a href="#void">Void</a></li>
+                  <li><a href="#refund">Refund</a></li>
+                  <li><a href="#txn_verification">Transaction Verification</a></li>
+                  <li><a href="#cc_verification">Credit Card Verification</a></li>
+                  <li><a href="#batch">Closing a Batch</a></li>
+                  <li><a href="#fraud">Updating Fraud</a></li>
+                  <li><a href="#receipts">Receipts</a></li>
+                  <li><a href="#secure_storage">Secure Storage</a></li>
+                </ul>
+              {% elsif page.menu == 'iop-reference' %}
+                <ul class="salt-side-nav nav nav-list well">
+                  <h4>IOP API</h4>
+                  <li><a href="./core_api_ref_iop.html">Introduction</a></li>
+                  <li><a href="#purchase">Purchase</a></li>
+                  <li><a href="#refund">Refund</a></li>
+                  <li><a href="#validate">Transaction Verification</a></li>
+                  <li><a href="#receipts">Receipts</a></li>
+                </ul>
+              {% endif %}
             {% endif %}
-          {% endif %}
+          </div>
         </div>
-        <div class="span9" style="margin-top:31px;">
+        <div class="span9 salt-content">
         {{ content }}
         </div>
       </div> <!-- row -->

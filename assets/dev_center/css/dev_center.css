@@ -1,6 +1,5 @@
 div#api-docs {
 	background: white;
-	margin-left: 298px;
 	position: relative;
 	z-index: 45
 }
@@ -44,7 +43,17 @@ body > .container-fluid {
   }
 }
 
+@media (max-width: 1200px) {
+  #sidebar > div.affix {
+    position: static;
+  }
+}
+
 .navbar-fixed-top .navbar-inner {
   padding-left:20px;
   padding-right:20px;
+}
+
+.salt-content {
+  padding-top: 30px;
 }
