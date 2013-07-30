@@ -5,6 +5,13 @@
             return +new Date;
         };
     </script>
+	
+	<script>
+	function resetOrderId(){
+		var formSinglePurchase = document.forms['form-single-purchase'];
+		formSinglePurchase.elements["orderId"].value = $time();
+	}
+	</script>
 
 	<h3>Try It Yourself</h3>
     <form accept-charset="ISO-8859-1" id="form-single-purchase" action="https://test.salt.com/gateway/creditcard/processor.do" method="post" target="iframe-single-purchase-result" name="ccform">
@@ -48,7 +55,7 @@
                     Order Id:
                 </td>
                 <td>
-                    <input id="inputOrderId"  type="text" name="orderId" value="" size="50"/>
+                    <input id="inputOrderId"  type="text" name="orderId" value="" size="50" readonly/>
                 </td>
             </tr>
             <tr>
@@ -117,7 +124,7 @@
 
             <tr>
                 <td colspan="2">
-                    <input type="submit" value="Submit">
+                    <input type="submit" value="Submit" onClick="resetOrderId()">
                 </td>
             </tr>
         </table>
@@ -130,10 +137,6 @@
     </iframe>
 	
 </div>
-
-<script>
-    var formSinglePurchase = document.forms['form-single-purchase'];
-    formSinglePurchase.elements["orderId"].value = $time();
-</script>
+resetOrderId()
 
 <!-- Copyright � 2013 SALT Technology Inc. All rights reserved. -->
