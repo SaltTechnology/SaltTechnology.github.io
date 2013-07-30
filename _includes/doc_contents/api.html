@@ -1,156 +1,64 @@
-
-<div class="well">
 <a id="api" name="api" class="section-anchor"></a>
-<h3>
-    <a name="_Toc355011662"></a>
-    <a name="_Toc222545475"></a>
-    <a name="_Toc271107071"></a>
-    <a name="_Ref222720742">3 Working With the SALT Core API</a>
-</h3>
+<h2>Working With the SALT Core API</h2>
+<p>You will need to use the SALT Credit Card API to perform credit card transactions.</p>
+
+<h3>Client Library</h3>
 <p>
-    You will need to use the SALT Core API to perform credit card transactions.
-</p>
-</div>
-<br>
-<div class="well">
-<h4>
-    <a name="_Toc355011663"></a>
-    <a name="_Toc222545476"></a>
-    <a name="_Toc271107072"></a>
-    <a name="_Toc205716302">3.1 Client Library</a>
-</h4>
-<p>
-    Before working with the SALT Core API, ensure that you have downloaded the client library file to your computer. The Core API consists of a single package
-    with two main classes:
-</p>
-<p>
-    <strong>package com.salt.payment.client.creditcard.api</strong>
+  Before working with the SALT Core API, ensure that you have downloaded the client library file to your computer. The Core API consists of a single package <code>package com.salt.payment.client.creditcard.api</code>
+  with two main classes:
 </p>
 <ul type="disc">
-    <li>
-        <strong>HttpsCreditCardService</strong>
-        Calls the SALT Core API Handler to process credit card transactions, such as purchases, voids, and refunds.
-    </li>
-    <li>
-        <strong>CreditCardReceipt</strong>
-        A container class for the HttpsCreditCardService method response
-    </li>
+  <li>
+    <code>HttpsCreditCardService</code> - Calls the SALT Payment Gateway to process credit card transactions, such as purchases, voids, and refunds.
+  </li>
+  <li>
+    <code>CreditCardReceipt</code> - A container class for the <code>HttpsCreditCardService</code> method response.
+  </li>
 </ul>
+<p>These classes and their methods will be described in full in the following sections.</p>
+<div class="alert alert-warning">
+  <strong>IMPORTANT</strong>: This document discusses development using the Java version of the Core API. For examples using other languages, including Microsoft .NET and PHP, please see the <a href="#appendix">Appendix</a>.
+</div>
+
+<hr/>
+
+<h3>The HttpsCreditCardService</h3>
 <p>
-    These classes and their methods will be described in full in the following sections.
+    To process a credit card transaction, you will need to construct an instance of the <code>HttpsCreditCardService</code> class as follows:
 </p>
-<div align="center">
-    <table class="table table-bordered table-striped">
-        <tbody>
-            <tr>
-                <td width="638" valign="top">
-                    <p>
-                        <strong><u>IMPORTANT:</u></strong>
-                        This chapter discusses development using the Java version of the Core API. For examples using other languages, including Microsoft .NET
-                        and PHP, please see Appendix IV: Core API for Other Programming Languages.
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+<table class="table table-bordered table-striped">
+  <caption>Core API: HttpsCreditCardService Constructor</caption>
+  <thead>
+    <tr>
+      <td colspan="3">
+        <code>HttpsCreditCardService(merchant, apiToken, url)</code> 
+      </td>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>merchant</td>
+      <td>Merchant</td>
+      <td>Contains your merchant credentials. See Table 3.2.</td>
+    </tr>
+    <tr>
+      <td>url</td>
+      <td>String(255)</td>
+      <td>URL to the SALT Core API handler. In the environment this is<a href="https://test.salt.com/gateway/creditcard/processor.do">https://test.salt.com/gateway/creditcard/processor.do</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="alert alert-warning">
+  <strong>NOTE</strong>:
+  If you are using the <code>HttpsCreditCardService</code> from API versions 1.3.1 or older, the old constructors are still supported but are now considered deprecated.
 </div>
-</div>
-<br>
-<div class="well">
-<h4>
-    <a name="_Toc205716304"></a>
-    <a name="_Toc355011664"></a>
-    <a name="_Toc222545477"></a>
-    <a name="_Toc271107073"></a>
-    <a name="_Ref271106528">3.2 HttpsCreditCardService</a>
-</h4>
-<p>
-    To process a credit card transaction, you will need to construct an instance of the HttpsCreditCardService class as follows:
-</p>
-<p>
-    <a name="_Toc222546511"></a>
-    <a name="_Toc271107117">Table </a>
-    3-1 Core API: HttpsCreditCardService Constructor
-</p>
-<div align="center">
-    <table class="table table-bordered table-striped">
-        <tbody>
-            <tr>
-                <td width="638" colspan="3" valign="top">
-                    <p>
-                        HttpsCreditCardService(merchant, apiToken, url) Parameters
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="85" valign="top">
-                    <p align="left">
-                        <strong>Name</strong>
-                    </p>
-                </td>
-                <td width="88" valign="top">
-                    <p align="left">
-                        <strong>Type</strong>
-                    </p>
-                </td>
-                <td width="465" valign="top">
-                    <p align="left">
-                        <strong>Description</strong>
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="85" valign="top">
-                    <p align="left">
-                        merchant
-                    </p>
-                </td>
-                <td width="88" valign="top">
-                    <p align="left">
-                        Merchant
-                    </p>
-                </td>
-                <td width="465" valign="top">
-                    <p align="left">
-                        Contains your merchant credentials. See Table 3.2.
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="85" valign="top">
-                    <p align="left">
-                        url
-                    </p>
-                </td>
-                <td width="88" valign="top">
-                    <p align="left">
-                        String(255)
-                    </p>
-                </td>
-                <td width="465" valign="top">
-                    <p align="left">
-URL to the SALT Core API handler. In the development environment this is                        <a href="https://test.salt.com/gateway/creditcard/processor.do">https://test.salt.com/gateway/creditcard/processor.do</a>
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-<div align="center">
-    <table class="table table-bordered table-striped">
-        <tbody>
-            <tr>
-                <td width="638" valign="top">
-                    <p>
-                        <strong><u>NOTE:</u></strong>
-                        If you are using the HttpsCreditCardService from API versions 1.3.1 or older, the old constructors are still supported but are now
-                        considered deprecated.
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+
 <p>
     <a name="_Toc222546512"></a>
     <a name="_Toc271107118"></a>
@@ -245,8 +153,9 @@ URL to the SALT Core API handler. In the development environment this is        
 <p>
     After you have created a new instance, you can use it to process transactions.
 </p>
-</div>
-<br>
+
+<hr/>
+
 <div class="well">
 <h4>
     <a name="_Toc355011665"></a>
