@@ -1,6 +1,6 @@
+/* "Two-column" content for API reference */
 .method-section {
   clear: left;
-  font-size: 13px;
   padding: 0 0 45px 0;
   position: relative
 }
@@ -17,6 +17,11 @@
   padding: 0;
   position: relative;
   width: auto;
+}
+
+/* "Single-column" guide-ish content */
+.salt-guide-section {
+  max-width: 700px;
 }
 
 body > .container-fluid {
