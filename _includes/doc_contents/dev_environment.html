@@ -1,110 +1,46 @@
 <a id="environment" name="environment" class="section-anchor"></a>
-<div class="well">
-<p align="left">
-    <a name="_Toc222545473"></a>
-    <a name="_Toc271107069"></a>
-    <a name="_Ref222720746"></a>
-</p>
-<h3>
-    <a name="_Toc355011660"></a>
-    <a name="_Ref354145119">2 The SALT Test Environment</a>
-</h3>
+<h2>The SALT Sandbox Environment</h2>
 <p>
-    The SALT Test Environment is a sandbox environment mirroring the production environment that allows you to perform testing and integration before
+    The SALT Sandbox Environment is a environment mirroring the production environment that allows you to perform testing and integration before
     going into production.
 </p>
-<p>
-    Once you have a merchant account setup with SALT, SALT's administrator will create your Credit Card Core API Stores for you and grant you access to the
-    Development environment.
-</p>
+<div class="alert alert-info">
+  <p>If you don't yet have a Sandbox account, you can create one by following the link below!</p>
+  <p><a class="btn btn-warning btn-large" href="https://test.salt.com/merchantmanagement/">Create a SALT Sandbox Account</a></p>
 </div>
-<br>
-<div class="well">
-<p>
-    <a name="_Toc222546510"></a>
-    <a name="_Toc271107116">Table </a>
-    2-1 - SALT Core API Test Environment
-</p>
-<div align="center">
-    <table class="table table-bordered table-striped">
-        <tbody>
-            <tr>
-                <td width="121" valign="top">
-                </td>
-                <td width="321" valign="top">
-                    <p align="left">
-                        <strong>URL</strong>
-                    </p>
-                </td>
-                <td width="196" valign="top">
-                    <p align="left">
-                        <strong>Description</strong>
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="121" valign="top">
-                    <p align="left">
-                        <strong>SALT Merchant Management Website</strong>
-                    </p>
-                </td>
-                <td width="321" valign="top">
-                    <p align="left">
-                        <a href="https://test.salt.com/merchantmanagement/">https://test.salt.com/merchantmanagement/</a>
-                    </p>
-                </td>
-                <td width="196" valign="top">
-                    <p align="left">
-                        Allows you to perform administrative tasks such as viewing transaction activity and configuring your Stores.
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="121" valign="top">
-                    <p align="left">
-                        <strong>Credit Card Core API Handler</strong>
-                    </p>
-                </td>
-                <td width="321" valign="top">
-                    <p align="left">
-                        <a href="https://test.salt.com/gateway/creditcard/processor.do">https://test.salt.com/gateway/creditcard/processor.do</a>
-                    </p>
-                </td>
-                <td width="196" valign="top">
-                    <p align="left">
-                        Receives Credit Card Core API requests
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-<p>
-    The SALT Merchant Management Website requires a login, which consists of a Username and Password provided to you upon signup. You can change your password
-    after logging in.
-</p>
-</div>
-<br>
-<div class="well">
-<h4>
-    <a name="_Toc355011661"></a>
-    <a name="_Toc222545474"></a>
-    <a name="_Toc271107070">2.1 Store Information and Configuration</a>
-</h4>
-<p>
-    To access the Store information/configuration page:
-</p>
-<p align="left">
-    1. Login to the SALT Merchant Management Website at <a href="https://test.salt.com/merchantmanagement/">https://test.salt.com/merchantmanagement/</a>
-</p>
-<p align="left">
-    2. Select the Store Link under the Merchant Setup section. A list of all of your Stores will be displayed.
-</p>
-<p align="left">
-    3. Press the Modify button for the Store that you wish to configure. You will be taken to the Store configuration page.
-</p>
-<p>
-    Information about your Store (including Merchant ID and Store ID) is shown, along with all configuration options.
-</p>
-</div>
+
+<table class="table table-bordered table-striped">
+  <caption>SALT Sandbox Environment</caption>
+  <thead>
+    <tr>
+      <th></th>
+      <th>URL</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>SALT Merchant Management Website</strong></td>
+      <td><a href="https://test.salt.com/merchantmanagement/">https://test.salt.com/merchantmanagement/</a></td>
+      <td>Allows you to perform administrative tasks such as viewing transaction activity and configuring your services.</td>
+    </tr>
+    <tr>
+      <td><strong>SALT Payment Gateway</strong></td>
+      <td><a href="https://test.salt.com/gateway/creditcard/processor.do">https://test.salt.com/gateway/creditcard/processor.do</a></td>
+      <td>Receives Credit Card API requests</td>
+    </tr>
+  </tbody>
+</table>
+<p>The SALT Merchant Management Console requires a login, which consists of a Username and Password set by you when creating your Sandbox account. You can change your password at any time.</p>
+
+<hr/>
+
+<h3>Finding Your Merchant Credentials</h3>
+<p>In order to process payments through your Sandbox account, you will need to retrieve your Sandbox Merchant Credentials - <code>merchantId</code> and <code>apiToken</code>. To find your credentials:</p>
+
+<ol>
+  <li>Login to the SALT Sandbox Merchant Management Console at <a href="https://test.salt.com/merchantmanagement/">https://test.salt.com/merchantmanagement/</a></li>
+  <li>Click the 'Services' link in the main menu. A list of all of your services will be displayed.</li>
+  <li>Click the Service to view your <code>merchantId</code> and <code>apiToken</code>.</li>
+</ol>
 <!-- Copyright (c) 2013 SALT Technology Inc. All rights reserved. -->

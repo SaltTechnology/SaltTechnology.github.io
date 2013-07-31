@@ -1,3 +1,16 @@
+h1 {
+  font-size: 30px;
+}
+
+hr {
+  border-style: dotted;
+  border-color: rgb(204, 204, 204);
+  border-image: none;
+  border-width: 1px 0px 0px;
+  clear:both;
+  margin: 30px 0px;
+}
+
 /* "Two-column" content for API reference */
 .method-section {
   clear: left;
