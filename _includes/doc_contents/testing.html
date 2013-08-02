@@ -1,0 +1,421 @@
+<h1>Testing in the Sandbox Environment</h1>
+<p>
+    The SALT Sandbox Environment allows you to simulate different response scenarios by providing certain values for transaction parameters.
+    Note that these parameters operate in the <strong>Sandbox Environment only </strong>and have no bearing on the behaviour of the Production Environment.
+</p>
+
+<h3>Test Credit Card Numbers</h3>
+<p>
+    There are several dummy test credit card numbers that can be used in the Sandbox Environment for testing. Do <strong>not </strong>use these in the production environment, as they will be rejected by the gateway.
+</p>
+<div class="alert alert-warning">
+  <strong>IMPORTANT</strong>: Never use real credit card numbers in the Sandbox Environment.  Use any of the below dummy numbers instead.
+</div>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Credit Card Type</th>
+      <th>Number(s)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>American Express</td>
+      <td>378282246310005, 371449635398431</td>
+    </tr>
+    <tr>
+      <td>Diner's Club</td>
+      <td>30569309025904</td>
+    </tr>
+    <tr>
+      <td>Discover</td>
+      <td>6011111111111117</td>
+    </tr>
+    <tr>
+      <td>JCB</td>
+      <td>3530111333300000</td>
+    </tr>
+    <tr>
+      <td>MasterCard</td>
+      <td>5555555555554444, 5105105105105100</td>
+    </tr>
+    <tr>
+      <td>Visa</td>
+      <td>4242424242424242, 4012888888881881</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Transaction Results</h3>
+<h4>Transaction Cents Value</h4>
+<p>
+    The <strong>cents value of the transaction amount</strong> dictates whether a transaction will be approved or declined/failed. For example, transactions ending in 00 and
+    50 cents (e.g. $10.00, $20.50) will be approved.
+</p>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+        <th>Cents</th>
+        <th>Result</th>
+        <th>Cents</th>
+        <th>Result</th>
+        <th>Cents</th>
+        <th>Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>00</td>
+        <td>APPROVAL</td>
+        <td>34</td>
+        <td>APPROVAL</td>
+        <td>68</td>
+        <td>DECLINED</td>
+    </tr>
+    <tr>
+        <td>01</td>
+        <td>DECLINED</td>
+        <td>35</td>
+        <td>APPROVAL</td>
+        <td>69</td>
+        <td>APPROVAL</td>
+    </tr>
+    <tr>
+        <td>02</td>
+        <td>DECLINED</td>
+        <td>36</td>
+        <td>APPROVAL</td>
+        <td>70</td>
+        <td>APPROVAL</td>
+    </tr>
+    <tr>
+        <td>03</td>
+        <td>DECLINED</td>
+        <td>37</td>
+        <td>APPROVAL</td>
+        <td>71</td>
+        <td>APPROVAL</td>
+    </tr>
+    <tr>
+        <td>04</td>
+        <td>DECLINED</td>
+        <td>38</td>
+        <td>APPROVAL</td>
+        <td>72</td>
+        <td>DECLINED</td>
+    </tr>
+    <tr>
+        <td>05</td>
+        <td>DECLINED</td>
+        <td>39</td>
+        <td>APPROVAL</td>
+        <td>73</td>
+        <td>DECLINED</td>
+    </tr>
+    <tr>
+        <td>06</td>
+        <td>DECLINED</td>
+        <td>40</td>
+        <td>APPROVAL</td>
+        <td>74</td>
+        <td>DECLINED</td>
+    </tr>
+    <tr>
+        <td>07</td>
+        <td>DECLINED</td>
+        <td>41</td>
+        <td>DECLINED</td>
+        <td>75</td>
+        <td>DECLINED</td>
+    </tr>
+    <tr>
+        <td>08</td>
+        <td>APPROVAL</td>
+        <td>42</td>
+        <td>APPROVAL</td>
+        <td>76</td>
+        <td>DECLINED</td>
+    </tr>
+    <tr>
+        <td>09</td>
+        <td>APPROVAL</td>
+        <td>43</td>
+        <td>DECLINED</td>
+        <td>77</td>
+        <td>DECLINED</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>DECLINED</td>
+        <td>44</td>
+        <td>APPROVAL</td>
+        <td>78</td>
+        <td>DECLINED</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>APPROVAL</td>
+        <td>45</td>
+        <td>APPROVAL</td>
+        <td>79</td>
+        <td>APPROVAL</td>
+    </tr>
+    <tr>
+        <td>12</td>
+        <td>DECLINED</td>
+        <td>46</td>
+        <td>APPROVAL</td>
+        <td>80</td>
+        <td>ERROR</td>
+    </tr>
+    <tr>
+        <td>13</td>
+        <td>AMT. ERROR</td>
+        <td>47</td>
+        <td>APPROVAL</td>
+        <td>81</td>
+        <td>INCORRECT PIN</td>
+    </tr>
+    <tr>
+        <td>14</td>
+        <td>INVALID CARD</td>
+        <td>48</td>
+        <td>APPROVAL</td>
+        <td>82</td>
+        <td>DECLINED</td>
+    </tr>
+    <tr>
+        <td>15</td>
+        <td>INVALID CARD</td>
+        <td>49</td>
+        <td>APPROVAL</td>
+        <td>83</td>
+        <td>INCORRECT PIN</td>
+    </tr>
+    <tr>
+        <td>16</td>
+        <td>APPROVAL</td>
+        <td>50</td>
+        <td>APPROVAL</td>
+        <td>84</td>
+        <td>DECLINED</td>
+    </tr>
+    <tr>
+        <td>17</td>
+        <td>APPROVAL</td>
+        <td>51</td>
+        <td>DECLINED</td>
+        <td>85</td>
+        <td>APPROVAL</td>
+    </tr>
+    <tr>
+        <td>18</td>
+        <td>APPROVAL</td>
+        <td>52</td>
+        <td>DECLINED</td>
+        <td>86</td>
+        <td>DECLINED</td>
+    </tr>
+    <tr>
+        <td>19</td>
+        <td>ERROR</td>
+        <td>53</td>
+        <td>DECLINED</td>
+        <td>87</td>
+        <td>APPROVAL</td>
+    </tr>
+    <tr>
+        <td>20</td>
+        <td>APPROVAL</td>
+        <td>54</td>
+        <td>EXPIRED CARD</td>
+        <td>88</td>
+        <td>APPROVAL</td>
+    </tr>
+    <tr>
+        <td>21</td>
+        <td>DECLINED</td>
+        <td>55</td>
+        <td>INCORRECT PIN</td>
+        <td>89</td>
+        <td>APPROVAL</td>
+    </tr>
+    <tr>
+        <td>22</td>
+        <td>APPROVAL</td>
+        <td>56</td>
+        <td>APPROVAL</td>
+        <td>90</td>
+        <td>DECLINED</td>
+    </tr>
+    <tr>
+        <td>23</td>
+        <td>APPROVAL</td>
+        <td>57</td>
+        <td>DECLINED</td>
+        <td>91</td>
+        <td>ERROR</td>
+    </tr>
+    <tr>
+        <td>24</td>
+        <td>APPROVAL</td>
+        <td>58</td>
+        <td>CARD NOT SUPPORTED</td>
+        <td>92</td>
+        <td>ERROR</td>
+    </tr>
+    <tr>
+        <td>25</td>
+        <td>DECLINED</td>
+        <td>59</td>
+        <td>APPROVAL</td>
+        <td>93</td>
+        <td>DECLINED</td>
+    </tr>
+    <tr>
+        <td>26</td>
+        <td>APPROVAL</td>
+        <td>60</td>
+        <td>APPROVAL</td>
+        <td>94</td>
+        <td>ERROR</td>
+    </tr>
+    <tr>
+        <td>27</td>
+        <td>APPROVAL</td>
+        <td>61</td>
+        <td>DECLINED</td>
+        <td>95</td>
+        <td>APPROVAL</td>
+    </tr>
+    <tr>
+        <td>28</td>
+        <td>DECLINED</td>
+        <td>62</td>
+        <td>DECLINED</td>
+        <td>96</td>
+        <td>DECLINED</td>
+    </tr>
+    <tr>
+        <td>29</td>
+        <td>APPROVAL</td>
+        <td>63</td>
+        <td>DECLINED</td>
+        <td>97</td>
+        <td>DECLINED</td>
+    </tr>
+    <tr>
+        <td>30</td>
+        <td>DECLINED</td>
+        <td>64</td>
+        <td>APPROVAL</td>
+        <td>98</td>
+        <td>APPROVAL</td>
+    </tr>
+    <tr>
+        <td>31</td>
+        <td>APPROVAL</td>
+        <td>65</td>
+        <td>DECLINED</td>
+        <td>99</td>
+        <td>APPROVAL</td>
+    </tr>
+    <tr>
+        <td>32</td>
+        <td>APPROVAL</td>
+        <td>66</td>
+        <td>APPROVAL</td>
+        <td>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>33</td>
+        <td>EXPIRED CARD</td>
+        <td>67</td>
+        <td>APPROVAL</td>
+        <td>
+        </td>
+        <td>
+        </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>CVV2 Results</h4>
+<p>
+  By default, the CVV2 will always report a match unless you use one of the following special values:
+</p>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>CVV2 Data</th>
+      <th>CVV2 Response Code</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0ABC, 1ABC, 2ABC 9ABC</td>
+      <td>N (non-match)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>AVS Results</h4>
+<p>
+  The <strong>last digit of the credit card number</strong> used for the transaction determines the AVS result.
+</p>
+<caption>Sandbox Environment AVS Results</caption>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+        <th>Last Digit in Card Number</th>
+        <th>AVS Response Code</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>0</td>
+        <td>X</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Y</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>A</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>W</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>Z</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>D</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>U</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>R</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>S</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>G</td>
+    </tr>
+  </tbody>
+</table>
+
