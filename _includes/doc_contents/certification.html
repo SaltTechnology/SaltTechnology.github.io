@@ -1,32 +1,20 @@
 <a id="certification" name="certification" class="section-anchor"></a>
-<div class="well">
-<h3>
-    <a name="_Ref355172812"></a>
-    <a name="_Toc355011681">7 Certification</a>
-</h3>
+<h2>Certification</h2>
 <p>
-    Elavon requires that all merchants offering credit card payment follow a set of standard guidelines for implementation.
-</p>
-</div>
-<br>
-<div class="well">
-<h4>
-    <a name="_Toc355011682"></a>
-    <a name="_Toc222545511"></a>
-    <a name="_Toc271107104">7.1 Approval</a>
-</h4>
+  Credit card associations, including Visa and Mastercard, require that all merchants offering online credit card payment follow a set of standard guidelines for implementation.  
+  The process of verifying that your website meets the card association requirements is known as <strong>Certification</strong>.</p>
+<p> Approval for processing may be contingent on meeting these guidelines, depending on your credit card processor.</p>
+<hr/>
+
+<h3>Approval</h3>
 <p>
-    A full Approval from Elavon requires a fully-functional, secure and complete e-commerce website to be created by the merchant. Since you will want to
-    obtain some kind of approval before actually starting integration, you will typically go for a Conditional Approval first (see below).
+  A full Approval requires a fully-functional, secure and complete e-commerce website to be created by the merchant. Since you will want to
+  obtain some kind of approval before actually starting integration, you will typically go for a Conditional Approval first if supported by your processor (see below).
 </p>
-</div>
-<br>
-<div class="well">
-<h4>
-    <a name="_Toc355011683"></a>
-    <a name="_Toc222545512"></a>
-    <a name="_Toc271107105">7.2 Conditional Approval</a>
-</h4>
+
+<hr/>
+
+<h3>Conditional Approval</h3>
 <p>
     A Conditional Approval can be granted to a merchant who has not yet integrated their site with the SALT Payment Gateway. A Conditional Approval means that
     you are guaranteed a full Approval so long as the payment portion of your site is completed.
@@ -39,300 +27,160 @@
     Important notes about Conditional Approval:
 </p>
 <ul>
-    <li align="left">
+    <li>
         <strong>It allows you to process REAL credit card payments</strong>
     </li>
-    <li align="left">
-        <strong>It expires in 30 days</strong>
-        if full approval is not obtained by that point, your entire application will have to be re-submitted.
+    <li>
+        <strong>It will expire after a set time period</strong>
+        if full approval is not obtained by that point, your entire application will have to be re-submitted.  A typical validity period is 30 days.
     </li>
-    <li align="left">
+    <li>
         <strong>No integration is required to obtain Conditional Approval</strong>
     </li>
 </ul>
-</div>
-<br>
-<div class="well">
-<h4>
-    <a name="_Toc355011684"></a>
-    <a name="_Toc222545513"></a>
-    <a name="_Toc271107106">7.3 Certification Checklist</a>
-</h4>
+
+<hr/>
+
+<h3>Certification Checklist</h3>
 <p>
     Each merchant implementation must undergo a brief certification process to obtain approval. To complete certification, you will need to supply SALT with:
 </p>
-<p align="left">
-    The URL to your credit card store implementation
-</p>
-<p align="left">
-    Any instructions (logins, registration etc) needed to complete a test purchase
+
+<ul>
+  <li>The URL to your credit card store implementation</p>
+  <li>Any instructions (logins, registration etc) needed to complete a test purchase</li>
+</ul>
+
+<p>
+  SALT and the processor will conduct a review of your site, and once this is complete you will receive the appropriate approval(s). Please ensure that you have met all website requirements before submitting your request.
 </p>
 <p>
-    SALT and Elavon will conduct a review of your site, and once this is complete you will receive the appropriate approval(s). Please ensure that you have met
-    all website requirements before submitting your request.
+  The following self-assessment checklist summarizes the requirements that need to be met:
 </p>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>&#10004;</th>
+      <th>Requirement</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td><input type="checkbox" name="done-1"></input></td>
+        <td><strong>Correlation between business and product/service</strong></td>
+        <td>There should be a correlation between the registered merchant name and the product/service offered.</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="done-2"></input></td>
+        <td><strong>Customer service contact provided</strong></td>
+        <td>There must be a clear posting of a Customer Service Telephone # or Email Address.</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="done-3"></input></td>
+        <td><strong>Return/Refund policy</strong></td>
+        <td>
+          Return/refund policy is clearly stated on the merchant website.
+        </td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="done-4"></input></td>
+        <td><strong>Delivery policy</strong></td>
+        <td>
+          The merchant's delivery methods and timing are clearly described
+        </td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="done-5"></input></td>
+        <td><strong>*Display correct receipt</strong></td>
+        <td>
+          <p>
+            The receipt presented to the customer after a successful or unsuccessful transaction must contain certain fields.
+            <strong>Make sure to follow the guidelines presented in the <a href="#receipts">Receipts section</a>.</strong>
+          </p>
+        </td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="done-6"></input></td>
+        <td>
+          <strong>
+            *Display timeout warning (if applicable)
+          </strong>
+        </td>
+        <td>
+          <p>
+            Display a warning message to the customer if the customer has &lt; 30 minutes to complete payment (e.g. their session times out).
+          </p>
+          <p>
+            If there is no such restriction, no message needs to be displayed
+          </p>
+        </td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="done-7"></input></td>
+        <td><strong>Product/service description</strong></td>
+        <td>
+          The product/service offered for sale is clearly described
+        </td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="done-8"></input></td>
+        <td><strong>*Display correct currency</strong></td>
+        <td>
+          <strong>Must indicate the currency of payment </strong>
+          (e.g. USD, CAD). Explicitly indicate the currency type on the payment total
+        </td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="done-9"></input></td>
+        <td><strong>English language option</strong></td>
+        <td>
+          There must be an English translation option for foreign language websites
+        </td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="done-10"></input></td>
+        <td><strong>*Customer Notification</strong></td>
+        <td>
+          You must have some way for a customer to be notified/determine the status of a transaction.
+          <strong>Follow the requirements presented in the <a href="#non_page">Non-page-specific requirements section</a>.</strong>
+        </td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="done-11"></input></td>
+        <td><strong>Age Verification</strong></td>
+        <td>
+          The website includes an age Verification process for products sold that require age verification (alcohol, tobacco etc.).
+        </td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="done-12"></input></td>
+        <td><strong>Customer Ready?</strong></td>
+        <td>
+          The website must be ready to accept real orders from customers at the website URL specified in your application the site should NOT
+          use language/pages that imply that it is coming soon or under construction or use a testing URL (e.g. www.yourdomain.com/test)
+        </td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="done-13"></input></td>
+        <td><strong>Privacy Policy</strong></td>
+        <td>
+          Make sure a privacy policy/statement is clearly stated on your website.
+        </td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="done-14"></input></td>
+        <td><strong>*Secure Payment Page</strong></td>
+        <td>
+            <p>
+              Ensure that you have an SSL Certificate protecting your payment information entry page.
+              <strong>Follow the requirements presented in the <a href="#non_page">Non-page-specific requirements section</a>.</strong>
+            </p>
+        </td>
+    </tr>
+  </tbody>
+</table>
 <p>
-    The following self-assessment checklist summarizes the requirements that need to be met:
+  <strong>* Required for full approval, but not required for conditional approval</strong>
 </p>
-<p>
-    <a name="_Toc222546548"></a>
-    <a name="_Toc271107150"></a>
-    <a name="_Toc205716338"></a>
-    <a name="_Toc203276474">Table </a>
-    7-1 - Certification Checklist
-</p>
-<div align="center">
-    <table class="table table-bordered table-striped">
-        <tbody>
-            <tr>
-                <td width="38" valign="top">
-                    <p align="center">
-                        <strong>X</strong>
-                    </p>
-                </td>
-                <td width="198" valign="top">
-                    <p align="left">
-                        <strong>Requirement</strong>
-                    </p>
-                </td>
-                <td width="404" valign="top">
-                    <p align="left">
-                        <strong>Description</strong>
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="38" valign="top">
-                </td>
-                <td width="198" valign="top">
-                    <p align="left">
-                        <strong>Correlation between business and product/service</strong>
-                    </p>
-                </td>
-                <td width="404" valign="top">
-                    <p align="left">
-                        There should be a correlation between the registered merchant name and the product/service offered.
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="38" valign="top">
-                </td>
-                <td width="198" valign="top">
-                    <p align="left">
-                        <strong>Customer service contact provided</strong>
-                    </p>
-                </td>
-                <td width="404" valign="top">
-                    <p align="left">
-                        There must be a clear posting of a Customer Service Telephone # or Email Address.
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="38" valign="top">
-                </td>
-                <td width="198" valign="top">
-                    <p align="left">
-                        <strong>Return/Refund policy</strong>
-                    </p>
-                </td>
-                <td width="404" valign="top">
-                    <p>
-                        Return/refund policy is clearly stated on the merchant website.
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="38" valign="top">
-                </td>
-                <td width="198" valign="top">
-                    <p align="left">
-                        <strong>Delivery policy</strong>
-                    </p>
-                </td>
-                <td width="404" valign="top">
-                    <p>
-                        The merchant's delivery methods and timing are clearly described
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="38" valign="top">
-                </td>
-                <td width="198" valign="top">
-                    <p align="left">
-                        <strong>*Display correct receipt</strong>
-                    </p>
-                </td>
-                <td width="404" valign="top">
-                    <p>
-                        The receipt presented to the customer after a successful or unsuccessful transaction must contain certain fields.
-                    </p>
-                    <p align="left">
-                        <strong>Make sure to</strong>
-                        <strong>follow the guidelines presented in Section </strong>
-                        <strong>4.1</strong>
-                        .
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="38" valign="top">
-                </td>
-                <td width="198" valign="top">
-                    <p align="left">
-                        <strong>
-                            *Display timeout warning
-                            <br/>
-                            (if applicable)
-                        </strong>
-                    </p>
-                </td>
-                <td width="404" valign="top">
-                    <p>
-                        Display a warning message to the customer if the customer has &lt; 30 minutes to complete payment (e.g. their session times out).
-                    </p>
-                    <p>
-                        If there is no such restriction, no message needs to be displayed
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="38" valign="top">
-                </td>
-                <td width="198" valign="top">
-                    <p align="left">
-                        <strong>Product/service description</strong>
-                    </p>
-                </td>
-                <td width="404" valign="top">
-                    <p>
-                        The product/service offered for sale is clearly described
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="38" valign="top">
-                </td>
-                <td width="198" valign="top">
-                    <p align="left">
-                        <strong>*Display correct currency</strong>
-                    </p>
-                </td>
-                <td width="404" valign="top">
-                    <p>
-                        <strong>Must indicate the currency of payment </strong>
-                        (e.g. USD, CAD). Explicitly indicate the currency type on the payment total
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="38" valign="top">
-                </td>
-                <td width="198" valign="top">
-                    <p align="left">
-                        <strong>English language option</strong>
-                    </p>
-                </td>
-                <td width="404" valign="top">
-                    <p>
-                        There must be an English translation option for foreign language websites
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="38" valign="top">
-                </td>
-                <td width="198" valign="top">
-                    <p align="left">
-                        <strong>*Customer Notification</strong>
-                    </p>
-                </td>
-                <td width="404" valign="top">
-                    <p>
-                        You must have some way for a customer to be notified/determine the status of a transaction.
-                    </p>
-                    <p>
-                        <strong></strong>
-                    </p>
-                    <p>
-                        <strong>Follow the requirements presented in Section </strong>
-                        <strong>6.2</strong>
-                        <strong>.</strong>
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="38" valign="top">
-                </td>
-                <td width="198" valign="top">
-                    <p align="left">
-                        <strong>Age Verification</strong>
-                    </p>
-                </td>
-                <td width="404" valign="top">
-                    <p>
-                        The website includes an age Verification process for products sold that require age verification (alcohol, tobacco etc.).
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="38" valign="top">
-                </td>
-                <td width="198" valign="top">
-                    <p align="left">
-                        <strong>Customer Ready?</strong>
-                    </p>
-                </td>
-                <td width="404" valign="top">
-                    <p>
-                        The website must be ready to accept real orders from customers at the website URL specified in your application the site should NOT
-                        use language/pages that imply that it is coming soon or under construction or use a testing URL (e.g. www.yourdomain.com/test)
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="38" valign="top">
-                </td>
-                <td width="198" valign="top">
-                    <p align="left">
-                        <strong>Privacy Policy</strong>
-                    </p>
-                </td>
-                <td width="404" valign="top">
-                    <p>
-                        Make sure a privacy policy/statement is clearly stated on your website<strong></strong>
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="38" valign="top">
-                </td>
-                <td width="198" valign="top">
-                    <p align="left">
-                        <strong>*Secure Payment Page</strong>
-                    </p>
-                </td>
-                <td width="404" valign="top">
-                    <p>
-                        Ensure that you have an SSL Certificate protecting your payment information entry page.
-                    </p>
-                    <p>
-                        <strong></strong>
-                    </p>
-                    <p>
-                        <strong>Follow the requirements presented in Section </strong>
-                        <strong>6.3</strong>
-                        <strong>.</strong>
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-<p>
-    <strong>* Required for full approval, but not required for conditional approval</strong>
-</p>
-</div>
 <!-- Copyright (c) 2013 SALT Technology Inc. All rights reserved. -->
