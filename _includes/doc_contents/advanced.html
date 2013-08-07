@@ -1,185 +1,64 @@
-<p align="left">
-    <a name="_Toc222545494"></a>
-    <a name="_Toc271107087"></a>
-    <a name="_Ref222717133"></a>
-</p>
 <a id="advanced_api" name="advanced_api" class="section-anchor"></a>
-<div class="well">
-<h3>
+<h2>
     <a name="_Toc355011674">5 Advanced Core API Features</a>
+</h2>
+<h3>
+    Credit Card Security Features
 </h3>
-</div>
-<br>
-<div class="well">
-<h4>
-    <a name="_Toc355011675"></a>
-    <a name="_Toc222545495"></a>
-    <a name="_Toc271107088"></a>
-    <a name="_Ref223318688">5.1 Credit Card Security Features</a>
-</h4>
 <p>
-    To use the Core API Credit Card security features, you will need to use the full constructor for the CreditCard class, which includes additional data
-    fields.
+  To use the Client API Credit Card security features, you will need to use the full constructor for the <code>CreditCard</code> class, which includes additional data fields.
 </p>
-<p>
-    <a name="_Toc222546532"></a>
-    <a name="_Toc271107135"></a>
-    <a name="_Ref233264689">Table </a>
-    5-1 Core API: CreditCard Class (Full Constructor)
-</p>
-<div align="center">
-    <table class="table table-bordered table-striped">
-        <tbody>
-            <tr>
-                <td width="638" colspan="3" valign="top">
-                    <p>
-                        CreditCard Constructor Parameters
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="158" valign="top">
-                    <p align="left">
-                        <strong>Name</strong>
-                    </p>
-                </td>
-                <td width="97" valign="top">
-                    <p align="left">
-                        <strong>Type</strong>
-                    </p>
-                </td>
-                <td width="383" valign="top">
-                    <p align="left">
-                        <strong>Description</strong>
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="158" valign="top">
-                    <p align="left">
-                        creditCardNumber
-                    </p>
-                </td>
-                <td width="97" valign="top">
-                    <p align="left">
-                        Long
-                    </p>
-                </td>
-                <td width="383" valign="top">
-                    <p align="left">
-                        Credit Card Number
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="158" valign="top">
-                    <p align="left">
-                        expiryDate
-                    </p>
-                </td>
-                <td width="97" valign="top">
-                    <p align="left">
-                        Short
-                    </p>
-                </td>
-                <td width="383" valign="top">
-                    <p align="left">
-                        Credit Card Expiry Date
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="158" valign="top">
-                    <p align="left">
-                        cvv2
-                    </p>
-                </td>
-                <td width="97" valign="top">
-                    <p align="left">
-                        String
-                    </p>
-                </td>
-                <td width="383" valign="top">
-                    <p align="left">
-                        Card Verification Value/Card Verification Digits
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="158" valign="top">
-                    <p align="left">
-                        street
-                    </p>
-                </td>
-                <td width="97" valign="top">
-                    <p align="left">
-                        String
-                    </p>
-                </td>
-                <td width="383" valign="top">
-                    <p align="left">
-                        Cardholder street address
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="158" valign="top">
-                    <p align="left">
-                        zip
-                    </p>
-                </td>
-                <td width="97" valign="top">
-                    <p align="left">
-                        String
-                    </p>
-                </td>
-                <td width="383" valign="top">
-                    <p align="left">
-                        Cardholder zip/postal code
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="158" valign="top">
-                    <p align="left">
-                        secureCode
-                    </p>
-                </td>
-                <td width="97" valign="top">
-                    <p align="left">
-                        String
-                    </p>
-                </td>
-                <td width="383" valign="top">
-                    <p align="left">
-                        Verified by Visa/MasterCard SecureCode value
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="158" valign="top">
-                    <p align="left">
-                        cardHolderName
-                    </p>
-                </td>
-                <td width="97" valign="top">
-                    <p align="left">
-                        String
-                    </p>
-                </td>
-                <td width="383" valign="top">
-                    <p align="left">
-                        Credit Card Holder Name
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-<p>
-    <a name="_Toc222545496"></a>
-    <a name="_Toc271107089">Card Verification Value (CVV2)</a>
-</p>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <td><code>CreditCard</code> Constructor Parameters</td>
+    </tr>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+       <td><code>creditCardNumber</code></td>
+        <td><code>Long</code></td>
+        <td>Credit Card Number</td>
+    </tr>
+    <tr>
+        <td><code>expiryDate</code></td>
+        <td><code>Short</code></td>
+        <td>Credit Card Expiry Date</td>
+    </tr>
+    <tr>
+        <td><code>cvv2</code></td>
+        <td><code>String</code></td>
+        <td>Card Verification Value/Card Verification Digits</td>
+    </tr>
+    <tr>
+        <td><code>street</code></td>
+        <td><code>String</code></td>
+        <td>Cardholder street address</td>
+    </tr>
+    <tr>
+        <td><code>zip</code></td>
+        <td><code>String</code></td>
+        <td>Cardholder zip/postal code</td>
+    </tr>
+    <tr>
+        <td><code>secureCode</code></td>
+        <td><code>String</code></td>
+        <td>Verified by Visa/MasterCard SecureCode value</td>
+    </tr>
+    <tr>
+        <td><code>cardHolderName</code></td>
+        <td><code>String</code></td>
+        <td>Credit Card Holder Name</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Card Verification Value (CVV2)</h4>
 <p>
     The Card Verification Value (sometimes known as CVV2 or CVN is a security feature for credit card transactions, giving increased protection against
     credit card fraud. It is a series of digits (3 or 4) that can be usually found on the back of a credit card.
@@ -188,460 +67,176 @@
     Many card issuers will decline a transaction if the CVV2 is not provided. If the value provided by the customer does not match the value on file with the
     card issuer, the issuer <em>may </em>decline the transaction (although this is not always the case).
 </p>
-<p>
-    <a name="_Toc222545497"></a>
-    <a name="_Toc271107090">Using CVV2</a>
-</p>
+<h5>Using CVV2</h5>
 <p>
     To use CVV2, you must
 </p>
-<p align="left">
-    1. Collect and include the CVV2 value as part of the CreditCard object
-</p>
-<p align="left">
-    2. Create a VerificationRequest with the Cvv2Request parameter set (to CVV2_PRESENT).
-</p>
-<p align="left">
-    3. Call the singlePurchase() method with the VerificationRequest.
-</p>
-<p>
-    <a name="_Toc222546533"></a>
-    <a name="_Toc271107136">Table </a>
-    5-2 Cvv2Request Enumeration
-</p>
-<div align="center">
-    <table class="table table-bordered table-striped">
-        <tbody>
-            <tr>
-                <td width="638" colspan="3" valign="top">
-                    <p>
-                        Cvv2Request
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="234" valign="top">
-                    <p align="left">
-                        <strong>Value</strong>
-                    </p>
-                </td>
-                <td width="320" valign="top">
-                    <p align="left">
-                        <strong>Description</strong>
-                    </p>
-                </td>
-                <td width="85" valign="top">
-                    <p align="left">
-                        <strong>Indicator*</strong>
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="234" valign="top">
-                    <p align="left">
-                        CVV2_NOT_SUBMITTED
-                    </p>
-                </td>
-                <td width="320" valign="top">
-                    <p align="left">
-                        CVV2 value is deliberately bypassed or is not provided by the merchant.
-                    </p>
-                </td>
-                <td width="85" valign="top">
-                    <p align="left">
-                        0
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="234" valign="top">
-                    <p align="left">
-                        CVV2_PRESENT
-                    </p>
-                </td>
-                <td width="320" valign="top">
-                    <p align="left">
-                        Cardholder states that the CVV2 value is present on the card and can be verified.
-                    </p>
-                </td>
-                <td width="85" valign="top">
-                    <p align="left">
-                        1
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="234" valign="top">
-                    <p align="left">
-                        CVV2_PRESENT_BUT_ILLEGIBLE
-                    </p>
-                </td>
-                <td width="320" valign="top">
-                    <p align="left">
-                        Cardholder states that the CVV2 value is present on the card but it is illegible.
-                    </p>
-                </td>
-                <td width="85" valign="top">
-                    <p align="left">
-                        2
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="234" valign="top">
-                    <p align="left">
-                        CARD_HAS_NO_CVV2
-                    </p>
-                </td>
-                <td width="320" valign="top">
-                    <p align="left">
-                        Cardholder states that the card has no value imprint.
-                    </p>
-                </td>
-                <td width="85" valign="top">
-                    <p align="left">
-                        9
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<ol>
+  <li>Collect and include the CVV2 value as part of the <code>CreditCard</code> object</li>
+  <li>Create a <code>VerificationRequest</code> with the <code>Cvv2Request</code> parameter set to <code>CVV2_PRESENT</code>.</li>
+  <li>Call the <code>singlePurchase()</code> method with the <code>VerificationRequest</code>.</li>
+</ol>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+        <td><code>Cvv2Request</code></td>
+    </tr>
+    <tr>
+        <th>Value</th>
+        <th>Description</th>
+        <th>Indicator*</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td><code>CVV2_NOT_SUBMITTED</code></td>
+        <td>CVV2 value is deliberately bypassed or is not provided by the merchant.</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td><code>CVV2_PRESENT</code></td>
+        <td>Cardholder states that the CVV2 value is present on the card and can be verified.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td><code>CVV2_PRESENT_BUT_ILLEGIBLE</code></td>
+        <td>Cardholder states that the CVV2 value is present on the card but it is illegible.</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td><code>CARD_HAS_NO_CVV2</code></td>
+        <td>Cardholder states that the card has no value imprint.</td>
+        <td>9</td>
+    </tr>
+  </tbody>
+</table>
 <p>
     <strong>
         * Denotes the indicator digit typically associated with CVV2 verification. Is not needed when using this API, but may be referred to in other
         documentation.
     </strong>
 </p>
+
 <p>
-    An example of a singlePurchase() with CVV2 checking is shown below:
+    An example of a <code>singlePurchase()</code> with CVV2 checking is shown below:
 </p>
-<br clear="all"/>
-<p align="left">
-    <a name="_Toc337027748"></a>
-    <a name="_Toc271107161"><strong></strong></a>
-</p>
+<pre class="prettyprint linenums">
+import com.salt.payment.client.creditcard.api.*;
+:
+:
+int merchantId=12345; // as assigned by SALT
+String apiToken="DNZHRC6dNgppYYzR"; // as assigned by SALT
+long pan=4242424242424242L;
+short expiry=1212;
+String invoice="order-12345"; // merchant invoice/orderId
+String cvv2="888"; // CVV2 digits
+long amount=3420; // in cents
+HttpsCreditCardService ccService = new HttpsCreditCardService(
+  new Merchant(merchantId, apiToken),  "https://test.salt.com/gateway/creditcard/processor.do");
+// specify additional credit card parameters
+CreditCard creditCard = new CreditCard(pan, expiry, cvv2, null, null);
+// specify the VerificationRequest contains an AvsRequest and/or Cvv2Request
+VerificationRequest verify = new VerificationRequest(
+  null,
+  Cvv2Request.CVV2_PRESENT,
+  );
+CreditCardReceipt receipt =
+  ccService.singlePurchase(invoice, creditCard, amount, verify);
+:
+:
+// Extract Results from CreditCardReceipt...
+:
+:
+// Verification results from CreditCardReceipt...
+Cvv2Response cvv2Response = receipt.getCvv2Response();
+:
+:
+</pre>
 <p>
-    Figure 5-1 Example Core API Purchase with CVV2
+    The results of the CVV2 check are returned as a <code>Cvv2Response</code> object as part of the CreditCardReceipt.
 </p>
 <table class="table table-bordered table-striped">
-    <tbody>
-        <tr>
-            <td width="638" valign="top">
-                <p align="left">
-                    import com.salt.payment.client.creditcard.api.*;
-                </p>
-                <p align="left">
-                    :
-                </p>
-                <p align="left">
-                    :
-                </p>
-                <p align="left">
-                    int merchantId=12345; // as assigned by SALT
-                </p>
-                <p align="left">
-                    String apiToken="DNZHRC6dNgppYYzR"; // as assigned by SALT
-                </p>
-                <p align="left">
-                    long pan=4242424242424242L;
-                </p>
-                <p align="left">
-                    short expiry=1212;
-                </p>
-                <p align="left">
-                    String invoice="order-12345"; // merchant invoice/orderId
-                </p>
-                <p align="left">
-                    String <strong>cvv2</strong>="<strong>888</strong>"; // CVV2 digits
-                </p>
-                <p align="left">
-                    long amount=3420; // in cents
-                </p>
-                <p align="left">
-                    HttpsCreditCardService ccService = new HttpsCreditCardService(
-                    <br/>
-                    <strong> </strong>
-                    new Merchant(merchantId, apiToken), <strong> </strong>"https://test.salt.com/gateway/creditcard/processor.do");
-                </p>
-                <p align="left">
-                    // specify additional credit card parameters
-                </p>
-                <p align="left">
-                    CreditCard creditCard = <strong>new CreditCard</strong>(pan, expiry<strong>, cvv2, </strong>null, null);
-                </p>
-                <p align="left">
-                    // specify the VerificationRequest contains an AvsRequest and/or Cvv2Request
-                </p>
-                <p align="left">
-                    <strong>VerificationRequest verify = new VerificationRequest(</strong>
-                </p>
-                <p align="left">
-                    <strong> null,</strong>
-                </p>
-                <p align="left">
-                    <strong> Cvv2Request.CVV2_PRESENT,</strong>
-                </p>
-                <p align="left">
-                    <strong> );</strong>
-                </p>
-                <p align="left">
-                    CreditCardReceipt receipt =
-                </p>
-                <p align="left">
-                    <strong> </strong>
-                    ccService.singlePurchase(invoice, creditCard, amount<strong>, verify</strong>);
-                </p>
-                <p align="left">
-                    :
-                </p>
-                <p align="left">
-                    :
-                </p>
-                <p align="left">
-                    // Extract Results from CreditCardReceipt...
-                </p>
-                <p align="left">
-                    :
-                </p>
-                <p align="left">
-                    :
-                </p>
-                <p align="left">
-                    // Verification results from CreditCardReceipt...
-                </p>
-                <p align="left">
-                    <strong>Cvv2Response cvv2Response = receipt.getCvv2Response();</strong>
-                    <strong></strong>
-                </p>
-                <p align="left">
-                    :
-                </p>
-                <p align="left">
-                    :
-                </p>
-            </td>
-        </tr>
-    </tbody>
+  <thead>
+      <tr>
+          <td><code>Cvv2Response</code></td>
+      </tr>
+      <tr>
+          <th>Field (Accessor)</th>
+          <th>Type</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>getCode()</code></td>
+          <td><code>String</code></td>
+          <td>CVV2 Response Code</td>
+      </tr>
+      <tr>
+          <td><code>getMessage()</code></td>
+          <td><code>String</code></td>
+          <td>CVV2 Response Message</td>
+      </tr>
+  </tbody>
 </table>
-<p>
-    The results of the CVV2 check are returned as a <strong>Cvv2Response</strong> object as part of the CreditCardReceipt.
-</p>
-<p>
-    <a name="_Toc222546534"></a>
-    <a name="_Toc271107137">Table </a>
-    5-3 Core API: Cvv2Response Object
-</p>
-<div align="center">
-    <table class="table table-bordered table-striped">
-        <tbody>
-            <tr>
-                <td width="638" colspan="3" valign="top">
-                    <p>
-                        Cvv2Response
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="209" valign="top">
-                    <p align="left">
-                        <strong>Field (Accessor)</strong>
-                    </p>
-                </td>
-                <td width="91" valign="top">
-                    <p align="left">
-                        <strong>Type</strong>
-                    </p>
-                </td>
-                <td width="338" valign="top">
-                    <p align="left">
-                        <strong>Description</strong>
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="209" valign="top">
-                    <p align="left">
-                        getCode()
-                    </p>
-                </td>
-                <td width="91" valign="top">
-                    <p align="left">
-                        String
-                    </p>
-                </td>
-                <td width="338" valign="top">
-                    <p align="left">
-                        CVV2 Response Code
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="209" valign="top">
-                    <p align="left">
-                        getMessage()
-                    </p>
-                </td>
-                <td width="91" valign="top">
-                    <p align="left">
-                        String
-                    </p>
-                </td>
-                <td width="338" valign="top">
-                    <p align="left">
-                        CVV2 Response Message
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
 <p>
     The CVV2 response code will denote a match/mismatch:
 </p>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+        <th>Code</th>
+        <th>Description</th>
+        <th>Match</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>M</td>
+        <td>CVV2 Match</td>
+        <td>Match</td>
+    </tr>
+    <tr>
+        <td>N</td>
+        <td>CVV2 No Match</td>
+        <td width="127" valign="top">
+            <p align="left">
+                <strong>Mismatch</strong>
+                <strong></strong>
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td>P</td>
+        <td>Not Processed</td>
+        <td>Unknown</td>
+    </tr>
+    <tr>
+        <td>S</td>
+        <td>Issuer indicates that CVV2 data should be present on the card, but the merchant has indicated data is not present on the card</td>
+        <td>Unknown</td>
+    </tr>
+    <tr>
+        <td>U</td>
+        <td>Issuer has not certified for CVV2 or Issuer has not provided Visa with the CVV2 encryption keys</td>
+        <td>Unknown</td>
+    </tr>
+    <tr>
+        <td>&lt;blank&gt;</td>
+        <td>CVV2 was not performed, occurs if you did not provide a cvv2 or an invalid cvv2 value</td>
+        <td>Unknown</td>
+    </tr>
+  </tbody>
+</table>
 <p>
-    <a name="_Toc222546535"></a>
-    <a name="_Toc271107138">Table </a>
-    5-4 CVV2 Response Codes
-</p>
-<div align="center">
-    <table class="table table-bordered table-striped">
-        <tbody>
-            <tr>
-                <td width="68" valign="top">
-                    <p align="left">
-                        <strong>Code</strong>
-                    </p>
-                </td>
-                <td width="444" valign="top">
-                    <p align="left">
-                        <strong>Description</strong>
-                    </p>
-                </td>
-                <td width="127" valign="top">
-                    <p align="left">
-                        <strong>Match</strong>
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="68" valign="top">
-                    <p align="left">
-                        M
-                    </p>
-                </td>
-                <td width="444" valign="top">
-                    <p align="left">
-                        CVV2 Match
-                    </p>
-                </td>
-                <td width="127" valign="top">
-                    <p align="left">
-                        Match
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="68" valign="top">
-                    <p align="left">
-                        N
-                    </p>
-                </td>
-                <td width="444" valign="top">
-                    <p align="left">
-                        CVV2 No Match
-                    </p>
-                </td>
-                <td width="127" valign="top">
-                    <p align="left">
-                        <strong>Mismatch</strong>
-                        <strong></strong>
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="68" valign="top">
-                    <p align="left">
-                        P
-                    </p>
-                </td>
-                <td width="444" valign="top">
-                    <p align="left">
-                        Not Processed
-                    </p>
-                </td>
-                <td width="127" valign="top">
-                    <p align="left">
-                        Unknown
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="68" valign="top">
-                    <p align="left">
-                        S
-                    </p>
-                </td>
-                <td width="444" valign="top">
-                    <p align="left">
-                        Issuer indicates that CVV2 data should be present on the card, but the merchant has indicated data is not present on the card
-                    </p>
-                </td>
-                <td width="127" valign="top">
-                    <p align="left">
-                        Unknown
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="68" valign="top">
-                    <p align="left">
-                        U
-                    </p>
-                </td>
-                <td width="444" valign="top">
-                    <p align="left">
-                        Issuer has not certified for CVV2 or Issuer has not provided Visa with the CVV2 encryption keys
-                    </p>
-                </td>
-                <td width="127" valign="top">
-                    <p align="left">
-                        Unknown
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="68" valign="top">
-                    <p align="left">
-                        &lt;blank&gt;
-                    </p>
-                </td>
-                <td width="444" valign="top">
-                    <p align="left">
-                        CVV2 was not performed, occurs if you did not provide a cvv2 or an invalid cvv2 value
-                    </p>
-                </td>
-                <td width="127" valign="top">
-                    <p align="left">
-                        Unknown
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-<p>
-Note that if a CVV2 check results in a mismatch or is not supported by the cardholder financial institution, this does <strong>NOT</strong>    <strong>necessarily</strong> mean that a transaction will be declined. Some financial institutions may decline but others will not. CVV2 gives you
+  Note that if a CVV2 check results in a mismatch or is not supported by the cardholder financial institution, this does <strong>NOT</strong>    <strong>necessarily</strong> mean that a transaction will be declined. Some financial institutions may decline but others will not. CVV2 gives you
     additional information on which you can base your decision whether or not to accept the transaction as legitimate
     <strong>
         . If the financial institution does not decline the transaction, and you choose not to accept the transaction, you must issue a void against it.
     </strong>
     (See Section 3.4 on how to perform a void)
 </p>
-<p>
-    <a name="_Toc222545498"></a>
-    <a name="_Toc271107091">Address Verification System (AVS)</a>
-</p>
+<h4>Address Verification System (AVS)</h4>
 <p>
     Address Verification System (AVS) provides additional security by comparing a given billing address against the address on file at the cardholder
     financial institution. If an AVS check indicates that the address does not fully match, you may have cause to suspect a possibly fraudulent transaction.
@@ -653,689 +248,245 @@ Note that if a CVV2 check results in a mismatch or is not supported by the cardh
 </p>
 <p>
 Note that if an AVS check results in a mismatch or is not supported by the cardholder financial institution, this does <strong>NOT</strong>    <strong>necessarily</strong> mean that a transaction will be rejected. AVS only gives you additional information on which you can base your decision
-    whether or not to accept the transaction as legitimate<strong>. If you choose not to accept the transaction, you must issue a void against it </strong>(see
-    Section 3.4 on how to perform a void).
+    whether or not to accept the transaction as legitimate<strong>. If you choose not to accept the transaction, you must issue a void against it </strong>
 </p>
-<p>
-    <a name="_Toc222545499"></a>
-    <a name="_Toc271107092">Using AVS</a>
-</p>
+<h5>Using AVS</h5>
 <p>
     To use AVS, you must
 </p>
-<p align="left">
-    1. Collect and include the customer zip/postal code and address as part of the CreditCard object
-</p>
-<p align="left">
-    2. Create a VerificationRequest with the AvsRequest parameter set.
-</p>
-<p align="left">
-    3. Call the singlePurchase() method with the VerificationRequest.
-</p>
-<p>
-    <a name="_Toc222546536"></a>
-    <a name="_Toc271107139"></a>
-    <a name="_Toc185066523">Table </a>
-    5-5 AvsRequest Enumeration
-</p>
-<div align="center">
-    <table class="table table-bordered table-striped">
-        <tbody>
-            <tr>
-                <td width="639" colspan="2" valign="top">
-                    <p>
-                        AvsRequest
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="198" valign="top">
-                    <p align="left">
-                        <strong>Value</strong>
-                    </p>
-                </td>
-                <td width="441" valign="top">
-                    <p align="left">
-                        <strong>Description</strong>
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="198" valign="top">
-                    <p align="left">
-                        VERIFY_STREET_AND_ZIP
-                    </p>
-                </td>
-                <td width="441" valign="top">
-                    <p align="left">
-                        Verify that <strong>both </strong>specified street number &amp; name (combined) and zip/postal code of the cardholder matches the
-                        values in the cardholder issuer file.
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="198" valign="top">
-                    <p align="left">
-                        VERIFY_ZIP_ONLY
-                    </p>
-                </td>
-                <td width="441" valign="top">
-                    <p align="left">
-                        Verify that specified zip/postal code of the cardholder matches the value in the cardholder issuer file. If this is specified,
-                        address will <strong>not </strong>be verified
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-<p>
-    An example of a singlePurchase() with AVS checking is shown below:
-</p>
-<br clear="all"/>
-<p align="left">
-    <a name="_Toc337027749"></a>
-    <a name="_Toc271107162"><strong></strong></a>
-</p>
-<p>
-    Figure 5-2 Example Core API Purchase with AVS
-</p>
+<ol>
+  <li>Collect and include the customer zip/postal code and address as part of the <code>CreditCard</code> object</li>
+  <li>Create a <code>VerificationRequest</code> with the <code>AvsRequest</code> parameter set.</li>
+  <li>Call the <code>singlePurchase()</code> method with the <code>VerificationRequest</code>.</li>
+</ol>
 <table class="table table-bordered table-striped">
-    <tbody>
-        <tr>
-            <td width="638" valign="top">
-                <p align="left">
-                    import com.salt.payment.client.creditcard.api.*;
-                </p>
-                <p align="left">
-                    :
-                </p>
-                <p align="left">
-                    :
-                </p>
-                <p align="left">
-                    int merchantId=12345; // as assigned by SALT
-                </p>
-                <p align="left">
-                    String apiToken="DNZHRC6dNgppYYzR"; // as assigned by SALT
-                </p>
-                <p align="left">
-                    long pan=4242424242424242L;
-                </p>
-                <p align="left">
-                    short expiry=1212;
-                </p>
-                <p align="left">
-                    String invoice="order-12345"; // merchant invoice/orderId
-                </p>
-                <p align="left">
-                    String <strong>avsStreet</strong>="<strong>123 Easy Street</strong>"; // AVS Street number and name
-                </p>
-                <p align="left">
-                    String <strong>avsZip</strong>="<strong>A1B2C3</strong>"; // AVS ZIP/Postal code
-                </p>
-                <p align="left">
-                    long amount=3420; // in cents
-                </p>
-                <p align="left">
-                    HttpsCreditCardService ccService = new HttpsCreditCardService(
-                    <br/>
-                    <strong> </strong>
-                    new Merchant(merchantId, apiToken), <strong> </strong>"https://test.salt.com/gateway/creditcard/processor.do");
-                </p>
-                <p align="left">
-                    // specify additional credit card parameters
-                </p>
-                <p align="left">
-                    CreditCard creditCard = <strong>new CreditCard</strong>(pan, expiry<strong>, </strong>null<strong>, avsStreet, avsZip</strong>);
-                </p>
-                <p align="left">
-                    // specify the VerificationRequest contains an AvsRequest and/or Cvv2Request
-                </p>
-                <p align="left">
-                    <strong>VerificationRequest verify = new VerificationRequest(</strong>
-                </p>
-                <p align="left">
-                    <strong> AvsRequest.VERIFY_STREET_AND_ZIP,</strong>
-                </p>
-                <p align="left">
-                    <strong> null</strong>
-                </p>
-                <p align="left">
-                    <strong> );</strong>
-                </p>
-                <p align="left">
-                    CreditCardReceipt receipt =
-                </p>
-                <p align="left">
-                    <strong> </strong>
-                    ccService.singlePurchase(invoice, creditCard, amount<strong>, verify</strong>);
-                </p>
-                <p align="left">
-                    :
-                </p>
-                <p align="left">
-                    :
-                </p>
-                <p align="left">
-                    // Extract Results from CreditCardReceipt...
-                </p>
-                <p align="left">
-                    :
-                </p>
-                <p align="left">
-                    :
-                </p>
-                <p align="left">
-                    // Verification results from CreditCardReceipt...
-                </p>
-                <p align="left">
-                    <strong>AvsResponse avsResponse = receipt.getAvsResponse();</strong>
-                    <strong></strong>
-                </p>
-                <p align="left">
-                    :
-                </p>
-                <p align="left">
-                    :
-                </p>
-            </td>
-        </tr>
-    </tbody>
+  <thead>
+    <tr>
+      <td><code>AvsRequest</code></td>
+    </tr>
+    <tr>
+        <th>Value</th>
+        <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>VERIFY_STREET_AND_ZIP</td>
+        <td>
+          Verify that <strong>both </strong>specified street number &amp; name (combined) and zip/postal code of the cardholder matches the
+          values in the cardholder issuer file.
+        </td>
+    </tr>
+    <tr>
+        <td>VERIFY_ZIP_ONLY</td>
+        <td>
+          Verify that specified zip/postal code of the cardholder matches the value in the cardholder issuer file. If this is specified,
+          address will <strong>not </strong>be verified
+        </td>
+    </tr>
+  </tbody>
 </table>
 <p>
-    The results of the AVS request are returned as an AvsResponse object as part of the CreditCardReceipt.
+    An example of a <code>singlePurchase()</code> with AVS checking is shown below:
 </p>
+<pre class="prettyprint linenums">
+import com.salt.payment.client.creditcard.api.*;
+:
+:
+int merchantId=12345; // as assigned by SALT
+String apiToken="DNZHRC6dNgppYYzR"; // as assigned by SALT
+long pan=4242424242424242L;
+short expiry=1212;
+String invoice="order-12345"; // merchant invoice/orderId
+String avsStreet="123 Easy Street"; // AVS Street number and name
+String avsZip="A1B2C3"; // AVS ZIP/Postal code
+long amount=3420; // in cents
+HttpsCreditCardService ccService = new HttpsCreditCardService(
+  new Merchant(merchantId, apiToken),  "https://test.salt.com/gateway/creditcard/processor.do");
+// specify additional credit card parameters
+CreditCard creditCard = new CreditCard(pan, expiry, null, avsStreet, avsZip);
+// specify the VerificationRequest contains an AvsRequest and/or Cvv2Request
+VerificationRequest verify = new VerificationRequest(
+  AvsRequest.VERIFY_STREET_AND_ZIP,
+  null
+);
+CreditCardReceipt receipt =
+  ccService.singlePurchase(invoice, creditCard, amount, verify);
+:
+:
+// Extract Results from CreditCardReceipt...
+:
+:
+// Verification results from CreditCardReceipt...
+AvsResponse avsResponse = receipt.getAvsResponse();
+:
+:
+</pre>
 <p>
-    <a name="_Toc222546537"></a>
-    <a name="_Toc271107140">Table </a>
-    5-6 Core API: AvsResponse Object
+    The results of the AVS request are returned as an <code>AvsResponse</code> object as part of the <code>CreditCardReceipt</code>.
 </p>
-<div align="center">
-    <table class="table table-bordered table-striped">
-        <tbody>
-            <tr>
-                <td width="638" colspan="3" valign="top">
-                    <p>
-                        AvsResponse
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="209" valign="top">
-                    <p align="left">
-                        <strong>Field (Accessor)</strong>
-                    </p>
-                </td>
-                <td width="73" valign="top">
-                    <p align="left">
-                        <strong>Type</strong>
-                    </p>
-                </td>
-                <td width="356" valign="top">
-                    <p align="left">
-                        <strong>Description</strong>
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="209" valign="top">
-                    <p align="left">
-                        getAvsErrorCode()
-                    </p>
-                </td>
-                <td width="73" valign="top">
-                    <p align="left">
-                        String
-                    </p>
-                </td>
-                <td width="356" valign="top">
-                    <p align="left">
-                        The code of the error that prevented AVS from being performed, or null if no error
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="209" valign="top">
-                    <p align="left">
-                        getAvsErrorMessage()
-                    </p>
-                </td>
-                <td width="73" valign="top">
-                    <p align="left">
-                        String
-                    </p>
-                </td>
-                <td width="356" valign="top">
-                    <p align="left">
-                        The message of the error that prevented AVS from being performed, or null if no error
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="209" valign="top">
-                    <p align="left">
-                        getAvsResponseCode()
-                    </p>
-                </td>
-                <td width="73" valign="top">
-                    <p align="left">
-                        String
-                    </p>
-                </td>
-                <td width="356" valign="top">
-                    <p align="left">
-                        The standard alphabetic AVS response code (see Table 5.7)
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="209" valign="top">
-                    <p align="left">
-                        getZipType()
-                    </p>
-                </td>
-                <td width="73" valign="top">
-                    <p align="left">
-                        String
-                    </p>
-                </td>
-                <td width="356" valign="top">
-                    <p align="left">
-                        The type of the zip (either zip or postal code) or null if there was an AVS error
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="209" valign="top">
-                    <p align="left">
-                        isAvsPerformed()
-                    </p>
-                </td>
-                <td width="73" valign="top">
-                    <p align="left">
-                        Boolean
-                    </p>
-                </td>
-                <td width="356" valign="top">
-                    <p align="left">
-                        true if AVS was performed, false if it wasn't
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="209" valign="top">
-                    <p align="left">
-                        isStreetFormatValid()
-                    </p>
-                </td>
-                <td width="73" valign="top">
-                    <p align="left">
-                        Boolean
-                    </p>
-                </td>
-                <td width="356" valign="top">
-                    <p align="left">
-                        true if the street format is valid, false otherwise
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="209" valign="top">
-                    <p align="left">
-                        isStreetFormatValid
-                    </p>
-                    <p align="left">
-                        AndMatched()
-                    </p>
-                </td>
-                <td width="73" valign="top">
-                    <p align="left">
-                        Boolean
-                    </p>
-                </td>
-                <td width="356" valign="top">
-                    <p align="left">
-                        true if the street format is valid and matches
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="209" valign="top">
-                    <p align="left">
-                        isZipFormatValid()
-                    </p>
-                </td>
-                <td width="73" valign="top">
-                    <p align="left">
-                        Boolean
-                    </p>
-                </td>
-                <td width="356" valign="top">
-                    <p align="left">
-                        true if the zip/postal code format is valid, false otherwise
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="209" valign="top">
-                    <p align="left">
-                        isZipFormatValid
-                    </p>
-                    <p align="left">
-                        AndMatched()
-                    </p>
-                </td>
-                <td width="73" valign="top">
-                    <p align="left">
-                        Boolean
-                    </p>
-                </td>
-                <td width="356" valign="top">
-                    <p align="left">
-                        true if the zip/postal code format is valid and matches
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <td><code>AvsResponse</code></td>
+    </tr>
+    <tr>
+      <th>Field (Accessor)</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td><code>getAvsErrorCode()</code></td>
+        <td><code>String</code></td>
+        <td>The code of the error that prevented AVS from being performed, or null if no error</td>
+    </tr>
+    <tr>
+        <td><code>getAvsErrorMessage()</code></td>
+        <td><code>String</code></td>
+        <td>The message of the error that prevented AVS from being performed, or null if no error</td>
+    </tr>
+    <tr>
+        <td><code>getAvsResponseCode()</code></td>
+        <td><code>String</code></td>
+        <td>The standard alphabetic AVS response code (see Table 5.7)</td>
+    </tr>
+    <tr>
+        <td><code>getZipType()</code></td>
+        <td><code>String</code></td>
+        <td>The type of the zip (either zip or postal code) or null if there was an AVS error</td>
+    </tr>
+    <tr>
+        <td><code>isAvsPerformed()</code></td>
+        <td><code>Boolean</code></td>
+        <td>true if AVS was performed, false if it wasn't</td>
+    </tr>
+    <tr>
+        <td><code>isStreetFormatValid()</code></td>
+        <td><code>Boolean</code></td>
+        <td>true if the street format is valid, false otherwise</td>
+    </tr>
+    <tr>
+        <td><code>isStreetFormatValidAndMatched()</code></td>
+        <td>Boolean</td>
+        <td>true if the street format is valid and matches</td>
+    </tr>
+    <tr>
+        <td><code>isZipFormatValid()</code></td>
+        <td><code>Boolean</code></td>
+        <td>true if the zip/postal code format is valid, false otherwise</td>
+    </tr>
+    <tr>
+        <td><code>isZipFormatValidAndMatched()</code></td>
+        <td>Boolean</td>
+        <td>true if the zip/postal code format is valid and matches</td>
+    </tr>
+  </tbody>
+</table>
 <p>
-    The getResponseCode() field indicates: a full match (both address and zip/postal match), a partial match (one field matches), a mismatch (both do not
+    The <code>getResponseCode()</code> field indicates: a full match (both address and zip/postal match), a partial match (one field matches), a mismatch (both do not
     match), or unknown (AVS may be unavailable/unsupported by this cardholder bank).
 </p>
-<p>
-    <a name="_Toc222546538"></a>
-    <a name="_Toc271107141"></a>
-    <a name="_Ref222722916"></a>
-    <a name="_Ref222722925">Table </a>
-    5-7 AVS Response Codes
-</p>
-<div align="center">
-    <table class="table table-bordered table-striped">
-        <tbody>
-            <tr>
-                <td width="68" valign="top">
-                    <p align="left">
-                        <strong>Code</strong>
-                    </p>
-                </td>
-                <td width="444" valign="top">
-                    <p align="left">
-                        <strong>Description</strong>
-                    </p>
-                </td>
-                <td width="127" valign="top">
-                    <p align="left">
-                        <strong>Match</strong>
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="68" valign="top">
-                    <p align="left">
-                        A
-                    </p>
-                </td>
-                <td width="444" valign="top">
-                    <p align="left">
-                        Street address matches, but zip/postal does not (Domestic)
-                    </p>
-                </td>
-                <td width="127" valign="top">
-                    <p align="left">
-                        Partial
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="68" valign="top">
-                    <p align="left">
-                        B
-                    </p>
-                </td>
-                <td width="444" valign="top">
-                    <p align="left">
-                        Street address matches, but postal code not verified (International)
-                    </p>
-                </td>
-                <td width="127" valign="top">
-                    <p align="left">
-                        Partial
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="68" valign="top">
-                    <p align="left">
-                        C
-                    </p>
-                </td>
-                <td width="444" valign="top">
-                    <p align="left">
-                        Street address and postal code do not match (International)
-                    </p>
-                </td>
-                <td width="127" valign="top">
-                    <p align="left">
-                        <strong>Mismatch</strong>
-                        <strong></strong>
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="68" valign="top">
-                    <p align="left">
-                        D, M
-                    </p>
-                </td>
-                <td width="444" valign="top">
-                    <p align="left">
-                        Street address and postal code match (International)
-                    </p>
-                </td>
-                <td width="127" valign="top">
-                    <p align="left">
-                        Full Match
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="68" valign="top">
-                    <p align="left">
-                        E
-                    </p>
-                </td>
-                <td width="444" valign="top">
-                    <p align="left">
-                        AVS data invalid or not allowed for this card type
-                    </p>
-                </td>
-                <td width="127" valign="top">
-                    <p align="left">
-                        Unknown
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="68" valign="top">
-                    <p align="left">
-                        G
-                    </p>
-                </td>
-                <td width="444" valign="top">
-                    <p align="left">
-                        Non-US bank does not support AVS
-                    </p>
-                </td>
-                <td width="127" valign="top">
-                    <p align="left">
-                        Unknown
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="68" valign="top">
-                    <p align="left">
-                        I
-                    </p>
-                </td>
-                <td width="444" valign="top">
-                    <p align="left">
-                        Address not verified
-                    </p>
-                </td>
-                <td width="127" valign="top">
-                    <p align="left">
-                        Unknown
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="68" valign="top">
-                    <p align="left">
-                        N
-                    </p>
-                </td>
-                <td width="444" valign="top">
-                    <p align="left">
-                        Street address and postal code do not match (Domestic)
-                    </p>
-                </td>
-                <td width="127" valign="top">
-                    <p align="left">
-                        <strong>Mismatch</strong>
-                        <strong></strong>
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="68" valign="top">
-                    <p align="left">
-                        P
-                    </p>
-                </td>
-                <td width="444" valign="top">
-                    <p align="left">
-                        Postal code matches, but street address not verified (International)
-                    </p>
-                </td>
-                <td width="127" valign="top">
-                    <p align="left">
-                        Partial
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="68" valign="top">
-                    <p align="left">
-                        R
-                    </p>
-                </td>
-                <td width="444" valign="top">
-                    <p align="left">
-                        System unavailable (Domestic)
-                    </p>
-                </td>
-                <td width="127" valign="top">
-                    <p align="left">
-                        Unknown
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="68" valign="top">
-                    <p align="left">
-                        S
-                    </p>
-                </td>
-                <td width="444" valign="top">
-                    <p align="left">
-                        Bank Does not support AVS (Domestic)
-                    </p>
-                </td>
-                <td width="127" valign="top">
-                    <p align="left">
-                        Unknown
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="68" valign="top">
-                    <p align="left">
-                        U
-                    </p>
-                </td>
-                <td width="444" valign="top">
-                    <p align="left">
-                        Address information unavailable. Returned if the US bank does not support non-US AVS or if the AVS in a US bank is not functioning
-                        properly.
-                    </p>
-                </td>
-                <td width="127" valign="top">
-                    <p align="left">
-                        Unknown
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="68" valign="top">
-                    <p align="left">
-                        W, Z
-                    </p>
-                </td>
-                <td width="444" valign="top">
-                    <p align="left">
-                        Street address does not match, but zip code matches (Domestic)
-                    </p>
-                </td>
-                <td width="127" valign="top">
-                    <p align="left">
-                        Partial
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="68" valign="top">
-                    <p align="left">
-                        X, Y
-                    </p>
-                </td>
-                <td width="444" valign="top">
-                    <p align="left">
-                        Street address and zip code match (Domestic)
-                    </p>
-                </td>
-                <td width="127" valign="top">
-                    <p align="left">
-                        Full Match
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="68" valign="top">
-                    <p align="left">
-                        &lt;blank&gt;
-                    </p>
-                </td>
-                <td width="444" valign="top">
-                    <p align="left">
-                        AVS was not performed, occurs if you did not provide a billing address
-                    </p>
-                </td>
-                <td width="127" valign="top">
-                    <p align="left">
-                        Unknown
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-<p>
-    <a name="_Toc222545500"></a>
-    <a name="_Toc271107093">Suggestions for Interpreting/Handling an AVS Response</a>
-</p>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+        <th>Code</th>
+        <th>Description</th>
+        <th>Match</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>A</td>
+        <td>Street address matches, but zip/postal does not (Domestic)</td>
+        <td>Partial</td>
+    </tr>
+    <tr>
+        <td>B</td>
+        <td>Street address matches, but postal code not verified (International)</td>
+        <td>Partial</td>
+    </tr>
+    <tr>
+        <td>C</td>
+        <td>Street address and postal code do not match (International)</td>
+        <td width="127" valign="top">
+            <p align="left">
+                <strong>Mismatch</strong>
+                <strong></strong>
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td>D, M</td>
+        <td>Street address and postal code match (International)</td>
+        <td>Full Match</td>
+    </tr>
+    <tr>
+        <td>E</td>
+        <td>AVS data invalid or not allowed for this card type</td>
+        <td>Unknown</td>
+    </tr>
+    <tr>
+        <td>G</td>
+        <td>Non-US bank does not support AVS</td>
+        <td>Unknown</td>
+    </tr>
+    <tr>
+        <td>I</td>
+        <td>Address not verified</td>
+        <td>Unknown</td>
+    </tr>
+    <tr>
+        <td>N</td>
+        <td>Street address and postal code do not match (Domestic)</td>
+        <td width="127" valign="top">
+            <p align="left">
+                <strong>Mismatch</strong>
+                <strong></strong>
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td>P</td>
+        <td>Postal code matches, but street address not verified (International)</td>
+        <td>Partial</td>
+    </tr>
+    <tr>
+        <td>R</td>
+        <td>System unavailable (Domestic)</td>
+        <td>Unknown</td>
+    </tr>
+    <tr>
+        <td>S</td>
+        <td>Bank Does not support AVS (Domestic)</td>
+        <td>Unknown</td>
+    </tr>
+    <tr>
+        <td>U</td>
+        <td>
+          Address information unavailable. Returned if the US bank does not support non-US AVS or if the AVS in a US bank is not functioning properly.
+        </td>
+        <td>Unknown</td>
+    </tr>
+    <tr>
+        <td>W, Z</td>
+        <td>Street address does not match, but zip code matches (Domestic)</td>
+        <td>Partial</td>
+    </tr>
+    <tr>
+        <td>X, Y</td>
+        <td>Street address and zip code match (Domestic)</td>
+        <td>Full Match</td>
+    </tr>
+    <tr>
+        <td>&lt;blank&gt;</td>
+        <td>AVS was not performed, occurs if you did not provide a billing address</td>
+        <td>Unknown</td>
+    </tr>
+  </tbody>
+</table>
+<h5>Suggestions for Interpreting/Handling an AVS Response</h5>
 <p>
     AVS is not a foolproof security feature, so even if a full match is obtained, there is no guarantee that a transaction is not fraudulent. However, a
     partial, or better yet, full match makes it more likely that whoever is submitting the transaction is the real cardholder (since they have access to the
@@ -1345,31 +496,20 @@ Note that if an AVS check results in a mismatch or is not supported by the cardh
     Below are some suggestions for the interpretation/handling of AVS responses. Please note that these are just suggestions and the ultimate decision of
     whether or not to accept a transaction is still up to you. Also remember that if you do not want to accept a transaction, you must void it yourself.
 </p>
-<p>
-    <strong>Partial Match</strong>
+<ul>
+    <li><strong>Partial Match</strong>
     Typically if the user has one part of the address correct, they probably know the entire address. Of course, a full match is more reassuring, but
     sometimes a partial match occurs because of differences in the formats of the entered address and the address on file (for example, sometimes the
-    cardholder may enter the unit number before their street number).
-</p>
-<p>
-    <strong>Mismatch</strong>
-    You probably should not accept this transaction without confirming with the cardholder directly.
-</p>
-<p>
-    <strong>Unknown</strong>
+    cardholder may enter the unit number before their street number).</li>
+<li><strong>Mismatch</strong>
+    You probably should not accept this transaction without confirming with the cardholder directly.</li>
+<li><strong>Unknown</strong>
     If the cardholder address is international, you may see this result. If you typically do business with international customers, then this will be
-    expected. Otherwise, you may want to consider whether or not to accept the transaction.
-</p>
-</div>
-<br>
-<div class="well">
-<h4>
-    <a name="_Toc355011676"></a>
-    <a name="_Toc222545501"></a>
-    <a name="_Toc271107094"></a>
-    <a name="_Ref233193600"></a>
-    <a name="_Ref233193589">5.2 Secure Storage API</a>
-</h4>
+    expected. Otherwise, you may want to consider whether or not to accept the transaction.</li>
+</ul>
+
+<hr/>
+<h3>Secure Storage API</h3>
 <p>
     With the Secure Storage API, merchants can remotely store credit card and other sensitive customer data with SALT to increase security and reduce the scope
     of PCI Compliance.
@@ -1378,115 +518,51 @@ Note that if an AVS check results in a mismatch or is not supported by the cardh
     When information is stored with SALT, a Storage Token (which identifies the information in secure storage) is returned in response. This Storage Token
     can be used for all subsequent transactions including purchases and credit card verification.
 </p>
-<p>
-    <a name="_Toc222545502"></a>
-    <a name="_Toc271107095">Storing Customer Information (Creating a Storage Token)</a>
-</p>
-<p>
-    <a name="_Toc222546539"></a>
-    <a name="_Toc271107142">Table </a>
-    5-8 Core API: HttpsCreditCardService.addToStorage() Method
-</p>
-<div align="center">
-    <table class="table table-bordered table-striped">
-        <tbody>
-            <tr>
-                <td width="638" colspan="3" valign="top">
-                    <p>
-                        HttpsCreditCardService.addToStorage(paymentProfile, storageTokenId)
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="638" colspan="3" valign="top">
-                    <p>
-                        Parameters:
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="139" valign="top">
-                    <p align="left">
-                        <strong>Name</strong>
-                    </p>
-                </td>
-                <td width="108" valign="top">
-                    <p align="left">
-                        <strong>Type</strong>
-                    </p>
-                </td>
-                <td width="391" valign="top">
-                    <p align="left">
-                        <strong>Description</strong>
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="139" valign="top">
-                    <p align="left">
-                        storageTokenId
-                    </p>
-                </td>
-                <td width="108" valign="top">
-                    <p align="left">
-                        String(32)
-                    </p>
-                </td>
-                <td width="391" valign="top">
-                    <p align="left">
-                        Optional. Specifies the identifier (storage token) for the stored information. Must be unique. If not provided, SALT will auto-generate
-                        one for you.
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="139" valign="top">
-                    <p align="left">
-                        paymentProfile
-                    </p>
-                </td>
-                <td width="108" valign="top">
-                    <p align="left">
-                        PaymentProfile
-                    </p>
-                </td>
-                <td width="391" valign="top">
-                    <p align="left">
-                        Contains the customer information to be stored. See Table 5.9 for details
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="638" colspan="3" valign="top">
-                    <p>
-                        Returns:
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="247" colspan="2" valign="top">
-                    <p align="left">
-                        StorageReceipt
-                    </p>
-                </td>
-                <td width="391" valign="top">
-                    <p align="left">
-                        The results of the storage request
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<h4>Storing Customer Information (Creating a Storage Token)</h4>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <td>
+        <code>HttpsCreditCardService.addToStorage(paymentProfile, storageTokenId)</code>
+        </td>
+    </tr>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>storageTokenId</td>
+        <td>String(32)</td>
+        <td width="391" valign="top">
+            <p align="left">
+                Optional. Specifies the identifier (storage token) for the stored information. Must be unique. If not provided, SALT will auto-generate
+                one for you.
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td>paymentProfile</td>
+        <td>PaymentProfile</td>
+        <td>Contains the customer information to be stored. See Table 5.9 for details</td>
+    </tr>
+    <tr>
+        <td width="638" colspan="3" valign="top">
+            <p>
+                Returns:
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td>StorageReceipt</td>
+        <td>The results of the storage request</td>
+    </tr>
+  </tbody>
+</table>
 <p>
     The PaymentProfile class contains a CreditCard data object as well as a CustomerProfile data object. The basic constructor is shown below.
-</p>
-<p>
-    <a name="_Toc222546540"></a>
-    <a name="_Toc271107143"></a>
-    <a name="_Ref233221771"></a>
-    <a name="_Ref233221820">Table </a>
-    5-9 Core API: PaymentProfile Class
 </p>
 <div align="center">
     <table class="table table-bordered table-striped">
@@ -2738,5 +1814,4 @@ PaymentProfile <strong>paymentProfile</strong> = <strong>new PaymentProfile</str
 <p>
     Deleting a record will free up the associated storageTokenId for re-use.
 </p>
-</div>
 <!-- Copyright (c) 2013 SALT Technology Inc. All rights reserved. -->
