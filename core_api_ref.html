@@ -22,6 +22,8 @@ menu: credit-card-reference
     $("#selectLanguage").change(function() {
       showExamplesForLanguage($("#selectLanguage").val());
     });
+    // first language is the default displayed
+    showExamplesForLanguage(languages[0]);
   });
 </script>
 
@@ -32,8 +34,8 @@ menu: credit-card-reference
       {% include api_reference/intro_description.html %}
     </div>
     <div class="method-example">
+      <h4>Select a Language</h4>
       <select id="selectLanguage">
-      <option value="none">-Languages-</option> 
       <option value="java">Java</option>
       <option value="dotnet">.Net</option>
       <option value="php">PHP</option>
@@ -42,6 +44,9 @@ menu: credit-card-reference
     </div>
   </div>
 </div>
+
+<hr/>
+
 <div class="method">
   <a id="single_purchase" name="single_purchase" class="section-anchor"></a>
   <div class="method-section">
@@ -55,19 +60,10 @@ menu: credit-card-reference
       <div class="dotnet language-example"><pre class="prettyprint linenums">{% include net/single_purchase_example.html %}</pre></div>
     </div>
   </div>
-  <a id="recurring_purchase" name="recurring_purchase" class="section-anchor"></a>
-  <div class="method-section">
-    <div class="method-description">
-      {% include api_reference/recurring_purchase_description.html %}
-    </div>
-    <div class="method-example">
-      <div class="java language-example"><pre class="prettyprint linenums">{% include java/recurring_purchase_example.html %}</pre></div>
-      <div class="php language-example"><pre class="prettyprint linenums">{% include php/recurring_purchase_example.html %}</pre></div>
-      <div class="ruby language-example"><pre class="prettyprint linenums">{% include ruby/recurring_purchase_example.html %}</pre></div>
-      <div class="dotnet language-example"><pre class="prettyprint linenums">{% include net/recurring_purchase_example.html %}</pre></div>
-    </div>
-  </div>
 </div>
+
+<hr/>
+
 <div class="method">
   <a id="void" name="void" class="section-anchor"></a>
   <div class="method-section">
@@ -82,6 +78,9 @@ menu: credit-card-reference
     </div>
   </div>
 </div>
+
+<hr/>
+
 <div class="method">
   <a id="refund" name="refund" class="section-anchor"></a>
   <div class="method-section">
@@ -94,6 +93,9 @@ menu: credit-card-reference
     </div>
   </div>
 </div>
+
+<hr/>
+
 <div class="method">
   <a id="txn_verification" name="txn_verification" class="section-anchor"></a>
   <div class="method-section">
@@ -106,6 +108,9 @@ menu: credit-card-reference
     </div>
   </div>
 </div>
+
+<hr/>
+
 <div class="method">
   <a id="cc_verification" name="cc_verification" class="section-anchor"></a>
   <div class="method-section">
@@ -118,6 +123,26 @@ menu: credit-card-reference
     </div>
   </div>
 </div>
+
+<hr/>
+
+<div class="method">
+  <a id="recurring_purchase" name="recurring_purchase" class="section-anchor"></a>
+  <div class="method-section">
+    <div class="method-description">
+      {% include api_reference/recurring_purchase_description.html %}
+    </div>
+    <div class="method-example">
+      <div class="java language-example"><pre class="prettyprint linenums">{% include java/recurring_purchase_example.html %}</pre></div>
+      <div class="php language-example"><pre class="prettyprint linenums">{% include php/recurring_purchase_example.html %}</pre></div>
+      <div class="ruby language-example"><pre class="prettyprint linenums">{% include ruby/recurring_purchase_example.html %}</pre></div>
+      <div class="dotnet language-example"><pre class="prettyprint linenums">{% include net/recurring_purchase_example.html %}</pre></div>
+    </div>
+  </div>
+</div>
+
+<hr/>
+
 <div class="method">
 <a id="batch" name="batch" class="section-anchor"></a>
 <div class="method-section">
@@ -128,6 +153,9 @@ menu: credit-card-reference
     </div>
   </div>
 </div>
+
+<hr/>
+
 <div class="method">
   <a id="fraud" name="fraud" class="section-anchor"></a>
   <div class="method-section">
@@ -138,14 +166,22 @@ menu: credit-card-reference
     </div>
   </div>
 </div>
+
+<hr/>
+
 <div class="method">
   <a id="receipts" name="receipts" class="section-anchor"></a>
   <div class="method-section">
     <div class="method-description">{% include api_reference/receipts_description.html %}</div>
-    <div class="java language-example"><pre class="prettyprint linenums">{% include java/receipts_example.html %}</pre></div>
-    <div class="dotnet language-example"><pre class="prettyprint linenums">{% include net/receipts_example.html %}</pre></div>
+    <div class="method-example">
+      <div class="java language-example"><pre class="prettyprint linenums">{% include java/receipts_example.html %}</pre></div>
+      <div class="dotnet language-example"><pre class="prettyprint linenums">{% include net/receipts_example.html %}</pre></div>
+    </div>
   </div>
 </div>
+
+<hr/>
+
 <div class="method">
   <a id="secure_storage" name="secure_storage" class="section-anchor"></a>
   <div class="method-section">

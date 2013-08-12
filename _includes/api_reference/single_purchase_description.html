@@ -1,24 +1,53 @@
-<div class="well">
-	<h3>Single Purchase</h3>
+<h2>Single Purchase</h2>
 
-	<p>
-	Perform a single purchase.
-	</p>
+<p>
+The <code>singlePurchase</code> method runs a one-time charge against a credit card.
+</p>
 
-	<br>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <td colspan="3">
+        <code>singlePurchase(orderId, creditCard, amount, verificationRequest)</code>
+      </td>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>orderId</code></td>
+      <td><code>String(32)</code></td>
+      <td>Merchant assigned order identifier. Must be unique.</td>
+    </tr>
+    <tr>
+      <td><code>creditCard</code></td>
+      <td><code>CreditCard</code></td>
+      <td>The credit card to be charged</td>
+    </tr>
+    <tr>
+      <td><code>amount</code></td>
+      <td><code>Long</code></td>
+      <td>Amount of the purchase <strong>in cents</strong>. Do NOT include a $ or any decimal place. (e.g. if your purchase is $10.00, then
+          send 1000 as the total).
+      </td>
+    </tr>
+    <tr>
+      <td><code>verificationRequest</code></td>
+      <td><code>VerificationRequest</code></td>
+      <td>Credit Card Verification request information, null if not used. See Section 5 for details on how to use this field.</td>
+    </tr>
+    <tr>
+      <td colspan="3"><strong>Returns:</strong></td>
+    </tr>
+      <tr>
+      <td colspan="2"><code>CreditCardReceipt</code></td>
+      <td>The results of the purchase request</td>
+    </tr>
+  </tbody>
+</table>
 
-	<table class="table table-bordered table-striped">
-		<tr>
-		<th>httpsCreditCardService.singlePurchase Arguments
-		<th>Description
-		<tr>
-		<td>String orderId	<td>Merchant assigned orderId.  Must be unique.
-		<tr>
-		<td>CreditCard creditCard<td>Credit card information.
-		<tr>
-		<td>long amount<td>Amount of the purchase in cents.
-		<tr>
-		<td>VerificationRequest verificationRequest<td>Request information, null if not used.
-	</table>
-</div>
 <!-- Copyright (c) 2013 SALT Technology Inc. All rights reserved. -->

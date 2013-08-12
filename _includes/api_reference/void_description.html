@@ -1,18 +1,43 @@
-<div class="well">
-	<h3>Void</h3>
+<h2>Void</h2>
 
-	<p>
-		Cancels a transaction, preventing it from being settled.  A Void can only be performed on a transaction belonging to the current batch, before the current batch is closed (i.e. before the end of day).
-	</p>
+<p>
+  Cancels a transaction, preventing it from being settled.  A Void can only be performed on a transaction belonging to the current batch, before the current batch is closed (i.e. before the end of day).
+</p>
 
-	<table class="table table-bordered table-striped">
-		<tr>
-		<th>HttpsCreditCardService.voidTransaction Arguments
-		<th>Description
-		<tr>
-		<td>long transactionId	<td>			The SALT transaction ID of the transaction to void.
-		<tr>
-		<td>String transactionOrderId<td>The orderId previously assigned to the transaction that is to be voided.
-	</table>
-</div>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <td colspan="3">
+        <code>voidTransaction(transactionId, transactionOrderId)</code>
+      </td>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td><code>transactionId</code></td>
+        <td><code>Long</code></td>
+        <td>The SALT transactionId of the transaction to void</td>
+    </tr>
+    <tr>
+        <td><code>transactionOrderId</code></td>
+        <td><code>String(32)</code></td>
+        <td>
+          The orderId previously assigned to the transaction that is to be voided. This is an extra check to prevent inadvertent voiding of a
+          transaction. Not null.
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3"><strong>Returns:</strong></td>
+    </tr>
+    <tr>
+        <td colspan="2"><code>CreditCardReceipt</code></td>
+        <td>The results of the void request</td>
+    </tr>
+  </tbody>
+</table>
 <!-- Copyright (c) 2013 SALT Technology Inc. All rights reserved. -->

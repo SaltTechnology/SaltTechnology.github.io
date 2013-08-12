@@ -1,13 +1,533 @@
-<div class="well">
-	<h3>
-		Secure Storage
-	</h3>
+<h2>Secure Storage</h2>
 
-	<p>
-		With the Secure Storage API, merchants can remotely store credit card and other sensitive customer data with SALT to increase security and reduce the scope of PCI Compliance.
-	</p>
-	<p>
-		When information is stored with SALT, a ‘Storage Token’ (which identifies the information in secure storage) is returned in response.  This Storage Token can be used for all subsequent transactions including purchases and credit card verification.
-	</p>
+<p>
+    With the Secure Storage API, merchants can remotely store credit card and other sensitive customer data with SALT to increase security and reduce the scope
+    of PCI Compliance.
+</p>
+<p>
+    When information is stored with SALT, a Storage Token (which identifies the information in secure storage) is returned in response. This Storage Token
+    can be used for all subsequent transactions including purchases and credit card verification.
+</p>
+<h3>Storing Customer Information (Creating a Storage Token)</h3>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <td colspan="3">
+        <code>HttpsCreditCardService.addToStorage(paymentProfile, storageTokenId)</code>
+        </td>
+    </tr>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td><code>storageTokenId</code></td>
+        <td><code>String(32)</code></td>
+        <td>
+          Optional. Specifies the identifier (storage token) for the stored information. Must be unique. If not provided, SALT will auto-generate
+          one for you.
+        </td>
+    </tr>
+    <tr>
+        <td><code>paymentProfile</code></td>
+        <td><code>PaymentProfile</code></td>
+        <td>Contains the customer information to be stored.</td>
+    </tr>
+    <tr>
+        <td colspan="3">
+          Returns:
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2"><code>StorageReceipt</code></td>
+        <td>The results of the storage request</td>
+    </tr>
+    </tbody>
+</table>
+
+<h3>PaymentProfile object</h3>
+<p>
+    The <code>PaymentProfile</code> class contains a <code>CreditCard</code> data object as well as a <code>CustomerProfile</code> data object. The basic constructor is shown below.
+</p>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <td colspan="3">
+        <code>PaymentProfile</code> Constructor Parameters
+      </td>
+    </tr>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td><code>creditCard</code></td>
+        <td><code>CreditCard</code></td>
+        <td>
+                Contains Credit Card information, optional. However, if you intend to run transactions with this PaymentProfile you must provide this
+                field.
+        </td>
+    </tr>
+    <tr>
+        <td><code>customerProfile</code></td>
+        <td><code>CustomerProfile</code></td>
+        <td>Contains Customer information, optional. See Table 5.10 for details</td>
+    </tr>
+  </tbody>
+</table>
+<p>
+    The <code>CreditCard</code> class is described in Table 5.1. Note that CVV2 will not be stored, even if specified.
+</p>
+
+<h3>CustomerProfile object</h3>
+<p>
+    The <code>CustomerProfile</code> class allows you to store various customer details such as name and address. All fields are completely optional you can choose to
+    store any or all of the following fields:
+</p>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <td colspan="3">
+        <code>CustomerProfile</code>
+      </td>
+    </tr>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td><code>setFirstName()</code></td>
+        <td><code>String</code></td>
+        <td>Customer first name</td>
+    </tr>
+    <tr>
+        <td><code>setLastName()</code></td>
+        <td><code>String</code></td>
+        <td>Customer last name</td>
+    </tr>
+    <tr>
+        <td><code>setAddress1()</code></td>
+        <td><code>String</code></td>
+        <td>Address 1 (first line of address)</td>
+    </tr>
+    <tr>
+        <td><code>setAddress2()</code></td>
+        <td><code>String</code></td>
+        <td>Address 2 (second line of address)</td>
+    </tr>
+    <tr>
+        <td><code>setCity()</code></td>
+        <td><code>String</code></td>
+        <td>City</td>
+    </tr>
+    <tr>
+        <td><code>setProvince()</code></td>
+        <td><code>String</code></td>
+        <td>Province/State</td>
+    </tr>
+    <tr>
+        <td><code>setPostal()</code></td>
+        <td><code>String</code></td>
+        <td>Postal/ZIP Code</td>
+    </tr>
+    <tr>
+        <td><code>setCountry()</code></td>
+        <td><code>String</code></td>
+        <td>Country</td>
+    </tr>
+    <tr>
+        <td><code>setPhoneNumber()</code></td>
+        <td><code>String</code></td>
+        <td>Customer Phone Number</td>
+    </tr>
+    <tr>
+        <td><code>setFaxNumber()</code></td>
+        <td><code>String</code></td>
+        <td>Customer Fax Number</td>
+    </tr>
+    <tr>
+        <td><code>setWebsite()</code></td>
+        <td><code>String</code></td>
+        <td>Customer website</td>
+    </tr>
+    <tr>
+        <td><code>setLegalName()</code></td>
+        <td><code>String</code></td>
+        <td>Customer Company Legal Name</td>
+    </tr>
+    <tr>
+        <td><code>setTradeName()</code></td>
+        <td><code>String</code></td>
+        <td>Customer Company Trade Name</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>StorageReceipt object</h3>
+
+<p>
+  The results of the storage request are returned as a <code>StorageReceipt</code> object. This is a data class similar to the <code>CreditCardReceipt</code>, and contains the following fields:
+</p>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <td colspan="3">
+        <code>StorageReceipt</code>
+      </td>
+    </tr>
+    <tr>
+        <th>Field</th>
+        <th>Type</th>
+        <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td><code>getDebugMessage()</code></td>
+        <td><code>String</code></td>
+        <td>Debug message, if applicable</td>
+    </tr>
+    <tr>
+        <td><code>getErrorCode()</code></td>
+        <td><code>String</code></td>
+        <td>Error code, if applicable</td>
+    </tr>
+    <tr>
+        <td><code>getErrorMessage()</code></td>
+        <td><code>String</code></td>
+        <td>Error message, if applicable</td>
+    </tr>
+    <tr>
+        <td><code>getProcessedDateTime()</code></td>
+        <td><code>Date</code></td>
+        <td>Date/time when the transaction was processed</td>
+    </tr>
+    <tr>
+        <td><code>getPaymentProfile()</code></td>
+        <td><code>PaymentProfile</code></td>
+        <td>Payment profile retrieved or updates (via the storage query or update methods). For creation/deletion, this field is null</td>
+    </tr>
+    <tr>
+        <td><code>getStorageTokenId()</code></td>
+        <td><code>String(32)</code></td>
+        <td>
+          The storageTokenId used. For storage record creation where no storageTokenId was specified, this will contain the value of the
+          SALT-generated storageTokenId.
+        </td>
+    </tr>
+    <tr>
+        <td><code>isApproved()</code></td>
+        <td><code>Boolean</code></td>
+        <td>Returns true if the request was approved, otherwise the request was declined due to some error.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Running a Transaction with a Storage Token</h3>
+<p>
+    Once you have created a Storage Token, you can use it in place of a <code>CreditCard</code> object in any transaction that requires a credit card. The SALT Gateway will
+    use the <code>storageTokenId</code> to look up the stored credit card information, which in turn will be used in the transaction.
+</p>
+<div class="alert alert-warn">
+  <strong>IMPORTANT:</strong>
+  Credit card information is <strong>required to be stored </strong>in order to run transactions with the storage token. If you do not
+  provide this information when creating/updating the storage record (for example, if you are just storing the customer profile), then
+  you will be unable to use that storage token to run a transaction
 </div>
+<p>
+    To use the <code>storageTokenId</code>, all you need to do is call the appropriate Storage Token transaction methods (which are the same as the credit card methods,
+    just replacing the credit card with the token). The Storage Token <code>singlePurchase()</code> is shown below:
+</p>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <td colspan="3">
+        <code>singlePurchase(orderId, storageTokenId, amount, verificationRequest)</code>
+        (using Secure Storage)
+      </td>
+    </tr>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td><code>orderId</code></td>
+        <td><code>String(32)</code></td>
+        <td>Merchant assigned orderId. Must be unique.</td>
+    </tr>
+    <tr>
+        <td><code><strong>storageTokenId</strong></code></td>
+        <td><code>String(32)</code></td>
+        <td>
+          Storage Token ID as returned to you/specified by you when the storage record was created, will specify the stored credit card to use for this purchase.
+        </td>
+    </tr>
+    <tr>
+        <td><code>amount</code></td>
+        <td><code>Long</code></td>
+        <td>
+          Amount of the purchase <strong>in cents</strong>. Do NOT include a $ or any decimal place. (e.g. if your purchase is $10.00, then
+          send 1000 as the total).
+        </td>
+    </tr>
+    <tr>
+        <td><code>verificationRequest</code></td>
+        <td><code>Verification Request</code></td>
+        <td>
+          Credit Card Verification request information, null if not used. See Section 5.1 for details on how to use this field. Note that because
+          CVV2 is not stored, you cannot specify a CVV2 check.
+        </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        Returns:
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <code>CreditCardReceipt</code>
+      </td>
+      <td>
+        The results of the purchase request
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Purchase and Store Card</h4>
+
+<p>
+    There is a method that can provide the merchant a combined transaction for both purchase and secure storage creation.
+</p>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <td colspan="3">
+        <code>HttpsCreditCardService.singlePurchase(orderId, storageTokenId, amount, verificationRequest)</code>
+      </td>
+    </tr>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td><code>orderId</code></td>
+        <td><code>String(32)</code></td>
+        <td>Merchant assigned orderId. Must be unique.</td>
+    </tr>
+    <tr>
+        <td><code><strong>creditCard</strong></code></td>
+        <td><code>CreditCard</code></td>
+        <td>Credit Card information (see Table 3.4)</td>
+    </tr>
+    <tr>
+        <td><code>amount</code></td>
+        <td><code>Long</code></td>
+        <td>
+          Amount of the purchase <strong>in cents</strong>. Do NOT include a $ or any decimal place. (e.g. if your purchase is $10.00, then
+          send 1000 as the total).
+        </td>
+    </tr>
+    <tr>
+        <td><code>verificationRequest</code></td>
+        <td><code>Verification Request</code></td>
+        <td>
+          Credit Card Verification request information, null if not used. See Section 5.1 for details on how to use this field. Note that because
+          CVV2 is not stored, you cannot specify a CVV2 check.
+        </td>
+    </tr>
+    <tr>
+        <td><code><strong>storageTokenId</strong></code></td>
+        <td><code>String(32)</code></td>
+        <td>The secure storage token id that will be used to create storage record for this credit card.</td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        Returns:
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <code>CreditCardReceipt</code>
+      </td>
+      <td>
+        The results of the purchase request
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Other methods using Storage Tokens</h4>
+<p>
+    The other methods that can use the <code>storageTokenId</code> are:
+</p>
+<ul>
+  <li>
+      <strong>recurringPurchase</strong>
+      (orderId, <strong>storageTokenId</strong>, perPaymentAmount, startDate, endDate, schedule, verificationRequest)
+  </li>
+  <li>
+      <strong>updateRecurringPurchase</strong>
+      (recurringPurchaseId, <strong>storageTokenId</strong>, perPaymentAmount, verificationRequest)
+  </li>
+  <li>
+      <strong>verifyCreditCard</strong>
+      (<strong>storageTokenId</strong>, verificationRequest)
+  </li>
+  <li>
+      <strong>verifyCreditCard</strong>
+      (creditCard, verificationRequest, <strong>storageTokenId</strong>)
+  </li>
+</ul>
+
+<h3>Querying Secure Storage Records</h3>
+
+<p>
+    You can query and retrieve the contents of any previously stored customer information.
+</p>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <td colspan="3">
+        <code>HttpsCreditCardService.queryStorage(storageTokenId)</code>
+      </td>
+    </tr>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td><code>storageTokenId</code></td>
+        <td><code>String(32)</code></td>
+        <td>The Storage Token ID of the stored information to retrieve.</td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        Returns:
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <code>StorageReceipt</code>
+      </td>
+      <td>
+        The results of the query request
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p>
+    You can access the data through <code>StorageReceipt.getPaymentProfile()</code> and then retrieving the contained <code>creditCard</code> and/or <code>customerProfile</code>.
+</p>
+<div class="alert alert-warn">
+  <strong>IMPORTANT:</strong>
+  For security purposes, the credit card number returned will always be <strong>only the last 4 digits </strong>of the full credit card
+  number. All other data will be returned in its original form, including the card expiry date and all of the customer profile information.
+</div>
+
+<h3>Updating Secure Storage Records</h3>
+<p>
+    If you need to update/modify a stored record:
+</p>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <td colspan="3">
+        <code>HttpsCreditCardService.updateStorage(storageTokenId, paymentProfile)</code>
+      </td>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td><code>storageTokenId</code></td>
+        <td><code>String(32)</code></td>
+        <td>The Storage Token ID of the stored information to update.</td>
+    </tr>
+    <tr>
+        <td><code>paymentProfile</code></td>
+        <td><code>PaymentProfile</code></td>
+        <td>Customer information to be stored. Will overwrite any existing customer information.</td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        Returns:
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2"><code>StorageReceipt</code></td>
+      <td>The results of the update request</td>
+    </tr>
+  </tbody>
+</table>
+<p>
+    The provided <code>PaymentProfile</code> will overwrite any existing data. If a null value is provided for the <code>PaymentProfile</code> <code>creditCard</code> or <code>customerProfile</code>
+    parameters, then the corresponding stored data will be deleted. Note that even if you delete all of the data, the record itself will still exist (but be blank).
+</p>
+
+<h3>Deleting Secure Storage Records</h3>
+<p>
+    If you need to delete a stored record altogether:
+</p>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <td colspan="3">
+        <code>HttpsCreditCardService.deleteFromStorage(storageTokenId)</code>
+      </td>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td><code>storageTokenId</code></td>
+        <td><code>String(32)</code></td>
+        <td>The Storage Token ID of the stored information to delete.</td>
+    </tr>
+    <tr>
+        <td colspan="3">
+          Returns:
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2"><code>StorageReceipt</code></td>
+        <td>The results of the delete request</td>
+    </tr>
+  </tbody>
+</table>
+<p>
+    Deleting a record will free up the associated <code>storageTokenId</code> for re-use.
+</p>
+
+
+
 <!-- Copyright (c) 2013 SALT Technology Inc. All rights reserved. -->

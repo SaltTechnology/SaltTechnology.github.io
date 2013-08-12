@@ -1,84 +1,493 @@
-<div class="well">
-  <h3>Recurring Purchase</h3>
-  <p>You can use SALT’s Periodic Purchase features when the customer is billed periodically, or when splitting payment into a
-  number of separate payments.</p>
-  <br />
-  <table class="table table-bordered table-striped">
-	<tr>
-	  <th>Schedule Arguments</th>
-	  <th>Description</th>
-	</tr>
-	<tr>
-	  <td>ScheduleType scheduleType</td>
-	  <td>One of MONTH, WEEK, DAY.</td>
-	</tr>
-	<tr>
-	  <td>short intervalLength</td>
-	  <td>Duration of the interval.</td>
-	</tr>
-  </table>
-  <br />
-  <table class="table table-bordered table-striped">
-	<tr>
-	  <th>PeriodicPurchaseInfo Arguments</th>
-	  <th>Description</th>
-	</tr>
-	<tr>
-	  <td>Long periodicTransactionId</td>
-	  <td>SALT recurring purchase ID returned when the purchase was originally created.</td>
-	</tr>
-	<tr>
-	  <td>State state</td>
-	  <td>One of IN_PROGRESS, ON_HOLD, CANCELLED.</td>
-	</tr>
-	<tr>
-	  <td>Schedule schedule</td>
-	  <td>The schedule on which to issue payments.</td>
-	</tr>
-	<tr>
-	  <td>Long perPaymentAmount</td>
-	  <td>Payment amount in cents.</td>
-	</tr>
-	<tr>
-	  <td>String orderId</td>
-	  <td>Merchant assigned orderId.</td>
-	</tr>
-	<tr>
-	  <td>String customerId</td>
-	  <td>Optional meta field that can be used to describe a customer.</td>
-	</tr>
-	<tr>
-	  <td>Date startDate</td>
-	  <td>The date of when to issue the first payment. If this date is null or in the past, then the first payment will be
-	  issued immediately. Cannot be modified after the first payment has been issued.</td>
-	</tr>
-	<tr>
-	  <td>Date endDate</td>
-	  <td>The date of when to end the payments. A payment will not be issued if it falls on this date.</td>
-	</tr>
-	<tr>
-	  <td>Date nextPaymentDate</td>
-	  <td>Change when the next payment will occur.</td>
-	</tr>
-  </table>
-  <br />
-  <table class="table table-bordered table-striped">
-	<tr>
-	  <th>HttpsCreditCardService.recurringPurchase Arguments</th>
-	  <th>Description</th>
-	</tr>
-	<tr>
-	  <td>PeriodicPurchaseInfo purchaseInfo</td>
-	  <td>Defines periodic-specific information, such as schedule, dates, and customer ID.</td>
-	</tr>
-	<tr>
-	  <td>CreditCard creditCard</td>
-	  <td>CreditCard information.</td>
-	</tr>
-	<tr>
-	  <td>VerificationRequest verificationRequest</td>
-	  <td>Credit Card Verification request information, null if not used.</td>
-	</tr>
-  </table>
-</div>
+<h2>Recurring Payments</h2>
+<p>You can use SALT’s Recurring Payments feature when the customer is billed periodically, or when splitting payment into a
+number of separate payments.</p>
+
+<h3>Creating a Recurring Payment</h3>
+<p>
+    You can set up a customer for recurring billing by using the <code>recurringPurchase()</code> method:
+</p>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <td colspan="3"><code>recurringPurchase(periodicPurchaseInfo, creditCard, storageTokenId, verificationRequest)</code></td>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td><code>periodicPurchaseInfo</code></td>
+        <td><code>PeriodicPurchaseInfo</code></td>
+        <td>Defines periodic-specific information, such as schedule, dates, and customer ID. See Table 3.10.</td>
+    </tr>
+    <tr>
+        <td><code>creditCard</code></td>
+        <td><code>CreditCard</code></td>
+        <td>Credit Card information (see Table 3.4). If storageTokenId is provided, this will be ignored</td>
+    </tr>
+    <tr>
+        <td><code>storageTokenId</code></td>
+        <td><code>String</code></td>
+        <td>Storage Token ID specifying the stored credit card to use for this purchase. Takes precedence over the creditCard field.</td>
+    </tr>
+    <tr>
+        <td><code>verificationRequest</code></td>
+        <td><code>Verification Request</code></td>
+        <td>
+          Credit Card Verification request information, null if not used. Note that CVV2 will not be stored/used in recurring purchases. See
+          Section 5 for details on how to use this field.
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3"><strong>Returns:</strong></td>
+    </tr>
+    <tr>
+        <td colspan="2"><code>CreditCardReceipt</code></td>
+        <td>The results of the purchase request.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>PeriodicPurchaseInfo object</h3>
+
+<p>The <code>PeriodicPurchaseInfo</code> defines setup parameters such as schedule and per-payment-amount for a recurring payment.</p>
+
+<p>
+    The <code>periodicPurchaseInfo</code> object is constructed as follows:
+</p>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <td colspan="3">
+        <code>PeriodicPurchaseInfo</code> Constructor Parameters
+      </td>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td><code>periodicTransactionId</code></td>
+        <td><code>Long</code></td>
+        <td>SALT recurring purchase ID returned when the purchase was originally created. Not applicable to new recurring purchases</td>
+    </tr>
+    <tr>
+        <td><code>state</code></td>
+        <td><code>State</code></td>
+        <td>
+            <p align="left">
+                One of IN_PROGRESS, ON_HOLD, CANCELLED. Note a cancelled payment will not be run again and cannot be further modified. Not applicable
+                to new recurring purchases.
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td><code>schedule</code></td>
+        <td><code>Schedule</code></td>
+        <td>The schedule on which to issue payments. See Table 3.11. If null, will default to monthly payments.</td>
+    </tr>
+    <tr>
+        <td><code>perPaymentAmount</code></td>
+        <td><code>Long</code></td>
+        <td>
+            <p align="left">
+                Per-payment amount of the <strong>in cents</strong>. Do NOT include a $ or any decimal place. (e.g. if your purchase is $10.00, then
+                send 1000 as the total).
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td><code>orderId</code></td>
+        <td><code>String(32)</code></td>
+        <td>Merchant assigned orderId. Must be unique. Cannot be modified after the first payment has been issued.</td>
+    </tr>
+    <tr>
+        <td><code>customerId</code></td>
+        <td><code>String(32)</code></td>
+        <td>Optional meta field that can be used to describe a customer</td>
+    </tr>
+    <tr>
+        <td><code>startDate</code></td>
+        <td><code>Date</code></td>
+        <td>
+            <p align="left">
+                The date of when to issue the first payment. If this date is null or in the past, then the first payment will be issued immediately.
+                Cannot be modified after the first payment has been issued.
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td><code>endDate</code></td>
+        <td><code>Date</code></td>
+        <td>The date of when to end the payments. A payment will not be issued if it falls on this date.</td>
+    </tr>
+    <tr>
+        <td><code>nextPaymentDate</code></td>
+        <td><code>Date</code></td>
+        <td>
+          Change when the next payment will occur. Must be set between the start and end date (as currently defined or as modified by their
+          respective parameters). Not used in a new recurring payment (startDate defines first payment date).
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3"><strong>Parameters Outside of the full constructor</strong></td>
+    </tr>
+    <tr>
+        <td><code>ExecutionType</code></td>
+        <td><code>enum</code></td>
+        <td>
+          <p>Has a value of either <code>MANUAL</code> or <code>AUTO</code></p>
+          <ul>
+            <li><code>AUTO</code> = the recurring purchase will execute immediately.</li>
+            <li><code>MANUAL</code> = the recurring purchase will not run unless first explicitly executed via executeRecurringPurchase().</li>
+          </ul>
+          <p>If not provided, will default to <code>MANUAL</code></p>
+        </td>
+    </tr>
+    <tr>
+        <td><code>setExecutionType(ExecutionType executionType)</code></td>
+        <td>
+        </td>
+        <td>Sets the execution type to either manual or auto</td>
+    </tr>
+    <tr>
+        <td><code>getExecutionType()</code></td>
+        <td><code>ExecutionType</code></td>
+        <td>Returns the value of the execution type</td>
+    </tr>
+    <tr>
+        <td><code>installmentNumber</code></td>
+        <td><code>Integer</code></td>
+        <td>
+            <p align="left">
+                The value of the instalment the periodic purchase transaction is on. (e.g. if there are 4 instalments, and the card is charged for the
+                second time, the installmentNumber = 2)
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td><code>setInstallmentNumber(Integer installmentNumber)</code></td>
+        <td>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td><code>getInstallmentNumber()</code></td>
+        <td><code>Integer</code></td>
+        <td>Returns the installmentNumber</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Schedule object</h4>
+<p>
+    Used to define a schedule for when to issue recurring payments:
+</p>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <td colspan="3"><code>Schedule</code> Constructor Parameters</td>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td><code>scheduleType</code></td>
+        <td><code>ScheduleType</code></td>
+        <td>Schedule based on days, weeks, or months (See the <code>ScheduleType</code> Enumeration below)</td>
+    </tr>
+    <tr>
+        <td><code>intervalLength</code></td>
+        <td><code>Short</code></td>
+        <td>Payments will be issued every number of days/weeks/months</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>ScheduleType enumeration</h4>
+
+<table class="table table-bordered table-striped">
+  <tbody>
+      <tr>
+          <td colspan="2"><code>ScheduleType</code> Enumeration</td>
+      </tr>
+      <tr>
+          <th>Value</th>
+          <th>Description</th>
+      </tr>
+      <tr>
+          <td>MONTH</td>
+          <td>Schedule based on months</td>
+      </tr>
+      <tr>
+          <td>WEEK</td>
+          <td>Schedule based on weeks</td>
+      </tr>
+      <tr>
+          <td>DAY</td>
+          <td>Schedule based on days</td>
+      </tr>
+  </tbody>
+</table>
+
+<p>
+    So for example, if you create a Schedule using scheduleType = WEEK and intervalLength = 2, then payments will be issued every two weeks.
+</p>
+
+<h3>Executing Recurring Payments</h3>
+<p>
+If you created a recurring purchase with a MANUAL execution mode, to charge the customer card you will need to call the <code>executeRecurringPurchase()</code> method.
+</p>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+        <td colspan="3"><code>executeRecurringPurchase(recurringPurchaseId, cvv2)</code></td>
+    </tr>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td><code>recurringPurchaseId</code></td>
+        <td><code>Long</code></td>
+        <td>SALT recurring purchase ID returned when the purchase was originally created.</td>
+    </tr>
+    <tr>
+        <td><code>cvv2</code></td>
+        <td><code>String</code></td>
+        <td>Card Verification Value/Card Verification Digits. This parameter provides optional verification when performing this transaction</td>
+    </tr>
+    <tr>
+        <td colspan="3">
+          <strong>Returns:</strong>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2"><code>CreditCardReceipt</code></td>
+        <td>The results of the transaction</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Managing Recurring Payments</h3>
+<p>
+    There are additional operations available that you can use to manage your recurring payments.
+</p>
+
+<h4>Putting a Payment on Hold (and Resuming a Payment on Hold)</h4>
+<p>
+    Putting a hold on a recurring payment means that further payments will be suspended until the recurring payment is resumed. You can resume payments by
+    calling the <code>resumeRecurringPurchase()</code> method.
+</p>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+        <td colspan="3"><code>holdRecurringPurchase(recurringPurchaseId)</code></td>
+    </tr>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td><code>recurringPurchaseId</code></td>
+        <td><code>Long</code></td>
+        <td>SALT recurring purchase ID returned when the purchase was originally created.</td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <strong>Returns:</strong>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2"><code>CreditCardReceipt</code></td>
+        <td>The results of the hold</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <td colspan="3"><code>resumeRecurringPurchase(recurringPurchaseId)</code></td>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>recurringPurchaseId</code></td>
+      <td><code>Long</code></td>
+      <td>SALT recurring purchase ID returned when the purchase was originally created.</td>
+    </tr>
+    <tr>
+      <td colspan="3"><strong>Returns:</strong></td>
+    </tr>
+    <tr>
+      <td colspan="2"><code>CreditCardReceipt</code></td>
+      <td>The results of the hold</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Cancelling a Payment</h4>
+<p>
+    You can cancel a payment entirely by calling the <code>cancelRecurringPurchase()</code> method. This means that no further payments will be made regardless of whether
+    the payment has reached its <code>endDate</code>. Note that you <strong>cannot</strong> resume or otherwise update a cancelled payment.
+</p>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <td colspan="3"><code>cancelRecurringPurchase(recurringPurchaseId)</code></td>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>recurringPurchaseId</code></td>
+      <td><code>Long</code></td>
+      <td>SALT recurring purchase ID returned when the purchase was originally created.</td>
+    </tr>
+    <tr>
+      <td colspan="3"><strong>Returns:</strong></td>
+    </tr>
+    <tr>
+      <td colspan="2"><code>CreditCardReceipt</code></td>
+      <td>The results of the cancellation</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Updating Recurring Payment Details</h4>
+<p>
+    To update the payment details of a recurring purchase such as when a customer credit card expires/is changed, you can use the <code>updateRecurringPurchase()</code>
+    method. Note that you cannot update a recurring purchase that has been cancelled or that has completed.
+</p>
+<p>
+    If any parameters provided are null, the existing corresponding fields will <strong>not</strong> be updated.
+</p>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <td colspan="3"><code>updateRecurringPurchase(periodicPurchaseInfo, creditCard, storageTokenId, verificationRequest)</code></td>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td><code>periodicPurchaseInfo</code></td>
+        <td><code>PeriodicPurchaseInfo</code></td>
+        <td>Defines periodic-specific information, such as schedule, dates, and customer ID. See Table 3.10.</td>
+    </tr>
+    <tr>
+        <td><code>creditCard</code></td>
+        <td><code>CreditCard</code></td>
+        <td>Credit Card information (see Table 3.4). If storageTokenId is provided, this will be ignored</td>
+    </tr>
+    <tr>
+        <td><code>storageTokenId</code></td>
+        <td><code>String(32)</code></td>
+        <td>Storage Token ID specifying the stored credit card to use for this purchase. Takes precedence over the creditCard field.</td>
+    </tr>
+    <tr>
+        <td><code>verificationRequest</code></td>
+        <td><code>VerificationRequest</code></td>
+        <td>
+          Credit Card Verification request information, null if not used. Note that CVV2 will not be stored/used in recurring purchases. See
+          Section 5 for details on how to use this field.
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3"><strong>Returns:</strong></td>
+    </tr>
+    <tr>
+        <td colspan="2"><code>CreditCardReceipt</code></td>
+        <td>The results of the update request</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h4>Miscellaneous</h4>
+<p>
+    The <code>queryRecurringPurchase()</code> method is a convenience method that you can use to check the current status of a recurring purchase, including the last
+    successful payment made.
+</p>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <td colspan="3"><code>queryRecurringPurchase(recurringPurchaseId)</code></td>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td><code>recurringPurchaseId</code></td>
+        <td><code>Long</code></td>
+        <td>SALT recurring purchase ID returned when the purchase was originally created.</td>
+    </tr>
+    <tr>
+        <td colspan="3"><strong>Returns:</strong></td>
+    </tr>
+    <tr>
+        <td colspan="2"><code>CreditCardReceipt</code></td>
+        <td>The results of the query retrieve the <code>PeriodicPurchaseInfo</code> field for periodic purchase fields.</td>
+    </tr>
+  </tbody>
+</table>
+<p>
+    The <code>PeriodicPurchaseInfo</code> object contains a subset of the fields from the class:
+</p>
+<ul>
+    <li>
+        <code>periodicTransactionId</code>
+        the ID when the periodic purchase was originally created
+    </li>
+    <li>
+        <code>state</code>
+        current state of the periodic purchase
+    </li>
+    <li>
+        <code>nextPaymentDate</code>
+        next date the payment will be run
+    </li>
+    <li>
+        <code>lastPaymentId</code>
+        the transaction ID of the <strong>last successful payment run.</strong> You can use this ID to run a <code>verifyTransaction()</code> to retrieve the transaction
+        information.
+    </li>
+</ul>
+
+
 <!-- Copyright (c) 2013 SALT Technology Inc. All rights reserved. -->

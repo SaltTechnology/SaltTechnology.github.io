@@ -1,29 +1,53 @@
-<div class="well">
-  <h3>Refund</h3>
-  <p>Returns funds from a previously settled purchase to the customer. Refunds can only be performed on a purchase that is part
-  of an already-closed batch.</p>
-  <br />
-  <table class="table table-bordered table-striped">
-	<tr>
-	  <th>HttpsCreditCardService.refund Arguments</th>
-	  <th>Description</th>
-	</tr>
-	<tr>
-	  <td>long purchaseId</td>
-	  <td>The SALT transactionId of the purchase to void.</td>
-	</tr>
-	<tr>
-	  <td>String purchaseOrderId</td>
-	  <td>The order ID previously assigned to the purchase that is to be refunded.</td>
-	</tr>
-	<tr>
-	  <td>String refundOrderId</td>
-	  <td>The merchant assigned orderId to be attached to this refund request. Will be generated if null.</td>
-	</tr>
-	<tr>
-	  <td>long amount</td>
-	  <td>The amount to refund in cents.</td>
-	</tr>
-  </table>
-</div>
+<h2>Refund</h2>
+<p>Returns funds from a previously settled purchase to the customer. Refunds can only be performed on a purchase that is part
+of an already-closed batch.</p>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <td colspan="3"><code>refund(purchaseId, purchaseOrderId, refundOrderId, amount)</code></td>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td><code>purchaseId</code></td>
+        <td><code>Long</code></td>
+        <td>The SALT transactionId of the purchase to refund</td>
+    </tr>
+    <tr>
+        <td><code>purchaseOrderId</code></td>
+        <td><code>String(32)</code></td>
+        <td>
+          The order id previously assigned to the purchase that is to be refunded. This is an extra check to prevent inadvertent refunding of a
+          purchase. Not null.
+        </td>
+    </tr>
+    <tr>
+        <td><code>refundOrderId</code></td>
+        <td><code>String(32)</code></td>
+        <td>The merchant assigned orderId to be attached to this refund request. Will be generated if null.</td>
+    </tr>
+    <tr>
+        <td><code>amount</code></td>
+        <td><code>Long</code></td>
+        <td>
+          Amount to refund <strong>in cents</strong>. Do NOT include a $ or any decimal place. (e.g. if your purchase is $10.00, then send 1000
+          as the total). This value does NOT have to match the original purchase amount.
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3"><strong>Returns:</strong></td>
+    </tr>
+    <tr>
+        <td colspan="2"><code>CreditCardReceipt</code></td>
+        <td>The results of the Refund Request</td>
+    </tr>
+  </tbody>
+</table>
+
 <!-- Copyright (c) 2013 SALT Technology Inc. All rights reserved. -->

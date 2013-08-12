@@ -1,22 +1,42 @@
-<div class="well">
-	<h3>Fraud</h3>
+<h2>Updating Fraud</h2>
+<p>
+    Applies only when using the Advanced Fraud Sute.  This function allows you to update fraud service with the appropriate credit card authorization status if you are using a non-SALT payment processing service.
+</p>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <td colspan="3"><code>updateFraud(Long transactionId, String fraudSessionId, String auth)</code></td>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td><code>transactionId</code></td>
+        <td><code>Long</code></td>
+        <td>Transaction ID number of the transaction whose fraud authentication is being updated. Cannot be null.</td>
+    </tr>
+    <tr>
+        <td><code>fraudSessionId</code></td>
+        <td><code>String</code></td>
+        <td>Fraud Session ID string. Cannot be null. Used to track which merchant is preforming the fraud update.</td>
+    </tr>
+    <tr>
+        <td><code>auth</code></td>
+        <td><code>String</code></td>
+        <td>Auth string. If null, will decline the update request.</td>
+    </tr>
+    <tr>
+        <td colspan="3"><strong>Returns:</strong></td>
+    </tr>
+    <tr>
+        <td colspan="2"><code>CreditCardReceipt</code></td>
+        <td>The results of the fraud update</td>
+    </tr>
+  </tbody>
+</table>
 
-	<p>
-		Allow merchants to update fraud AUTH status if they use other payment processing service.
-	</p>
-
-	<br>
-
-	<table class="table table-bordered table-striped">
-		<tr>
-		<th>HttpsCreditCardService.updateFraud Arguments
-		<th>Description
-		<tr>
-		<td>long transactionId<td>Transaction ID number of the transaction whose fraud authentication is being updated. 
-		<tr>
-		<td>String fraudSessionId<td>Fraud Session ID string.  Used to track which merchant is preforming the fraud update.
-		<tr>
-		<td>String auth	<td>Auth string. If null, will decline the update request.
-	</table>
-</div>
 <!-- Copyright (c) 2013 SALT Technology Inc. All rights reserved. -->

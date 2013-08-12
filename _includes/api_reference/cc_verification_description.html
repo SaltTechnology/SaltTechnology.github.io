@@ -1,20 +1,38 @@
-<div class="well">
-	<h3>Credit Card Verification</h3>
-	<p>
-		Use the verifyCreditCard() method to check the status of a credit card. A CreditCardReceipt object is returned, containing information about the card’s validity, Secure Storage information if the card uses Secure Storage and Fraud information if the card uses the Advanced Fraud Suite.
-	</p>
+<h2>Credit Card Verification</h2>
+<p>
+  Use the <code>verifyCreditCard()</code> method to check the validity of a credit card without charging the customer (i.e. a $0.00 transaction). A <code>CreditCardReceipt</code> object is returned, containing information about the card
+  validity, Secure Storage information if the card uses Secure Storage and Fraud information if the card uses the Advanced Fraud Suite.
+</p>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <td colspan="3"><code>verifyCreditCard(creditCard, verificationRequest)</code></td>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td><code>creditCard</code></td>
+        <td><code>CreditCard</code></td>
+        <td>Credit Card information (see Table 3.4)</td>
+    </tr>
+    <tr>
+        <td><code>verificationRequest</code></td>
+        <td><code>Verification Request</code></td>
+        <td>Credit Card Verification request information, null if not used. See Section 5 for details on how to use this field.</td>
+    </tr>
+    <tr>
+        <td colspan="3"><strong>Returns:</strong></td>
+    </tr>
+    <tr>
+        <td colspan="2"><code>CreditCardReceipt</code></td>
+        <td>The results of the <code>verifyCreditCard</code> request. (See Table 3.21)</td>
+    </tr>
+  </tbody>
+</table>
 
-	<br>
-
-	<table class="table table-bordered table-striped">
-		<tr>
-		<th>HttpsCreditCardService.verifyCreditCard Arguments
-		<th>Description
-		<tr>
-		<td>CreditCard creditCard<td>CreditCard information.
-		<tr>
-		<td>VerificationRequest verificationRequest<td>Credit Card Verification request information.
-		</tr>
-	</table>
-</div>
 <!-- Copyright (c) 2013 SALT Technology Inc. All rights reserved. -->

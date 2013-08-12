@@ -1,33 +1,129 @@
-<div class="well">
-  <h3>Receipts</h3>
-  <p>For full details on what needs to be included in a purchase receipt, check out our full documentation 
-  <a href="http://salttechnology.github.io/core_api_doc.htm">here</a></p>
-  <br />
-  <table class="table table-bordered table-striped">
-	<tr>
-	  <th>CreditCardReceipt Arguments</th>
-	  <th>Description</th>
-	</tr>
-	<tr>
-	  <td>getCvv2Response()</td>
-	  <td>Returns a Cvv2Response when performing a transaction with a VerificationRequest.</td>
-	</tr>
-	<tr>
-	  <td>getPeriodicPurchaseInfo()</td>
-	  <td>Returns PeriodicPurchaseInfo when performing a recurring payment.</td>
-	</tr>
-	<tr>
-	  <td>getStorageTokenId()</td>
-	  <td>Returns the storage token used when setting up Secure Storage.</td>
-	</tr>
-	<tr>
-	  <td>getOrderId()</td>
-	  <td>Returns the merchant assigned orderId for a purchase or refund.</td>
-	</tr>
-	<tr>
-	  <td>getResponse()</td>
-	  <td>Returns the response from the creditcard gateway.</td>
-	</tr>
-  </table>
-</div>
+<h2>Receipts</h2>
+
+<h3>CreditCardReceipt</h3>
+<p>
+    The <code>CreditCardReceipt</code> object contains the results of a credit card transaction:
+</p>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <td colspan="3">CreditCardReceipt</td>
+    </tr>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>getApprovalInfo()</code></td>
+      <td><code>ApprovalInfo</code></td>
+      <td>Transaction approval information</td>
+    </tr>
+    <tr>
+      <td><code>getAvsResponse()</code></td>
+      <td><code>AvsResponse</code></td>
+      <td>The AVS response from processing the purchase, or null if AVS was not enabled or no response. See Section 5</td>
+    </tr>
+    <tr>
+      <td><code>getCardBrand()</code></td>
+      <td><code>Integer</code></td>
+      <td>
+        <p>Returns the brand of the credit card, as a number:</p>
+        <p>1=Visa, 2=MasterCard, 3=AMEX, 4=Discover, 5=Diners, 6=JCB, 7=Other</p>
+      </td>
+    </tr>
+    <tr>
+        <td><code>getCvv2Response()</code></td>
+        <td><code>Cvv2Response</code></td>
+        <td>The CVV2 response from processing the purchase, or null if CVV2 was not enabled or no response. See Section 5</td>
+    </tr>
+    <tr>
+        <td><code>getDebugMessage()</code></td>
+        <td><code>String(255)</code></td>
+        <td>Debug message, if applicable</td>
+    </tr>
+    <tr>
+        <td><code>getErrorCode()</code></td>
+        <td><code>String(128)</code></td>
+        <td>Error code, if applicable</td>
+    </tr>
+    <tr>
+        <td><code>getErrorMessage()</code></td>
+        <td><code>String(255)</code></td>
+        <td>Error message, if applicable</td>
+    </tr>
+    <tr>
+        <td><code>getOrderId()</code></td>
+        <td><code>String(32)</code></td>
+        <td>Merchant-assigned orderId</td>
+    </tr>
+    <tr>
+        <td><code>getPeriodicPurchaseInfo()</code></td>
+        <td><code>PeriodicPurchaseInfo</code></td>
+        <td>Information about the periodic purchase, if this was a periodic purchase transaction</td>
+    </tr>
+    <tr>
+        <td><code>getProcessedDateTime()</code></td>
+        <td><code>Date</code></td>
+        <td>Date/time when the transaction was processed</td>
+    </tr>
+    <tr>
+        <td><code>getSanitizedCardNumber()</code></td>
+        <td><code>String(20)</code></td>
+        <td>Storage/display-safe version of the credit card number. E.g. 424242****4242</td>
+    </tr>
+    <tr>
+        <td><code>getTransactionId()</code></td>
+        <td><code>Long</code></td>
+        <td>SALT TransactionId for this transaction</td>
+    </tr>
+    <tr>
+        <td><code>isApproved()</code></td>
+        <td><code>Boolean</code></td>
+        <td>Returns true if the request was approved, otherwise the request was declined due to some error.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>ApprovalInfo object</h3>
+<p>
+    The <code>ApprovalInfo</code> object contains the transaction approval information of the Transaction:
+</p>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <td colspan="3"><code>ApprovalInfo</code></td>
+    </tr>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td><code>getApprovalCode()</code></td>
+        <td><code>String</code></td>
+        <td>Credit Card Approval Code</td>
+    </tr>
+    <tr>
+        <td><code>getAuthorizedAmount()</code></td>
+        <td><code>Long</code></td>
+        <td>Amount authorized on approval, in cents</td>
+    </tr>
+    <tr>
+        <td><code>getReferenceNumber()</code></td>
+        <td><code>Integer</code></td>
+        <td>Credit Card approval Reference Number</td>
+    </tr>
+    <tr>
+        <td><code>getTraceNumber()</code></td>
+        <td><code>Integer</code></td>
+        <td>Credit Card approval Trace Number</td>
+    </tr>
+  </tbody>
+</table>
+
 <!-- Copyright (c) 2013 SALT Technology Inc. All rights reserved. -->
