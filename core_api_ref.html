@@ -3,43 +3,26 @@ layout: default
 title: Credit Card API Reference
 menu: credit-card-reference
 ---
-<script>
-  function makeVisible(divId){
-    switch(divId){
-      case "Java":
-        for (var i = 0; i < document.getElementsByName("Java").length; i++) {
-          document.getElementsByName("Java")[i].style.display = 'block';
-          document.getElementsByName(".Net")[i].style.display = 'none';
-          document.getElementsByName("PHP")[i].style.display = 'none';
-          document.getElementsByName("Ruby")[i].style.display = 'none';
-        }
-        break;
-      case ".Net":
-        for (var i = 0; i < document.getElementsByName("Java").length; i++) {
-          document.getElementsByName("Java")[i].style.display = 'none';
-          document.getElementsByName(".Net")[i].style.display = 'block';
-          document.getElementsByName("PHP")[i].style.display = 'none';
-          document.getElementsByName("Ruby")[i].style.display = 'none';
-        }
-        break;
-      case "PHP":
-        for (var i = 0; i < document.getElementsByName("Java").length; i++) {
-          document.getElementsByName("Java")[i].style.display = 'none';
-          document.getElementsByName(".Net")[i].style.display = 'none';
-          document.getElementsByName("PHP")[i].style.display = 'block';
-          document.getElementsByName("Ruby")[i].style.display = 'none';
-        }
-        break;
-      case "Ruby":
-        for (var i = 0; i < document.getElementsByName("Java").length; i++) {
-          document.getElementsByName("Java")[i].style.display = 'none';
-          document.getElementsByName(".Net")[i].style.display = 'none';
-          document.getElementsByName("PHP")[i].style.display = 'none';
-          document.getElementsByName("Ruby")[i].style.display = 'block';
-        }
-        break;
-    }
+<style>
+  div.language-example {
+    display: none;
   }
+</style>
+<script>
+  var languages = ["java", "dotnet", "php", "ruby"];
+
+  function showExamplesForLanguage(languageName){
+    $.each(languages, function(i, v) {
+      var languageClass = "." + v;
+      v == languageName ? $(languageClass).show() : $(languageClass).hide();
+    });
+  }
+
+  $(document).ready(function() {
+    $("#selectLanguage").change(function() {
+      showExamplesForLanguage($("#selectLanguage").val());
+    });
+  });
 </script>
 
 <div class="method">
@@ -49,12 +32,12 @@ menu: credit-card-reference
       {% include intro_description.html %}
     </div>
     <div class="method-example">
-      <select id="selectLanguages" onchange="makeVisible(this.value)">
+      <select id="selectLanguage">
       <option value="none">-Languages-</option> 
-      <option value="Java">Java</option>
-      <option value=".Net">.Net</option>
-      <option value="PHP">PHP</option>
-      <option value="Ruby">Ruby</option>
+      <option value="java">Java</option>
+      <option value="dotnet">.Net</option>
+      <option value="php">PHP</option>
+      <option value="ruby">Ruby</option>
       </select>
     </div>
   </div>
@@ -66,10 +49,10 @@ menu: credit-card-reference
       {% include single_purchase_description.html %}
     </div>
     <div class="method-example">
-      <div name="Java" style="display: none;"><pre class="prettyprint linenums">{% include java/single_purchase_example.html %}</pre></div>
-      <div name="PHP" style="display: none;"><pre class="prettyprint linenums">{% include php/single_purchase_example.html %}</pre></div>
-      <div name="Ruby" style="display: none;"><pre class="prettyprint linenums">{% include ruby/single_purchase_example.html %}</pre></div>
-      <div name=".Net" style="display: none;"><pre class="prettyprint linenums">{% include net/single_purchase_example.html %}</pre></div>
+      <div class="java language-example"><pre class="prettyprint linenums">{% include java/single_purchase_example.html %}</pre></div>
+      <div class="php language-example"><pre class="prettyprint linenums">{% include php/single_purchase_example.html %}</pre></div>
+      <div class="ruby language-example"><pre class="prettyprint linenums">{% include ruby/single_purchase_example.html %}</pre></div>
+      <div class="dotnet language-example"><pre class="prettyprint linenums">{% include net/single_purchase_example.html %}</pre></div>
     </div>
   </div>
   <a id="recurring_purchase" name="recurring_purchase" class="section-anchor"></a>
@@ -78,10 +61,10 @@ menu: credit-card-reference
       {% include recurring_purchase_description.html %}
     </div>
     <div class="method-example">
-      <div name="Java" style="display: none;"><pre class="prettyprint linenums">{% include java/recurring_purchase_example.html %}</pre></div>
-      <div name="PHP" style="display: none;"><pre class="prettyprint linenums">{% include php/recurring_purchase_example.html %}</pre></div>
-      <div name="Ruby" style="display: none;"><pre class="prettyprint linenums">{% include ruby/recurring_purchase_example.html %}</pre></div>
-      <div name=".Net" style="display: none;"><pre class="prettyprint linenums">{% include net/recurring_purchase_example.html %}</pre></div>
+      <div class="java language-example"><pre class="prettyprint linenums">{% include java/recurring_purchase_example.html %}</pre></div>
+      <div class="php language-example"><pre class="prettyprint linenums">{% include php/recurring_purchase_example.html %}</pre></div>
+      <div class="ruby language-example"><pre class="prettyprint linenums">{% include ruby/recurring_purchase_example.html %}</pre></div>
+      <div class="dotnet language-example"><pre class="prettyprint linenums">{% include net/recurring_purchase_example.html %}</pre></div>
     </div>
   </div>
 </div>
@@ -92,10 +75,10 @@ menu: credit-card-reference
       {% include void_description.html %}
     </div>
     <div class="method-example">
-      <div name="Java" style="display: none;"><pre class="prettyprint linenums">{% include java/void_example.html %}</pre></div>
-      <div name="PHP" style="display: none;"><pre class="prettyprint linenums">{% include php/void_example.html %}</pre></div>
-      <div name="Ruby" style="display: none;"><pre class="prettyprint linenums">{% include ruby/void_example.html %}</pre></div>
-      <div name=".Net" style="display: none;"><pre class="prettyprint linenums">{% include net/void_example.html %}</pre></div>
+      <div class="java language-example"><pre class="prettyprint linenums">{% include java/void_example.html %}</pre></div>
+      <div class="php language-example"><pre class="prettyprint linenums">{% include php/void_example.html %}</pre></div>
+      <div class="ruby language-example"><pre class="prettyprint linenums">{% include ruby/void_example.html %}</pre></div>
+      <div class="dotnet language-example"><pre class="prettyprint linenums">{% include net/void_example.html %}</pre></div>
     </div>
   </div>
 </div>
@@ -104,10 +87,10 @@ menu: credit-card-reference
   <div class="method-section">
   <div class="method-description">{% include refund_description.html %}</div>
     <div class="method-example">
-      <div name="Java" style="display: none;"><pre class="prettyprint linenums">{% include java/refund_example.html %}</pre></div>
-      <div name="PHP" style="display: none;"><pre class="prettyprint linenums">{% include php/single_refund_example.html %}</pre></div>
-      <div name="Ruby" style="display: none;"><pre class="prettyprint linenums">{% include ruby/single_refund_example.html %}</pre></div>
-      <div name=".Net" style="display: none;"><pre class="prettyprint linenums">{% include net/refund_example.html %}</pre></div>
+      <div class="java language-example"><pre class="prettyprint linenums">{% include java/refund_example.html %}</pre></div>
+      <div class="php language-example"><pre class="prettyprint linenums">{% include php/single_refund_example.html %}</pre></div>
+      <div class="ruby language-example"><pre class="prettyprint linenums">{% include ruby/single_refund_example.html %}</pre></div>
+      <div class="dotnet language-example"><pre class="prettyprint linenums">{% include net/refund_example.html %}</pre></div>
     </div>
   </div>
 </div>
@@ -116,10 +99,10 @@ menu: credit-card-reference
   <div class="method-section">
     <div class="method-description">{% include txn_verification_description.html %}</div>
     <div class="method-example">
-      <div name="Java" style="display: none;"><pre class="prettyprint linenums">{% include java/txn_verification_example.html %}</pre></div>
-      <div name="PHP" style="display: none;"><pre class="prettyprint linenums">{% include php/txn_verification_example.html %}</pre></div>
-      <div name="Ruby" style="display: none;"><pre class="prettyprint linenums">{% include ruby/txn_verification_example.html %}</pre></div>
-      <div name=".Net" style="display: none;"><pre class="prettyprint linenums">{% include net/txn_verification_example.html %}</pre></div>
+      <div class="java language-example"><pre class="prettyprint linenums">{% include java/txn_verification_example.html %}</pre></div>
+      <div class="php language-example"><pre class="prettyprint linenums">{% include php/txn_verification_example.html %}</pre></div>
+      <div class="ruby language-example"><pre class="prettyprint linenums">{% include ruby/txn_verification_example.html %}</pre></div>
+      <div class="dotnet language-example"><pre class="prettyprint linenums">{% include net/txn_verification_example.html %}</pre></div>
     </div>
   </div>
 </div>
@@ -128,10 +111,10 @@ menu: credit-card-reference
   <div class="method-section">
     <div class="method-description">{% include cc_verification_description.html %}</div>
     <div class="method-example">
-      <div name="Java" style="display: none;"><pre class="prettyprint linenums">{% include java/cc_verification_example.html %}</pre></div>
-      <div name="PHP" style="display: none;"><pre class="prettyprint linenums">{% include php/cc_verification_example.html %}</pre></div>
-      <div name="Ruby" style="display: none;"><pre class="prettyprint linenums">{% include ruby/cc_verification_example.html %}</pre></div>
-      <div name=".Net" style="display: none;"><pre class="prettyprint linenums">{% include net/cc_verification_example.html %}</pre></div>
+      <div class="java language-example"><pre class="prettyprint linenums">{% include java/cc_verification_example.html %}</pre></div>
+      <div class="php language-example"><pre class="prettyprint linenums">{% include php/cc_verification_example.html %}</pre></div>
+      <div class="ruby language-example"><pre class="prettyprint linenums">{% include ruby/cc_verification_example.html %}</pre></div>
+      <div class="dotnet language-example"><pre class="prettyprint linenums">{% include net/cc_verification_example.html %}</pre></div>
     </div>
   </div>
 </div>
@@ -140,8 +123,8 @@ menu: credit-card-reference
 <div class="method-section">
   <div class="method-description">{% include batch_description.html %}</div>
     <div class="method-example">
-      <div name="Java" style="display: none;"><pre class="prettyprint linenums">{% include java/batch_example.html %}</pre></div>
-      <div name=".Net" style="display: none;"><pre class="prettyprint linenums">{% include net/batch_example.html %}</pre></div>
+      <div class="java language-example"><pre class="prettyprint linenums">{% include java/batch_example.html %}</pre></div>
+      <div class="dotnet language-example"><pre class="prettyprint linenums">{% include net/batch_example.html %}</pre></div>
     </div>
   </div>
 </div>
@@ -150,8 +133,8 @@ menu: credit-card-reference
   <div class="method-section">
     <div class="method-description">{% include fraud_description.html %}</div>
     <div class="method-example">
-      <div name="Java" style="display: none;"><pre class="prettyprint linenums">{% include java/fraud_example.html %}</pre></div>
-      <div name=".Net" style="display: none;"><pre class="prettyprint linenums">{% include net/fraud_example.html %}</pre></div>
+      <div class="java language-example"><pre class="prettyprint linenums">{% include java/fraud_example.html %}</pre></div>
+      <div class="dotnet language-example"><pre class="prettyprint linenums">{% include net/fraud_example.html %}</pre></div>
     </div>
   </div>
 </div>
@@ -159,8 +142,8 @@ menu: credit-card-reference
   <a id="receipts" name="receipts" class="section-anchor"></a>
   <div class="method-section">
     <div class="method-description">{% include receipts_description.html %}</div>
-    <div name="Java" style="display: none;"><pre class="prettyprint linenums">{% include java/receipts_example.html %}</pre></div>
-    <div name=".Net" style="display: none;"><pre class="prettyprint linenums">{% include net/receipts_example.html %}</pre></div>
+    <div class="java language-example"><pre class="prettyprint linenums">{% include java/receipts_example.html %}</pre></div>
+    <div class="dotnet language-example"><pre class="prettyprint linenums">{% include net/receipts_example.html %}</pre></div>
   </div>
 </div>
 <div class="method">
@@ -168,10 +151,10 @@ menu: credit-card-reference
   <div class="method-section">
     <div class="method-description">{% include secure_storage_description.html %}</div>
     <div class="method-example">
-      <div name="Java" style="display: none;"><pre class="prettyprint linenums">{% include java/secure_storage_example.html %}</pre></div>
-      <div name="PHP" style="display: none;"><pre class="prettyprint linenums">{% include php/secure_storage_example.html %}</pre></div>
-      <div name="Ruby" style="display: none;"><pre class="prettyprint linenums">{% include ruby/secure_storage_example.html %}</pre></div>
-      <div name=".Net" style="display: none;"><pre class="prettyprint linenums">{% include net/secure_storage_example.html %}</pre></div>
+      <div class="java language-example"><pre class="prettyprint linenums">{% include java/secure_storage_example.html %}</pre></div>
+      <div class="php language-example"><pre class="prettyprint linenums">{% include php/secure_storage_example.html %}</pre></div>
+      <div class="ruby language-example"><pre class="prettyprint linenums">{% include ruby/secure_storage_example.html %}</pre></div>
+      <div class="dotnet language-example"><pre class="prettyprint linenums">{% include net/secure_storage_example.html %}</pre></div>
     </div>
   </div>
 </div>
