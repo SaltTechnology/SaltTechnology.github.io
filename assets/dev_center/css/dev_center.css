@@ -27,6 +27,7 @@ hr {
 .method-section .method-example {
   left: 20px;
   margin-left: 50%;
+  top: 60px;
   padding: 0;
   position: relative;
   width: auto;
@@ -60,11 +61,11 @@ body > .container-fluid {
 
 @media (max-width: 1200px) {
   .method-section .method-description {
-    width: 400px;
+    width: 450px;
   }
   .method-section .method-example{
-    width: 400px;
-    margin-left: 400px;
+    width: 450px;
+    margin-left: 450px;
   }
 }
 
