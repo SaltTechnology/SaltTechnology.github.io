@@ -11,20 +11,22 @@
         <div class="span3" id="sidebar">
           <div class="affix">
             <ul class="salt-side-nav nav nav-list well">
-              {% include main_sidebar.html %}
-            </ul>
-            {% if page.menu %}
+              <h4>Main Menu</h4>
+              <li class="nav-header">Overview</li>
+              <li><a href="getting_started.html">Getting Started</a></li>
+              <li><a href="client_libraries.html">Client Libraries</a>
               {% if page.menu == 'client-libraries' %}
-                <ul class="salt-side-nav nav nav-list well">
-                  <h4>Client Libraries</h4>
+                <ul class="salt-sub-nav nav nav-list">
                   <li><a href="#java">Java</a></li>
                   <li><a href="#net">.Net</a></li>
                   <li><a href="#php">PHP</a></li>
                   <li><a href="#ruby">Ruby</a></li>
                 </ul>
-              {% elsif page.menu == 'guide' %}
-                <ul class="salt-side-nav nav nav-list well">
-                  <h4>Integration Guide</h4>
+              {% endif %}
+              </li>
+              <li><a href="integration_guide.html">Integration Guide</a>
+              {% if page.menu == 'guide' %}
+                <ul class="salt-sub-nav nav nav-list">
                   <li><a href="#introduction">Introduction</a></li>
                   <li><a href="#environment">Sandbox Environment</a></li>
                   <li><a href="#api">Working With the API</a></li>
@@ -35,9 +37,13 @@
                   <li><a href="#moving_production">Moving to Production</a></li>
                   <li><a href="#appendix">Appendix</a></li>
                 </ul>
-              {% elsif page.menu == 'credit-card-reference' %}
-                <ul class="salt-side-nav nav nav-list well">
-                  <h4>Credit Card API</h4>
+              {% endif %}
+              </li>
+              <!--    <li><a href="faq.html">FAQ</a></li> -->
+              <li class="nav-header">API Reference</li>
+              <li><a href="post_api_ref.html">POST API</a>
+              {% if page.menu == 'post-api-reference' %}
+                <ul class="salt-sub-nav nav nav-list">
                   <li><a href="./core_api_ref.html">Introduction</a></li>
                   <li><a href="#single_purchase">Single Purchase</a></li>
                   <li><a href="#void">Void</a></li>
@@ -50,8 +56,28 @@
                   <li><a href="#receipts">Receipts</a></li>
                   <li><a href="#secure_storage">Secure Storage</a></li>
                 </ul>
-              {% elsif page.menu == 'iop-reference' %}
-                <ul class="salt-side-nav nav nav-list well">
+              {% endif %}
+              </li>
+              <li><a href="core_api_ref.html">Credit Card API</a>
+              {% if page.menu == 'credit-card-reference' %}
+                <ul class="salt-sub-nav nav nav-list">
+                  <li><a href="./core_api_ref.html">Introduction</a></li>
+                  <li><a href="#single_purchase">Single Purchase</a></li>
+                  <li><a href="#void">Void</a></li>
+                  <li><a href="#refund">Refund</a></li>
+                  <li><a href="#txn_verification">Transaction Verification</a></li>
+                  <li><a href="#cc_verification">Credit Card Verification</a></li>
+                  <li><a href="#recurring_purchase">Recurring Payments</a></li>
+                  <li><a href="#batch">Closing a Batch</a></li>
+                  <li><a href="#fraud">Updating Fraud</a></li>
+                  <li><a href="#receipts">Receipts</a></li>
+                  <li><a href="#secure_storage">Secure Storage</a></li>
+                </ul>
+              {% endif %}
+              </li>
+              <!-- <li><a href="core_api_ref_iop.html">IOP API</a>
+              {% if page.menu == 'iop-reference' %}
+                <ul class="salt-sub-nav nav nav-list">
                   <h4>IOP API</h4>
                   <li><a href="./core_api_ref_iop.html">Introduction</a></li>
                   <li><a href="#purchase">Purchase</a></li>
@@ -60,7 +86,10 @@
                   <li><a href="#receipts">Receipts</a></li>
                 </ul>
               {% endif %}
-            {% endif %}
+              </li> -->
+              <li><a href="ref_error_codes.html">Error Codes</a></li>
+              <li><a href="ref_testing.html">Sandbox Testing</a></li>
+            </ul>
           </div>
         </div>
         <div class="span9 salt-content">
