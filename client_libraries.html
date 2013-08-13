@@ -4,93 +4,106 @@ title: SALT Client Libraries
 menu: client-libraries
 ---
 <div class="span9 salt-guide-section">
+  <h1>SALT Client Libraries</h1>
+  <p>SALT provides client libraries in several programming languages that you can use to connect to the SALT Payment Gateway.</p>
+
+  <div class="alert alert-info">
+    <p>You'll need a SALT account to use our client libraries.  You can create a free Sandbox account by following the link below!</p>
+    <p><a class="btn btn-warning btn-large" href="https://test.salt.com/merchantmanagement/">Create a SALT Sandbox Account</a></p>
+  </div>
+
+  <hr/>
+
   <div id="java" name="java" class="section-anchor">
-    <div class="well">
-      <h2>Java</h2>
+    <h2>Java</h2>
+    <h3>Download and Build</h3>
+    <p>Grab the source code as zip file or clone our Git repository.</p>
+    <ul>
+      <li>
+        <strong>Zip File:</strong>
+        Download <a href="https://github.com/SaltTechnology/salt-payment-client-java/archive/master.zip">source as a zip file</a>.
+      </li>
+      <li><strong>Git:</strong>
+        Clone from our 
+        <a href="https://github.com/SaltTechnology/salt-payment-client-java" target="_blank">Git Repository</a>.
+      </li>
+    </ul>
+
+    <p>Build JAR File:</p>
+    <ul>
+      <li>
+        <strong>Maven:</strong>
+        <ol>
+          <li>On the command line, execute: <code>mvn install</code></li>
+        </ol>
+      </li>
+      <li>
+        <strong>Intellij:</strong>
+        <ol>
+          <li>Open a new project in Intellij by opening <code>pom.xml</code>.</li>
+          <li>Open the maven tab (located at the left side).</li>
+          <li>Run the lifecycle named &quot;clean&quot; followed by the lifecycle named &quot;install&quot;.</li>
+        </ol>
+      </li>
+      <li>
+        <strong>Eclipse:</strong>
+        <ol>
+          <li>Run the project as &quot;Maven clean&quot;</li>
+          <li>Run the project as &quot;Maven install&quot;</li>
+        </ol>
+      </li>
+    </ul>
+
+    <p>The JAR file can be found in the <code>target/</code> folder of the project.</p>
+
+    <h3>Examples</h3>
+    <p>The Java source comes with several working code examples.  To run the examples:</p>
+
+    <ol>
+      <li>Set your <code>apiToken</code> and <code>merchantId</code> in the project configuration. 
       <ol>
-        <li>Create Test Merchant Account. Generate API token, merchant Id, user name and password.
-        <ol>
-          <li>Contact Customer Services
-          <ul>
-            <li>Phone: 1-866-854-9851 ext. 2</li>
-            <li>Email: support@salt.com</li>
-          </ul></li>
-        </ol></li>
-        <li>Get source code as zip file or from git repository
-        <ul>
-          <li>Zip File
-          <ol>
-            <li>Download the repository 
-            <a href="https://github.com/SaltTechnology/salt-payment-client-java/archive/master.zip">zip file</a></li>
-            <li>Extract the zip file</li>
-          </ol></li>
-          <li>Git
-          <ol>
-            <li>Check out the from 
-            <a href="https://github.com/SaltTechnology/salt-payment-client-java" target="_blank">git hub
-            repository</a></li>
-          </ol></li>
-        </ul></li>
-        <li>Update API token and merchant Id in source code
-        <ol>
-          <li>Open merchant.properties file located under 
-          <code>salt-payment-client-java\src\main\resources\merchant.properties</code></li>
-          <li>Replace the values of merchant.Id and merchant.apiToken with those received from step one</li>
-        </ol></li>
-        <li>Make a transaction
-        <ul>
-          <li>Maven:
-          <ol>
-            <li>To run example single purchase execute: mvn install -Psingle-purchase</li>
-            <li>To run example secure storage execute: mvn install -Psecure-storagee</li>
-            <li>To run example recurring-purchase execute: mvn install -Precurring-purchase</li>
-          </ol></li>
-          <li>Intellij:
-          <ol>
-            <li>Open a new project in Intellij by opening the pom.xml file, extracted from the zip file.</li>
-            <li>Open the maven tab (located at the left side).</li>
-            <li>Run the lifecycle named &quot;clean&quot; followed by the lifecycle named &quot;install&quot;.</li>
-          </ol></li>
-          <li>Eclipse:
-          <ol>
-            <li>Run the project as &quot;Maven clean&quot;</li>
-            <li>Run the project as &quot;Maven install&quot;</li>
-          </ol></li>
-        </ul></li>
-        <li>View Transaction
-        <ol>
-          <li>Go to the 
-          <a href="https://test.salt.com/merchantmanagement/public/security/login" target="_blank">Merchant Management
-          login</a></li>
-          <li>Login using the username and password credentials created in step one</li>
-          <li>Go to &#39;...&#39; to view transaction</li>
-        </ol></li>
-      </ol>
-    </div>
-  </div>
-  <div id="net" name="net" class="section-anchor">
-    <div class="well">
-      <h2>.Net</h2>
+        <li>Open <code>merchant.properties</code> located at 
+        <code>salt-payment-client-java\src\main\resources\merchant.properties</code></li>
+        <li>Replace the values of merchant.Id and merchant.apiToken with your credentials.</li>
+      </ol></li>
+      <li>Run the Examples:
       <ul>
-        <li>Coming Soon</li>
+        <li>Maven:
+          <ol>
+            <li>To run an example single purchase execute: <code>mvn install -Psingle-purchase</code></li>
+            <li>To run an example secure storage execute: <code>mvn install -Psecure-storage</code></li>
+            <li>To run an example recurring purchase execute: <code>mvn install -Precurring-purchase</code></li>
+          </ol>
+        </li>
       </ul>
-    </div>
+    </ol>
   </div>
+
+  <hr/>
+
+  <div id="dotnet" name="dotnet" class="section-anchor">
+    <h2>.Net</h2>
+    <ul>
+      <li>Coming Soon</li>
+    </ul>
+  </div>
+
+  <hr/>
+
   <div id="php" name="php" class="section-anchor">
-    <div class="well">
-      <h2>PHP</h2>
-      <ul>
-        <li>Coming Soon</li>
-      </ul>
-    </div>
+    <h2>PHP</h2>
+    <ul>
+      <li>Coming Soon</li>
+    </ul>
   </div>
+
+  <hr/>
+
   <div id="ruby" name="ruby" class="section-anchor">
-    <div class="well">
-      <h2>Ruby</h2>
-      <ul>
-        <li>Coming Soon</li>
-      </ul>
-    </div>
+    <h2>Ruby</h2>
+    <ul>
+      <li>Coming Soon</li>
+    </ul>
   </div>
 </div>
 <!-- Copyright (c) 2013 SALT Technology Inc. All rights reserved. -->
