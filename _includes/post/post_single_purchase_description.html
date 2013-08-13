@@ -1,32 +1,52 @@
-<div class="well">
-<h3>Single Purchase</h3>
+<h2>Single Purchase</h2>
 
 <p>
-Perform a single purchase.
+The <code>singlePurchase</code> method runs a one-time charge against a credit card.
 </p>
 
 <table class="table table-bordered table-striped">
-<tr>
-<td>requestCode<td>"singlePurchase"
-<tr>
-<td>merchantId<td>Your merchant ID.
-<tr>
-<td>apiToken<td> Your API Token.
-<tr>
-<td>marketSegmentCode<td>I (Internet) or M (Mail/Telephone)
-<tr>
-<td>orderId<td>Merchant assigned orderId. 
-<tr>
-<td>creditCardNumber<td>The PAN of the paying credit card.
-<tr>
-<td>expiryDate<td>The expiry of the paying credit card in the format MMYY.
-<tr>
-<td>storageTokenId<td>If the customer is stored in Secure Storage, you can supply this ID instead of the customer's credit card credentials.
-<tr>
-<td>amount<td>The amount of the purchase in cents.
-<tr>
-<td>avsRequestCode<td>0 or 1, Whether or not you require AVS.
-<tr>
-<td>cvv2RequestCode<td>0 or 1, Whether or not you require CVV2.
+  <tr>
+    <td>requestCode</td>
+    <td>"singlePurchase"</td>
+  </tr>
+  <tr>
+    <td>merchantId</td>
+    <td>Your merchant ID.</td>
+  </tr>
+  <tr>
+    <td>apiToken</td>
+    <td> Your API Token.</td>
+  </tr>
+  <tr>
+    <td>marketSegmentCode</td>
+    <td>I (Internet) or M (Mail/Telephone)</td>
+  </tr>
+  <tr>
+    <td>orderId</td>
+    <td>Merchant assigned orderId. </td>
+  </tr>
+  <tr>
+    <td>creditCardNumber</td>
+    <td>The PAN of the paying credit card.</td>
+  </tr>
+  <tr>
+    <td>expiryDate</td>
+    <td>The expiry of the paying credit card in the format MMYY.</td>
+  </tr>
+  <tr>
+    <td>storageTokenId</td>
+    <td>If the customer is stored in Secure Storage, you can supply this ID instead of the customer's credit card credentials.</td>
+  </tr>
+  <tr>
+    <td>amount</td>
+    <td>The amount of the purchase in cents.</td>
+  </tr>
+  <tr>
+    <td>avsRequestCode</td>
+    <td>0 or 1, Whether or not you require AVS.</td>
+  </tr>
+  <tr>
+    <td>cvv2RequestCode</td>
+    <td>0 or 1, Whether or not you require CVV2.</td>
+  </tr>
 </table>
-</div>

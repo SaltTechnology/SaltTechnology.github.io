@@ -1,12 +1,11 @@
-<div class="well">
-<h3>Recurring Purchase</h3>
+<h2>Recurring Payments</h2>
 
 <p>
-You can use SALT’s Periodic Purchase features when the customer is billed periodically, or when splitting payment into a number of separate payments.
-<br>
+You can use SALT’s Recurring Payment feature when the customer is billed periodically, or when splitting payment into a number of separate payments.
 </p>
 
-To create a recurring payment:
+<p>To create a recurring payment:</p>
+
 <table class="table table-bordered table-striped">
 <tr>
 <td>requestCode<td>"recurringPurchase"
@@ -48,9 +47,7 @@ To create a recurring payment:
 <td>cvv2RequestCode<td>0 or 1, Whether or not your require CVV2.
 </table>
 
-<br>
-
-To execute a recurring payment:
+<p>To execute a recurring payment:</p>
 <table class="table table-bordered table-striped">
 <tr>
 <td>merchantId<td>Your merchant ID.
@@ -66,9 +63,8 @@ To execute a recurring payment:
 <td>transactionOrderId<td>The order Id of the transaction you are executing.
 </table>
 
-<br>
 
-To hold/resume/cancel a recurring payment:
+<p>To hold/resume/cancel a recurring payment:</p>
 <table class="table table-bordered table-striped">
 <tr>
 <td>requestCode<td>"recurringPurchase"
@@ -85,4 +81,3 @@ To hold/resume/cancel a recurring payment:
 <tr>
 <td>periodicPurchaseStateCode<td>1 = resume, 3 = hold, 4 = cancel
 </table>
-</div>
