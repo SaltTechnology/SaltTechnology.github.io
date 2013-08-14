@@ -12,92 +12,95 @@ menu: client-libraries
     <p><a class="btn btn-warning btn-large" href="https://test.salt.com/merchantmanagement/">Create a SALT Sandbox Account</a></p>
   </div>
 
-  <hr/>
+  <div class="tabbable">
+    <ul class="nav nav-tabs">
+      <li class="active"><a href="#java" data-toggle="tab">Java</a></li>
+      <li><a href="#dotnet" data-toggle="tab">.NET</a></li>
+      <li><a href="#php" data-toggle="tab">PHP</a></li>
+      <li><a href="#ruby" data-toggle="tab">Ruby</a></li>
+    </ul>
 
-  <div id="java" name="java" class="section-anchor">
-    <h2>Java</h2>
-    <h3>Download and Build</h3>
-    <ol>
-      <li>Clone our <a href="https://github.com/SaltTechnology/salt-payment-client-java" target="_blank">Git Repository</a> or download the <a href="https://github.com/SaltTechnology/salt-payment-client-java/archive/master.zip">source as a zip file</a>.</li>
-      <li>Build JAR File:
-        <ul>
-          <li>
-            <strong>Maven:</strong>
-            <ol>
-              <li>On the command line, execute: <code>mvn install</code></li>
-            </ol>
+    <div class="tab-content">
+      <div id="java" class="tab-pane active">
+        <h2>Java Client Library</h2>
+        <h3>Download and Build</h3>
+        <ol>
+          <li>Clone our <a href="https://github.com/SaltTechnology/salt-payment-client-java" target="_blank">Git Repository</a> or download the <a href="https://github.com/SaltTechnology/salt-payment-client-java/archive/master.zip">source as a zip file</a>.</li>
+          <li>Build JAR File:
+            <ul>
+              <li>
+                <strong>Maven:</strong>
+                <ol>
+                  <li>On the command line, execute: <code>mvn install</code></li>
+                </ol>
+              </li>
+              <li>
+                <strong>Intellij:</strong>
+                <ol>
+                  <li>Open a new project in Intellij by opening <code>pom.xml</code>.</li>
+                  <li>Open the maven tab (located at the left side).</li>
+                  <li>Run the lifecycle named &quot;clean&quot; followed by the lifecycle named &quot;install&quot;.</li>
+                </ol>
+              </li>
+              <li>
+                <strong>Eclipse:</strong>
+                <ol>
+                  <li>Run the project as &quot;Maven clean&quot;</li>
+                  <li>Run the project as &quot;Maven install&quot;</li>
+                </ol>
+              </li>
+            </ul>
           </li>
-          <li>
-            <strong>Intellij:</strong>
-            <ol>
-              <li>Open a new project in Intellij by opening <code>pom.xml</code>.</li>
-              <li>Open the maven tab (located at the left side).</li>
-              <li>Run the lifecycle named &quot;clean&quot; followed by the lifecycle named &quot;install&quot;.</li>
-            </ol>
-          </li>
-          <li>
-            <strong>Eclipse:</strong>
-            <ol>
-              <li>Run the project as &quot;Maven clean&quot;</li>
-              <li>Run the project as &quot;Maven install&quot;</li>
-            </ol>
-          </li>
-        </ul>
-      </li>
-    </ol>
+        </ol>
 
-    <p>The built JAR file can be found in the <code>target/</code> folder of the project.</p>
+        <p>The built JAR file can be found in the <code>target/</code> folder of the project.</p>
 
-    <h3>Examples</h3>
-    <p>The Java source comes with several working code examples.  To run the examples:</p>
+        <h3>Examples</h3>
+        <p>The Java source comes with several working code examples.  To run the examples:</p>
 
-    <ol>
-      <li>Set your <code>apiToken</code> and <code>merchantId</code> in the project configuration. 
-      <ol>
-        <li>Open <code>merchant.properties</code> located at 
-        <code>salt-payment-client-java\src\main\resources\merchant.properties</code></li>
-        <li>Replace the values of merchant.Id and merchant.apiToken with your credentials.</li>
-      </ol></li>
-      <li>Run the Examples:
-      <ul>
-        <li>Maven:
+        <ol>
+          <li>Set your <code>apiToken</code> and <code>merchantId</code> in the project configuration. 
           <ol>
-            <li>To run an example single purchase execute: <code>mvn install -Psingle-purchase</code></li>
-            <li>To run an example secure storage execute: <code>mvn install -Psecure-storage</code></li>
-            <li>To run an example recurring purchase execute: <code>mvn install -Precurring-purchase</code></li>
-          </ol>
-        </li>
-      </ul>
-    </ol>
-  </div>
+            <li>Open <code>merchant.properties</code> located at 
+            <code>salt-payment-client-java\src\main\resources\merchant.properties</code></li>
+            <li>Replace the values of merchant.Id and merchant.apiToken with your credentials.</li>
+          </ol></li>
+          <li>Run the Examples:
+          <ul>
+            <li>Maven:
+              <ol>
+                <li>To run an example single purchase execute: <code>mvn install -Psingle-purchase</code></li>
+                <li>To run an example secure storage execute: <code>mvn install -Psecure-storage</code></li>
+                <li>To run an example recurring purchase execute: <code>mvn install -Precurring-purchase</code></li>
+              </ol>
+            </li>
+          </ul>
+        </ol>
+      </div>
 
-  <hr/>
+      <div id="dotnet" class="tab-pane">
+        <h2>.NET Client Library</h2>
+        <ul>
+          <li>Coming Soon</li>
+        </ul>
+      </div>
 
-  <div id="dotnet" name="dotnet" class="section-anchor">
-    <h2>.Net</h2>
-    <ul>
-      <li>Coming Soon</li>
-    </ul>
-  </div>
+      <div id="php" class="tab-pane">
+        <h2>PHP Client Library</h2>
+        <ol>
+          <li>Clone our <a href="https://github.com/SaltTechnology/salt-payment-client-php" target="_blank">Git Repository</a> or download the <a href="https://github.com/SaltTechnology/salt-payment-client-php/archive/master.zip">source as a zip file</a>.</li>
+          <li>Include the library in your code.  E.g. <code>include 'lib/HttpsCreditCardService.php';</code></li>
+        </ol>
+      </div>
 
-  <hr/>
-
-  <div id="php" name="php" class="section-anchor">
-    <h2>PHP</h2>
-    <ul>
-      <li>Clone our <a href="https://github.com/SaltTechnology/salt-payment-client-php" target="_blank">Git Repository</a> or download the <a href="https://github.com/SaltTechnology/salt-payment-client-php/archive/master.zip">source as a zip file</a>.</li>
-      <li>Include the library in your code.  E.g. <code>include 'lib/HttpsCreditCardService.php';</code></li>
-    </ul>
-  </div>
-
-  <hr/>
-
-  <div id="ruby" name="ruby" class="section-anchor">
-    <h2>Ruby</h2>
-    <ul>
-      <li>Clone our <a href="https://github.com/SaltTechnology/salt-payment-client-ruby" target="_blank">Git Repository</a> or download the <a href="https://github.com/SaltTechnology/salt-payment-client-ruby/archive/master.zip">source as a zip file</a>.</li>
-      <li>Include the library in your code.  E.g. <code>require('lib/HttpsCreditCardService.php')</code></li>
-    </ul>
-  </div>
+      <div id="ruby" class="tab-pane">
+        <h2>Ruby Client Library</h2>
+        <ol>
+          <li>Clone our <a href="https://github.com/SaltTechnology/salt-payment-client-ruby" target="_blank">Git Repository</a> or download the <a href="https://github.com/SaltTechnology/salt-payment-client-ruby/archive/master.zip">source as a zip file</a>.</li>
+          <li>Include the library in your code.  E.g. <code>require('lib/HttpsCreditCardService.php')</code></li>
+        </ol>
+      </div>
+    </div> <!-- tab content -->
+  </div> <!-- tabbable -->
 </div>
 <!-- Copyright (c) 2013 SALT Technology Inc. All rights reserved. -->
