@@ -17,44 +17,36 @@ menu: client-libraries
   <div id="java" name="java" class="section-anchor">
     <h2>Java</h2>
     <h3>Download and Build</h3>
-    <p>Grab the source code as zip file or clone our Git repository.</p>
-    <ul>
-      <li>
-        <strong>Zip File:</strong>
-        Download <a href="https://github.com/SaltTechnology/salt-payment-client-java/archive/master.zip">source as a zip file</a>.
+    <ol>
+      <li>Clone our <a href="https://github.com/SaltTechnology/salt-payment-client-java" target="_blank">Git Repository</a> or download the <a href="https://github.com/SaltTechnology/salt-payment-client-java/archive/master.zip">source as a zip file</a>.</li>
+      <li>Build JAR File:
+        <ul>
+          <li>
+            <strong>Maven:</strong>
+            <ol>
+              <li>On the command line, execute: <code>mvn install</code></li>
+            </ol>
+          </li>
+          <li>
+            <strong>Intellij:</strong>
+            <ol>
+              <li>Open a new project in Intellij by opening <code>pom.xml</code>.</li>
+              <li>Open the maven tab (located at the left side).</li>
+              <li>Run the lifecycle named &quot;clean&quot; followed by the lifecycle named &quot;install&quot;.</li>
+            </ol>
+          </li>
+          <li>
+            <strong>Eclipse:</strong>
+            <ol>
+              <li>Run the project as &quot;Maven clean&quot;</li>
+              <li>Run the project as &quot;Maven install&quot;</li>
+            </ol>
+          </li>
+        </ul>
       </li>
-      <li><strong>Git:</strong>
-        Clone from our 
-        <a href="https://github.com/SaltTechnology/salt-payment-client-java" target="_blank">Git Repository</a>.
-      </li>
-    </ul>
+    </ol>
 
-    <p>Build JAR File:</p>
-    <ul>
-      <li>
-        <strong>Maven:</strong>
-        <ol>
-          <li>On the command line, execute: <code>mvn install</code></li>
-        </ol>
-      </li>
-      <li>
-        <strong>Intellij:</strong>
-        <ol>
-          <li>Open a new project in Intellij by opening <code>pom.xml</code>.</li>
-          <li>Open the maven tab (located at the left side).</li>
-          <li>Run the lifecycle named &quot;clean&quot; followed by the lifecycle named &quot;install&quot;.</li>
-        </ol>
-      </li>
-      <li>
-        <strong>Eclipse:</strong>
-        <ol>
-          <li>Run the project as &quot;Maven clean&quot;</li>
-          <li>Run the project as &quot;Maven install&quot;</li>
-        </ol>
-      </li>
-    </ul>
-
-    <p>The JAR file can be found in the <code>target/</code> folder of the project.</p>
+    <p>The built JAR file can be found in the <code>target/</code> folder of the project.</p>
 
     <h3>Examples</h3>
     <p>The Java source comes with several working code examples.  To run the examples:</p>
@@ -93,7 +85,8 @@ menu: client-libraries
   <div id="php" name="php" class="section-anchor">
     <h2>PHP</h2>
     <ul>
-      <li>Coming Soon</li>
+      <li>Clone our <a href="https://github.com/SaltTechnology/salt-payment-client-php" target="_blank">Git Repository</a> or download the <a href="https://github.com/SaltTechnology/salt-payment-client-php/archive/master.zip">source as a zip file</a>.</li>
+      <li>Include the library in your code.  E.g. <code>include 'lib/HttpsCreditCardService.php';</code></li>
     </ul>
   </div>
 
@@ -102,7 +95,8 @@ menu: client-libraries
   <div id="ruby" name="ruby" class="section-anchor">
     <h2>Ruby</h2>
     <ul>
-      <li>Coming Soon</li>
+      <li>Clone our <a href="https://github.com/SaltTechnology/salt-payment-client-ruby" target="_blank">Git Repository</a> or download the <a href="https://github.com/SaltTechnology/salt-payment-client-ruby/archive/master.zip">source as a zip file</a>.</li>
+      <li>Include the library in your code.  E.g. <code>require('lib/HttpsCreditCardService.php')</code></li>
     </ul>
   </div>
 </div>
