@@ -87,10 +87,36 @@ menu: client-libraries
 
       <div id="php" class="tab-pane">
         <h2>PHP Client Library</h2>
-        <ol>
-          <li>Clone our <a href="https://github.com/SaltTechnology/salt-payment-client-php" target="_blank">Git Repository</a> or download the <a href="https://github.com/SaltTechnology/salt-payment-client-php/archive/master.zip">source as a zip file</a>.</li>
-          <li>Include the library in your code.  E.g. <code>include 'lib/HttpsCreditCardService.php';</code></li>
-        </ol>
+        <h4>Dependencies</h4>
+          <p>SALT's PHP library requires PHP version 5.3.0 or higher.</p>
+        <h4>Download & Install</h4>
+          <p>Clone our <a href="https://github.com/SaltTechnology/salt-payment-client-php" target="_blank">Git Repository</a> or download the <a href="https://github.com/SaltTechnology/salt-payment-client-php/archive/master.zip">source as a zip file</a>.</p>
+        <h4>Usage</h4>
+        <p>To use this library, include the SALT.php file and start using the library.</p>
+          <pre class="prettyprint linenums">
+//Include the salt library
+include 'path/to/SALT/lib/SALT.php';
+
+//Include the classes you want to use from the SALT namespace.
+use \SALT\Merchant;
+use \SALT\HttpsCreditCardService;
+
+...
+
+//Initialize the SALT library (HttpsCreditCardService is the key class here)
+$url = 'https://test.salt.com/gateway/creditcard/processor.do';
+$merchant = new Merchant ('Merchant ID', 'API Key');
+$service = new HttpsCreditCardService($merchant, $url);
+...
+
+// Perform charges, refunds, etc. See Client Library API for info.</pre>
+
+          <h4>Exceptions & Error Handling</h4>
+          <p>Any transaction errors, validation errors, connection errors, or other types of errors will cause a \SALT\SaltError (Exception). Make sure to catch these exceptions and handle them appropriately.</p>
+
+          <h4>Testing</h4>
+          <p>To run the tests, you'll need PHPUnit. Run the following on your command line from the root directory of this project:</p>
+          <pre>phpunit --bootstrap lib/Salt.php tests/</pre>
       </div>
 
       <div id="ruby" class="tab-pane">
