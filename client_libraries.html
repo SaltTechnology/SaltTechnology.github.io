@@ -9,7 +9,7 @@ menu: client-libraries
 
   <div class="alert alert-info">
     <p>You'll need a SALT account to use our client libraries.  You can create a free Sandbox account by following the link below!</p>
-    <p><a class="btn btn-warning btn-large" href="https://test.salt.com/merchantmanagement/public/signup">Create a SALT Sandbox Account</a></p>
+    <p><a class="btn btn-warning btn-large" href="https://test.saltpayments.com/merchantmanagement/public/signup">Create a SALT Sandbox Account</a></p>
   </div>
 
   <div class="tabbable">
@@ -104,7 +104,7 @@ use \SALT\HttpsCreditCardService;
 ...
 
 //Initialize the SALT library (HttpsCreditCardService is the key class here)
-$url = 'https://test.salt.com/gateway/creditcard/processor.do';
+$url = 'https://test.saltpayments.com/gateway/creditcard/processor.do';
 $merchant = new Merchant ('Merchant ID', 'API Key');
 $service = new HttpsCreditCardService($merchant, $url);
 ...
