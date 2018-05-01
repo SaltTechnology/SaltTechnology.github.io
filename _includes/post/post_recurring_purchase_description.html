@@ -42,7 +42,7 @@ You can use SALT’s Recurring Payment feature when the customer is billed perio
 <tr>
 <td>storageTokenId<td>If the customer is stored in Secure Storage, you can supply this ID instead of the customer's credit card credentials.
 <tr>
-<td>avsRequestCode<td>0 or 1, Whether or not your require AVS.
+<td>avsRequestCode<td>null, 0 or 1. To skip check, don’t pass in this parameter; 0 to check both street and postal ; 1 to only check postal.
 <tr>
 <td>cvv2RequestCode<td>0 or 1, Whether or not your require CVV2.
 </table>
