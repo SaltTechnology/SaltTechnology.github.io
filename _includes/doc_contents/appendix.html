@@ -61,7 +61,7 @@ short expiry = 1212; // Credit Card Expiry
 string invoice="unique invoice"; // assign a unique invoice number
 long amount = 10000; // amount of txn
 
-HttpsCreditCardService ccService = new HttpsCreditCardService(new Merchant(merchantId, apiToken), "https://test.saltpayments.com/gateway/creditcard/processor.do");
+HttpsCreditCardService ccService = new HttpsCreditCardService(new Merchant(merchantId, apiToken), "https://gateway-uat.saltpayments.com/gateway/creditcard/processor.do");
 CreditCard creditCard = new CreditCard(pan, expiry);
 CreditCardReceipt resp = null;
 resp = ccService.singlePurchase(invoice, creditCard, amount, null);
@@ -114,7 +114,7 @@ if(resp.isApproved()){
     $invoice="unique invoice"; // assign a unique invoice number
     $amount = 10000; // amount of txn
     $ccService = new HttpsCreditCardService($merchantId, $apiToken,
-        "https://test.saltpayments.com/gateway/creditcard/processor.do");
+        "https://gateway-uat.saltpayments.com/gateway/creditcard/processor.do");
     $creditCard = new CreditCard($pan, $expiry);
     $resp = $ccService-&gt;singlePurchase($invoice, $creditCard, $amount, null);
     if($resp-&gt;isApproved()){
@@ -144,7 +144,7 @@ if(resp.isApproved()){
     $storage="token123"
     // Credit Card Storage Token Id
     $ccService = new HttpsCreditCardService($merchantId, $apiToken,
-        "https://test.saltpayments.com/gateway/creditcard/processor.do");
+        "https://gateway-uat.saltpayments.com/gateway/creditcard/processor.do");
     $creditCard = new CreditCard($pan, $expiry);
     $resp = $ccService-&gt;singlePurchase($invoice, $creditCard, $amount, null, $storageTokenId);
     if($resp-&gt;isApproved()){

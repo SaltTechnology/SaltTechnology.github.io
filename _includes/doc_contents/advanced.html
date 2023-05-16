@@ -128,7 +128,7 @@ String invoice="order-12345"; // merchant invoice/orderId
 String cvv2="888"; // CVV2 digits
 long amount=3420; // in cents
 HttpsCreditCardService ccService = new HttpsCreditCardService(
-  new Merchant(merchantId, apiToken),  "https://test.saltpayments.com/gateway/creditcard/processor.do");
+  new Merchant(merchantId, apiToken),  "https://gateway-uat.saltpayments.com/gateway/creditcard/processor.do");
 // specify additional credit card parameters
 CreditCard creditCard = new CreditCard(pan, expiry, cvv2, null, null);
 // specify the VerificationRequest contains an AvsRequest and/or Cvv2Request
@@ -298,7 +298,7 @@ String avsStreet="123 Easy Street"; // AVS Street number and name
 String avsZip="A1B2C3"; // AVS ZIP/Postal code
 long amount=3420; // in cents
 HttpsCreditCardService ccService = new HttpsCreditCardService(
-  new Merchant(merchantId, apiToken),  "https://test.saltpayments.com/gateway/creditcard/processor.do");
+  new Merchant(merchantId, apiToken),  "https://gateway-uat.saltpayments.com/gateway/creditcard/processor.do");
 // specify additional credit card parameters
 CreditCard creditCard = new CreditCard(pan, expiry, null, avsStreet, avsZip);
 // specify the VerificationRequest contains an AvsRequest and/or Cvv2Request
@@ -691,7 +691,7 @@ String address1="123 Easy Street"; // Customer address1
 String postal="A1B2C3"; // Customer Postal code
 String phone="4165551234"; // Customer phone number
 HttpsCreditCardService ccService = new HttpsCreditCardService(
-    new Merchant(merchantId, apiToken), "https://test.saltpayments.com/gateway/creditcard/processor.do");
+    new Merchant(merchantId, apiToken), "https://gateway-uat.saltpayments.com/gateway/creditcard/processor.do");
 // credit card to store
 CreditCard creditCard = new CreditCard(ccNumber, ccExpiry);
 // customer profile details to store
